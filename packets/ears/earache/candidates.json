@@ -1,0 +1,482 @@
+{
+  "packet": {
+    "id": "earache",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "candidates": [
+    {
+      "id": "e-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hard-to-hear",
+      "q": {
+        "young": "Is it hard to hear on that side?",
+        "older": "Is it hard to hear things on that side?"
+      },
+      "why": "Item 1, the packet's top-ranked item and the one the app already ships by hand as FOLLOW_UPS.ears.hearing. This wording is the shipped text kept as close to unchanged as the register ruling allows, so the transition is a replacement rather than a rewrite. Decision 11 asks that the chosen item 1 candidate carry the id `hearing` at build time; the reviewer should decide whether to rename this entry, and should also note the packet's open flag that \"on that side\" assumes one ear was tapped.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hard-to-hear",
+      "q": {
+        "young": "Is it hard to hear other people?",
+        "older": "Do you have to ask people to say things again?"
+      },
+      "why": "Item 1 again, worded from NG233 1.2.1's own example of a hearing difficulty a child notices (\"asking for things to be repeated\") rather than from the perception itself. It costs the link to the shipped wording and to \"that side\", so laterality is lost, but it asks about an everyday event instead of asking a child to judge their own hearing.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "text repaired 2026-09-06 — the review edit left it malformed (capitalisation, question mark, stray bracket, or a note typed into the question field)"
+      }
+    },
+    {
+      "id": "e-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your ear feel more wet or squishy inside?",
+        "older": "Has your ear felt wet?"
+      },
+      "why": "Item 2, the wetness half of the split argued in \"The discharge split\": what the child feels, never what the child would have to look at, name or colour. The packet's own open flag lands squarely on this young-tier wording, since a 4-year-old may not separate a wet ear from bath water, sweat or a tear; a reviewer should read this line with that in mind.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "young tier reworded at review; older tier restored 2026-09-06 to the generated text after a comment was typed into the edit prompt by mistake"
+      }
+    },
+    {
+      "id": "e-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is something coming out of your ear?",
+        "older": "Has something been coming out of your ear?"
+      },
+      "why": "Item 2 in its other permitted form. It avoids the bath-water confusion that threatens e-003's young tier, because a child answering it is reporting a thing they noticed rather than a texture they felt. The cost is that it edges closer to inspection than \"wet\" does, and it may read to a nurse as more of an observation than it is.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "runny-nose",
+      "q": {
+        "young": "Do you feel stuffy, like you have a cold?",
+        "older": "Do you have a cold at the moment?"
+      },
+      "why": "Item 3, third in rank and the cheapest well-sourced context here: five sources, and Schmitt's \"day 3 of a cold\" is the most useful piece of timing in the packet. \"A cold\" is a word a 4-year-old owns, but it asks the child for a small self-diagnosis, which e-006 avoids.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "text repaired 2026-09-06 — the review edit left it malformed (capitalisation, question mark, stray bracket, or a note typed into the question field)"
+      }
+    },
+    {
+      "id": "e-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "runny-nose",
+      "q": {
+        "young": "Is your nose stuffy or runny?",
+        "older": "Has your nose been stuffy or runny?"
+      },
+      "why": "Item 3 worded as the two observations underneath it, which is how ETG-5 and NG233 1.2.4 both state it. It asks for a fact rather than a label, so it should be steadier in the young tier; it will also catch children whose nose is running for reasons other than a cold, which is a false positive the nurse can unpick easily.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you been swimming?",
+        "older": "Have you been swimming or in a pool?"
+      },
+      "why": "Item 4, ranked fourth because it is exposure only the child holds, for the one ear condition whose incidence peaks inside this app's age band, and because Schmitt treats it as a routing fact. Short enough to survive the young tier untouched.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-008",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Did water get in your ear?",
+        "older": "Did water get into your ear in the bath or shower?"
+      },
+      "why": "Item 4 widened from swimming to water exposure, which is what the source risk table actually lists. It catches the child who does not swim but whose ear gets wet daily, at the cost of a much higher yes rate: nearly every child gets water in an ear in the bath, so a yes here carries less information than a yes to e-007.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-009",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your ear feel full?",
+        "older": "Does your ear feel full or stuffed up?"
+      },
+      "why": "Item 6, ranked fifth: a sensation only the child has, and one the app's SENSATIONS list does not carry. Uses the two permitted words and no others. \"Full\" alone may be thin for a young child, which is why e-010 offers the second word first.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your ear feel stuffed up?",
+        "older": "Does your ear feel stuffed up even when it does not hurt?"
+      },
+      "why": "Item 6 again, with the older tier carrying Schmitt's distinction: fullness without pain routes to a different protocol entirely, so the answer is worth more when it is separated from the pain the app has already collected. The trailing clause makes the older line long and a reviewer may prefer to cut it.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it hurt when you chew?",
+        "older": "Does your ear hurt when you chew food?"
+      },
+      "why": "Item 5, and it is only the chewing half of the source sentence; the other half of that sentence is the examination the child must never perform on their own ear. Chewing is something the child does at every meal without being asked. The young tier drops \"your ear\" for length, which makes it slightly closer to the mouth group's shipped hurt-eat question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does chewing make your ear hurt?",
+        "older": "Does your ear hurt while you are chewing your food?"
+      },
+      "why": "Item 5 with the ear named in both tiers, which keeps it distinguishable from the mouth group's hurt-eat on a nurse's screen when a child taps both regions. Reads as slightly more effortful than e-011 for a 4-year-old.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same exact as e-011"
+      }
+    },
+    {
+      "id": "e-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you put something in your ear?",
+        "older": "Did you put something in your ear?"
+      },
+      "why": "Item 7: only the child knows, it can be time-critical, and it appears in no diagnostic criterion. The object is deliberately unnamed, because naming it both prompts the answer and frightens a child into denying it. A child may deny this anyway if they think they are in trouble, which is a limit of the item rather than of the wording.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Is something stuck in your ear?",
+        "older": "Did anything go into your ear and stay there?"
+      },
+      "why": "Item 7 asked about the state rather than the act, so a child who fears being told off for putting something in can answer without confessing to doing it. It also catches the case where somebody else did it. The cost is that a child may answer yes about a feeling of fullness, which is item 6.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you keep falling over?",
+        "older": "Have you been falling over when you walk around?"
+      },
+      "why": "Item 9, and only the half of it the child experiences: the adult's words for this are all judgements about a child being watched, and none of them may be handed back to the child. The spinning sensation is not asked here because it is already offered on the sensations screen. Partial by design, since the child supplies events and the nurse supplies the pattern.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you bump into things?",
+        "older": "Have you been bumping into things when you walk?"
+      },
+      "why": "Item 9's other event. Bumping into things is likelier than falling over in an older child and does not need the child to have hit the floor, so it may pick up the milder end. It is also the noisier of the two: children bump into things constantly, so a yes needs the nurse to ask what changed.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "minAge": 8,
+      "answers": "yesno",
+      "q": {
+        "young": "Can you hear a noise in your ear?",
+        "older": "Can you hear a noise in your ear, like buzzing?"
+      },
+      "why": "Item 8, floored at 8 by the packet's own judgement rather than by any source: a younger child asked whether they can hear a noise will go looking for one and find it. One concrete example word is needed for the child to compare against, and the packet rules that word is \"buzzing\". The young line is written to pass the screen only; with minAge 8 it should never render, and the reviewer should decide whether removing the floor also means rewriting it.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it hard to move your neck?",
+        "older": "Is it hard to move or turn your neck?"
+      },
+      "why": "Item 10, the highest-stakes item here and the weakest as a question: the source criterion is a manoeuvre, and a child told to try it who cannot do it will hurt themselves, so only the child's own experience is asked. Note the packet's standing warning that this is near-identical in fact and wording to the sore-throat packet's item 9, and the app dedupes by question id, not by fact, so a child who taps an ear and a throat could see the same sentence twice.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "fact": "feels-feverish",
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Have you been feeling hot or shivery?"
+      },
+      "why": "Item 11: the child reports the sensation and the nurse takes the measurement, which is item 33 and not the app's. Ranked eleventh because the packet's sources hold at least five incompatible thresholds that no question can resolve, and the nurse will measure regardless.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "e-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "fact": "vomiting",
+      "q": {
+        "young": "Have you thrown up?",
+        "older": "Have you thrown up at all?"
+      },
+      "why": "Item 12, in the packet's ruled vocabulary and carried unchanged from the earlier packets that settled it. Genuinely in the history and in the pooled severity definition, and genuinely a poor use of a three-question screen for a child whose ear hurts, which is why it ranks twelfth.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

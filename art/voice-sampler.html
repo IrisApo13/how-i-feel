@@ -1,0 +1,175 @@
+<title>Voice Sampler</title>
+<style>
+  :root{--ink:#24303f;--muted:#6b7785;--line:#dfe4ea;--bg:#faf9f7;--card:#fff;--sky:#3b82c4}
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+       color:var(--ink);background:var(--bg);max-width:1000px;margin-inline:auto}
+  h1{font-size:20px;margin:0 0 2px}
+  p.sub{margin:0 0 18px;color:var(--muted);font-size:13px;max-width:70ch}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .panel h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  label{display:block;font-size:13px;margin-bottom:10px}
+  select,input[type=text]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;width:100%;background:#fff;color:var(--ink)}
+  input[type=range]{width:220px;vertical-align:middle}
+  .val{font-variant-numeric:tabular-nums;font-weight:700;margin-left:6px}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+     padding:6px 8px;border-bottom:1px solid var(--line)}
+  td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+  tr:hover td{background:#f5f7f9}
+  button{font:inherit;font-weight:600;padding:6px 12px;border-radius:8px;border:1px solid var(--line);
+         background:#fff;color:var(--ink);cursor:pointer}
+  button.play{background:var(--sky);color:#fff;border-color:var(--sky)}
+  button.pick{border-color:var(--sky);color:var(--sky)}
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px}
+  .on-device{background:#e6f3e9;color:#2b6b3d}
+  .network{background:#fdecec;color:#a33}
+  .chosen{background:#eef4fb;border-left:3px solid var(--sky)}
+  code{background:#f0f2f5;padding:1px 5px;border-radius:4px;font-size:12px}
+  .note{font-size:12.5px;color:var(--muted)}
+  .note b{color:var(--ink)}
+  #out{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;white-space:pre-wrap;
+       background:#f7f8fa;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:8px}
+</style>
+
+<h1>Voice sampler</h1>
+<p class="sub">Every speech voice installed on this machine, saying the app's own lines. The app currently names no voice at all, so the browser picks the default &mdash; which is usually the flattest one available. Find one you like, then hit <b>Use this one</b> and paste the result to me.</p>
+
+<div class="panel" id="diag">
+  <h2>Is it working?</h2>
+  <button id="test" style="background:#3b82c4;color:#fff;border-color:#3b82c4;padding:9px 16px">Test sound now</button>
+  <div id="status" class="note" style="margin-top:10px">checking…</div>
+</div>
+
+<div class="panel">
+  <h2>What it says</h2>
+  <label>
+    <select id="line">
+      <option>Hi! I hurt sometimes too.</option>
+      <option>Next you'll see a body. Show me where it hurts.</option>
+      <option>How much does your tummy hurt?</option>
+      <option>Does your head hurt when you wake up, or does it wake you at night?</option>
+      <option>A few more things that help the nurse.</option>
+      <option>Has this happened to you before?</option>
+    </select>
+  </label>
+  <label>Pitch <input type="range" id="pitch" min="0.5" max="2" step="0.05" value="1.15"><span class="val" id="pv">1.15</span>
+    <span class="note">&mdash; higher is younger, but past ~1.4 it turns shrill</span></label>
+  <label>Rate <input type="range" id="rate" min="0.5" max="1.5" step="0.05" value="0.92"><span class="val" id="rv">0.92</span>
+    <span class="note">&mdash; <b>the app is at 0.92 and that is likely the problem.</b> Slowing a flat voice makes it eerie rather than gentle; try 1.0&ndash;1.1</span></label>
+</div>
+
+<div class="panel">
+  <h2>Voices <span id="count" class="note"></span></h2>
+  <label style="max-width:320px"><input type="text" id="filter" placeholder="filter by name or language…"></label>
+  <table><thead><tr><th>Voice</th><th>Language</th><th>Where it runs</th><th></th><th></th></tr></thead>
+  <tbody id="rows"></tbody></table>
+</div>
+
+<div class="panel">
+  <h2>Your pick</h2>
+  <div id="out">Nothing picked yet.</div>
+  <p class="note" style="margin-top:10px"><b>On-device vs network matters here.</b> A voice marked <span class="chip network">network</span> sends the text it speaks to the vendor's servers. Every line this app speaks is a question about a child's symptoms, and the whole privacy posture is that nothing leaves the device &mdash; so prefer <span class="chip on-device">on&#8209;device</span> even if a network voice sounds slightly better.</p>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id)
+  let voices = []
+  // Defined before load() -- `const` is not hoisted, and load() calls this.
+  const log = (m) => { $('status').innerHTML = m }
+
+  const render = () => {
+    const q = $('filter').value.trim().toLowerCase()
+    const list = voices
+      .filter(v => v.lang.toLowerCase().startsWith('en'))
+      .filter(v => !q || v.name.toLowerCase().includes(q) || v.lang.toLowerCase().includes(q))
+    $('count').textContent = `— ${list.length} English of ${voices.length} total`
+    $('rows').innerHTML = list.map((v) => `
+      <tr data-name="${v.name.replace(/"/g,'&quot;')}">
+        <td><b>${v.name}</b>${v.default ? ' <span class="note">(browser default)</span>' : ''}</td>
+        <td class="note">${v.lang}</td>
+        <td><span class="chip ${v.localService ? 'on-device' : 'network'}">${v.localService ? 'on-device' : 'network'}</span></td>
+        <td><button class="play">Play</button></td>
+        <td><button class="pick">Use this one</button></td>
+      </tr>`).join('')
+  }
+
+  const load = () => {
+    voices = ('speechSynthesis' in window) ? speechSynthesis.getVoices() : []
+    render()
+    if (!('speechSynthesis' in window)) log('<b>No speechSynthesis in this browser.</b>')
+    else if (!voices.length) log('Voices not loaded yet. Chrome returns an empty list on first call and fills it a moment later — if this does not change, reload the page.')
+    else log(`${voices.length} voices available. Press <b>Test sound now</b>.`)
+  }
+  load()
+  speechSynthesis.onvoiceschanged = load
+
+  // Chrome needs three workarounds here, all of them long-standing bugs:
+  //
+  //  1. cancel() followed by speak() in the SAME tick cancels the new utterance
+  //     too -- which is the "error: canceled" you get. A short delay fixes it.
+  //  2. an utterance with no live reference can be garbage-collected mid-speech,
+  //     so the current one is parked on `current`.
+  //  3. the engine silently pauses after inactivity; resume() is a harmless
+  //     no-op when it is already running.
+  //
+  // Errors are also tagged with a token so a cancelled OLD utterance cannot
+  // overwrite the status of the new one -- that alone made this look broken.
+  let current = null
+  let token = 0
+
+  const say = (name) => {
+    if (!('speechSynthesis' in window)) { log('<b>This browser has no speechSynthesis.</b>'); return }
+    const mine = ++token
+    speechSynthesis.cancel()
+
+    setTimeout(() => {
+      if (mine !== token) return
+      speechSynthesis.resume()
+      const v = voices.find(x => x.name === name)
+      const label = v ? v.name : 'the browser default'
+      const u = new SpeechSynthesisUtterance($('line').value)
+      if (v) u.voice = v
+      u.pitch = +$('pitch').value
+      u.rate = +$('rate').value
+      u.volume = 1
+      u.onstart = () => { if (mine === token) log(`speaking with <b>${label}</b>…`) }
+      u.onend = () => { if (mine === token) log(`finished <b>${label}</b>. Heard nothing? Check the system output device — browsers sometimes route speech elsewhere.`) }
+      u.onerror = (e) => {
+        if (mine !== token || e.error === 'canceled' || e.error === 'interrupted') return
+        log(`<b>error:</b> ${e.error}`)
+      }
+      current = u
+      speechSynthesis.speak(u)
+
+      setTimeout(() => {
+        if (mine !== token) return
+        if (!speechSynthesis.speaking && !speechSynthesis.pending)
+          log('Accepted but never spoke. Open the served copy at <b>http://localhost:5174/voice-sampler.html</b> rather than the file, and check the system volume.')
+      }, 1200)
+    }, 120)
+  }
+
+  $('test').onclick = () => say(null)
+
+  $('rows').addEventListener('click', (e) => {
+    const tr = e.target.closest('tr'); if (!tr) return
+    const name = tr.dataset.name
+    if (e.target.classList.contains('play')) say(name)
+    if (e.target.classList.contains('pick')) {
+      for (const r of document.querySelectorAll('tr')) r.classList.remove('chosen')
+      tr.classList.add('chosen')
+      const v = voices.find(x => x.name === name)
+      $('out').textContent =
+        `voice:  ${name}\nlang:   ${v?.lang}\nruns:   ${v?.localService ? 'on-device' : 'NETWORK — text leaves the machine'}\n` +
+        `pitch:  ${$('pitch').value}\nrate:   ${$('rate').value}`
+    }
+  })
+
+  for (const id of ['pitch','rate']) {
+    $(id).addEventListener('input', () => {
+      $(id === 'pitch' ? 'pv' : 'rv').textContent = $(id).value
+    })
+  }
+  $('filter').addEventListener('input', render)
+</script>

@@ -1,0 +1,89 @@
+{
+  "id": "tummy-acute-pain",
+  "group": "tummy",
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "7": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    5,
+    1,
+    4,
+    14,
+    7,
+    10,
+    12,
+    9,
+    3,
+    11,
+    18,
+    19,
+    16,
+    8,
+    2
+  ],
+  "minAge": {
+    "4": 5,
+    "5": 5,
+    "8": 7
+  },
+  "cite": {
+    "1": "pARC; Alvarado; AIR; PAS; RCH",
+    "2": "pARC; Alvarado; PAS",
+    "3": "Alvarado; PAS; RCH; SPASMS",
+    "4": "pARC; Alvarado; AIR; PAS; SPASMS",
+    "5": "pARC; PAS via WSES",
+    "7": "SPASMS; RCH",
+    "8": "SPASMS; RCH; Almalki",
+    "9": "RCH; Almalki",
+    "10": "RCH; Almalki",
+    "11": "RCH; Almalki",
+    "12": "RCH; SPASMS; Almalki",
+    "14": "RCH; Almalki",
+    "16": "Alvarado; AIR; PAS; pARC; RCH",
+    "18": "RCH; SPASMS; Almalki",
+    "19": "RCH"
+  },
+  "bannedPhrases": [
+    [
+      "appendi|appendix",
+      "names a diagnosis to the child"
+    ],
+    [
+      "constipat|dysuria|bilious|hematuria|emesis",
+      "clinical term"
+    ],
+    [
+      "diabet|battery|poison",
+      "names a cause that would frighten or prompt"
+    ],
+    [
+      "bowel|urine|stool|motion|\\bwee\\b|\\bpoo\\b(?!p)",
+      "wrong register - packet decision 1"
+    ]
+  ],
+  "minAgeNotes": {
+    "8": "JUDGEMENT, NOT A CITATION. The packet observes that 4-6 year olds conflate 'it stopped' with 'it went away for a bit'; no source states a floor. Flagged so a reviewer can see this one differs from items 4 and 5, whose floors come from pARC and SPASMS."
+  },
+  "preferred": {
+    "18": "t-017a"
+  },
+  "packetRank": 10,
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

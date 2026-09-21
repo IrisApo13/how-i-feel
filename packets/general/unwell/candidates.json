@@ -1,0 +1,506 @@
+{
+  "packet": {
+    "id": "general-unwell",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "candidates": [
+    {
+      "id": "g-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Do you feel hot?",
+        "older": "Do you feel hot right now, or did you earlier?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "feels-feverish",
+      "why": "Item 1, the flagship. IMCI puts 'feels hot' inside its own definition of fever and Craig's case definition counts a report that the child 'felt hot in the previous 24 hours', so the older tier reaches back as well as asking now. Sensation only, no number, and it takes the shared feels-feverish fact per decision 9.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Does your body feel hot?",
+        "older": "Does your body feel hot all over?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "feels-feverish",
+      "why": "Item 1, second phrasing. 'All over' matches the complaint this cross-cutting packet is named for without asking the child to judge how ill they are (item 29). Same fact as g-001 so only one wording can win a slot.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "g-003",
+      "traces_to": 2,
+      "q": {
+        "young": "Are you shivering?",
+        "older": "Are you shivering or shaking?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "shivering",
+      "why": "Item 2, split from item 1 on purpose (decision 4). NICE scores 'Rigors' as an amber criterion in its own right and lists 'Shivering' with no temperature attached, so this carries its own fact and never fuses with feeling hot. Says shaking, never 'rigor'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Are you shaking?",
+        "older": "Have you been shaking, even when you are warm?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "shivering",
+      "why": "Item 2, second phrasing, leading with the child's word. The older tier reflects NICE scoring rigors beside rather than inside the temperature criteria: a shaking child who does not feel hot is still amber. No grading is asked for.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "g-005",
+      "traces_to": 3,
+      "q": {
+        "young": "Have you been able to drink?",
+        "older": "Have you been able to drink anything today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eating-drinking",
+      "why": "Item 3, the best-sourced item here. IMCI's general danger sign is 'Is the child able to drink?' and its family-facing return list says 'Not able to drink'. Asks what the child has managed, not whether they are dehydrated, which is exam (item 27).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-006",
+      "traces_to": 3,
+      "q": {
+        "young": "Did you drink water today?",
+        "older": "Have you managed to drink some water today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eating-drinking",
+      "why": "Item 3, concrete phrasing. Craig's variable is 'no fluid intake in the previous 24 hours' and NICE 1.7.2 tells carers 'to offer the child regular fluids', so a plain drink-of-water question carries the criterion for a younger child.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-007",
+      "traces_to": 4,
+      "q": {
+        "young": "Have you peed today?",
+        "older": "Have you been to pee at all today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "peed-today",
+      "why": "Item 4, the only survivor of NICE's Circulation and hydration column ('Reduced urine output'). Output is a volume nobody measures in a school room, so this asks the absence the child knows about. Register 'pee' per decision 1; distinct from item 5, which is pain.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-008",
+      "traces_to": 5,
+      "q": {
+        "young": "Does it hurt when you pee?",
+        "older": "Does it hurt or sting when you pee?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "painful-peeing",
+      "why": "Item 5, the highest-value Search-B-only item. NICE table 3 lists 'Painful urination (dysuria)' and RCH says UTI is the most common serious bacterial infection in a febrile child with no focus. Fact slug matches the one 'Still open' proposes for tummy's t-006.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "not good too personal"
+      }
+    },
+    {
+      "id": "g-009",
+      "traces_to": 5,
+      "q": {
+        "young": "Does peeing sting?",
+        "older": "Does it sting or burn when you pee?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "painful-peeing",
+      "why": "Item 5, second phrasing for the youngest tier, where 'sting' is likelier than 'hurt' to name the sensation. Same NICE dysuria criterion and same fact, so review can pick the wording without duplicating the question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-010",
+      "traces_to": 6,
+      "q": {
+        "young": "Are you peeing more than usual?",
+        "older": "Have you been going to pee more often than usual?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "peeing-often",
+      "why": "Item 6, from NICE table 3's 'More frequent urination'. The baseline compared against is explicitly the child's own, which is what keeps it inside the self-report filter; one source and a self-baseline, so it ranks last.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-011",
+      "traces_to": 7,
+      "q": {
+        "young": "Have you thrown up?",
+        "older": "Have you thrown up at all today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "vomiting",
+      "why": "Item 7. A rule variable (Bleeker, Pneumonia Rule 3), a general danger sign and an RCH localising symptom. IMCI's 'vomits everything' is a threshold a child cannot apply to themselves, so this captures the raw fact. 'Throw up', never 'be sick' (decision 1).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-012",
+      "traces_to": 8,
+      "q": {
+        "young": "Has your poop been runny?",
+        "older": "Has your poop been runny or watery?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "runny-poop",
+      "why": "Item 8, the one Keitel Table 1 variable that is child-reportable and sits inside a rule with any published rule-out value. Register 'poop' per decision 1. Blood in the poop is deliberately not carried (item 34); fact slug matches the fix proposed for tummy's t-012.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-013",
+      "traces_to": 9,
+      "q": {
+        "young": "Is it hard to breathe?",
+        "older": "Is it hard to breathe right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "hard-to-breathe",
+      "why": "Item 9, the one respiratory fact with a child-facing half. Thompson HTA: rapid breathing and shortness of breath gave the greatest LR+ in the low-prevalence setting this app most resembles. No rate, no counting, no measuring (item 26).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-014",
+      "traces_to": 9,
+      "q": {
+        "young": "Is it hard to get your breath?",
+        "older": "Do you have to work hard to breathe?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "hard-to-breathe",
+      "why": "Item 9, second phrasing for the Five Stage Decision Tree's 'Dyspnea' and Pneumonia Rule 1's 'Shortness of breath'. Effort is the child's felt half; increased work of breathing as observed stays excluded (item 26).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-015",
+      "traces_to": 10,
+      "q": {
+        "young": "Have you been coughing?",
+        "older": "Have you been coughing at all?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "cough",
+      "why": "Item 10. Craig names cough as discriminating in both directions, which almost nothing else in this literature does; it is also the entry condition of IMCI's whole respiratory module. Asks presence and is never inverted, per the wording cautions.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-016",
+      "traces_to": 11,
+      "q": {
+        "young": "Is it hard to turn your head?",
+        "older": "Is it hard to turn your head from side to side?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "neck-movement",
+      "why": "Item 11, the most time-critical child-facing item. Neck stiffness is red in NICE's traffic light and is what makes a febrile child 'VERY SEVERE FEBRILE DISEASE' in IMCI, but the elicited sign is the clinician's (item 31); what the child discovers by trying is turning. Never 'stiff neck' (decision 1).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-017",
+      "traces_to": 11,
+      "q": {
+        "young": "Is your neck hard to move?",
+        "older": "Does your neck feel hard to move or bend?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "neck-movement",
+      "why": "Item 11, second phrasing. Same NICE and RCH neck-stiffness criterion, worded as movement the child attempts rather than a sign anyone elicits or examines. Shares the neck-movement fact that 'Still open' proposes for the collision with throat's item 9.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-018",
+      "traces_to": 12,
+      "q": {
+        "young": "Do you have spots or a rash?",
+        "older": "Do you have any spots or a rash on your skin?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "rash",
+      "why": "Item 12, NICE's leading red flag reduced to its weakest half: presence only. Wording matches the shipped tummy-rash, chest-rash and back-rash questions per decision 1, and the blanching test is never delegated to the child (item 33).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "g-019",
+      "traces_to": 12,
+      "q": {
+        "young": "Have you seen spots on your skin?",
+        "older": "Did you notice any spots or a rash earlier today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "rash",
+      "why": "Item 12, the resolved-or-transient phrasing. NICE 1.2.26 says to ask about these features since the onset because they may have gone by assessment, and RCH prolonged lists 'Resolved or transient symptoms: rash'. Same rash fact, so only one wording ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same a sbefore"
+      }
+    },
+    {
+      "id": "g-020",
+      "traces_to": 13,
+      "q": {
+        "young": "Is it hard to walk?",
+        "older": "Is it hard to walk, or to use your arm or leg?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "limb-use",
+      "why": "Item 13, from NICE amber 'Non-weight bearing limb or not using an extremity' and 1.2.24. The child's half is use, not appearance: swelling is exam (item 32) and limb-swelling is covered by the limb packet. Reaches the atraumatic febrile child the injury-scoped limb packet cannot.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

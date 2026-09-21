@@ -1,0 +1,276 @@
+{
+  "packet": {
+    "id": "limb-pain",
+    "askableItems": [
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "candidates": [
+    {
+      "id": "p-001",
+      "traces_to": 8,
+      "q": {
+        "young": "Is it stiff when you wake up?",
+        "older": "Is it stiff when you first wake up in the morning?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "morning-stiff",
+      "why": "Establishes morning stiffness, the inflammatory pattern GGC 1126 prints for JIA as 'Stiffness. Often worse in morning'; uses the shipped SENSATIONS.stiff label 'Stiff'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "next one will be better"
+      }
+    },
+    {
+      "id": "p-002",
+      "traces_to": 8,
+      "q": {
+        "young": "Is it hard to move when you wake up?",
+        "older": "In the morning when you wake up, is it hard to move?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "morning-stiff",
+      "why": "Same fact reached through the other shipped label, SENSATIONS.stiff kidLabel 'Hard to move', for a child who does not use the word stiff; rests on RCH acutely swollen joint's 'character (migratory/early morning)'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-003",
+      "traces_to": 8,
+      "q": {
+        "young": "Does it hurt in the morning?",
+        "older": "When you wake up in the morning, does it hurt?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "morning-pain",
+      "why": "A different answer from stiffness: whether pain is present on waking, which is Lehman and Carl's 'pain that frequently occurs in the morning', PMM's 'Pains never present at the start of the day after waking' and O'Keeffe's 'Absence of morning pain' - the discriminator that disambiguates the night-pain answer the app already collects.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-004",
+      "traces_to": 9,
+      "q": {
+        "young": "Does it hurt more when you run around?",
+        "older": "Does running around make it hurt more?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-when-playing",
+      "why": "Establishes activity-related pain, which Lehman and Carl set against the benign pattern ('The pain is not caused by activity') and which carries RCH's traction apophysitis and stress fractures; asks about a pattern already noticed, never an instruction to run.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-005",
+      "traces_to": 9,
+      "q": {
+        "young": "Does it hurt when you play?",
+        "older": "Does it start hurting when you have been playing?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-when-playing",
+      "why": "Same fact in PMM's own words - 'ask about play, sport, schoolwork' - for a child who does not run around; the older tier adds the onset-during-play framing without asking the child to grade anything.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "weird wording"
+      }
+    },
+    {
+      "id": "p-006",
+      "traces_to": 9,
+      "q": {
+        "young": "Does it hurt more after you play?",
+        "older": "Does it hurt more after you have been playing?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-when-playing",
+      "why": "Same fact heard as pain that follows play rather than pain during it, the pattern RCH's traction apophysitis and stress fractures produce and which Lehman and Carl set against the benign course; still a pattern the child has noticed, never an instruction.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-007",
+      "traces_to": 10,
+      "q": {
+        "young": "Does the sore spot move to a different place?",
+        "older": "Does the sore spot move around to a different place on different days?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-moves-around",
+      "why": "Establishes migration over time, which the body map cannot hold because it records where it hurts now; rests on RCH acutely swollen joint's 'character (migratory/early morning)' and PMM's 'comes and goes, changes site'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "weird wording"
+      }
+    },
+    {
+      "id": "p-008",
+      "traces_to": 10,
+      "q": {
+        "young": "Did it hurt somewhere else before?",
+        "older": "A few days ago, was the hurt in a different place?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-moves-around",
+      "why": "Same fact asked as a single memory of one earlier day rather than a pattern over many, which is the easier of the two for the youngest children this item is open to; same PMM and RCH sourcing.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-009",
+      "traces_to": 11,
+      "q": {
+        "young": "Do you wake up all sweaty at night?",
+        "older": "Have you been waking up all sweaty at night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "wakes-sweaty",
+      "why": "Establishes the one constitutional symptom in this literature a child owns, filed as history by RCH limp, GGC 1126, RCH acutely swollen joint and Lehman and Carl; anchored on waking, not on feeling hot, so it stays separable from the fever question.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "next one is better"
+      }
+    },
+    {
+      "id": "p-010",
+      "traces_to": 11,
+      "q": {
+        "young": "Do you get sweaty when you are sleeping?",
+        "older": "Do you get sweaty in your sleep at night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "wakes-sweaty",
+      "why": "Same fact for a child who sweats through the night without waking, so a no to the waking form is not read as a no to the finding; same four sources.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "p-011",
+      "traces_to": 11,
+      "q": {
+        "young": "Did you wake up sweaty last night?",
+        "older": "Did you wake up sweaty any night this week?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "wakes-sweaty",
+      "why": "Same fact pinned to a countable night rather than a habit, which a child can answer without judging how often is often; same four sources.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    }
+  ]
+}

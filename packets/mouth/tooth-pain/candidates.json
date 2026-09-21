@@ -1,0 +1,349 @@
+{
+  "packet": {
+    "id": "mouth-pain",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "candidates": [
+    {
+      "id": "m-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Did something hit your mouth or teeth?",
+        "older": "Did something hit your mouth or teeth before it started to hurt?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "mouth-mechanism",
+      "why": "Item 1, the router. Source 1's first History bullet is 'Mechanism of injury'; the whole guideline forks on trauma vs non-trauma and the app has no mouth mechanism gate. Asks whether, never who or what (safeguarding exclusion).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Did your mouth get hit or knocked?",
+        "older": "Did your mouth or your teeth get hit or knocked into something?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "mouth-mechanism",
+      "why": "Item 1, passive phrasing of the same mechanism fork, so a child who would not say 'something hit me' can still answer. Stops at whether, and names no agent.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "m-003",
+      "traces_to": 2,
+      "q": {
+        "young": "Have you been able to eat and drink?",
+        "older": "Have you been able to eat and drink since your tooth started hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "eating-drinking",
+      "why": "Item 2, wording carried from SOHO-5's validated child-facing 'hard for you to eat / to drink because of your teeth', and from source 3 where drinking is complication, admission criterion and discharge criterion at once. Reuses the existing eating-drinking fact per decision 10.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Has it been hard to drink today?",
+        "older": "Has your sore tooth made it hard for you to eat or drink?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "eating-drinking",
+      "why": "Item 2, the drinking half foregrounded because source 3 makes 'refusal to drink' and 'unable to maintain adequate hydration' the escalation line. Same fact as m-003 so a child tapping Mouth and Throat is not asked twice.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-005",
+      "traces_to": 3,
+      "q": {
+        "young": "Is your face or cheek puffy?",
+        "older": "Is your face or your cheek puffy or swollen on one side?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "face-swelling",
+      "why": "Item 3, the non-urgent half of source 4's split: 'and your cheek or jaw is swollen'. Uses decision 1's register (puffy/swollen, never inflamed or swelled up) and asks only what a child sees and feels with their own face.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-006",
+      "traces_to": 3,
+      "q": {
+        "young": "Does your cheek feel puffy or swollen?",
+        "older": "Has one side of your face looked puffy or swollen since the pain started?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "face-swelling",
+      "why": "Item 3, felt rather than seen, for a child with no mirror. Source 2's 'erythema and cellulitis of facial skin overlying tooth'; source 8's extraoral swelling in 77-79% of admitted children. No instruction to press or feel anything.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "m-007",
+      "traces_to": 4,
+      "q": {
+        "young": "Did a tooth come all the way out?",
+        "older": "Did one of your teeth come all the way out of your mouth?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-out",
+      "why": "Item 4, the twenty-minute clock. Source 1: 'avulsion of a permanent tooth is a dental emergency', 'Complete displacement from socket'. Decision 1's exact phrase 'came all the way out' rather than 'fell out', which to a 6-12 year old means the normal thing. Asks the event, never the tooth type, and gives no first aid.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-008",
+      "traces_to": 4,
+      "q": {
+        "young": "Did a whole tooth come out today?",
+        "older": "Did a whole tooth come out, not just a piece of it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-out",
+      "why": "Item 4, worded to separate the whole tooth from item 6's chip, because source 1 warns avulsion must be told apart from a fracture and from a fully intruded tooth. Presence of the event only.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same idea as prev"
+      }
+    },
+    {
+      "id": "m-009",
+      "traces_to": 5,
+      "q": {
+        "young": "Is the puffy part near your eye?",
+        "older": "Is the puffy or swollen part near your eye or under your chin?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "swelling-location",
+      "why": "Item 5, the urgent half of source 4's split, where location is the entire content: 'the area around your eye or your neck is swollen'. Plain 'near your eye' and 'under your chin' per the packet's ban on eye socket, orbit and jaw line. Kept separate from item 3 per decision 3.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "puffy doesnt make sense?"
+      }
+    },
+    {
+      "id": "m-010",
+      "traces_to": 5,
+      "q": {
+        "young": "Is it puffy under your chin?",
+        "older": "Is the puffiness under your chin or up near your eye?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "swelling-location",
+      "why": "Item 5, chin-first ordering for a child whose swelling is lower. Source 2's 'submandibular or periorbital areas' rendered as the only two locations a child can name. Never asks the child to feel under their own chin.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-011",
+      "traces_to": 6,
+      "q": {
+        "young": "Is one of your teeth broken or chipped?",
+        "older": "Is one of your teeth broken or chipped since it started hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-broken",
+      "why": "Item 6, the fractured-teeth table reduced to presence. Decision 1's 'broken or chipped', never fractured and never the enamel/dentine/pulp colour cues, since grading is the examiner's. No looking, no touching.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-012",
+      "traces_to": 6,
+      "q": {
+        "young": "Did a piece of a tooth break off?",
+        "older": "Has a piece of one of your teeth broken off?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-broken",
+      "why": "Item 6, the missing-piece phrasing, because source 1 tracks fragments as well as teeth ('Account for all lost teeth and fragments'). Presence only; the aspiration inference stays with the nurse.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-013",
+      "traces_to": 7,
+      "q": {
+        "young": "Is a tooth looser than before?",
+        "older": "Is one of your teeth looser than it was before today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-moved",
+      "why": "Item 7, anchored to change per decision 5, because source 2 puts every 6-13 year old in mixed dentition and primary molars exfoliate at 11-12, so the bare question returns yes for healthy children. Uses 'loose', never the British 'wobbly', and avoids 'still'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "m-014",
+      "traces_to": 7,
+      "q": {
+        "young": "Is a tooth in a different place?",
+        "older": "Does one of your teeth sit in a different place than before?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "tooth-moved",
+      "why": "Item 7, the displacement half of source 1's row 'Anteriorly or posteriorly displaced / Partially out of socket / Pushed into socket', anchored to 'than before' rather than 'still'. Never asks the child to move or test the tooth.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "doesnt make sense"
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "tummy-ongoing",
+  "group": "tummy",
+  "groups": [
+    "tummy"
+  ],
+  "depth": "inside",
+  "mechanism": null,
+  "packetRank": 5,
+  "packetRankNote": "Decision 5. Lower leads. `tummy/acute-pain` is 10 and `tummy/vomiting` is 20, and this is the third packet in a three-packet group. The number is 5 -- ahead of both -- and the argument is that it costs nothing and buys the lead. `roundRobin` in build-bank.mjs spends the cap one item per packet per cycle over the queues that SURVIVED the duration filter, so `packetRank` decides who picks FIRST, not who picks MORE: with three live queues and a cap of 5 or 6, each packet's item count is identical whether this packet is 5 or 15, and only the order changes. The bands where that lead matters are `long-time` and `not-sure`, where `tummy/acute-pain`'s queue is exactly ONE item long (its item 7, the only one it scopes to `long-time`) -- so from the second cycle onward the long-duration child is choosing between this packet and `tummy/vomiting` alone. In `few-days` the cost of leading is that this packet's item 1 is asked before `tummy/acute-pain`'s walk/jump/cough item; the round-robin still gives appendicitis the same NUMBER of slots it would have had at rank 15, so nothing is displaced, only reordered. PLAN.md's own note on the declined row 17 asked for \"a packetRank above both existing tummy packets\" under exactly this duration scoping; this follows it.",
+  "durations": {
+    "default": [
+      "few-days",
+      "not-sure",
+      "long-time"
+    ],
+    "exceptions": {
+      "5": [
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "durationsNote": "Decision 4. This packet deliberately does NOT compete in `just-now`, `this-morning` or `yesterday`. Every source read here defines its population by duration and none of them reaches into those bands: RCH chronic -- \"Chronic abdominal pain is intermittent or constant abdominal pain that has been present for at least two months\"; AFP Table 1 -- recurrent abdominal pain is \"At least three episodes of pain over at least three months\"; NASPGHAN Table 1 -- \"Chronic abdominal pain Abdominal pain with a minimum duration of 3 mo. Some clinicians believe that pain that lasts more than 1-2 mo is chronic\"; Rome IV via AFP -- \"at least four times per month for at least two months\". `tummy/acute-pain` owns the acute bands and its literature is appendicitis literature; asking a child whose tummy has hurt since breakfast whether it always comes back in the same spot is asking a question its sources do not support. `few-days` is included -- not because any source's window starts there, but because the app's `few-days` is the band a child picks when the pain is neither today nor obviously old, and NASPGHAN records that clinicians disagree about where chronic begins (\"more than 1-2 mo\"). Item 5 is narrowed to `not-sure` and `long-time` because AFP's and NASPGHAN's word is *persistent* right upper or lower quadrant pain: whether the pain is always in the same spot is a claim about weeks, and a child three days in has not had time to find out. JUDGEMENT, NOT A CITATION for the mapping of source windows onto the app's six bands; the source windows themselves are quoted verbatim in the packet.",
+  "itemRank": [
+    1,
+    3,
+    8,
+    4,
+    5,
+    7,
+    2,
+    6,
+    9
+  ],
+  "itemRankNote": "Proposed, not yet confirmed by review. Decision 6. Item 1 leads because it is the only alarm feature in this literature that survives all three filters at once -- it is in every guideline read (RCH chronic \"pain waking the child from sleep\", AFP Table 4 \"Pain that wakes the child from sleep\", StatPearls \"pain causing wakening from sleep\"), it is the child's own experience rather than an observer's, and it does not touch the PG ceiling. Item 3 is second because it is the criterion that decides REFERRAL in RCH and it is definitional in Apley/AFP (\"severe enough to affect the child's ability to perform normal activities\"), and because it carries a shared fact (`stopping-normal-things`) that a co-tapped head or back would otherwise win. Item 2 is third: the episodic/continuous split is what separates abdominal migraine and IBS from continuous functional pain, and nothing else in the app asks it. Item 4 is fourth -- Rome IV's own \"not limited to physiological events such as eating\" is a discriminator, not an association. Item 5 is fifth and carries `minAge: 8`, so under-8s never reach it. Items 8 and 9 are last on provenance: item 8 rests on one ICHD-3 comment, item 9 largely on one retrospective cohort, and item 9 is the first to drop if the list must shrink. REORDERED 2026-09-09 by iris, who reviewed all five Wave C packets and changed one thing: item 8 (headache alongside the tummy pain) replaces item 2 (are there pain-free days) in the shipped six. The other four Wave C packets were confirmed as they stood. This ordering is no longer \"proposed, not yet confirmed by review\".",
+  "minAge": {
+    "5": 8
+  },
+  "minAgeNotes": {
+    "5": "JUDGEMENT, NOT A CITATION. No source in this packet sets an age floor -- StatPearls scopes its whole approach to \"children aged 4 to 18 years with chronic abdominal pain\", RCH chronic sets none, and NASPGHAN's Apley criteria were derived on school children with no lower bound. The floor is this packet's own, and it is a CAPABILITY floor, not a validity one: StatPearls states that \"Young children often have difficulty localizing and describing pain, and may report either peri-umbilical pain or generalized abdominal pain\", and item 5 asks a child to compare where the pain was on many different days. The NUMBER 8 is borrowed from `limb/pain` item 10 (`pain-moves-around`, minAge 8), which asks the same shape of question about the same capability; StatPearls gives no age at all, so any number here is invented and is flagged as such. Every other item is unfloored: they are all plain history in a complaint guideline that sets no floor, and per brief section 4 a floor on such an item would be an invention rather than a citation."
+  },
+  "cite": {
+    "1": "RCH chronic (1) -- History, pain characteristics: \"pain waking the child from sleep\"; AFP (3) Table 4 Alarm Findings -- \"Pain that wakes the child from sleep\"; StatPearls (4) -- red flag \"pain causing wakening from sleep\"",
+    "2": "ICHD-3 1.6.1.2 (6) -- criterion \"Complete freedom from symptoms between attacks\" and \"with normality between episodes\"; RCH chronic (1) -- abdominal migraine row, \"few or no GI complaints between attacks\"; AFP (3) -- Rome IV FAP-NOS, \"episodic or continuous abdominal pain\"; RCH chronic (1) -- FAP-NOS row, \"Episodic or continuous\"",
+    "3": "RCH chronic (1) -- History: \"Functional impact of pain on usual activities (eg school attendance, social activities, physical activity)\", and escalation trigger \"Abdominal pain causing significant interruption to usual activities (schooling, social interactions, eating)\"; AFP (3) Table 1 -- recurrent abdominal pain is \"severe enough to affect the child's ability to perform normal activities\"; NASPGHAN (2) Table 1 -- Apley, \"severe enough to affect activities\"; ICHD-3 1.6.1.2 (6) -- \"Pain of 1.6.1.2 Abdominal migraine is severe enough to interfere with normal daily activities\"",
+    "4": "AFP (3) -- Rome IV FAP-NOS, pain \"not associated with eating or menses\", and functional dyspepsia, \"postprandial fullness, early satiation\"; RCH chronic (1) -- History, \"association with meals\", and functional dyspepsia row, \"Bothersome postprandial fullness / Early satiety\"; StatPearls (4) -- \"The relationship of pain to food can provide critical diagnostic clues, including the timing of pain after meals\"",
+    "5": "NASPGHAN (2) -- alarm signs, \"persistent right upper or right lower quadrant pain\"; AFP (3) Table 4 -- \"Persistent right upper or lower quadrant pain\"; StatPearls (4) -- \"A consistent description of severe pain, sharp pain, and localization in a specific quadrant suggests organic pathology related to a particular location\", against \"they may describe generalized pain or changing locations\". THE QUADRANT IS NEVER ASKED: only whether the spot stays the same, per tummy/acute-pain's standing rule that the body map is the only instrument for location",
+    "6": "AFP (3) Table 4 -- alarm finding \"Dysphagia\"; RCH chronic (1) -- History, \"dysphagia (the sensation of food sticking, or moving slowly down the oesophagus)\", which is also the wording source for the question; StatPearls (4) -- red flag \"dysphagia, odynophagia\"",
+    "7": "AFP (3) -- Rome IV irritable bowel syndrome, pain \"associated with defecation\"; RCH chronic (1) -- IBS row, \"Pain related to defecation\". The second half of both criteria -- change in frequency or FORM of stools -- is refused under the dignity ruling and is item 25",
+    "8": "ICHD-3 1.6.1.2 (6) -- Comments, \"In young children the presence of headache is often overlooked. A careful history of presence or absence of headache must be taken\"; AFP (3) -- Rome IV abdominal migraine, associated symptoms include \"headache, photophobia\"; RCH chronic (1) -- abdominal migraine row, \"Migraine in child (or family)\" (the family half is not carried; see item 26)",
+    "9": "Liu et al. 2025 (5) -- oral ulcer recorded as an alarm symptom, present in 7/224 organic vs 0/347 functional, P = 0.001; RCH chronic (1) -- History, \"extraintestinal manifestations of inflammatory bowel disease (IBD) (eyes, skin, joints, perianal)\". WEAKEST PROVENANCE IN THE PACKET: RCH's list does not name the mouth, so the oral-ulcer specificity rests on source 5 alone, a single retrospective cohort"
+  },
+  "facts": {
+    "1": "night-pain",
+    "2": "well-between-times",
+    "3": "stopping-normal-things",
+    "4": "pain-after-eating",
+    "5": "pain-same-spot",
+    "6": "food-sticks",
+    "7": "poop-changes-pain",
+    "8": "headache-with-tummy-pain",
+    "9": "mouth-sores"
+  },
+  "factsNote": "JUDGEMENT, NOT A CITATION -- no source assigns facts; the reasoning is the bank's dedupe behaviour, and the standing warning that two packets sharing a fact means only ONE question is ever asked. Decision 7. REUSED: `night-pain` (back/pain b-001 and limb/injury l-013 -- both are worded region-neutrally, \"Does it wake you up at night?\", and neither is reachable from group `tummy`, so a tummy-only child gets this packet's question and a child who also tapped their back is correctly asked once); `stopping-normal-things` (back/pain item 12 and head/headache item 9, region-neutral by construction and by that packet's own ruling -- neither reaches group `tummy`); `mouth-sores` (the general rash/surface question r-014, which is depth `surface` and therefore unreachable from this packet's depth `inside` -- the slug is shared so a child who answers `surface` elsewhere is not asked twice). COINED, with the reason each was NOT folded into an existing slug: `well-between-times` (nothing in the bank asks about the gaps between episodes; `happened-before` asks whether it happened before, which is a different fact); `pain-after-eating` (NOT `eating-drinking` -- that slug is general-unwell g-005, \"Have you been able to drink anything today?\", which reaches group `tummy` at every duration including `long-time`, so sharing it would suppress this item outright, and it records what the child MANAGED whereas this records what the pain DOES); `pain-same-spot` (NOT `pain-moves-around` -- limb/pain p-008 is \"Did it hurt somewhere else before?\", migratory arthritis over days in joints, minAge 8, and it is the OPPOSITE polarity; a shared slug would let one suppress the other and leave a nurse an answer that could mean either thing. Following head/headache's precedent for coining `head-worse-moving` rather than reusing `worse-on-movement`); `food-sticks` (NOT `hurts-to-swallow` -- throat/sore-throat s-001 is odynophagia, pain on swallowing; dysphagia is the sensation of food STICKING and RCH defines the two separately); `poop-changes-pain` (NOT `bathroom-change` -- back/pain b-007 is \"Does it feel different when you need to pee?\", a cauda-equina red flag at minAge 8, a different organ and a different alarm; and NOT `runny-poop`, which is consistency); `headache-with-tummy-pain` (NOT any head-group slug -- this is a tummy question about a co-occurring headache and the head group's own questions are unreachable from here). RULED ON AND NOT USED: `runny-poop` (general-unwell g-012 already carries it into group `tummy` at every duration including `long-time`, so the \"chronic, severe or nocturnal diarrhea\" alarm is already asked -- item 12); `vomiting` (the hand-written `threw-up` and tummy/vomiting own it, and tummy/vomiting scopes its item 1 to `long-time` -- item 11); `morning-pain` (limb/pain p-003 is JIA morning stiffness in a limb; this packet's alarm is NIGHT waking, not morning pain, and no source here mentions a morning pattern -- not reused and no morning item proposed); `recent-illness` (limb/injury l-019, post-infectious; nothing in this literature supports a post-infectious question at this duration).",
+  "preferred": {},
+  "preferredNote": "No wording preferences can be expressed yet -- this packet has no candidates. Stage 2 must honour decision 2 (register) and decision 3 (the dignity ruling), and must take item 6's wording from RCH's own gloss, \"the sensation of food sticking\", never from the word dysphagia.",
+  "bannedPhrases": [
+    [
+      "\\b(weigh\\w*|weight|kilos?|kilograms?|pounds?|stones?|lighter|heavier|thinner|skinn\\w+|slim\\w+|chubb\\w+|fat\\b|lost .{0,12}(weight|kilos|pounds)|clothes .{0,12}(loose|big|fall)\\w*|belt)\\b",
+      "THE DIGNITY RULING, first half. Body weight is banned as a CONCEPT across this app, and involuntary weight loss is simultaneously the best-measured alarm feature in this literature (Liu 2025, OR 13.60) and the one every source names first. It is refused anyway: a child answering alone on a shared hospital tablet cannot be asked to account for their body. The nurse has the scales. This regex must catch the family, not one phrasing, because a generator told 'never say weight' will write 'have your clothes got looser?'"
+    ],
+    [
+      "\\b(grow\\w*|growth|taller|height|how tall|centiles?|percentiles?|growth chart|stunt\\w+|pubert\\w+|puberty|body chang\\w+|develop\\w+ (late|slowly))\\b",
+      "THE DIGNITY RULING, second half. 'Deceleration of linear growth' (NASPGHAN), 'stunting of height' (RCH) and 'delayed puberty' (AFP, StatPearls, Vandenplas) are measurements taken over time from a chart, not facts a child holds -- and puberty is out of scope by age and refused on the same grounds head/headache refused the HEADSS screen"
+    ],
+    [
+      "\\b(look at|check|have a look at|inspect|see if there('s| is)|what colou?r) (your|the|any) ?(poop|pee|stool|blood|toilet|paper|underwear|pants)\\b|\\bblood in (your|the) (poop|pee|stool)\\b|\\bstreaks?\\b|\\btarry\\b|\\bmel[ae]na\\b|\\bh(a)?ematochezia\\b|\\bbloody (stool|poop)\\b",
+      "THE DIGNITY RULING, third half, extending tummy/vomiting's ban. Gastrointestinal blood loss is an alarm feature in every source read (NASPGHAN, AFP Table 4, RCH, StatPearls, and Liu 2025 where bloody stool carries OR 12.90) and it is REFUSED here, because the only way a child answers it is by having looked at what came out of them. tummy/acute-pain item 11 ships it in the ACUTE bands where a single frightening event is the subject; over months it becomes a standing instruction to inspect yourself"
+    ],
+    [
+      "\\b(how many times|how often|times a (day|week|month)|per (day|week|month)|days? (a|per) (week|month)|four times|4 times|every day|each day|count (them|how many)|write .{0,10}down|diary)\\b",
+      "THE DIGNITY RULING, fourth half, and decision 3. Rome IV's own thresholds are counts per month ('at least four times per month for at least two months'; IBS 'at least four days per month') and Apley's is 'three or more episodes over three or more months'. None is reachable: a 4-12 year old cannot aggregate over a month, and the moment a count question touches the toilet it becomes the counting ban. Deliberately catches 'how often' as well as 'how many times', because the guideline register offers both"
+    ],
+    [
+      "\\b(nappy|nappies|diapers?|pull-?ups?|potty|bedpan\\w*|commode|toilet trips?)\\b|\\b(accidents?|wet(ting)? (yourself|the bed|your pants)|soil(ed|ing)?|dirty (pants|underwear)|withhold\\w*|holding it in|encopresis|smear\\w*)\\b|\\bget up (in|at|during) (the )?night\\b|\\bnight\\b.{0,12}\\b(toilet|bathroom|poop|pee)\\b|\\b(toilet|bathroom)\\b.{0,12}\\b(at night|in the night)\\b",
+      "THE DIGNITY RULING, fifth half. Carried unchanged from tummy/vomiting and extended: StatPearls names 'a history of spending excessive or minimal time on the toilet, a reluctance to defecate at school, and a history of encopresis or stool streaking on underwear' as diagnostic history, and RCH names 'nocturnal stooling'. All of it is refused. This is the ground on which PLAN.md declined row 17 (constipation) outright, and this packet does not reopen it by the side door"
+    ],
+    [
+      "\\b(stool|stools|bowels?|bowel habit|motions?|number two|faeces|feces|defecat\\w+|defaecat\\w+|poo\\b|pooed|pooing|lumpy|pellets?|Bristol)\\b|\\bpoops?\\b.{0,15}\\b(hard|soft|lumpy|watery|runny|shape)\\w*\\b|\\b(hard|soft|lumpy|watery|runny)\\b.{0,10}\\bpoops?\\b",
+      "Clinical or British register for poop, plus the stool-FORM half of the Rome IV IBS criterion. Item 7 asks whether pooping changes the PAIN, which is answerable without inspection; 'a change in frequency or form of stools' is the other half of the same sentence and is refused -- form cannot be reported without looking, and frequency is the counting ban"
+    ],
+    [
+      "\\b(irritable bowel|\\bibs\\b|dyspepsia|dyspeptic|abdominal migraine|functional abdominal pain|\\bfapd?s?\\b|\\bdgbi\\b|Rome (III|IV)|organic disease|functional (disorder|pain)|somatisation|somatization|somatic symptom)\\b",
+      "Names a diagnosis or a classification to the child. This literature IS a classification system: RCH's differential table, AFP's Rome IV box and StatPearls' subtype list are written entirely in these words and sit directly in a generator's path. 'Functional' is the most dangerous of them -- Vandenplas records that the Rome committee itself warns the term 'should not be misconstrued to imply a nonorganic condition', so it will mislead a nurse as well as frighten a child"
+    ],
+    [
+      "\\b(crohn\\w*|colitis|\\bibd\\b|inflammatory bowel|c(o)?eliac|c(o)?eliac disease|ulcers?|peptic|gastritis|reflux|\\bgord\\b|\\bgerd\\b|h\\.? ?pylori|helicobacter|giardia|parasit\\w+|lactose|pancreatit\\w+|gallbladder|appendi\\w+|intussusception|obstruction|diabet\\w+|\\bdka\\b|cancer|tumou?rs?)\\b",
+      "Names a condition to the child. RCH's 'Differential Diagnosis Organic' table is a list of exactly these and it is the richest single block in the source; a generator working from it will reach for the disease name because that is the column heading"
+    ],
+    [
+      "\\b(periumbilical|peri-?umbilical|epigastric|quadrant\\w*|\\brlq\\b|\\bruq\\b|\\brif\\b|midline|localis\\w+|localiz\\w+|abdomen|abdominal|stomach|belly|gut|\\btum\\b|oesophagus|esophagus|rectal|perianal|perirectal)\\b",
+      "Anatomical and classificatory words. tummy/acute-pain decision 1 rules 'your tummy' and nothing else, and its standing rule is that a child is NEVER asked to name or choose an abdominal region in words -- the body map is the only instrument for location. Item 5 asks whether the spot stays the same and never where it is"
+    ],
+    [
+      "\\b(dysphagia|odynophagia|anorexia|nausea|nauseous|nauseated|queasy|postprandial|satiation|satiety|waterbrash|borborygmi|flatulence|distension|distention|bloat\\w*|colicky|paroxysmal|stereotypical|vasomotor|pallor|photophobia|nocturnal)\\b",
+      "Clinical register for a symptom. Decision 2 rules 'food gets stuck', 'after you eat', 'at night'. Three of these are also already collected by the sensation screen (SENSATIONS.queasy 'Yucky tummy', SENSATIONS.cramping 'Scrunchy', SENSATIONS.squeezing 'Tight squeeze') and must not be asked again in words"
+    ],
+    [
+      "\\b(pale|paler|palely|white as a sheet|go(ne|es)? white|dark (shadows|circles|rings) under)\\b",
+      "Item 28. Pallor is one of ICHD-3's four associated signs for abdominal migraine and it is an OBSERVER's finding -- ICHD-3's own gloss is 'Pallor is often accompanied by dark shadows under the eyes', which is a description of what someone else sees. A child asked whether they go pale reports what an adult once told them"
+    ],
+    [
+      "\\b(mum|mummy|mom|mommy|dad|daddy|parents?|carers?|grown-?ups?|nurse|doctor|teacher|anyone (in|at) (your|the) (family|home)|your (brother|sister|nan|gran|grandma|grandad)) ?(said|say|says|told|tell|tells|thinks?|has|have|had|got)?\\b",
+      "Item 26. Family history of inflammatory bowel disease, coeliac disease, peptic ulcer, H. pylori and migraine appears in NASPGHAN's alarm list, AFP Table 4, RCH's history and RCH's abdominal migraine row ('Migraine in child (or family)') -- and in Liu 2025 it is the third commonest alarm symptom of all, at 13%. It is not the child's to report and it is not asked. Carried from head/headache and tummy/vomiting"
+    ],
+    [
+      "\\b(bull(y|ies|ied|ying)|teas(e|ed|ing)|picked on|left out|stress\\w*|worried about|anxious|anxiety|depress\\w+|argu\\w+|fight(ing)? at home|home life|divorce|life events?|upset about|why do you think|what do you think (is )?(caus|mak)\\w*)\\b",
+      "The psychosocial exclusion. RCH instructs a HEADSSS screen and 'Consider and address psychosocial stressors'; Vandenplas's panel agreed 100% that 'psychosocial history of both the child and parents may offer insights into stress-related triggers'. Refused on the same grounds head/headache refused NG127's bullying instruction -- a tablet cannot respond to a disclosure, the waiting room is public, and a 'no' is uninterpretable. It is also the one exclusion this literature ARGUES FOR: NASPGHAN states that 'the presence of anxiety, depression, behavior problems or recent negative life events does not distinguish between functional and organic abdominal pain'. MOODS collects the child's state and never its cause"
+    ],
+    [
+      "\\b(skipp?(ed|ing)? .{0,12}(meal|meals|lunch|breakfast|dinner|tea)|miss(ed|ing)? .{0,12}(meal|meals|lunch|breakfast)|what did you eat|which foods?|trigger\\w*|cut out|avoid\\w* .{0,10}foods?|dairy|gluten|wheat|\\bfodmap\\w*|fizzy|sweets|junk)\\b",
+      "Trigger and dietary-exclusion history is management, not assessment -- RCH files 'Specialist dietician input to discuss evidence-based dietary strategies' under Treatment. It is also a blame surface: 'what did you eat?' invites a 7-year-old to account for having caused their own pain. Item 4 asks whether eating changes the pain, never what was eaten"
+    ],
+    [
+      "\\b(miss(ing|ed)? school|school attendance|off school|days off|behind at school|grades|homework)\\b",
+      "Item 3 is worded as 'the things you usually do', never as school. Two reasons: the child is in a hospital waiting room and may be answering on a weekend or a holiday, where a school question has no answer; and AFP explicitly frames missed school as SECONDARY GAIN to be discouraged ('avoid reinforcing RAP symptoms with secondary gain, such as missing school'), so a question naming it reads to the child as an accusation. Bare 'school' is deliberately NOT caught, matching head/headache"
+    ],
+    [
+      "\\b(hours?|minutes?|how long (has|have|does)|2 to 72|one hour|an hour|at least (two|three) months?|for months|weeks? or months?|since when|what date)\\b",
+      "Item 29 and item 10. Every duration threshold in this literature is unreachable: ICHD-3 requires attacks of 2-72 hours, AFP requires 'lasting for more than one hour', Rome IV requires two months and Apley three. DURATIONS collects the band and the nurse has the arrival time; a child must never be asked for a number of hours or a date"
+    ],
+    [
+      "\\b(scopes?|endoscop\\w+|colonoscop\\w+|gastroscop\\w+|camera|biopsy|blood tests?|needles?|\\bx-?ray\\w*|ultrasound|scans?|calprotectin|stool test|poop test|breath test|admitted|stay (in )?overnight|operation|surgery)\\b",
+      "Never name what happens next. Source 5 exists to decide which of these children get an endoscopy; telling a child that is what the question is for would change the answer. Carried from three earlier packets"
+    ],
+    [
+      "\\b(laxatives?|movicol|senna|antidepressants?|\\bssri\\w*|amitriptyline|antispasmodic\\w*|buscopan|peppermint oil|probiotics?|paracetamol|acetaminophen|ibuprofen|painkillers?|pain killers?|tablets?|pills?|medicines?|medication)\\b",
+      "RCH's treatment section is written in these words and sits in the generator's path. A child does not know what they were given, and asking reads as an accusation about compliance. HELPS already lets a child ask for 'My own medicine' without being interrogated"
+    ],
+    [
+      "\\b(press|pressing|squeeze|squeezing your tummy|poke|poking|prod|push on|pinch\\w*|feel your (tummy|belly)|suck (it )?in|breathe in and)\\b",
+      "Never ask a child to press on their own tummy. RCH's examination is 'Abdominal examination for palpable faeces, palpable mass' and it is the nurse's; delegating it returns a finding-shaped answer from a 7-year-old. Carried unchanged from tummy/acute-pain and tummy/vomiting"
+    ],
+    [
+      "\\b(pregnan\\w+|periods?|menstru\\w+|menses|sexual\\w*|\\bsex\\b|contracept\\w+|alcohol|drugs?|smok\\w+|vap\\w+)\\b",
+      "Out of scope by age and refused on principle. RCH's history includes 'Menstrual history, sexual history and contraception (if relevant)' and Rome IV's own criterion is worded 'not limited to physiological events such as eating or menses'. The app stops at 12; item 4 asks only the eating half of that criterion and never the other"
+    ],
+    [
+      "\\b(unwell|poorly|off[- ]colou?r|lethargic|listless\\w*|floppy|drowsy|irritable|jaundice\\w*|yellow (eyes|skin)|toxic|failure to thrive)\\b",
+      "Observers' words about a child, not the child's own, and 'unwell' and 'off colour' are British idiom banned project-wide. RCH and AFP both write in this register -- AFP's workup triggers include jaundice, which is something someone else sees"
+    ],
+    [
+      "\\b(rate|score|out of ten|out of 10|how bad|grade|scale of|worst|severe|serious|dangerous)\\b|\\bis it getting (worse|better)\\b|\\bworse than (before|last)\\b",
+      "Two bans in one. Never ask a child to rate anything in words -- the FPS-R screen has intensity. And this packet ships NO trajectory question: tummy/acute-pain item 7 ('is it getting worse') is the ONE item that packet scopes to `long-time`, so it already serves this group at this depth in exactly these bands. tummy/vomiting made the same call for the same reason (its decision 6). A second trajectory question here would be the commonest reject reason in the project, arriving twice"
+    ],
+    [
+      "than usual|than normal|more than (you )?normally|like you normally|as usual|than you usually|compared (to|with)",
+      "tummy/vomiting decision 4: a 4-7 year old cannot construct their own baseline to compare against. It bites hard here, because this literature is written entirely in change-over-time language -- 'changes in bowel habit', 'appetite changes', 'altered bowel symptoms', 'significant change in an established pattern'. Deliberately does NOT catch 'than before'"
+    ],
+    [
+      "\\bhave you got\\b|\\bhaven'?t you got\\b|\\bwhilst\\b|\\b(wee|weed|weeing)\\b|\\btummy ache\\b|\\bin hospital\\b|\\bnan\\b|\\bfaeces\\b|\\boesophag\\w+\\b|\\bdiarrhoea\\b|\\bcoeliac\\b|\\bcolour\\b|\\bpaediatric\\b|\\bpractise\\b",
+      "British and Australian idiom, re-banned because the two guideline sources here are both non-US: RCH Melbourne writes 'oesophagus', 'faeces', 'diarrhoea', 'coeliac' and 'stunting of height'. Decision 2 rules US English -- 'do you have', 'poop', 'pee', 'color', 'a sore tummy'"
+    ]
+  ]
+}

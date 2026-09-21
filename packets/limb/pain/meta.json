@@ -1,0 +1,173 @@
+{
+  "id": "limb-pain",
+  "group": "limb",
+  "groups": [
+    "limb"
+  ],
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days",
+      "long-time"
+    ],
+    "exceptions": {
+      "8": [
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "10": [
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    8,
+    9,
+    11,
+    10
+  ],
+  "minAge": {
+    "10": 8
+  },
+  "cite": {
+    "8": "GGC 1126 (JIA); RCH acutely swollen joint; Lehman & Carl; PMM; O'Keeffe; Walters via Liao",
+    "9": "RCH limp (traction apophysitis, stress fractures); GGC 1126 (overuse syndromes); Lehman & Carl; PMM; O'Keeffe",
+    "10": "RCH acutely swollen joint (migratory character; ARF); PMM",
+    "11": "RCH limp; GGC 1126; RCH acutely swollen joint; Lehman & Carl",
+    "12": "RCH limp; GGC 1126; RCH acutely swollen joint; PMM"
+  },
+  "bannedPhrases": [
+    [
+      "\\b(arthritis|septic|osteomyelitis|synovitis|myositis|discitis|leukaemia|leukemia|cancer|tumou?r|sarcoma|perthes|sufe|rheumatic fever|kawasaki|purpura|sickle cell)\\b",
+      "names a condition to the child - wording caution 'never name a condition'"
+    ],
+    [
+      "growing pains?",
+      "'growing pains' is a diagnosis, and a dismissive one - PMM: 'care must be taken to not miss serious pathology, including malignancy'"
+    ],
+    [
+      "\\b(broken|break|breaking|fractur\\w*|sprain\\w*|dislocat\\w*|snapped)\\b",
+      "names an injury to the child - carried from limb/injury; an atraumatic child can still be told they broke something"
+    ],
+    [
+      "x-?ray|ultrasound|\\bmri\\b|\\bscan\\b|blood test|\\bneedle|\\bcast\\b|plaster|operation|surgery|aspiration|joint fluid",
+      "names what happens next - this literature ends in a joint aspiration more often than the fracture literature does"
+    ],
+    [
+      "\\bfever(s|ish)?\\b|temperature|degrees|thermometer",
+      "item 3: never say fever and never ask a child for a number - four incompatible thresholds across three sources"
+    ],
+    [
+      "\\b(limp|limps|limping|limped|gait|antalgic|waddling)\\b",
+      "item 22: a limp is what an observer sees; asking a child to report it is an examination delegated, the same failure as asking a child whether they are drooling"
+    ],
+    [
+      "weight[- ]?bear\\w*|non[- ]?weight|mobilise|mobilize|range of (motion|movement)|\\bflexion\\b|\\bsupination\\b|\\brotation\\b|pseudoparalysis",
+      "clinical terms - decision 1, and item 21 (range of motion is the excluded examination)"
+    ],
+    [
+      "(the )?other (leg|arm|side|one|foot|hand)\\b|both (legs|arms|sides|feet|hands)\\b|compared? (to|with)|than the other|as the other",
+      "never ask a child to compare their two limbs - Tu 2025's strongest predictor is exactly this comparison and it is an examination; the body map already holds bilaterality (item 13)"
+    ],
+    [
+      "\\b(press|pressing|squeeze|squeezing|poke|poking|prod|push on|feel it|touch it)\\b",
+      "item 23: never ask a child to press on or feel their own limb"
+    ],
+    [
+      "\\b(try to|see if you can|straighten it|bend it|wiggle|hop|jump up|walk (four|4)|take (four|4) steps|stand up and|grip|squat)\\b",
+      "decision 5: never instruct a movement. Item 9 asks about a pattern the child has noticed, never 'run around and tell me if it hurts'"
+    ],
+    [
+      "\\b(arm|arms|leg|legs|hand|hands|foot|feet|finger|fingers|toe|toes|thumb|knee|knees|ankle|ankles|wrist|elbow|shoulder|hip|hips|calf|calves|shin|thigh|groin|joint|joints|bone|bones)\\b",
+      "names a body part - decision 1 and limb/injury decision 4: the group spans 36 regions and the body map already holds which. Extended here with this literature's own words (calf, shin, thigh, groin)"
+    ],
+    [
+      "\\b(weigh|weighs|weight|heavy|heavier|chubby|fat|thin|thinner|skinny|pounds|kilos|centile|percentile)\\b",
+      "item 20: never ask a child about their body weight in either direction - SUFE's criterion is a centile and malignancy's is unexplained weight loss; both are scales"
+    ],
+    [
+      "\\b(poorly|off colour|off-colour|under the weather|unwell|out of sorts|wee|wees|weeing|nappy|nappies|poo|torch|jumper)\\b",
+      "decision 1: British register. 'poorly' overturns limb/injury decision 1, which ruled it; the rest is the packets/PLAN.md watch list"
+    ],
+    [
+      "\\b(been sick|feel sick|feeling sick|are you sick|were you sick|was sick|being sick)\\b",
+      "decision 1: 'sick' means about to vomit in UK English and coming down with something in US English - item 5 says 'had a cold or a sore throat'"
+    ],
+    [
+      "have you got\\b|haven'?t you\\b|didn'?t you\\b|isn'?t it\\b",
+      "British construction ('have you got') and tag questions, which lead the answer"
+    ],
+    [
+      "\\b(pee|peeing|poop|pooping|toilet|potty|incontinen\\w*|wet the bed|wetting|soiled|soiling)\\b",
+      "item 18 is a nurse prompt, never a child question: a screen that asks a child about wetting reads as an accusation"
+    ],
+    [
+      "\\b(testicle|testicles|balls|willy|penis|vagina|private parts|groin|scrotum|bottom)\\b",
+      "item 29: this app will not ask a child a question about their genitals, even though both guidelines name testicular torsion as a cause of a limp"
+    ],
+    [
+      "\\baccident\\b",
+      "'accident' carries blame and collides with wetting - carried from limb/injury"
+    ],
+    [
+      "did (someone|anyone|somebody)\\b|on purpose|hurt you deliberately|is anyone hurting|who hurt you",
+      "item 30: the app must never ask a child about inflicted injury - safeguarding policy, not question design, is the instrument"
+    ],
+    [
+      "\\b(migratory|flitting|polyarticular|oligoarticular|nocturnal|arthralgia|myalgia|apophysitis|effusion|erythema|pallor|lethargy|malaise|anorexia|constitutional|systemic|febrile|afebrile)\\b",
+      "clinical terms for items 8-12 - decision 1"
+    ],
+    [
+      "\\bappetite\\b|off (your|his|her) food\\b",
+      "decision 1: item 12 says 'hungry', never 'appetite' and never the British 'off your food'"
+    ],
+    [
+      "night sweats?\\b|perspir\\w*|\\bclammy\\b|\\bsweats\\b",
+      "decision 1: item 11 says 'wake up all sweaty', never the clinical compound 'night sweats'"
+    ],
+    [
+      "\\b(exercise|exercising|exertion|activity|activities|physical activit\\w*)\\b",
+      "decision 1: item 9 says 'run around' or 'play', never 'activity', 'exercise' or 'exertion'"
+    ],
+    [
+      "how (bad|sore|much|painful)\\b|on a scale|out of (ten|10)|rate (the|your)|\\bmarkedly\\b|\\bsevere(ly)?\\b|\\bmild(ly)?\\b|\\bmoderate\\b",
+      "never ask a child to rate or grade anything in words - FPS-R has severity, and Tu 2025's 'markedly reduced' is an examiner's grading"
+    ],
+    [
+      "\\b(serious|dangerous|emergency|urgent)\\b",
+      "already banned globally; restated because this packet's differential contains three orthopaedic emergencies and the temptation to signal urgency is real"
+    ],
+    [
+      "\\b(and|then) (tell me|say if|let me know|see if|see how)\\b|^(go|run|walk|stand|move|bend|lift|try|show me|have a go)\\b|\\bhave a go\\b",
+      "imperative mood -- the packet's highest-risk ruling (decision 5) and the only one the old keyword list could not catch. \"Run around and tell me if it hurts\" is an examination delegated to a child; \"does it hurt more when you run around?\" asks about a pattern they already noticed"
+    ],
+    [
+      "\\b(hot|warm|boiling|burning up|overheated)\\b",
+      "item 11 must anchor on waking up, not on feeling hot -- \"do you get hot in the night?\" lands on the feels-feverish fact, which decision 11 calls actively harmful because row 1 will own that fact across four packets"
+    ],
+    [
+      "\\bstiffness\\b|\\brestrict\\w*|\\bon waking\\b|early morning symptoms?",
+      "clinical register for item 8, ruled out in decision 1. The adjective \"stiff\" is the app's own shipped vocabulary and stays legal; the noun and \"restricted\" are a clinician describing a child"
+    ],
+    [
+      "\\b(big|small|little) (boy|girl|kid|lad)\\b|getting (bigger|smaller)|grown a lot|\\bhow big\\b",
+      "the body-weight ban is a ban on the CONCEPT, not on the word \"weight\" -- decision 1 gives \"are you a big boy?\" as the worked example and the old regex matched none of it"
+    ],
+    [
+      "\\bthe (good|bad|normal|fine|okay|ok) one\\b|\\b(either|each|the opposite) (side|one|leg|arm)\\b|the one that('?s| is| isn'?t)\\b",
+      "two-limb comparison, reached without the words the old rule watched for. This is the strongest predictor in the literature (LR+ 12.1) and the packet says it is forbidden three times over, so the enforcement must not be thinner than the prose"
+    ]
+  ],
+  "preferred": {},
+  "mechanism": "no-injury"
+}

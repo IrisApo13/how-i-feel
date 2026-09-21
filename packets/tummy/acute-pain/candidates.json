@@ -1,0 +1,577 @@
+{
+  "packet": {
+    "id": "tummy-acute-pain",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      18,
+      19
+    ]
+  },
+  "candidates": [
+    {
+      "id": "t-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "minAge": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your tummy hurt more when you walk or jump?",
+        "older": "Does the pain get worse when you walk, jump, or cough?"
+      },
+      "why": "Top-ranked item: the strongest history variable in the best-performing model (pARC), and nothing else the app collects can stand in for it. Asks what the child already noticed, never asks them to hop.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "pARC treats walk/jump/cough as ONE variable, any manoeuvre counting; kept all three so a child in a bed who cannot walk or jump can still answer via cough"
+      }
+    },
+    {
+      "id": "t-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "minAge": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it hurt more when you cough?",
+        "older": "Does coughing make your tummy hurt more?"
+      },
+      "why": "Alternate wording for item 5, narrowed to the coughing half. Offered because the three-verb version is a compound yes/no; a reviewer may prefer the single, unambiguous verb. Only one item-5 question ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "cough-only alternate: narrows a single three-manoeuvre criterion and makes it unanswerable for a child who can only cough"
+      }
+    },
+    {
+      "id": "t-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "vomiting",
+      "q": {
+        "young": "Did you throw up?",
+        "older": "Have you thrown up since your tummy started hurting?"
+      },
+      "why": "Commonest associated symptom at 58% and named by six sources; also the re-sourced replacement for the hand-written `threw-up` follow-up, which is dropped once the bank covers tummy.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "matches the wording the app already ships, so nothing is lost in the handover"
+      }
+    },
+    {
+      "id": "t-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "minAge": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Did it start hurting in a different place first?",
+        "older": "Did the pain start somewhere else before it moved to where it is now?"
+      },
+      "why": "Migration is in every prediction rule, and the body map already supplies where it is now, so only the whether half is missing. Asks whether, never where; the nurse maps the pair.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "clearer than t-005"
+      }
+    },
+    {
+      "id": "t-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "minAge": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Was the hurt somewhere else when it started?",
+        "older": "Was the pain in a different spot when it first began?"
+      },
+      "why": "Alternate wording for item 4, avoiding the word moved in case a child reads it as being asked to point. Only one item-4 question ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "alternate; t-004 is clearer"
+      }
+    },
+    {
+      "id": "t-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it hurt when you pee?",
+        "older": "Does it hurt or sting when you pee?"
+      },
+      "why": "UTI is 5% of these children and is invisible to every appendicitis score in the packet; the app currently asks a child with a sore tummy nothing about weeing.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "direct; t-007's construction is odd"
+      },
+      "fact": "painful-peeing"
+    },
+    {
+      "id": "t-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "q": {
+        "young": "Does peeing feel stingy?",
+        "older": "Have you had any stinging when you pee?"
+      },
+      "why": "Alternate wording for item 12 leading with the sensation rather than the word hurt, which the FPS-R screen has already used heavily by this point. Only one item-12 question ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "alternate; 'does peeing feel stingy' is awkward"
+      }
+    },
+    {
+      "id": "t-008",
+      "duration": "any",
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it hurt more now than before?",
+        "older": "Is the pain worse now than when it started?"
+      },
+      "why": "A trajectory rather than a snapshot, and the only item the packet keeps in the long-time band; also the question a repeat visit exists to answer.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "band-agnostic"
+      }
+    },
+    {
+      "id": "t-009",
+      "duration": "any",
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it hurting more and more?",
+        "older": "Has the pain been getting worse as the day goes on?"
+      },
+      "why": "Alternate wording for item 7 that captures progression rather than a two-point comparison, which matters most in the long-time band where there is no clear start point. Only one item-7 question ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "alternate; 'as the day goes on' breaks in the few-days band"
+      }
+    },
+    {
+      "id": "t-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you poop today?",
+        "older": "Have you pooped today?"
+      },
+      "why": "Constipation is 13% of diagnoses; re-sources the hand-written `bathroom-today` follow-up so it survives. Asks when, never whether the child is constipated, and carries no hint of fault.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "\"have you pooped today?\" accepted as sufficient"
+      }
+    },
+    {
+      "id": "t-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you poop yesterday?",
+        "older": "Did you poop yesterday?"
+      },
+      "why": "Alternate for item 10 that reaches back a day, since a no to today alone does not separate a normal morning from several days without. Only useful as the second step of a pair, which the yes/no-only screen cannot currently render; flagged for the reviewer.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "\"have you pooped today?\" is sufficient; the when-variant needs an answer type the app lacks"
+      }
+    },
+    {
+      "id": "t-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "q": {
+        "young": "Has your poop been runny?",
+        "older": "Has your poop been runny or watery?"
+      },
+      "why": "Second commonest associated symptom at 28.9%, and gastroenteritis is 26% of diagnoses; no prediction rule contains it, so it exists only because source 6 is organised by complaint.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted"
+      },
+      "fact": "runny-poop"
+    },
+    {
+      "id": "t-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you want to eat something?",
+        "older": "Do you feel like eating anything right now?"
+      },
+      "why": "Four sources name anorexia; a child cannot use that word but can say whether they feel like eating. Deliberately the appetite form rather than the shipped `ate-today`, which asks a different fact.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted as yes/no; flag for the nurse that a nil-by-mouth child will answer this confusingly"
+      }
+    },
+    {
+      "id": "t-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "q": {
+        "young": "Was there blood in your poop?",
+        "older": "Have you seen any blood in your poop?"
+      },
+      "why": "Something a child sees directly and can report; a red flag in three sources. Uses the plain observable word rather than any clinical description of stool.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "not shipped in v1 — same treatment as item 17. A yes/no naming blood is leading (yes is the escalating answer) and the packet's own cautions require a neutral colour widget the app does not have yet"
+      }
+    },
+    {
+      "id": "t-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you see blood in the toilet?",
+        "older": "Have you seen any blood in the toilet after you poop?"
+      },
+      "why": "Alternate for item 11 that points at the toilet rather than at the child's own body, which may be easier for a young child to answer without embarrassment. Only one item-11 question ships.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "not shipped in v1 — same treatment as item 17. A yes/no naming blood is leading (yes is the escalating answer) and the packet's own cautions require a neutral colour widget the app does not have yet"
+      }
+    },
+    {
+      "id": "t-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 14,
+      "answers": "yesno",
+      "q": {
+        "young": "Are you drinking lots and peeing lots?",
+        "older": "Have you been drinking more than usual and peeing more than usual?"
+      },
+      "why": "Both halves of the polyuria/polydipsia pair in one question, as the packet directs; DKA presenting as tummy pain is a life-threatening miss no score here touches. Never names the condition.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted"
+      }
+    },
+    {
+      "id": "t-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 18,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Is it hard to breathe, or do you have a cough?",
+        "older": "Have you had a cough, or has it been hard to breathe?"
+      },
+      "why": "Chest causes of tummy pain. Needs an id distinct from the chest group's `breathing` question and must not fire when the child has also tapped chest, since the pipeline dedupes by question id rather than by fact.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "split into two questions — see t-017a / t-017b"
+      }
+    },
+    {
+      "id": "t-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 19,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you swallow something that isn't food?",
+        "older": "Have you swallowed anything that isn't food?"
+      },
+      "why": "Time-critical, trivially reportable, and absent from every score; only the child or a witness knows. Names no object, so it cannot prompt or frighten the child into a denial.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted"
+      }
+    },
+    {
+      "id": "t-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 16,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you feel hot?",
+        "older": "Do you feel hot or shivery?"
+      },
+      "why": "Captures the raw sensation and leaves the threshold to the nurse with the thermometer; three sources use three incompatible cutoffs. Never says fever and never asks for a number.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted"
+      },
+      "fact": "feels-feverish"
+    },
+    {
+      "id": "t-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 6,
+      "minAge": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Did your tummy hurt more when the car went over a bump?",
+        "older": "On the way here, did the pain get worse when the car went over a bump?"
+      },
+      "why": "Vivid and answerable, but the weakest provenance in the packet: one source, and that source is a protocol whose variables are being tested rather than validated. First to drop if the list must shrink.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "removed entirely: assumes the child arrived by car and was awake for it; a child brought by ambulance, on foot or asleep has no answer and yes/no offers no \"didn't happen\""
+      }
+    },
+    {
+      "id": "t-021",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "q": {
+        "young": "Does the hurt stop and then come back?",
+        "older": "Does the pain go away for a while and then come back?"
+      },
+      "why": "Colicky versus constant pain, which clinicians failed to document in 68% of cases, so a child's answer may be the only record. Ranks low: it overlaps SENSATIONS cramping, and young children conflate stopped with paused.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted with minAge 7 — see meta"
+      }
+    },
+    {
+      "id": "t-022",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your tummy feel yucky, like you might throw up?",
+        "older": "Do you feel like you might throw up, even though you haven't?"
+      },
+      "why": "A genuinely separate variable in pARC, not a softer version of vomiting. Ranks last because SENSATIONS already offers queasy on the inside list before follow-ups are reached.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "SENSATIONS.queasy already covers nausea and item 2 ranks last, so it would never be selected; rejected to keep the bank lean"
+      }
+    },
+    {
+      "id": "t-017a",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 18,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Is it hard to breathe?",
+        "older": "Is it hard to breathe right now?"
+      },
+      "why": "Breathing now. Split from the cough half so a yes is interpretable — the two have different time windows.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "split from the compound item-18 question"
+      }
+    },
+    {
+      "id": "t-017b",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 18,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you had a cough or a cold?",
+        "older": "Have you had a cough or a cold in the last two weeks?"
+      },
+      "why": "Recent respiratory infection. SPASMS scopes this to two weeks; kept explicit for the older tier.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "split from the compound item-18 question"
+      }
+    }
+  ]
+}

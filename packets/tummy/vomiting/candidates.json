@@ -1,0 +1,491 @@
+{
+  "packet": {
+    "id": "vomiting-diarrhoea",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      33
+    ]
+  },
+  "candidates": [
+    {
+      "id": "v-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Did your drink stay down?",
+        "older": "Have you been able to keep a drink down?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "drink-stays-down",
+      "why": "Establishes whether fluid the child took actually stayed down, which is the discharge criterion in RCH gastro and RCH vomiting and the nasogastric trigger in NICE 1.3.2.2; decision 3 requires asking what the child managed, not what they drank.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "weird wording"
+      }
+    },
+    {
+      "id": "v-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Can you drink water without throwing up?",
+        "older": "Can you drink something without throwing up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "drink-stays-down",
+      "why": "Same fact reached as a present-tense ability rather than a past outcome, matching NHSGGC's ED rule that the child 'can tolerate oral fluids and do not have ongoing vomiting'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Did you throw up after your last drink?",
+        "older": "Did you throw up after the last drink you had?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "drink-stays-down",
+      "why": "The same fact with inverted polarity, anchored to one remembered event rather than a stretch of time; NICE separates 'unable to drink it' from 'vomits persistently' and this wording catches the second.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "v-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Are you thirsty?",
+        "older": "Are you feeling thirsty?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "thirsty",
+      "why": "The plainest form of the only subjective variable in the three dehydration scales, carried by RCH Dehydration: 'Children with mild dehydration have no clinical signs. They may have increased thirst'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Do you want a drink right now?",
+        "older": "Would you like a drink right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "thirsty",
+      "why": "Reaches thirst through wanting rather than through the word 'thirsty', which a 4-year-old may not own; WHO's own column is 'Thirsty, drinks eagerly' and IMCI asks 'Drinking eagerly, thirsty?'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-006",
+      "traces_to": 2,
+      "q": {
+        "young": "Do you keep wanting drinks?",
+        "older": "Do you keep wanting something to drink?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "thirsty",
+      "why": "Asks for a repeated urge rather than a single moment, which is closer to the CDS general-appearance row 'Thirsty, restless' without using an intensity word the screen rejects.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "v-007",
+      "traces_to": 3,
+      "q": {
+        "young": "Have you had a pee since you got here?",
+        "older": "Have you needed a pee since you got here?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "peed-today",
+      "why": "Decision 4's preferred form: the raw fact is the child's and the comparison with 'usual' is the nurse's, since the nurse knows the arrival time; sourced from NICE 1.8.1.1 'decreased urine output' and RCH Dehydration.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "what does here mean"
+      }
+    },
+    {
+      "id": "v-008",
+      "traces_to": 3,
+      "q": {
+        "young": "Did you go for a pee today?",
+        "older": "Have you been for a pee today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "peed-today",
+      "why": "A day-length window rather than an arrival-anchored one, closer to Gorelick's 'Reduced; not passed in many hours' for a child brought in soon after arriving.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-009",
+      "traces_to": 3,
+      "q": {
+        "young": "Do you need a pee right now?",
+        "older": "Do you feel like you need a pee right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "peed-today",
+      "why": "Asks the present urge instead of a past event, so a child who cannot remember the last time still gives the nurse something; same NICE and RCH Dehydration urine-output line.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-010",
+      "traces_to": 4,
+      "q": {
+        "young": "Do bright lights hurt your eyes?",
+        "older": "Do bright lights bother your eyes?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "light-hurts",
+      "why": "RCH Vomiting's red flag 'Neck stiffness, photophobia and fever in older child'; decision 7 requires the fact already shipped for group head so a child who taps Head and Tummy is asked once.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-011",
+      "traces_to": 4,
+      "q": {
+        "young": "Do you want the lights turned off?",
+        "older": "Would you rather the lights were turned down?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "light-hurts",
+      "why": "Same red flag reached as a preference a child in a lit bay can act on rather than a judgement about their eyes; same shared fact per decision 7.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "not relevant"
+      }
+    },
+    {
+      "id": "v-012",
+      "traces_to": 33,
+      "q": {
+        "young": "Do you throw up when you wake up?",
+        "older": "Have you been throwing up in the morning when you wake up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "morning-vomiting",
+      "why": "RCH Vomiting: 'Early morning vomiting and headache may be due to raised ICP'; asks when in the day it happens, which DURATIONS cannot record because it only records when it started.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-013",
+      "traces_to": 33,
+      "q": {
+        "young": "Does throwing up happen in the morning?",
+        "older": "Does the throwing up mostly happen in the morning?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "morning-vomiting",
+      "why": "The same raised-ICP line asked as a pattern across days rather than as an event on waking, which is what the guideline sentence actually describes.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "assumes throwing up even happens?"
+      }
+    },
+    {
+      "id": "v-014",
+      "traces_to": 5,
+      "q": {
+        "young": "How many times have you thrown up today?",
+        "older": "How many times have you thrown up today?"
+      },
+      "answers": "count",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "minAge": 7,
+      "fact": "vomiting-count",
+      "why": "The packet's own natural wording for the count NICE ('more than twice') and NHSGGC ('three or more times') both threshold; decision 2 requires the count widget so the one reachable boundary is not discarded.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-015",
+      "traces_to": 5,
+      "q": {
+        "young": "How many times have you thrown up here?",
+        "older": "How many times have you thrown up since you arrived?"
+      },
+      "answers": "count",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "minAge": 7,
+      "fact": "vomiting-count",
+      "why": "Same MVS and NICE variable over a window the child can see, the same arrival anchor decision 4 chose for item 3, which asks for less aggregation than 'today'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "v-016",
+      "traces_to": 5,
+      "q": {
+        "young": "How many times have you thrown up this morning?",
+        "older": "How many times have you thrown up since you woke up this morning?"
+      },
+      "answers": "count",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "minAge": 7,
+      "fact": "vomiting-count",
+      "why": "The same count bounded by waking, a landmark a 7-year-old holds better than a clock window; NICE and NHSGGC count over 24 hours and the packet may not say so to the child.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-017",
+      "traces_to": 6,
+      "q": {
+        "young": "Is it hard to turn your head?",
+        "older": "Does it feel hard to turn your head?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "neck-movement",
+      "why": "NICE's 'neck stiffness', NHSGGC's 'Stiff neck' and RCH Vomiting's red flag, turned into something the child discovers by trying rather than a resistance a clinician feels; shares the fact the throat packet ships, per decision 7.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-018",
+      "traces_to": 6,
+      "q": {
+        "young": "Can you turn your head to look behind you?",
+        "older": "Can you turn your head to look over your shoulder?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "neck-movement",
+      "why": "The same three sources framed as a movement the child attempts, which gives a younger child something concrete to do; same shared fact so the child is asked once.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    },
+    {
+      "id": "v-019",
+      "traces_to": 7,
+      "q": {
+        "young": "Has anyone at home thrown up too?",
+        "older": "Has anyone else at home been throwing up too?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "household-vomiting",
+      "why": "The first thing NICE 1.1.1.2 tells a clinician to ask, and the one third of it a child holds; decision 1 requires 'thrown up' here because the natural phrasing uses the banned word.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "doesnt matter too much"
+      }
+    },
+    {
+      "id": "v-020",
+      "traces_to": 7,
+      "q": {
+        "young": "Did you see someone else throw up?",
+        "older": "Have you seen anyone else throw up lately?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "household-vomiting",
+      "why": "Decision 10's reason for including this item is that the child reports what they witnessed, so this wording asks exactly that and reaches a classmate as well as a sibling.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-08",
+        "reason": "not relevant"
+      }
+    }
+  ]
+}

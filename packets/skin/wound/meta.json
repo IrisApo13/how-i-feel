@@ -1,0 +1,198 @@
+{
+  "id": "skin-wound",
+  "group": "skin",
+  "groups": [
+    "head",
+    "throat",
+    "chest",
+    "tummy",
+    "limb",
+    "back",
+    "eyes",
+    "ears",
+    "mouth"
+  ],
+  "depth": "surface",
+  "mechanism": "injury",
+  "packetRank": 40,
+  "packetRankNote": "Proposed, not yet confirmed by review. `skin-wound` and `skin-rash` are BOTH depth `surface`, BOTH serve all nine groups, and BOTH have homeGroup `skin`, so in every group they land in the same non-home-group tier of `bankQuestions` and are spent ROUND-ROBIN. Lower packetRank picks FIRST, not everything: at 40 against skin-rash's default 50, this packet takes the odd slots and skin-rash the even ones. Wound leads for three reasons. (1) skin-rash's own packet rules that a NO to its lead item is not reassurance (NG240 1.1.10) and that the fact its literature routes on -- blanching -- cannot be asked of a child in any form; so its lead question, by its own argument, cannot close anything. This packet's lead item can: a YES sends the nurse to a wound that needs cleaning, exploration and a tetanus decision, and item 2 (bleeding now) is the only 999-level fact in either packet that only the child can supply while sitting in the waiting room. (2) Every one of this packet's six items carries a fact NO other packet holds, whereas five of the facts this packet might have asked -- bumped-it, unexplained-bruises, puffy-swollen, feels-feverish, blisters -- are ALREADY asked to this exact audience by skin-rash and general-unwell. Putting the packet with zero shared facts first is what a short cap gets the most out of; skin-rash keeps its shared-fact coverage whichever order is used. (3) mechanism `injury` reaches group `head`, which skin-rash cannot (see gateNote). THE COST, stated because a reviewer may reverse this: skin-rash items 3, 4 and 5 -- hard to breathe, hard to turn your head, bright lights -- are its meningococcal and anaphylaxis half, and each of them now falls one slot later. Meningococcal disease kills faster than a wound infection. The counter is that round-robin delays those items by one slot, it does not remove them, whereas rash leading can cost a bleeding child their only bleeding question when the cap is spent across two or three tapped groups.",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "3": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "6": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "durationsNote": "Source 5: \"Most cuts and grazes will start to heal in a few days.\" No source read describes a chronic wound in a child, so `long-time` is NOT the full packet. Three items survive it and each for a stated reason: item 1 because without it items 3 and 6 have no referent; item 3 because source 2 names \"Wounds containing foreign bodies (especially wood splinters)\" as tetanus-prone and a splinter left in for weeks is a real presentation; item 6 because a wound that hurts more than it did is the infection trajectory and infection is precisely what turns an old wound into a presentation. Items 2, 4 and 5 expire: a wound bleeding weeks later is a bleeding-disorder question this packet is not sourced for, source 3 puts bite infection at 12-24 hours, and a tendon injury presenting weeks later is found by examination.",
+  "itemRank": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "itemRankNote": "Proposed, not yet confirmed by review. Ordered by how fast the thing each points at causes harm, the same rule skin-rash used. 1 is the entry item and establishes the complaint (and re-sources the cut half of the hand-written `limb-see`). 2, 3 and 5 are three of source 5's six 999-list entries, in that order because uncontrolled bleeding is immediate, a retained object changes what the nurse must NOT do next, and a deep-structure injury is limb-threatening but not minute-threatening. 4 is the 111 list and changes the antibiotic, tetanus and -- in the human-adult case only, and only for the nurse -- safeguarding decisions. 6 is last because wound infection develops over hours to days and is the only item here whose red flag is not time-critical on the day. NOTE THE CAP: `young` gets five sourced questions spent ACROSS every group the child tapped, so item 6 never reaches a child under 8 even in a skin-only report, and a child who taps two groups may reach only items 1 and 2. CONFIRMED 2026-09-09 by iris, reviewed item by item against the shipped six and left unchanged. No longer \"proposed, not yet confirmed by review\".",
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "minAge": {},
+  "minAgeNotes": {
+    "*": "JUDGEMENT, NOT A CITATION. No item carries an age floor and the empty object is a decision, not an omission. Two floors were considered and rejected. (1) A VALIDITY floor of 5 on everything, from source 11: \"Children < 5 years old cannot validly and reliably self-report health outcomes.\" Rejected under brief section 4 -- that finding is about psychometric outcome MEASURES (scales, response formats, recall periods), and every item here is plain history in sources 1, 3 and 5, none of which sets any floor. It would also strip 4-year-olds of the whole packet. (2) A floor of 8 on item 6, from source 11's \"children under 8 years old cannot understand the concept of a week ... and some could not understand the term 'yesterday'\". Rejected because item 6 asks for a comparison against a remembered moment (\"than before\"), not a named recall period -- the same distinction head/headache drew when it banned \"than usual\" and permitted \"than before\". THE HONEST STATEMENT: this packet has no evidence in either direction about a 4- or 5-year-old reporting any of these six facts, and source 11 is the closest thing to evidence found -- it is a warning about the young tier, not a licence for it.",
+    "7": "Item 7 is NOT proposed here; it already ships as r-023 with minAge 8, set by skin/rash. This packet does not re-ask it and does not lower that floor -- see the safeguarding ruling."
+  },
+  "facts": {
+    "1": "cut-or-scrape",
+    "2": "bleeding-now",
+    "3": "something-in-it",
+    "4": "bitten",
+    "5": "wound-move",
+    "6": null
+  },
+  "factsNote": "JUDGEMENT, NOT A CITATION -- no source assigns facts; the reasoning is `keyOf` and `bankQuestions` dedupe behaviour. ALL FIVE TAGGED FACTS ARE COINED, and that is the headline: this packet shares NO fact with any packet in the bank, because everything it could have shared is already being asked to its exact audience. RULINGS THE BRIEF ASKED FOR, all verified against src/data/bank.js on 2026-09-08: (a) `bumped-it` -- NOT taken and no mechanism item proposed. r-024 (\"Did you bump it or hurt it there?\", skin-rash item 15) already fires for all nine groups at depth surface, which is this packet's entire audience, so \"how did it happen\" is covered and a second version would burn a round-robin slot to learn nothing. (b) `unexplained-bruises` -- NOT taken, no bruise item proposed. r-023 already fires for all nine groups at surface with minAge 8; see the safeguarding ruling for why this packet adds nothing to it. (c) `puffy-swollen` -- NOT taken. r-018 already fires for all nine at surface, so source 4's \"Warmth and swelling\" gets its swelling half for free. (d) `limb-swelling` -- MUST NOT be taken. l-016/l-017 are scoped groups [limb], depth inside, mechanism injury: they cannot fire on this branch at all, and PLAN.md merges a fact only when it is systemic. Merging would collapse a whole-body answer into a one-limb answer. (e) `swelling-location` -- NOT taken. m-010 is mouth-only, and location is the body map's job here; this packet proposes no swelling item of any kind. (f) `feels-feverish` -- NOT taken, no fever item proposed, even though source 4 grades cellulitis severity by systemic features and source 5's 111 list ends with \"feel generally unwell or have a high temperature\". g-001 (general-unwell, all ten groups, NO depth filter) and r-010 (skin-rash, all nine, surface) both already carry it. (g) `blisters` -- NOT taken, no blister item proposed. r-016 already fires for all nine at surface, and the blisters in THIS literature belong to burns, which are excluded as a different complaint. UNTAGGED: item 6, deliberately, following head/headache item 7, head-injury item 2, limb-injury item 4 and tummy/acute-pain item 7 -- this project leaves region-specific trajectory questions without a fact so they do not suppress each other's different subjects. COINED, with the collision check: nothing in the bank asks about bleeding, about an object in a wound, about being bitten, or about moving an injured part on the surface branch. `wound-move` is deliberately NOT `limb-use`: `limb-use` (l-004/`can-move`) is region-specific and scoped limb + inside, so the two can never both fire, but merging them would let a question about a cut hand suppress a question about a limp.",
+  "cite": {
+    "1": "RCH Lacerations (the guideline's whole subject; \"Minor lacerations are extremely common in childhood\"); NHS Cuts and grazes (the whole page); RCH Tetanus-prone wounds (\"Any wound other than a clean, minor cut\"); NHS inform Cuts and grazes. RE-SOURCES the cut half of the hand-written `limb-see` (\"Can you see a cut, bruise or rash?\"), which ships today with no citation and no fact.",
+    "2": "NHS Cuts and grazes -- 999 list: \"you have a cut and cannot stop the bleeding\"; RCH Lacerations (\"For actively bleeding wounds, control bleeding first\"); NHS inform Cuts and grazes (same 999 list). NOT cited for blood loss: the arterial half (\"the blood comes out in spurts and is bright red and hard to control\") is item 18 and is excluded.",
+    "3": "NHS Cuts and grazes -- 999 list: \"there's something stuck in the cut, such as a shard of glass - do not try to take it out yourself\"; RCH Lacerations -- Assessment: \"Contamination by dirt or foreign bodies\"; RCH Tetanus-prone wounds -- \"Wounds containing foreign bodies (especially wood splinters)\" and \"Any wound obviously contaminated with soil, dust or horse manure\"; RCH Cellulitis -- Red flags: \"Foreign body\"; Bernabe (\"wound exploration to remove foreign bodies\").",
+    "4": "RCH Lacerations -- Assessment: \"Causes (eg animal or human bites) which require consideration for tetanus prophylaxis and/or antibiotics\"; RCH Animal and human bites -- History: \"Animal or person involved\"; RCH Tetanus-prone wounds -- \"Bite wounds\"; RCH Cellulitis -- Red flags: \"Animal or human bite\"; NHS Cuts and grazes -- 111 list: \"you were bitten by a person or a wild or stray animal\".",
+    "5": "NHS Cuts and grazes -- 999 list: \"you lose feeling near the wound or have trouble moving it\"; RCH Lacerations -- Assessment: \"Injury to deeper structures (eg tendons, joints or nerves)\" and \"if a deep laceration cannot be examined adequately to exclude damage to such structures, refer for relevant surgical specialty advice\". The numbness half is item 15 and is already collected by SENSATIONS.tingly.",
+    "6": "NHS Cuts and grazes -- 111 list: \"a cut is swollen, red and getting more painful or pus is coming out of it\"; RCH Cellulitis -- Assessment: \"Typical presentation of all skin infections: Soft tissue redness, Warmth and swelling, Pain/tenderness\", the severity bands graded by \"moderate swelling and tenderness\" then \"severe swelling or tenderness\", and \"severe pain out of keeping with apparent severity of infection, rapid progression\"; RCH Animal and human bites (\"Infection can be clinically evident in dog bites within 24 hours and in cat bites as quickly as 12 hours\"). The colour half (\"red\", \"redness that spreads\") is item 19 and is banned.",
+    "7": "NHSGGC and RCH via skin/rash item 14 -- ALREADY ASKED as r-023 (fact unexplained-bruises, all nine groups, depth surface, minAge 8). RCH Child abuse red-flag findings and TEN-4-FACESp are cited in this packet only to explain why NO new bruise question is written; see the safeguarding ruling. Nothing here may be cited for a new item.",
+    "8": "RCH Lacerations (\"Associated injuries (eg head/ cervical spine in falls...)\"); RCH Animal and human bites (\"Risk of associated injuries eg if the child has fallen or been dragged\") -- ALREADY ASKED as r-024 (fact bumped-it, all nine groups, depth surface). No candidate may be written.",
+    "9": "RCH Cellulitis (\"Warmth and swelling\"); NHS Cuts and grazes (\"a cut is swollen\") -- ALREADY ASKED as r-018 (fact puffy-swollen). No candidate may be written.",
+    "10": "NHS Cuts and grazes (\"feel generally unwell or have a high temperature\"); RCH Cellulitis (\"Systemic features (eg fever, tachycardia)\"); RCH Animal and human bites (\"Assess for signs of infection (surrounding erythema, purulence, fever)\") -- ALREADY ASKED as g-001 and r-010 (fact feels-feverish). No candidate may be written.",
+    "11": "RCH Burns (dermal burns blister) -- ALREADY ASKED as r-016 (fact blisters), and burns are excluded from this packet as a different complaint. No candidate may be written.",
+    "15": "NHS Cuts and grazes -- 999 list: \"you lose feeling near the wound\" -- ALREADY COLLECTED by SENSATIONS.tingly (\"Fuzzy feeling\", fact fuzzy-feeling), which is depths surface+inside but tiers ['older'] only. A 4-to-7-year-old is asked this by nothing; recorded in Still open, not fixed here.",
+    "16": "RCH Cellulitis (\"Warmth\"); NHS Cuts and grazes (\"skin that is warm to touch\") -- ALREADY COLLECTED by SENSATIONS.burning (\"Hot and stingy\", depths surface), offered to every child this packet fires for.",
+    "17": "RCH Lacerations; NHS Cuts and grazes -- ALREADY COLLECTED by the body map and the depth gate (where), DURATIONS (when), the FPS-R screen (how much it hurts) and HELPS.bandage / HELPS.clean-it (what the child wants). No candidate.",
+    "18": "NHS Cuts and grazes -- 999 list: \"the blood comes out in spurts and is bright red and hard to control\"; RCH Lacerations (\"Impairment of blood supply to surrounding tissue... appears dusky or poorly perfused\") -- EXCLUDED, examination and colour. Cited so the split from item 2 is on the record.",
+    "19": "NHS Cuts and grazes (\"a cut is swollen, red\"); RCH Cellulitis (\"Soft tissue redness\", \"surrounding erythema\") -- EXCLUDED under the colour ban carried from skin/rash. No candidate.",
+    "20": "NHS Cuts and grazes (\"a cut is larger than around 5cm (2 inches)\", \"the wound is very large or deep\"); RCH Cellulitis (\"Large body surface area involved (eg larger than the patient's handprint)\"); Quinn via Bernabe (\"lacerations greater than 5 cm in length\") -- EXCLUDED, measurement. No candidate.",
+    "21": "RCH Tetanus-prone wounds (\"Check immunisation history\", \"Take an immunisation history\"); RCH Animal and human bites (\"Immunisation status (particularly tetanus)\", \"Other medical history: co-morbidities (eg immunosuppression), regular medications, allergies\"); RCH Cellulitis (Red flags: \"Immunosuppression\", \"Multiple comorbidities\", \"MRSA infection\") -- EXCLUDED, carer or record. No candidate.",
+    "22": "RCH Burns -- the whole guideline, including \"Early first aid with a total of 20 minutes of cool running water... within 3 hours of the burn\" -- EXCLUDED as a different presenting complaint with its own trauma pathway. Cited because the first-aid half is a genuine near-miss; see the packet's Excluded section.",
+    "23": "RCH Child abuse (\"Formal interviewing of the child should be done by the relevant specialist service\"); RCH Animal and human bites (\"Consider child abuse if there is any suspicion that bite is from a human adult\"); RCH Burns (\"Consider child abuse. Look for pattern of burn and/or inconsistent history\"); Pierce TEN-4-FACESp (\"The rule applies only to children with bruising who are younger than 4.0 years\") -- EXCLUDED as a deliberate ruling, not an oversight. No candidate, ever.",
+    "24": "RCH Animal and human bites -- History: \"Social history: home environment, other household members, supervision around animals\" -- EXCLUDED, carer's answer and a blame surface. No candidate.",
+    "25": "Quinn 2014 via Bernabe (\"the infection rate was the same in those presenting before and after 6 hours\"); RCH Tetanus-prone wounds (\"especially if topical disinfection is delayed more than 4 hours\") -- EXCLUDED. DURATIONS cannot express hours and the one source that tested the threshold found no relationship. CITED, NOT READ at the primary: Quinn 2014 itself was not opened.",
+    "26": "RCH Animal and human bites (\"consider the need for post-exposure prophylaxis against blood borne viruses (eg hepatitis B, HIV)\", rabies and Australian bat lyssavirus) -- EXCLUDED: a different pathway, and naming it to a child is out of scope by age and by the PG ceiling. No candidate.",
+    "27": "RCH Lacerations (contamination, deeper structures, perfusion, and every location-specific repair rule); RCH Animal and human bites (\"Location of injury\", \"A clenched-fist injury\", \"extensive skin loss (>1cm defect present on attempts to oppose skin edges)\"); RCH Cellulitis (\"Abscess or suppuration\", \"Lymphangitis\", \"Deep structure involvement\", \"Periorbital /facial/hand involvement\") -- EXCLUDED, examination. No candidate.",
+    "28": "RCH Lacerations (sutures, glue, strips, sedation, fasting, ROS intervals); RCH Tetanus-prone wounds (TIG, vaccine); RCH Cellulitis (antibiotics); RCH Animal and human bites (washout under anaesthesia); Bernabe (the PAWS clinic model) -- EXCLUDED, management. Naming what happens next to a frightened child changes the answer. No candidate."
+  },
+  "judgement": {
+    "packetRank": "40 is JUDGEMENT, NOT A CITATION. No source ranks packets; the reasoning is the round-robin in build-bank.mjs and the argument in packetRankNote.",
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "safeguarding": "JUDGEMENT, NOT A CITATION, and it OVERRIDES nothing in the sources -- the sources agree. RCH Child abuse states \"Formal interviewing of the child should be done by the relevant specialist service\" and that history \"should be sought from multiple sources including the child. Questions should be open-ended and limited to information that is clinically necessary\". A fixed yes/no on a shared tablet is neither open-ended nor a specialist service. The only validated rule in this literature, TEN-4-FACESp, \"applies only to children with bruising who are younger than 4.0 years\" and is an examination of bruise location and pattern -- it is out of the app's age range at its lower bound and could not be a question in any case. No child-facing safeguarding question is written.",
+    "dignity": "JUDGEMENT, NOT A CITATION. Item 12 (pus and wound discharge) is excluded on dignity as well as on examination grounds: it asks a child to look at what came out of their own body, which this project bans, and it invites them to peel a dressing off in a waiting room. Item 27's genital and perineal wounds are excluded outright -- source 3 names \"genitals\" among the locations needing specialist involvement and source 9 names \"genitalia\" among the burn sites raising abuse concern, and neither becomes a question of any kind.",
+    "doNotMerge": "Item 5 must NOT take `limb-use`, and no item here may take `limb-swelling` or `swelling-location`. All three are region-specific; PLAN.md merges a fact only when it is systemic.",
+    "unenforceableCautions": "Two cautions here cannot be regexes. (a) The colour ban is enforced, but 'redness that spreads' is the single most useful infection sign in source 4 and item 6 reaches only its pain half -- no regex can make up that shortfall, and the nurse is the one who sees the redness. (b) Item 3 must never become an instruction. The wording ban catches 'take it out' and its family, but the deeper rule -- that a question about an object in a wound must not send a child to investigate it -- is a stage-2 wording judgement."
+  },
+  "gateNote": "`mechanism: \"injury\"` filters in only TWO groups. GROUP_GATE asks a mechanism question for `head` and `limb` and for nobody else, so in the other seven groups `mechanism` is null, the mechanism filter is a no-op, and this packet is live regardless of it. In `limb`, depth is asked FIRST and mechanism only `when: { depth: ['inside','unknown'] }` -- so on the limb SURFACE branch, which is where a grazed knee lands, mechanism is never asked either and this packet fires with the field doing nothing. That leaves exactly one place the field bites: `head`, which asks mechanism first. mechanism `no-injury` excludes this packet, correctly -- a child with a headache and no bump needs no wound questions. mechanism `injury` includes it, and because head then never asks depth, `depths['head']` is undefined and the depth filter short-circuits. SO THIS PACKET REACHES GROUP `head` AND `skin-rash` DOES NOT: skin-rash is depth `surface` with no mechanism, and for head+injury its depth is compared against a mechanism answer and fails. A child with a cut on their forehead is asked about the cut by this packet and about spots by nothing.",
+  "preferred": {},
+  "preferredNote": "No wording preferences can be expressed yet -- this packet has no candidates. Two rules stage 2 must honour and neither is a regex. (1) Item 2 is worded 'Is it bleeding now?' and NOT 'Is it still bleeding?' -- screen.mjs already rejects `\\bstill\\b` as assuming it was already true, and 'a lot' is rejected as embedded intensity, which is exactly the split this packet needs between a child's report that blood is coming out and a clinician's estimate of blood loss. (2) Item 1 must offer BOTH words -- 'a cut or a scrape' -- for the same reason skin-rash requires 'spots or a rash': a US child of this age may own only one of them, and 'graze' is British and banned.",
+  "bannedPhrases": [
+    [
+      "tetanus|lockjaw|sepsis|septic|blood poisoning|cellulit|necroti[sz]ing|flesh[- ]eating|gangrene|rabies|lyssavirus|\\bmrsa\\b|hepatitis|\\bhiv\\b|abscess|lymphangitis",
+      "names a diagnosis or a complication to the child. Every source here writes in this register and 'tetanus', 'rabies' and 'blood poisoning' are words a child has heard in a frightening context"
+    ],
+    [
+      "infect(ed|ion|ious)?\\b|\\bgerms?\\b|\\bbacteria",
+      "a child told their cut might be infected has been given a reason to be frightened before they answer. Item 6 asks whether it hurts more than before, which is the child-reportable half of source 4's infection picture, and never names what that would mean"
+    ],
+    [
+      "\\btake it out\\b|\\bpull (it|them) out\\b|\\bpick (at|it)\\b|\\bpeel\\b|\\bpress\\b|\\bpush\\b|squeeze|\\bpoke\\b|\\bprod\\b|\\brub\\b|\\btouch it\\b|\\bfeel around\\b|\\bopen (it|the cut)\\b|\\bspread (it|the) (edges|skin)\\b",
+      "never ask a child to touch, open or explore their own wound, and above all never to remove anything. Source 5's own words are 'do not try to take it out yourself'; item 3 must ask what the child already knows is in there and never send them to find out. Also carries skin/rash's ban on pressing on skin"
+    ],
+    [
+      "take off your (bandage|band-?aid|dressing|plaster)|look under|lift (the|your) (bandage|band-?aid|dressing)|unwrap|undo the",
+      "never ask a child to uncover a dressed wound in a waiting room. Source 1 dresses wounds precisely so they stay covered, and an uncovered wound in a corridor is a harm the question would cause"
+    ],
+    [
+      "\\bpus\\b|\\bgoo\\b|\\boozing?\\b|weeping|discharge|yellow stuff|green stuff|\\bcrust|\\bscab.*(pick|look)|what came out",
+      "the dignity ruling. Source 5's 111 list ends with 'pus is coming out of it', but asking a child to look at and describe what has come out of their own body is banned project-wide, and it invites them to peel the dressing off to check"
+    ],
+    [
+      "how much blood|how many|\\bcount\\b|spurt|gushing|pouring|soaked|dripping|pumping out|bled through",
+      "never ask a child to estimate blood loss. Source 5's arterial criterion is a clinician's judgement; item 2 asks only whether blood is coming out now, which is a thing the child can see"
+    ],
+    [
+      "how big|how deep|how long is|how wide|millimet|centimet|\\bcm\\b|\\binch|bigger than|larger than|deeper than|handprint|size of",
+      "never ask about size or depth. Source 5 routes on 'larger than around 5cm', source 4 on 'larger than the patient's handprint', and Quinn on 'greater than 5 cm' -- a child asked to estimate produces a number a nurse reads as a measurement"
+    ],
+    [
+      "\\bred\\b|redness|\\bpink\\b|purple|\\bblue\\b|\\bblack\\b|brown|\\bdark\\b|\\bpale\\b|dusky|blotchy|colou?r",
+      "never ask the colour of anything. Carried unchanged from skin/rash and re-argued here: 'redness that spreads' is source 4's central infection sign and source 5's arterial criterion is 'bright red', and both are least reliable on brown and black skin, which is an equity harm with a direction"
+    ],
+    [
+      "who (did|hurt|made)|did (someone|somebody|anyone|anybody) (hurt|hit|do)|are you (scared|afraid|frightened) of|\\bhit you\\b|\\bpunch|\\bsmack|\\bkick(ed)? you\\b|on purpose|did they mean|were you told not to say|is it safe at home|at home\\b.*\\b(hurt|hit)",
+      "the safeguarding ruling. Source 8 states that formal interviewing 'should be done by the relevant specialist service' and that questions should be 'open-ended'. A yes/no on a shared tablet is neither, the child may be answering within earshot of the person who hurt them, and a 'no' is uninterpretable"
+    ],
+    [
+      "\\bjab\\b|injection|vaccin|immunis|immuniz|\\bshot\\b|up to date with|stitch|suture|staple|\\bglue\\b|\\bneedle|operation|surgery|sedat|an(a)?esthe|scrub|debride|washout|\\bantibiotic",
+      "never name what happens next. Sources 1, 2, 3 and 4 are mostly management text and it sits directly in the generator's path; a child told the answer decides whether they get a needle will answer the needle, not the question"
+    ],
+    [
+      "\\bwounds?\\b|laceration|abrasion|contaminat|foreign body|h(a)?emorrhage|avulsion|puncture|perfus|erythema|suppurat|tissue|dehiscence|devitali[sz]ed",
+      "clinical register for a cut. Say 'cut', 'scrape' or 'bruise' -- item 1's own wording is the model"
+    ],
+    [
+      "\\bstray\\b|wild animal|\\brabid\\b|\\bferal\\b|\\bvicious\\b|\\bdangerous dog\\b",
+      "source 5's 111 list says 'a wild or stray animal', which asks a child to classify an animal they may love or be frightened of. Item 4 asks only whether an animal or a person bit them; the classification is the nurse's"
+    ],
+    [
+      "was it dirty|somewhere dirty|were you playing in|should(n'?t| not) have|why did you|whose fault|did you do it to yourself",
+      "never invite a child to account for having caused their own injury. Source 2's tetanus trigger is soil and dust, and the tempting question -- 'were you playing somewhere dirty?' -- is an accusation delivered by a tablet"
+    ],
+    [
+      "\\bgraze[sd]?\\b|\\bplaster\\b|\\bcasualty\\b|\\ba&e\\b|\\bwhilst\\b|\\bpoorly\\b|off colou?r|\\bunwell\\b|in hospital\\b|paracetamol|\\btrolley\\b|tea towel|\\bhave you got\\b|\\bnappy|nappies\\b|\\bgp\\b",
+      "British and Australian idiom, and EVERY guideline source in this packet is one or the other. Sources 1-4 and 9 are RCH Melbourne, sources 5 and 6 are NHS. US register: 'scrape', 'Band-Aid', 'the ER', 'while', 'sick', 'at the hospital', 'do you have'"
+    ],
+    [
+      "genital|scrotum|\\bgroin\\b|private parts|down there|private area|\\bbottom\\b|\\bbum\\b",
+      "the dignity ruling. Source 3 names 'genitals' among locations needing specialist involvement and source 9 names 'genitalia' among burn sites raising abuse concern; neither becomes a question, and the app must not ask a child about that area at all"
+    ],
+    [
+      "burn(ed|t|s)?\\b|scald|\\bhot water\\b|\\bboiling\\b|\\bsunburn\\b|\\bfire\\b|\\bflame\\b|electric",
+      "burns are excluded from this packet as a different complaint with its own trauma pathway (source 9). A generator reading source 9's history list would otherwise write burn questions into a cut-and-scrape packet"
+    ],
+    [
+      "\\bhours?\\b|\\bminutes?\\b|what time|how many days|exactly when",
+      "no threshold in this literature is reachable. Source 2's is 4 hours, source 3's is 12-24 hours, and Quinn found the 6-hour 'golden period' made no difference; DURATIONS is the only time this app collects"
+    ],
+    [
+      "\\brate\\b|\\bscore\\b|out of ten|out of 10|\\bgrade\\b|scale of|how bad",
+      "never ask a child to rate or grade anything in words. The FPS-R screen has intensity, and source 4's mild/moderate/severe bands are the clinician's"
+    ]
+  ]
+}

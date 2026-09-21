@@ -1,0 +1,484 @@
+{
+  "packet": {
+    "id": "tummy-ongoing",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "candidates": [
+    {
+      "id": "o-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Does your sore tummy wake you up at night?",
+        "older": "Does the pain wake you up at night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "night-pain",
+      "why": "The flagship item in its plainest form. AFP Table 4 lists the alarm finding as \"Pain that wakes the child from sleep\", RCH files \"pain waking the child from sleep\" under History rather than Examination, and StatPearls writes \"pain causing wakening from sleep\" -- three of the four alarm lists, all in the same shape, all describing something the child and only the child knows. The young tier uses decision 2's register (\"sore tummy\", never \"tummy ache\") and one clause; the older tier drops the body word because the child has already tapped the body map.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Do you wake up at night in pain?",
+        "older": "Have you woken up at night because your tummy was hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "night-pain",
+      "why": "Same three sources, reached from the child's side of the sentence rather than the pain's: the pain is the reason, not the actor. Offered against o-001 because a 5-year-old may not read \"the pain woke you\" as a thing that can happen to them. Deliberately worded as waking, never as getting up -- the moment a night question asks what the child got up to do it becomes the toilet-counting ban (dignity ruling 3, and RCH's \"nocturnal stooling\" is refused at item 25).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Does your tummy hurt in the night?",
+        "older": "Does the pain ever wake you from your sleep?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "night-pain",
+      "why": "The weaker-but-easier form for the young tier: a 4-year-old knows whether their tummy hurts at night, and may not know whether that is what woke them. The older tier keeps StatPearls' full \"wakening from sleep\" sense. Flagged for review as the pair where the two tiers are not asking quite the same thing -- \"hurts at night\" is not the alarm feature, \"wakes you\" is -- so a reviewer may prefer o-001 or o-002 for accuracy and this one only for reach.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "o-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Does your tummy feel all better in between?",
+        "older": "In between the times it hurts, do you feel completely fine?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "well-between-times",
+      "why": "ICHD-3 1.6.1.2's criterion \"Complete freedom from symptoms between attacks\" and its description \"with normality between episodes\", plus RCH's \"few or no GI complaints between attacks\" and AFP's FAP-NOS contrast \"episodic or continuous\". The word carrying the whole item is \"all\"/\"completely\" -- the criterion is total freedom, not improvement -- so both tiers keep it. Nothing else in the app asks about the gaps; `happened-before` records only that it happened before.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "werid wording"
+      }
+    },
+    {
+      "id": "o-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Are there days when your tummy feels fine?",
+        "older": "Are there days when your tummy does not hurt at all?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "well-between-times",
+      "why": "The same episodic/continuous split reached through whole days rather than through the gap between attacks, which is a unit a young child can hold. Written as \"days when\" and never as a number of days, because every threshold in this literature is a count over a window (Rome IV's \"at least four times per month\", Apley's \"three or more episodes\") and counts are banned at item 10.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-006",
+      "traces_to": 2,
+      "q": {
+        "young": "Does it go away and then come back?",
+        "older": "Does the pain go away completely and then come back later?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "well-between-times",
+      "why": "AFP's and RCH's FAP-NOS wording \"episodic or continuous\" taken directly, with the episodic half as the yes. Same fact as o-004 and o-005 and the same polarity -- yes means the gaps are clean -- but it asks about the shape of the pattern rather than about how the child feels in the gaps, so a reviewer choosing between them is choosing which of two real things gets recorded. Note the risk: a child whose pain never fully stops can answer yes to \"comes back\" if they read it as \"gets worse again\", which o-004's \"all better\" resists.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-007",
+      "traces_to": 3,
+      "q": {
+        "young": "Does your sore tummy stop you playing?",
+        "older": "Is the pain stopping you doing the things you usually do?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "The definitional item: for Apley via NASPGHAN and for AFP Table 1 pain that does not affect activities is not recurrent abdominal pain (\"severe enough to affect the child's ability to perform normal activities\"), and RCH makes \"Abdominal pain causing significant interruption to usual activities\" its escalation trigger. Worded as activities and never as school, per decision 3: the child may be answering on a weekend, and AFP frames missed school as secondary gain to be discouraged, which turns a school question into an accusation. The young tier names playing because that is the activity a 4-7 year old can picture.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "werid wording"
+      }
+    },
+    {
+      "id": "o-008",
+      "traces_to": 3,
+      "q": {
+        "young": "Does it hurt too much to play?",
+        "older": "Have you had to stop doing things you like because of the pain?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "The same criterion asked as a thing that has already happened rather than as a state, which is what RCH's \"interruption to usual activities\" actually describes. Careful not to imply the child chose to stop -- \"had to\" does the work -- because this packet's literature is largely functional-pain literature and a child who has been told their pain is not real will hear any hint of choice as an accusation of exaggerating. Item 3 carries a shared fact (`stopping-normal-things`, also on back/pain and head/headache), so the wording stays region-neutral.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-009",
+      "traces_to": 4,
+      "q": {
+        "young": "Does your tummy hurt more after you eat?",
+        "older": "Does eating make the pain worse?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-after-eating",
+      "why": "A Rome IV discriminator, not an association: FAP-NOS is defined partly by the pain NOT being related to eating (AFP: \"not associated with eating or menses\"; StatPearls: \"not limited to physiological events such as eating\"), and RCH's History asks for \"association with meals\". Only the eating half is taken; menses is out of scope by age. Asks what eating does to the pain and never what was eaten -- \"what did you eat?\" invites a 7-year-old to account for having caused their own pain, and is banned.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-010",
+      "traces_to": 4,
+      "q": {
+        "young": "Does your tummy get sore after you eat?",
+        "older": "Does the pain come on after meals?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-after-eating",
+      "why": "The onset form rather than the worsening form, which matters because StatPearls says the useful fact is \"the timing of pain after meals\" -- and because a child whose tummy is not hurting right now cannot answer whether eating makes it worse, but can answer whether it starts after food. Offered against o-009 for that reason. Fact deliberately NOT `eating-drinking`: that slug is general-unwell g-005 (\"Have you been able to drink anything today?\"), which reaches group `tummy` at every duration and would suppress this item outright.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-011",
+      "traces_to": 4,
+      "q": {
+        "young": "Do you feel full after a little food?",
+        "older": "Do you feel full after eating only a small amount?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-after-eating",
+      "why": "REVIEWER: this asks something different from o-009 and o-010 and is labelled with item 4's fact because item 4 is where the packet files it. It reaches the OTHER clause of item 4's citation -- AFP's functional dyspepsia \"postprandial fullness, early satiation\" and RCH's \"Bothersome postprandial fullness / Early satiety\" -- which is about fullness, not about pain. If it ships alongside o-009 or o-010 the shared slug means only one of them is ever asked, and the two answers are not interchangeable. Worded without any baseline comparison (\"a small amount\", never \"less than usual\") because a 4-7 year old cannot construct their own baseline.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-012",
+      "traces_to": 5,
+      "q": {
+        "young": "Does it hurt in the same place every time?",
+        "older": "Is the pain always in the same place?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-same-spot",
+      "why": "The one alarm feature that survives in mutilated form. NASPGHAN and AFP Table 4 both name \"persistent right upper or right lower quadrant pain\" and StatPearls contrasts \"localization in a specific quadrant\" against \"generalized pain or changing locations\" -- but the quadrant is never named to a child, because the body map is the only instrument for location. This asks only whether the spot is stable and the nurse does the mapping. Duration copied verbatim from meta.durations.exceptions.5: persistent is a claim about weeks.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-013",
+      "traces_to": 5,
+      "q": {
+        "young": "Is it the same spot as last time?",
+        "older": "When the pain comes back, is it in the same spot as last time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-same-spot",
+      "why": "The same question anchored to episodes rather than to \"always\", because decision 9 records that this item is naturally a two-way choice being shipped as a yes/no and loses the child who would answer \"sometimes\" -- and \"same as last time\" is a comparison a child can actually make, where \"always\" asks them to summarise weeks. Same polarity as o-012 throughout: yes means the spot is stable, never the reverse. `pain-same-spot` is coined rather than reusing limb/pain's `pain-moves-around`, whose polarity is inverted.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "assumes that this happened before"
+      }
+    },
+    {
+      "id": "o-014",
+      "traces_to": 5,
+      "q": {
+        "young": "Is it always the same part of your tummy?",
+        "older": "Has the pain stayed in one place the whole time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "pain-same-spot",
+      "why": "Third phrasing because this is the hardest item in the packet to word: the fact wanted is persistence of location, the word for it is banned, and StatPearls warns in the same breath that young children cannot localise at all -- which is why meta gives item 5 minAge 8. \"Stayed in one place\" is the closest plain-English rendering of `persistent` that does not name a region. A reviewer should check that \"the same part of your tummy\" does not read to a child as an invitation to name a region in words; if it does, prefer o-012.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "asked before"
+      }
+    },
+    {
+      "id": "o-015",
+      "traces_to": 6,
+      "q": {
+        "young": "Does food get stuck when you swallow?",
+        "older": "Does food feel like it gets stuck when you swallow?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "food-sticks",
+      "why": "RCH hands over the child-facing wording itself: its History glosses dysphagia as \"the sensation of food sticking, or moving slowly\", and per meta.preferredNote the question must be built from that gloss and never from the word dysphagia. AFP Table 4 and StatPearls both list it as an alarm finding. Fact is `food-sticks` and NOT `hurts-to-swallow` (throat/sore-throat s-001), which is odynophagia -- pain on swallowing -- and which RCH and StatPearls both list separately from dysphagia.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-016",
+      "traces_to": 6,
+      "q": {
+        "young": "Is it hard to swallow your food?",
+        "older": "Does your food feel like it goes down slowly?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "food-sticks",
+      "why": "The second half of RCH's own gloss -- \"or moving slowly down\" -- which o-015 drops. The young tier is the difficulty framing because \"gets stuck\" may be read literally by a 4-year-old as food that is still there; a reviewer should weigh that against the risk that \"hard to swallow\" pulls in sore throats, which is a different fact and a different packet.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-017",
+      "traces_to": 7,
+      "q": {
+        "young": "Does your tummy feel better after you poop?",
+        "older": "Does the pain get better after you poop?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "poop-changes-pain",
+      "why": "The first half of the Rome IV IBS criterion -- AFP's pain \"associated with defecation\", RCH's \"Pain related to defecation\" -- and the half that passes the dignity test. It names poop and is permitted because it asks what the PAIN does: no counting, no inspection, no apparatus, and a \"no\" costs the child nothing. The second half of the same sentence, change in frequency or form of stools, is item 25 and refused. US register per decision 2: poop, never poo or stool.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-018",
+      "traces_to": 7,
+      "q": {
+        "young": "Does pooping make your tummy stop hurting?",
+        "older": "Does the pain go away when you poop?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "poop-changes-pain",
+      "why": "Same criterion with pooping as the actor rather than as a time marker, which removes the \"after\" that a young child has to hold two events across. Wording checked line by line against the dignity ruling: it does not ask how often, does not ask about the night, does not ask the child to look at anything, and does not mention continence or apparatus.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "o-019",
+      "traces_to": 7,
+      "q": {
+        "young": "Does your tummy hurt when you need to poop?",
+        "older": "Does your tummy hurt more when you need to poop?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "poop-changes-pain",
+      "why": "REVIEWER: this is the relation without the relief. RCH's IBS row says \"Pain related to defecation\", which is broader than AFP's relief reading, so this candidate is inside item 7's citation but records a different thing from o-017 and o-018 -- pain that comes with the urge, not pain that lifts afterwards. Same fact slug because the packet gives item 7 only one; if a reviewer wants both facts recorded, that is a decision for the packet, not for a candidate. Still clean against the ceiling: no count, no inspection, no toilet trip.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "o-020",
+      "traces_to": 8,
+      "q": {
+        "young": "Does your head hurt too?",
+        "older": "Does your head hurt at the same time as your tummy?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "headache-with-tummy-pain",
+      "why": "ICHD-3 1.6.1.2's Comments instruct clinicians outright: \"In young children the presence of headache is often overlooked. A careful history of presence or absence of headache must be taken.\" AFP lists headache among the abdominal-migraine associated symptoms. Reached from the tummy side this is an item, where head/headache recorded the same sentence as an argument rather than a question. RCH's \"(or family)\" half is refused at item 26 -- family history is never the child's to report.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-021",
+      "traces_to": 8,
+      "q": {
+        "young": "Does your head hurt when your tummy hurts?",
+        "older": "Do you get a headache when the tummy pain comes?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "headache-with-tummy-pain",
+      "why": "The co-occurrence made explicit rather than left to \"too\", which o-020's young tier leans on and which a 4-year-old may read as \"does your head ever hurt\". The condition is never named: this is a question about two pains happening together and a reviewer should reject any rewrite that reaches for the diagnosis behind it. Weak provenance -- one ICHD-3 comment and one entry in a symptom list -- which is why item 8 ranks eighth of nine.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "o-022",
+      "traces_to": 9,
+      "q": {
+        "young": "Do you have sores in your mouth?",
+        "older": "Have you had sores inside your mouth?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "fact": "mouth-sores",
+      "why": "Weakest provenance in the packet and the first item to drop: Liu 2025 recorded oral ulcer in 7 of 224 organic against 0 of 347 functional (P = 0.001), and RCH's extraintestinal list for IBD names eyes, skin, joints and perianal but not the mouth, so the oral specificity rests on one retrospective single-centre cohort and seven children. Only one candidate offered for that reason. Says \"sores\" and never the clinical word, which is banned as a condition name. Fact `mouth-sores` is reused from the general surface question r-014, which is depth `surface` and unreachable from here.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    }
+  ]
+}

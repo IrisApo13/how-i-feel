@@ -1,0 +1,602 @@
+{
+  "packet": {
+    "id": "back-pain",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "candidates": [
+    {
+      "id": "b-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Does it wake you up at night?",
+        "older": "Does the discomfort wake you up at night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "night-pain",
+      "why": "Item 1: source 6's 'pain waking from sleep' and source 7's 'Nocturnal pain' as the concrete event the packet says a child remembers, presence only, no grading.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Does it hurt when you are in bed?",
+        "older": "Does your back hurt when you are lying in bed?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "night-pain",
+      "why": "Item 1: the second half of the item title, carrying source 2's 'Night pain' and source 4's night pain without the banned grading word 'unrelenting'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same ideas as prev"
+      }
+    },
+    {
+      "id": "b-003",
+      "traces_to": 2,
+      "q": {
+        "young": "Does it hurt when you are sitting quietly?",
+        "older": "Does it hurt even when you are resting and not moving?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-at-rest",
+      "why": "Item 2: source 2's 'pain at rest' and source 4's 'pain at rest', reworded around the banned word by naming the state (sitting quietly / resting) instead.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "bad wording"
+      }
+    },
+    {
+      "id": "b-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Does it hurt when you are not moving?",
+        "older": "Does the discomfort stay even when you are not moving around?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-at-rest",
+      "why": "Item 2: source 3's 'change with activity or rest' as its own atom, deliberately unfused from item 1 per decision 4, and phrased as the inverse of item 10.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-005",
+      "traces_to": 3,
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Have you been feeling hot or shivery?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "feels-feverish",
+      "why": "Item 3: the child's half of source 1's 'Fever' and source 4's 'Fever, chills' behind source 2's discitis warning; reuses the shared fact per decision 8, never a measured temperature.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-006",
+      "traces_to": 4,
+      "q": {
+        "young": "Has going to the bathroom been different today?",
+        "older": "Has going to the bathroom felt different since your back started hurting?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "bathroom-change",
+      "why": "Item 4: source 6's 'Change to urinary or bowel habit' asked as change rather than accident, in the app's existing 'bathroom' register, floored at 8 as judgement.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "werid wording"
+      }
+    },
+    {
+      "id": "b-007",
+      "traces_to": 4,
+      "q": {
+        "young": "Does it feel different when you need to pee?",
+        "older": "Does it feel different when you go to the bathroom?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "bathroom-change",
+      "why": "Item 4: source 4's 'difficulties urinating' reached through the tummy packet's 'pee' without naming incontinence, enuresis or fault; asks for difference, never what happened.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-008",
+      "traces_to": 5,
+      "q": {
+        "young": "Do your legs feel wobbly?",
+        "older": "Do your legs feel weak or wobbly when you stand up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "legs-weak",
+      "why": "Item 5: source 2's 'weakness' and source 4's 'leg weakness' in the packet's ruled vocabulary (wobbly/weak, never give way or buckle), symptom not examined deficit.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-009",
+      "traces_to": 5,
+      "q": {
+        "young": "Do your legs feel weak?",
+        "older": "Have your legs felt weak or wobbly lately?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "legs-weak",
+      "why": "Item 5: the child's half of source 1's 'motor disturbances of the extremities', with source 2's and source 4's grading adjectives stripped so it stays askable.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "b-010",
+      "traces_to": 6,
+      "q": {
+        "young": "Does your leg feel like it went to sleep?",
+        "older": "Do your legs ever feel fuzzy or tingly, like pins and needles?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "fuzzy-feeling",
+      "why": "Item 6: source 1's 'sensory disturbances' reached through the packet's ruled child words; young leans on 'gone to sleep', older uses tingly and pins because SENSATIONS.tingly proves 8-12s hold it.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-011",
+      "traces_to": 6,
+      "q": {
+        "young": "Does anywhere feel fuzzy or funny?",
+        "older": "Does your leg ever feel fuzzy or gone to sleep?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "fuzzy-feeling",
+      "why": "Item 6: same criterion asked as whether it happens rather than which adjective fits, avoiding the menu the packet warns turns the item into a vocabulary test.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same ideas as prev"
+      }
+    },
+    {
+      "id": "b-012",
+      "traces_to": 7,
+      "q": {
+        "young": "Does the discomfort go down your leg?",
+        "older": "Does the discomfort go down your back and into your leg?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-down-leg",
+      "why": "Item 7: source 1's 'Radicular pain' as one pain that moves, which the body map cannot record; uses 'goes down your leg', never radiates, shoots or the condition name.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "doesnt make sense"
+      }
+    },
+    {
+      "id": "b-013",
+      "traces_to": 7,
+      "q": {
+        "young": "Do you feel it in your leg too?",
+        "older": "Does the discomfort from your back go all the way down your leg?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "pain-down-leg",
+      "why": "Item 7: source 3's radiculopathy line, with source 4's 'bilateral' qualifier dropped so the question does not invite a child to report the shape of the question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-014",
+      "traces_to": 8,
+      "q": {
+        "young": "Is it hard to get moving in the morning?",
+        "older": "When you wake up, is it hard to get moving?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "yesterday",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "morning-stiff",
+      "why": "Item 8: source 2's 'Morning stiffness' and source 7's 'worse in morning' as a time pattern, presence only because source 4's 30-60 minutes cannot be timed by a child.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-015",
+      "traces_to": 8,
+      "q": {
+        "young": "Does your back feel tight when you wake up?",
+        "older": "Does your back feel hard to move when you first wake up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "yesterday",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "morning-stiff",
+      "why": "Item 8: source 3's 'inflammatory symptoms (morning stiffness)' phrased as hard to get moving rather than the older-tier-only SENSATIONS word 'stiff'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-016",
+      "traces_to": 9,
+      "q": {
+        "young": "Did you fall or lift something heavy?",
+        "older": "Did you have a fall, or lift something heavy?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "back-mechanism",
+      "why": "Item 9: re-sources the shipped back-fell, fall half from five sources and lifting half from source 1's Table 2, with source 2's 'significant' grading not carried.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-017",
+      "traces_to": 9,
+      "q": {
+        "young": "Did you hurt your back doing something?",
+        "older": "Did something happen to your back, like a fall or carrying something heavy?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "back-mechanism",
+      "why": "Item 9: source 3's 'trauma (acute macrotrauma, repetitive microtrauma... recent/remote)' as a plain event question, not duration-restricted because a remote fall still counts.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-018",
+      "traces_to": 10,
+      "q": {
+        "young": "Is it worse when you move around?",
+        "older": "Does your back hurt more when you are moving around?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-on-movement",
+      "why": "Item 10: re-sources back-worse-move from source 3's 'mechanical symptoms (worse during or after activity)'; new fact, never worse-on-exertion, which is the chest discriminator.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-019",
+      "traces_to": 10,
+      "q": {
+        "young": "Does moving make it hurt more?",
+        "older": "Does the discomfort get worse when you move around?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-on-movement",
+      "why": "Item 10: source 1's 'Onset of back pain associated with exercise' kept neutral because the same raw fact is reassuring in source 3 and alarming in source 1; no instruction to move.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-020",
+      "traces_to": 11,
+      "q": {
+        "young": "Is it worse when you sit down?",
+        "older": "Does your back hurt more when you have been sitting down?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "worse-when-sitting",
+      "why": "Item 11: re-sources back-worse-sit from source 1 Table 2's 'sitting' and source 3's aggravating factors; the packet records this as its weakest citation and ranks it last.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-021",
+      "traces_to": 12,
+      "q": {
+        "young": "Does it stop you from playing?",
+        "older": "Is it stopping you from doing things you normally do?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "Item 12: source 2's 'Interference with function e.g. school, play, sport' anchored on play and normal activity, because the packet bans school as the anchor in a hospital.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-022",
+      "traces_to": 12,
+      "q": {
+        "young": "Is it hard to do the things you like?",
+        "older": "Has it stopped you doing things you usually do at home?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "Item 12: source 3's 'current level of function of the child' and source 6's 'Functional limitations', with a home anchor offered against the packet's open worry that 'normally do' is vague at four.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "b-023",
+      "traces_to": 13,
+      "q": {
+        "young": "Do you play sports or dance?",
+        "older": "Do you do sports, dancing, or gymnastics most days?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "sport-activity",
+      "why": "Item 13: source 2's 'Competitively sporty / dancer' and source 1's evidence-graded 'Competitive sports', asked as what the child does and never as the cause of the pain.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "b-024",
+      "traces_to": 14,
+      "q": {
+        "young": "Is it hard to walk?",
+        "older": "Is it hard to walk around right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "limb-use",
+      "why": "Item 14: source 2's 'Gait disturbance' and source 6's 'inability to walk or weight bear', reusing limb-use per decision 8 and using the packet's prescribed phrasing over 'can you walk'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "neck-pain",
+  "group": "throat",
+  "groups": [
+    "throat",
+    "back"
+  ],
+  "depth": "inside",
+  "mechanism": null,
+  "packetRank": 60,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure",
+      "long-time"
+    ],
+    "exceptions": {
+      "3": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "7": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    6,
+    7,
+    8
+  ],
+  "itemRankNote": "Proposed, not yet confirmed by review. Decision 6. Item 1 (mechanism) leads because all three complaint guidelines make trauma the FIRST branch and route it away from this pathway entirely -- RCH key point \"If torticollis occurs in setting of trauma, manage as Cervical spine assessment\", NHSGGC's Warning box \"This guideline is not suitable for use if torticollis is present in the context of trauma\", IAEM's first History red flag \"Any history of trauma?\" -- and because NEITHER of this packet's groups declares a mechanism gate in GROUP_GATE, so this question is the app's only route to that split. Item 2 is the fact this packet exists to coin (decision 9). Item 4 (vomiting) is third on the strongest evidence in the packet: in source 2's multivariate model headache (OR 2.45) and vomiting (OR 3.63) were \"the only variables strongly characterized by the presence of an urgent condition\", and headache is a body-map region this packet must not duplicate, so vomiting is the only half of that finding the packet can carry. Item 3 (awkward position) is fourth despite naming the single commonest cause (source 2: postural 43.1%) because it is a reassurance question, not an escalation one. Items 5-8 rank by how unreachable the fact is from these two groups by any other candidate. NOTE the practical effect of packetRank 60: in group `throat` the round-robin gives `sore-throat` the first pick, so a 4-7 year old who taps only Neck receives this packet's items 1 and 2 and nothing else from it, and an 8-12 year old receives items 1, 2 and 4. CONFIRMED 2026-09-09 by iris, reviewed item by item against the shipped six and left unchanged. No longer \"proposed, not yet confirmed by review\".",
+  "minAge": {},
+  "minAgeNotes": {
+    "*": "JUDGEMENT, NOT A CITATION. No item carries an age floor and the empty object is a decision. One quantitative age finding was located and deliberately NOT converted into a floor: source 1 reports self-reported neck pain in 3471 of 10797 children aged 9-17 (32.1%) versus 1240 of 11633 aged 0-8 (10.7%). That looks like a reporting floor until the examination half is read beside it -- neck pain ON EXAMINATION was 2784 of 10797 (25.8%) versus 922 of 11633 (7.9%). Both halves move together by the same factor, so the finding is that younger children have less cervical pain after blunt trauma, not that they cannot report the pain they have. That is a PREVALENCE statement, and brief section 4 rules that a validity floor derived from prevalence is an invention. Item 6 (arm paraesthesia) is deliberately NOT floored, following back/pain's minAgeNotes for its own `fuzzy-feeling` item: flooring it at 8 would make it duplicate SENSATIONS.tingly exactly where it fires and vanish exactly where the app has no other route to the concept. The answer there is a tier-split WORDING, not a floor.",
+    "6": "Deliberately NOT floored. See the note above; carried from back/pain's ruling on the same concept."
+  },
+  "facts": {
+    "1": "neck-mechanism",
+    "2": "neck-worse-moving",
+    "3": "awkward-position",
+    "4": "vomiting",
+    "5": "light-hurts",
+    "6": "arms-fuzzy",
+    "7": "recent-illness",
+    "8": "blurry"
+  },
+  "factsNote": "JUDGEMENT, NOT A CITATION -- no source assigns facts; the reasoning is the bank's dedupe behaviour in `keyOf` and `bankQuestions`. COINED: `neck-worse-moving` (decision 9, the packet's central ruling -- NOT `neck-movement`, which is a meningism RESTRICTION screen carried by six candidates in four packets, and NOT `worse-on-movement`, which is back/pain's and whose own sidecar `doNotMerge` note already established that region-specific movement facts are kept apart; named to match head/headache's `head-worse-moving`, coined for the same reason); `neck-mechanism` (NOT `back-mechanism`, whose shipped wording is \"Did you fall or lift something heavy?\" -- lifting is a lumbar mechanism and appears in no neck source read, and `back-mechanism` is scoped groups:[\"back\"] so sharing it would reach no child who taps front Neck while letting back/pain's lifting wording suppress this one for a child who taps Back of neck); `awkward-position` (NOT `morning-stiff`, which is inflammatory morning stiffness in limb/pain and back/pain and is cited there to a 30-60 minute duration criterion those packets ban a child from timing; \"did you sleep in a funny position\" is a mechanism, not a stiffness pattern, and using the slug would attach this item to a criterion its sources do not state); `arms-fuzzy` (NOT `fuzzy-feeling`, which is back/pain's LEG paraesthesia and the cauda equina red flag -- a child who taps Neck and Lower back must not have one answer stand for both limbs, and back/pain wins the group `back` queue, so sharing would replace an arm question with a leg one; NOT `legs-weak`, wrong limb and wrong literature). REUSED: `vomiting` (item 4 -- proposed anyway, because the candidate that carries it in group `throat` is sore-throat item 11 at that packet's rank 10, far below any cap, so the fact is nominally present and never asked; the shared slug means a child who taps Neck and Tummy is asked once); `light-hurts` (item 5 -- proposed anyway, because NO candidate carrying `light-hurts` reaches group `throat` or group `back`: h-002/h-003 are head-only and gated mechanism `no-injury`, v-010 is tummy, y-009 is eyes, and skin/rash's `bright-light-hurts` is a different slug at depth `surface`. Same reasoning head/headache used to propose its own `blurry` item); `recent-illness` (item 7 -- reachable in principle from both groups only via skin-rash, which is cross-cutting and therefore never reached under a cap of 5-6 once two home-group packets are queued); `blurry` (item 8 -- carried by eyes and head candidates only, neither of which reaches these groups). REUSED BY REFERENCE, NO ITEM PROPOSED: `neck-movement` (decision 9); `hurts-to-swallow` (s-001 is sore-throat item 1 at rank 0 and is therefore the FIRST question every child in group `throat` is asked, including every child who taps Neck -- writing a second one would be collapsed by `keyOf` and would spend a slot to change nothing); `feels-feverish` (nine candidates carry it, including general-unwell's g-001 which serves every group, sore-throat's s-020 in `throat` and back/pain's b-005 in `back`); `cold-hands-feet` (g-? in general-unwell serves every group; r-019 in skin-rash); `rash` and `spots-spreading` (skin-rash, depth `surface`, and this packet is depth `inside`).",
+  "cite": {
+    "1": "RCH Acquired torticollis (\"History of trauma\"; key point \"If torticollis occurs in setting of trauma, manage as Cervical spine assessment\"); IAEM Torticollis (\"Any history of trauma? If yes, follow a C Spine guideline\"); NHSGGC 365 (\"If torticollis occurs with a history of trauma manage as a cervical spine injury\"); RCH Cervical spine assessment (\"Risk factors for significant CSI in children: Axial load to the head (diving, trampoline, falling from height); Forced neck hyperflexion ...\"); Lee 2025 (CCR \"Dangerous mechanism\", defined in its own footnote as \"fall from >=1 m/5 stairs; axial load to head; motor vehicle crash high speed (>100 km/h), rollover, ejection; motorized recreational vehicles; or bicycle collision\"); Raucci 2024 (traumatic cause in 415 of 1409, 29.5%). THRESHOLD DISAGREEMENT ON RECORD: CCR's fall threshold is >=1 m or 5 stairs and RCH's is >3 metres or twice the child's height. The item captures the raw fact and names no height and no mechanism; the nurse classifies.",
+    "2": "RCH Cervical spine assessment (\"assess the active range of movement of the neck by asking the child to slowly rotate their head to each side, place their chin to chest and look up ... Stop immediately if this causes pain or paraesthesia\" -- the CHILD'S half only; the manoeuvre itself is item 21 and is banned); IAEM Torticollis (\"attempt active ROM (i.e. ask the patient to move their neck)\"); NHSGGC 365 (\"Examine the neck - assess for mid line tenderness, active range of movement\"); Raucci 2024 (pain present in 1176 of 1409, 83.5%, the commonest symptom in the cohort). NOT cited to NICE NG240 or to any meningism source: this is a musculoskeletal provocation question and NG240's neck stiffness is a restriction screen. See decision 9.",
+    "3": "RCH Acquired torticollis (\"History of awkward position eg recent flight, different sleeping arrangement\"); NHSGGC 365 (\"Is there a history of an awkward head/neck posture for a prolonged period of time which could cause the symptoms? E.g. playing X-box.\"); Raucci 2024 (\"A postural cause was recognized in 607 (43.1%) of patients\"). The X-box example is the source's, not the question's -- see bannedPhrases.",
+    "4": "Raucci 2024 (multivariate model: vomiting OR 3.63, p 0.002, one of \"the only variables strongly characterized by the presence of an urgent condition\"); NICE NG240 table 1 (\"Vomiting\" among symptoms and signs that may indicate bacterial meningitis in babies, children and young people). The `long-time` band for this item additionally leans on Baklizi et al., which is CITED, NOT READ -- see the packet's Sources note.",
+    "5": "RCH Acquired torticollis (\"Neurological symptoms: headache, strabismus, diplopia, photophobia, ataxia\"); NHSGGC 365 (\"Any neurological symptoms e.g. headache, strabismus, diplopia, photophobia, ataxia, seizures?\"); NICE NG240 table 1 (\"Photophobia\", listed as \"Harder to identify in babies\").",
+    "6": "Lee 2025 (Canadian C-spine Rule high-risk criteria: \"Paresthesias in extremities\" -> radiology); RCH Cervical spine assessment (\"Persistent symptoms including pain, paraesthesia and/or weakness should prompt further assessment and consideration of imaging\"). The WEAKNESS half of RCH's phrase is NOT carried by this item -- see item 9 in the packet.",
+    "7": "IAEM Torticollis (\"Infective: Recent fever, recent diagnosis of tonsillitis/pharyngitis/URTI symptoms, irritability, dysphagia, drooling, odynophagia\"); RCH Acquired torticollis (\"Infective symptoms: fever, increased drooling, sore throat, dysphagia\"); NHSGGC 365 (\"Fever, increased drooling, sore throat and dysphagia suggest an infective cause\"); Raucci 2024 (\"An infective/inflammatory etiology involved 19.1% of patients\"). Only the RECENT-ILLNESS half of these bullets is carried; drooling is an observer sign and fever, sore throat and dysphagia are reused by reference.",
+    "8": "RCH Acquired torticollis (\"Neurological symptoms: ... strabismus, diplopia ...\"); NHSGGC 365 (\"Any neurological symptoms e.g. headache, strabismus, diplopia ...\"); IAEM Torticollis (\"CNS symptoms: Headache, strabismus, diplopia\"). STRABISMUS IS NOT CARRIED -- it is an examination finding and all three guidelines file it beside an ophthalmologic examination; only the child's half of diplopia is taken, under the existing `blurry` slug. The `long-time` band for this item leans on Baklizi et al., CITED, NOT READ.",
+    "9": "RCH Cervical spine assessment (\"Persistent symptoms including pain, paraesthesia and/or weakness\") -- PARTIAL, NOT PROPOSED for v1. NEXUS and the PECARN CSI rule both make motor findings an EXAMINATION item (\"No focal neurological deficits on motor or sensory examination\"; \"Focal neurologic deficit on examination\"), and in a 5-year-old \"do your arms feel weak?\" is not distinguishable from \"does it hurt to move them\", which item 2 already asks.",
+    "10": "Raucci 2024, reporting Starc et al.'s red flags (\"age below 5 years, second admission to the emergency department (ED) for the same issue, presence of fever, pharyngodynia or headache\") -- ALREADY COLLECTED, partially, by the reserved `happened-before` question and the repeat-report RECURRENCE path. Starc is CITED, NOT READ; nothing here depends on it alone.",
+    "11": "IAEM Torticollis (\"Time course: Uncomplicated acute muscular torticollis should resolve within 7 - 10 days\"; \"Cervical Spine XR: ... persistent symptoms (>=1 week)\"); RCH Acquired torticollis (same 7-10 days, same >=1 week imaging trigger); NHSGGC 365 (\"acute muscular torticollis should resolve within 7-10 days\"; \"seek review by GP if the torticollis persists for longer than 1 week\"); Lee 2025 (CCR low-risk criterion \"Delayed onset of neck pain\") -- ALREADY COLLECTED, imperfectly, by DURATIONS. No band resolves 7-10 days or >=1 week and no candidate may ask a child for a number of days.",
+    "12": "NICE NG240 table 1 (\"Neck stiffness, including more subtle discomfort or reluctance to move the neck\"; \"Neck stiffness is harder to identify in children and young people with cognitive impairment or communication difficulties\") -- ALREADY COLLECTED under fact `neck-movement`, carried by six candidates in four packets. Decision 9. No candidate is proposed."
+  },
+  "bannedPhrases": [
+    [
+      "\\b(meningitis|meningococc\\w*|meningism\\w*|sepsis|septic\\w*|abscess(es)?|retropharyngeal|parapharyngeal|grisel\\w*|tumou?rs?|cancer|leuk(a)?emia|lymphoma|discit\\w*|osteomyelit\\w*|arthrit\\w*|dyston\\w+|torticollis|wry ?neck|subluxation|dislocat\\w+|fractures?|whiplash|sprain)\\b",
+      "names a condition to the child. Every source in this packet is written in this register: RCH's cause list alone contains torticollis, atlantoaxial rotatory subluxation, spinal tumours and dystonic syndromes, and it sits directly in the generator's path"
+    ],
+    [
+      "\\b(cervical|c-?spine|spines?|spinal|vertebra\\w*|atlanto-?axial|odontoid|sternocleidomastoid|\\bscm\\b|ligaments?|nerves?|spinal cord|lymph ?nodes?|glands?|muscles?)\\b",
+      "names a structure. The child already tapped Neck or Back of neck, which is the only location word any question needs. Extends back/pain's spine/vertebra/disc/nerve ban to the cervical vocabulary it did not cover"
+    ],
+    [
+      "\\b(try (to )?(turn|move|twist|tilt|rotate|nod|bend|lift)|turn your head (and|to) (see|tell|check|find)|move your neck (and|to) (see|tell|check)|look (up|down|left|right|over your shoulder|behind you|at the ceiling) (and|to) (see|tell|check)|chin to (your )?chest|rotate|range of (movement|motion)|\\brom\\b|see how far|as far as you can|which way can you)\\b",
+      "THE ruling of this packet. RCH Cervical spine assessment obtains range of movement by \"asking the child to slowly rotate their head to each side, place their chin to chest and look up\", with the instruction \"Stop immediately if this causes pain or paraesthesia\" and the key point \"The goal is to minimise movement\". A tablet that tells a child to move their neck and report the result has performed an examination by proxy, with nobody present to stop it, on a child whose cervical spine has not been cleared. Every item must ask what the child has ALREADY noticed"
+    ],
+    [
+      "\\b(press|pressing|poke|poking|prod|push on|squeeze|pinch|feel your neck|touch your neck|palpate|tender to touch)\\b",
+      "never ask a child to press or feel their own neck. \"Midline tenderness\" and \"Is there a palpable neck mass?\" are the examination in all three complaint guidelines, and cervical node tenderness is the most frequently used predictor in the whole sore-throat literature. Carried and strengthened from throat/sore-throat"
+    ],
+    [
+      "\\b(lumps?|bumps? (on|in) your neck|swollen glands?|\\bmass\\b|swelling in your neck)\\b",
+      "the palpation ban's other half. A child asked whether they have a lump will press their neck to find out"
+    ],
+    [
+      "\\b(crooked|twisted|tilted|lopsided|leaning|bent to one side|to one side|head is (stuck|turned|twisted)|what does your (neck|head) look|in the mirror|straight)\\b",
+      "never ask a child what their neck or head LOOKS like. Head deviation is an observer sign (source 2 records it in 1179 of 1409 children and the direction of tilt in every one of them) and the neck is the second region of the body a child cannot see -- back/pain made the identical ruling for the back. Being told by a tablet that your head is twisted is also frightening before it is informative"
+    ],
+    [
+      "\\b(diving|dived|trampoline|rugby|scrum|horse|pony|clothesline|hanging|car crash|rollover|ejected|seat ?belt|thrown from|stairs|metres?|meters?|feet high|how high|how fast)\\b",
+      "never name a mechanism or a height in item 1. The two sources that give fall thresholds disagree -- CCR \"fall from >=1 m/5 stairs\", RCH \"Fall >3 metres (or twice the child's height)\" -- so any named height silently picks one rule, and naming diving, a trampoline or a horse prompts the answer. Same ruling as throat/sore-throat's swallowed object"
+    ],
+    [
+      "\\b(x-?rays?|\\bct\\b|\\bmri\\b|scans?|ultrasound|blood tests?|needles?|cannula|drip|collars?|neck brace|spinal precautions|admitted|stay (in )?overnight|operation|surgery)\\b",
+      "never name what happens next. Most of the trauma literature for this complaint IS an imaging decision rule, and a child told a tablet is deciding whether they get a scan has been given a reason to answer defensively"
+    ],
+    [
+      "\\b(ibuprofen|paracetamol|acetaminophen|nurofen|panadol|calpol|advil|tylenol|diazepam|valium|procyclidine|benztropine|metoclopramide|maxolon|antibiotics?|medicines?|medication|tablets?|pills?|painkillers?|pain killers?)\\b",
+      "IAEM and RCH both list drugs by name, and IAEM's history bullet \"has the patient received any medications associated with acute dystonic reactions such as metoclopramide?\" is a carer's or a record's answer. A child does not know what they were given, and \"is the medicine working?\" invites a child to justify asking for more"
+    ],
+    [
+      "\\b(wetting|wet yourself|accidents?|nappy|nappies|diapers?|soiled|toilet|\\bwee\\b|weeing|\\bpee\\b|peeing|\\bpoo\\b|\\bpoop\\b|bladder|bowels?|saddle|genitals?|private parts|your bottom|down there)\\b",
+      "the dignity refusal, written as a ban so that nothing downstream fills the gap. No source read for this packet names bladder or bowel change in a child with neck pain, so writing that question here would be an invented citation -- and it is also the single most shaming question available in this body area, asked of a child alone on a shared hospital tablet. back/pain asks it for its OWN group, with its own citation and an 8+ floor; it must not be imported here"
+    ],
+    [
+      "\\b(x-?box|playstation|nintendo|ipads?|tablets?|screens?|screen ?time|gaming|games? console|phones?|telly|\\btv\\b)\\b",
+      "NHSGGC's own worked example of a prolonged awkward posture is \"E.g. playing X-box\". It must not reach item 3: it is a brand, it is a blame surface (\"did you give yourself this?\"), and the child is answering the question ON a screen"
+    ],
+    [
+      "\\b(numb|numbness|paraesthes\\w+|paresthes\\w+|pins and needles|sensory|motor|deficits?|neurolog\\w*|focal|ataxi\\w+|nystagmus|strabismus|diplopia|squint|photophob\\w+|dysphagia|odynophagia|pharyngodynia|torticoll\\w*)\\b",
+      "clinical register for symptoms this packet does ask about in plain words. Decision 1 rules \"fuzzy or tingly\" (carried from back/pain), \"blurry\", \"seeing two of things\", \"bright lights\". \"Pins and needles\" is additionally ruled out for the young tier by back/pain decision 1 and cannot be caught tier-conditionally, so it is banned outright here"
+    ],
+    [
+      "\\b(unwell|poorly|off[- ]colou?r|irritable|irritability|drowsy|drowsiness|lethargic|listless\\w*|toxic|floppy|confus\\w+|conscious\\w*|altered mental|distress\\w*|behaviou?r)\\b",
+      "observers' words about a child, not the child's own. IAEM and RCH both list \"irritability\" and \"disproportionate irritability\" as history items and NG240's red flag combination ends in \"altered level of consciousness or cognition\". \"Unwell\" and \"off colour\" are also banned project-wide as British idiom"
+    ],
+    [
+      "\\bwhilst\\b|\\bhave you got\\b|\\btorch\\b|\\bplaster\\b|\\bcasualty\\b|\\ba&e\\b|\\btrousers\\b|\\bjumper\\b|\\bmum\\b|\\bmummy\\b|\\bpoorly\\b",
+      "British, Irish and Australian idiom. EVERY guideline source in this packet is one of the three -- RCH Cervical spine assessment writes \"Whilst minimising neck movement\", NHSGGC and IAEM write \"paediatric\" and dose ibuprofen, NICE writes \"unwell\". Decision 1 rules US English and \"do you have\""
+    ],
+    [
+      "\\b(fever\\w*|temperature|degrees|thermometer|celsius|centigrade|fahrenheit)\\b",
+      "never say fever and never ask a child for a number. Fever is the most repeated criterion in this literature (NG240's red flag combination, RCH and IAEM and NHSGGC's \"Infective symptoms\", Starc's red flags, source 2's 11.3%) and it is reused by reference, not asked here. Carried unchanged from four packets. Also catches RCH's \"greater than 45 degrees\" range-of-movement criterion"
+    ],
+    [
+      "\\b(rate|score|out of ten|out of 10|how bad|grade|scale of|severe|severity|significant|persistent|unrelenting|progressive|disproportionate)\\b",
+      "grading adjectives sitting inside the source criteria -- \"severe pain\", \"Persistent symptoms\", \"disproportionate irritability\", \"significant CSI\". Stripping them is what makes the criterion askable, and the FPS-R screen already has intensity"
+    ],
+    [
+      "\\b(hours?|minutes?|seconds?|how many (days|times|degrees)|how long has|count (them|how many)|how far can you|times a (day|week)|per (day|week|month))\\b",
+      "never ask a child to time, count or measure. The time criteria in this literature are \"7 - 10 days\" and \"persistent symptoms (>=1 week)\" and the movement criterion is \"greater than 45 degrees to each side\"; DURATIONS cannot resolve any of them and a child cannot measure an angle"
+    ],
+    [
+      "than usual|than normal|more than (you )?normally|like you normally|as usual|than you usually|consistently",
+      "tummy/vomiting decision 4: a 4-7 year old cannot construct their own baseline to compare against. Deliberately does NOT catch \"than before\", which several packets ship in accepted trajectory candidates"
+    ],
+    [
+      "\\b(mum|mom|mommy|dad|daddy|parents?|carers?|grown-?ups?|nurse|doctor|teacher) (said|say|says|told|tell|tells|thinks?|reckons?)\\b",
+      "never ask a child to relay what an adult said. The predisposing-conditions list (Down syndrome, Marfan, Morquio, Larsen, previous cervical spine surgery) and the dystonia medication history are records, not the child's, and a 6-year-old does not know them"
+    ],
+    [
+      "\\b(school|class|lessons?|\\bpe\\b|games lesson)\\b",
+      "carried verbatim from back/pain: the app runs in a hospital and the child may not have been at school for a week. Ask about the things they normally do"
+    ],
+    [
+      "\\b(look (up|down|left|right|sideways|over your shoulder|behind you|at the ceiling)|turn(ing)? your head|head (from )?side to side|chin to (your )?chest|nod your head|tilt your head)\\b",
+      "THE NAMED MANOEUVRES, added 2026-09-09 after stage 2 found the third bannedPhrases entry did not catch their bare forms. That entry only fires when a movement is followed by 'and see'/'to tell'/'to check', so 'Can you look up at the ceiling?' and 'Does it hurt to look up?' passed it cleanly -- and those are word-for-word the manoeuvre RCH Cervical spine assessment performs (\"asking the child to slowly rotate their head to each side, place their chin to chest and look up\"), on a neck the guideline says to minimise movement of, with the instruction \"Stop immediately if this causes pain or paraesthesia\". A tablet cannot stop. Naming the specific movement is what turns a history question into an instruction, so the specific movements are banned outright while generic wording is not: 'Does it hurt when you move your neck?' (item 2) is the intended form and passes. This also self-enforces decision 9 -- 'turn your head' is the meningism restriction question owned by four other packets, and this packet must not write it"
+    ],
+    [
+      "\\b(try|tried|trying)\\b[^.?]{0,20}\\b(turn|tilt|rotate|nod|twist|move|look|lift)\\w*\\b|\\b(turn|tilt|rotate|nod|twist|lift|drop)\\s+(your|the)\\s+(head|neck|chin)\\b|\\bcan you (look|turn|tilt|nod|twist|move your neck)\\b|\\bhow far can you\\b|\\bto look (up|down|left|right|over)\\b|\\blook (up|down|over your shoulder)\\b",
+      "instructs the child to perform a neck movement, or asks them to test their own range. This is the packet's central safety ruling: RCH obtains range of movement by asking the child to rotate AND stopping immediately if it causes pain, and a tablet cannot stop. Items must ask about movement ALREADY made -- habitual or past tense, never a request. Added 2026-09-09: the original regex required 'look up' to be followed by 'and see/tell/check', so 'Can you look up at the ceiling?', 'Does it hurt to look up?' and 'Try turning your head' all passed."
+    ],
+    [
+      "\\bvomit(ed|ing|s)?\\b|\\bemesis\\b|\\b(be|been|being|feel|feeling|felt)\\s+sick\\b",
+      "decision 1 rules 'threw up' as the only verb for this, so 'throw up' is REQUIRED and must not be banned -- only the clinical word and the British idiom are. 'Been sick' means vomiting in British English and coming down with something in American English; every guideline behind this packet is British, Irish or Australian, so the trap is live. Added 2026-09-09."
+    ],
+    [
+      "\\bsick(ly|ness)?\\b",
+      "same British/American collision -- 'do you feel sick?' means two different things on the two sides of the Atlantic and is unanswerable. Written to spare 'sickle' and similar. Added 2026-09-09; head/headache bans this family too."
+    ]
+  ],
+  "preferred": {},
+  "preferredNote": "No wording preferences can be expressed yet -- this packet has no candidates. Stage 2 must honour decision 1's register rulings (\"your neck\", \"funny position\", \"fuzzy or tingly\", \"bright lights\", \"threw up\", \"a cold or a sore throat\") and, above all, the third bannedPhrases entry: item 2 asks whether moving the neck hurts, in the past or habitual tense, and must never instruct the child to move it and report back.",
+  "gateNote": "Group `throat` is `internal` in GROUP_DEPTH and declares no entry in GROUP_GATE, so no depth and no mechanism question is ever asked for it and `bankQuestions` receives depth = null and mechanism = null. Group `back` declares a single depth gate and no mechanism gate. Consequences, all deliberate: (a) `depth: \"inside\"` is LOAD-BEARING in `back`, where it correctly keeps this packet off the surface branch that skin/rash serves, and INERT in `throat`, where depth == null makes the filter a no-op -- so unlike throat/sore-throat, which ruled `depth: null` because \"inside\" would have been an untestable claim, \"inside\" here is tested in one of the two groups and true in both. (b) `mechanism: null` is the honest encoding for the same reason in reverse: neither group has a mechanism gate, so any value would be asserted and never tested. The trauma/no-trauma split that all three complaint guidelines make FIRST is therefore carried as item 1, a question, rather than as a gate -- which is why item 1 leads. (c) KNOWN REACH FAILURE, in Still open: in group `back`, `back-pain` is the home-group packet with 14 accepted items and home-group queues are exhausted before cross-cutting ones, so under a cap of 5-6 this packet never fires for a child who taps only Back of neck. `groups: [\"throat\", \"back\"]` is therefore correct in intent and inert in practice today; it becomes live only if the cap grows or `back-pain`'s ordering changes.",
+  "packetRankNote": "60, i.e. this packet DEFERS to `throat/sore-throat` (no packetRank, defaults to 50). Group `throat` holds two body-map regions -- `throat` (\"Throat\", head detail view) and `neck` (\"Neck\", front body view) -- and `applies` has no region filter, so both packets fire for both taps and the round-robin gives the lower packetRank the first pick and the odd slot. Deferring is asymmetric in this packet's favour: sore-throat's first item is \"Does it hurt when you swallow?\", which is a good and necessary question for a child with NECK pain (odynophagia and dysphagia are the retropharyngeal-abscess and infective-torticollis signal in all three of this packet's complaint guidelines), whereas this packet's first item is \"Did you bump your neck?\", which is a poor first question for a child with a plain sore throat. Leading would help the smaller group and hurt the larger one; deferring costs the neck child one slot position and costs the throat child nothing. In group `back` this packet is not the home group, so packetRank only orders it against other cross-cutting packets and is not consequential there."
+}

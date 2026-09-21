@@ -1,0 +1,213 @@
+{
+  "id": "mouth-pain",
+  "group": "mouth",
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "3": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "5": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "9": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "10": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "minAge": {},
+  "cite": {
+    "1": "RCH dental trauma (1)",
+    "2": "RCH HSV gingivostomatitis (3); SOHO-5 / Tsakos (6); NHS toothache (4); NHS mouth ulcers (5)",
+    "3": "NHS toothache (4); RCH dental conditions - non traumatic (2); Slotwinska-Pawlaczyk (8)",
+    "4": "RCH dental trauma (1)",
+    "5": "NHS toothache (4); RCH dental conditions - non traumatic (2); Slotwinska-Pawlaczyk (8)",
+    "6": "RCH dental trauma (1)",
+    "7": "RCH dental trauma (1); RCH dental conditions - non traumatic (2)",
+    "8": "RCH dental trauma (1)",
+    "9": "NHS mouth ulcers (5); RCH HSV gingivostomatitis (3)",
+    "10": "RCH dental trauma (1); NHS toothache (4); NHS mouth ulcers (5)"
+  },
+  "judgement": {
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "minAge": "No age floors on any item. JUDGEMENT, NOT A CITATION - no source floors anything, and source 6's derivation at age 5 was deliberately not converted into a floor on item 2 (decision 7).",
+    "item24": "Item 24 (bite / even occlusion) is excluded even though source 1 marks it 'subjective or objective'. JUDGEMENT, NOT A CITATION (decision 4).",
+    "proposedForV1": "Items 8, 9 and 10 are askable and deliberately not proposed for v1 generation. JUDGEMENT, NOT A CITATION.",
+    "item1": "Item 1 is a stopgap for a missing GROUP_GATE.mouth = 'mechanism'. It must be dropped from the bank if that gate is ever added (decision 6). JUDGEMENT, NOT A CITATION.",
+    "item2fact": "Item 2 reuses the existing fact 'eating-drinking' (sore-throat s-011/s-012). Items 11-14 in the packet map onto 'hurts-to-swallow', 'hard-to-breathe' and 'feels-feverish' and are NOT re-asked here; see decision 10.",
+    "unenforceableCautions": "Decision 5's POSITIVE requirement -- item 7 candidates must anchor to the injury or to a change -- cannot be a phrase ban. The regression it guards against ('Do you have a loose tooth?') passes the screen cleanly, so item 7 needs a human eye at review."
+  },
+  "bannedPhrases": [
+    [
+      "abscess|cellulitis|caries|decay|avuls|luxation|trismus|gingivostomatitis|stomatitis|pulpitis|osteomyelitis|periapical|odontogenic|periorbital|submandibular|occlusion|ludwig|\\bulcer",
+      "names a diagnosis or a clinical term to the child"
+    ],
+    [
+      "molar|incisor|canine tooth|\\bcrown\\b|\\benamel\\b|\\bdentine\\b|\\bdentin\\b|\\bpulp\\b|gum ?line|\\broot\\b|\\bsocket\\b",
+      "decision 1: say 'tooth' or 'teeth'; never name a dental structure the child cannot see"
+    ],
+    [
+      "baby (tooth|teeth)|grown[- ]?up (tooth|teeth)|adult (tooth|teeth)|permanent (tooth|teeth)|primary (tooth|teeth)|big teeth",
+      "item 22: never ask a child to classify the tooth - it is the fact the whole management table forks on and a guess is worse than no answer"
+    ],
+    [
+      "wiggl|jiggl|wobble it|\\bpull\\b.{0,14}(tooth|teeth)|touch.{0,14}(tooth|teeth)|press.{0,14}(tooth|teeth)|push.{0,14}(tooth|teeth)|\\btap\\b.{0,14}(tooth|teeth)|bite down",
+      "never instruct a child to wiggle, pull, push, touch, press on or tap a tooth"
+    ],
+    [
+      "mirror|look (in|at|inside).{0,14}(mouth|teeth|gums)|open (your mouth )?(wide )?and (look|check|see)|can you see|count your teeth|check your (teeth|gums|mouth)",
+      "item 23: no self-examination of the mouth - two RCH guidelines tell a clinician to lift the lip because these findings are missed otherwise"
+    ],
+    [
+      "\\bhole\\b|rotten|\\bbad tooth\\b|cavit(y|ies)|black spot|brown spot|white spot",
+      "never ask a child to find or name decay in their own mouth"
+    ],
+    [
+      "\\bmilk\\b|saline|\\brinse|scrub|salt water|put it back|hold it by",
+      "item 4 and item 27: the app must never give first aid; milk, saline, rinsing and re-seating are an adult's actions and both NHS pages say children must not rinse with salt water"
+    ],
+    [
+      "\\bglands?\\b|\\blumps?\\b|\\b(a|any|the|some) bumps?\\b|\\bbumps\\b|feel (under|your).{0,12}(jaw|chin|neck)|press (on )?your (jaw|chin|neck)",
+      "item 25: never ask a child to feel under their own jaw or neck (narrowed to noun senses: the rule is about palpation, and the verb 'bump' is the most natural young-tier phrasing for item 1)"
+    ],
+    [
+      "eye socket|\\borbit\\b|jaw ?line",
+      "item 5: say 'near your eye' and 'under your chin'; never name the anatomy"
+    ],
+    [
+      "\\bA&E\\b|emergency room|\\b999\\b|\\b911\\b|ambulance|hospital|straight away",
+      "never use escalation or service language - source 4's red flags are written for an adult deciding where to drive"
+    ],
+    [
+      "who (did|hit|hurt)|did (someone|somebody|anyone)|on purpose|hurt you",
+      "safeguarding: item 1 asks whether something hit the mouth and stops there, never who, what or why"
+    ],
+    [
+      "chok|inhale|breathe(d)? it in|went down the wrong way",
+      "item 8 asks where the tooth went; the aspiration inference is the nurse's, and 'choking' is frightening"
+    ],
+    [
+      "wobbl",
+      "decision 1: British and Australian for 'loose'; say 'loose'"
+    ],
+    [
+      "fell out|falling out|fall out",
+      "decision 1: to a 6-12 year old this means the normal thing that happens to baby teeth; say 'came all the way out'"
+    ],
+    [
+      "\\bfracture|inflamed|swelled up|swollen up",
+      "decision 1: say 'broken or chipped' and 'puffy or swollen'"
+    ],
+    [
+      "blister|canker|vesicle|cold sore",
+      "decision 1: say 'sore spot in your mouth'"
+    ],
+    [
+      "poorly|off colour|off-colour",
+      "British idiom; say 'puffy' or 'swollen', or name the symptom"
+    ],
+    [
+      "have you got|haven'?t you got",
+      "British construction; say 'do you have'"
+    ],
+    [
+      "\\bsweets\\b",
+      "British; US English is 'candy' - and see the next ban, which rules out asking about it at all"
+    ],
+    [
+      "\\bcandy\\b|sugary|fizzy|\\bsoda\\b|brush(ing)? your teeth|\\bfloss",
+      "item 28: diet and brushing are the carer's answer, and asking a child in pain about them carries an implication of blame"
+    ],
+    [
+      "\\bsurgery\\b",
+      "British for the dentist's or doctor's office; in US English it means an operation and will frighten a child"
+    ],
+    [
+      "\\bbe sick\\b|being sick|sick up",
+      "UK 'sick' means vomit; say 'throw up'"
+    ],
+    [
+      "\\bfever\\b|temperature|degrees",
+      "child reports the sensation, the nurse measures - and source 2 says fever may be absent in this complaint"
+    ],
+    [
+      "extrusion|intrusion",
+      "condition-name ban: the existing rule catches 'luxation' but not these two"
+    ],
+    [
+      "you need to go|right now",
+      "escalation language -- the app collects, it does not tell a child what to do"
+    ],
+    [
+      "what hit you|how did it happen|what happened",
+      "the 'what' and 'why' halves of the safeguarding ban on item 1 -- the existing rule caught only the 'who' forms"
+    ],
+    [
+      "\\byellow\\b|\\bpink\\b",
+      "item 6: never give a child the colour cues that distinguish enamel, dentine and pulp"
+    ],
+    [
+      "put your hand|run your finger|feel along",
+      "palpation, in forms the existing rule's 'feel under your jaw' phrasing did not reach"
+    ]
+  ]
+}

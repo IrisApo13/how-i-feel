@@ -1,0 +1,466 @@
+{
+  "packet": {
+    "id": "head-injury",
+    "version": 5,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14
+    ]
+  },
+  "candidates": [
+    {
+      "id": "h-001",
+      "duration": "just-now",
+      "traces_to": 1,
+      "answers": "count",
+      "q": {
+        "young": "How many times have you thrown up?",
+        "older": "How many times have you vomited since you hit your head?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "chose yes/no phrasing (h-008) over a count; loses the CHALICE >=3 boundary, PECARN binary still backs it"
+      },
+      "fact": "vomiting"
+    },
+    {
+      "id": "h-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you remember bumping your head?",
+        "older": "Do you remember how it happened?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "merged: young tier kept, older tier taken from h-014 to match PECARN's definition"
+      }
+    },
+    {
+      "id": "h-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 6,
+      "answers": "text",
+      "q": {
+        "young": "What were you doing when you hurt it?",
+        "older": "What were you doing when you hurt your head?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "mechanism question is important; accepted pending a text or voice widget"
+      }
+    },
+    {
+      "id": "h-004",
+      "duration": "any",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is your head hurting more than before?",
+        "older": "Has your headache got worse since it happened?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "band-agnostic phrasing preferred over h-009"
+      },
+      "note": "wording is timeframe-free; band widened to any so the trajectory item covers few-days/long-time per packet decision 5"
+    },
+    {
+      "id": "h-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Did everything go dark for a bit?",
+        "older": "Did you lose consciousness?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "accepted at review"
+      }
+    },
+    {
+      "id": "h-006",
+      "duration": "this-morning",
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt really badly?",
+        "older": "Is the pain severe?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "screen: severity adjectives"
+      }
+    },
+    {
+      "id": "h-007",
+      "duration": "yesterday",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is your head hurting more than before?",
+        "older": "Is it worse than it was?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "screen: duplicate of h-004"
+      }
+    },
+    {
+      "id": "h-008",
+      "duration": "any",
+      "traces_to": 1,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you thrown up since you hurt your head?",
+        "older": "Have you vomited since you hurt your head?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "vomiting as yes/no; reworded to be duration-band agnostic"
+      },
+      "fact": "vomiting"
+    },
+    {
+      "id": "h-009",
+      "duration": "few-days",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it worse today than yesterday?",
+        "older": "Is your headache worse today than yesterday?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "assumes a day has passed; breaks in the just-now band"
+      }
+    },
+    {
+      "id": "h-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Did your body become jerky afterwards?",
+        "older": "Did any part of your body jerk or shake afterwards?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "kept with low confidence; flagged for clinical review - a child may not recall a seizure"
+      }
+    },
+    {
+      "id": "h-011",
+      "duration": "few-days",
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you have a seizure?",
+        "older": "Have you had a seizure since the injury?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "screen: names a seizure to the child"
+      }
+    },
+    {
+      "id": "h-012",
+      "duration": "long-time",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Has your head hurt for lots of days?",
+        "older": "Has the headache lasted more than a week?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "redundant - the duration screen already captures how long it has hurt"
+      }
+    },
+    {
+      "id": "h-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you feel sleepy or slow?",
+        "older": "Have you been unusually drowsy?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "child-reported sleepiness; traces to item 13, not the CHALICE criterion"
+      }
+    },
+    {
+      "id": "h-014",
+      "duration": "not-sure",
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you remember what happened?",
+        "older": "Do you remember how it happened?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "merged into h-002"
+      }
+    },
+    {
+      "id": "h-015",
+      "duration": "not-sure",
+      "traces_to": 1,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you thrown up and does your head hurt?",
+        "older": "Have you vomited and is your head sore?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "compound question; redundant with h-008"
+      },
+      "fact": "vomiting"
+    },
+    {
+      "id": "h-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 14,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you felt sick in your tummy?",
+        "older": "Have you felt like you might throw up?"
+      },
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "nausea is distinct from vomiting; older tier rephrased, now traces to new item 14; older tier reworded 2026-09-06 — \"might be sick\" reads as \"becoming ill\" in US English and lost the nausea criterion"
+      }
+    },
+    {
+      "id": "h-017",
+      "duration": "not-sure",
+      "traces_to": 1,
+      "answers": "yesno",
+      "q": {
+        "young": "Since the moment when you hurt your head, have you been feeling sick at all?",
+        "older": "Have you felt sick since the injury?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "redundant with h-008, and 15 words for the young tier"
+      },
+      "fact": "vomiting"
+    },
+    {
+      "id": "h-018",
+      "duration": "not-sure",
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt now?",
+        "older": "Is your head hurting at the moment?"
+      },
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "redundant - the intensity screen already captured head pain severity"
+      }
+    },
+    {
+      "id": "f-016",
+      "duration": "any",
+      "traces_to": 6,
+      "answers": "count",
+      "q": {
+        "young": "If you fell down stairs, how many steps?",
+        "older": "If you fell down stairs, how many steps did you fall?"
+      },
+      "why": "Stairs are the one height a child can count, and CATCH's five-stair criterion is stated in steps rather than metres.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "step count is the child-answerable proxy for CATCH's \"5 stairs\" threshold",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "approved from the cold-run batch"
+      }
+    },
+    {
+      "id": "f-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Did a grown-up say you would not wake up?",
+        "older": "Did anyone tell you that you were not awake or not answering for a moment?"
+      },
+      "why": "Item 5 is partial and CHALICE requires it witnessed, so the question asks what the child was told rather than treating their own account as fact.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "routes LOC through a witness, which is what CHALICE actually requires",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "approved from the cold-run batch"
+      }
+    },
+    {
+      "id": "f-008",
+      "duration": "any",
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt too much to play?",
+        "older": "Is your headache stopping you doing things you would normally do?"
+      },
+      "why": "A functional proxy for item 3 that avoids asking a child to rate a severity word; include only if the reviewer decides not to derive item 3 from the FPS-R screen.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "functional interference instead of severity - satisfies decision 3",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "approved from the cold-run batch"
+      }
+    },
+    {
+      "id": "f-010",
+      "duration": "any",
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Is there a bit you cannot remember?",
+        "older": "Is there a part of what happened that you cannot remember at all?"
+      },
+      "why": "Catches amnesia the child has noticed themselves without using the banned blackout phrasing or asking for a duration.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "closer to PECARN's 'inability to recall the entire event' than h-002",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "approved from the cold-run batch"
+      }
+    },
+    {
+      "id": "f-015",
+      "duration": "any",
+      "traces_to": 6,
+      "answers": "text",
+      "q": {
+        "young": "Did you fall off something? What was it?",
+        "older": "If you fell, what did you fall from? For example the top bunk, a wall, or some stairs."
+      },
+      "why": "The three fall-height thresholds disagree, so the child names the object and the nurse maps it to whichever rule they use.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "implements the fall-height decision with concrete examples",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-06",
+        "reason": "two questions in one (fails the screen); item 6 is already served by h-003, which dedupes ahead of it, so nothing is lost"
+      }
+    },
+    {
+      "id": "f-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Was it hard to wake up this morning?",
+        "older": "Was it harder than usual to wake up this morning?"
+      },
+      "why": "A concrete moment the child can recall, which reports the same item 13 sleepiness without asking them to monitor their own drowsiness now.",
+      "origin": "cold-run subagent, 2026-08-30",
+      "note": "asks something the MOODS \"Tired\" answer does not",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-08-30",
+        "reason": "approved from the cold-run batch"
+      }
+    }
+  ]
+}

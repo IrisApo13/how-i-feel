@@ -1,0 +1,198 @@
+{
+  "id": "headache",
+  "group": "head",
+  "groups": [
+    "head"
+  ],
+  "depth": "inside",
+  "mechanism": "no-injury",
+  "packetRank": 50,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "long-time",
+      "not-sure"
+    ],
+    "exceptions": {
+      "3": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "9": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    3,
+    2,
+    12,
+    8,
+    6,
+    5,
+    4,
+    7,
+    9
+  ],
+  "itemRankNote": "Proposed, not yet confirmed by review. Decision 4. With the young cap of five sourced questions spent across every group the child tapped, a head-only 6-year-old receives items 1, 3, 2, 5 and 4 and nothing else, so this ordering decides what a child is actually asked. Light leads because it is the only item both literatures support independently (ICHD-3 criterion D and RCH's 'Signs of meningism (photophobia, neck stiffness)'), because source 12 supplies validated child wording for it, and because it is the question `FOLLOW_UPS.head` already ships -- ranking it below the cutoff would be a visible regression. Item 12 added 2026-09-08 at the user's request, RANKED LAST and deliberately so. The packet argued against proposing it because ICHD-3 says unilateral pain \"usually emerges in late adolescence\", so laterality does not discriminate migraine from tension-type at 4-12. That argument stands and is why it is last. It is included anyway on this project's existing principle -- established for the head-injury fall-height thresholds -- that the app captures the raw fact and lets the nurse classify. The asymmetry worth knowing: tension-type is bilateral BY DEFINITION, so \"one side\" points toward migraine, while \"both sides\" discriminates nothing. It is a one-directional test. REORDERED 2026-09-08 by iris, who chose the top six directly: 1, 3, 2, 12, 8, 6. Six because that is the 8+ cap; under-8s get the first five. This promotes item 8 (worse on coughing/sneezing/bending, the classic raised-ICP sign) from 7th, where it never shipped, and item 12 (laterality) from 10th. It drops item 5 (blurry) and item 4 (worse on movement) out of the shipped set -- see the cost note below. The earlier ordering was \"Proposed, not yet confirmed by review\"; this one is the review.",
+  "minAge": {},
+  "minAgeNotes": {
+    "*": "JUDGEMENT, NOT A CITATION. No item in this packet carries an age floor, and the empty object is a decision rather than an omission. Two floors were considered and rejected. (1) A CAPABILITY floor of 6 on items 1 and 6, from ICHD-3's 'In young children, photophobia and phonophobia may be inferred from their behaviour' -- rejected because ICHD-3 gives no age for 'young children', so any number would be invented, and because it would strip 4- and 5-year-olds of the only follow-up question group `head` currently ships. Handled instead by decision 6, a WORDING rule: the young-tier wording of items 1 and 6 must name a thing the child could not do (source 10's 'inability to watch TV or play on the computer or on electronic games'), not a judgement about light or sound. (2) A VALIDITY floor of 7 across the characterisation items, from source 12 (Kellier et al.) enrolling ages 7-17 -- rejected under brief section 4, because those same items are plain history in NICE NG127 section 1.21, which is written for children UNDER 12 and sets no floor at all. A validity floor on an item that is also plain history in a complaint guideline setting no floor is an invention, not a citation."
+  },
+  "cite": {
+    "1": "ICHD-3 1.1 criterion D; RCH Headache (migraine associated symptoms, and exam red flag \"Signs of meningism (photophobia, neck stiffness)\"); Kim 2022 Table 2 D.2; Kellier 2023 (\"Has light bothered you today?\", OR 4.1)",
+    "2": "NICE NG127 1.21.1 (\"headache associated with vomiting\"); RCH Headache (\"Associated vomiting without another clear cause\"); HeadSmart 5-11 column; ICHD-3 1.1 criterion D; Raucci 2019 Table 6; Kellier 2023",
+    "3": "NICE NG127 1.21.1 (\"headache that wakes them at night\"; \"headache that is present on awakening in the morning\"); RCH Headache (\"Early morning\"; \"Wakes the child from sleep\"); Raucci 2019 Table 6; Kim 2022 Table 3. DISAGREEMENT ON RECORD: Manoyana 2022 tested this feature and found no association (p = 0.52); the item is kept on the guidelines and must never be described as predictive.",
+    "4": "ICHD-3 1.1 criterion C4; ICHD-3 2.1 (the negative); RCH Headache (\"Effect on activities\" row); Kim 2022 Table 2 C.4; Kellier 2023 (\"Did your head hurt more when you moved around or played today?\")",
+    "5": "HeadSmart 5-11 column (\"Blurred or double vision/loss of vision\"). NOT Manoyana 2022 -- its OR 19.9 finding is an EXAMINATION finding (abnormal ocular movements, squint, pupillary responses) and may be cited for why the fact matters, never for the question.",
+    "6": "ICHD-3 1.1 criterion D; ICHD-3 2.1; RCH Headache (migraine associated symptoms); Kim 2022 Table 2 D.2; Kellier 2023 (\"Has sound bothered you today?\", OR 7.5)",
+    "7": "NICE NG127 1.21.1 (\"headache that progressively worsens\"); RCH Headache (\"Significant change in an established headache pattern or progressive worsening\", and the \"Chronic progressive\" pattern row); Raucci 2019 Table 6",
+    "8": "NICE NG127 1.21.1 (\"headache triggered or aggravated by coughing, sneezing or bending down\"); RCH Headache (\"Triggered or aggravated by coughing, sneezing or positional changes\"); Raucci 2019 Table 6 (\"Worsening of pain with cough or Valsalva maneuver\")",
+    "9": "NICE NG127 1.21.5 (\"affecting their school life, social life or family activities\"); Raucci 2019 Table 7 (\"Impairment of daily routine\"; \"Impairment of quality of life\"); ICHD-3 1.1 criterion C4 second half",
+    "10": "ICHD-3 1.1 criterion C2; ICHD-3 2.1; RCH Headache (\"Pain quality\" row); Kim 2022 Table 2 C.3 -- ALREADY COLLECTED by SENSATIONS.throbbing and SENSATIONS.squeezing; no candidate should be written",
+    "11": "ICHD-3 1.1 criterion C3; RCH Headache (\"Pain intensity\" row); Kellier 2023 (pain severity OR 5.7) -- ALREADY COLLECTED by the FPS-R screen, and severity adjectives are banned universally",
+    "12": "ICHD-3 1.1 criterion C1 *\"unilateral location\"* and its pediatric modification (*\"more often bilateral than is the case in adults\"*, *\"usually frontotemporal\"*); RCH Headache -- \"Pain location\" row, migraine *\"Unilateral or bilateral\"* vs tension-type *\"Bilateral\"*; Kellier 2023 -- validated child wording *\"Has your head hurt on one side or both sides today?\"*",
+    "13": "ICHD-3 1.1 criterion B and the 2-72h pediatric modification; ICHD-3 2.1; Kim 2022 Table 2 B; RCH Headache (\"Duration\" row); Manoyana 2022 (\"Acute onset (<3 months)\", OR 5.24) -- ALREADY COLLECTED, imperfectly, by DURATIONS; no threshold in the literature is reachable and no candidate may ask for hours or minutes",
+    "14": "ICHD-3 1.1 criterion D; RCH Headache; Kim 2022 Table 2 D.1 -- ALREADY COLLECTED by SENSATIONS.queasy",
+    "15": "HeadSmart 5-11 column (\"Balance/co-ordination/walking problems\"); Kim 2022 Table 2 D.1 (\"dizziness\"); NICE NG127 1.21.1 (\"ataxia\") -- ALREADY COLLECTED by SENSATIONS.dizzy and by general-unwell item 13 (fact `limb-use`); the ataxia half is examination",
+    "16": "NICE NG127 1.21.1 (\"headache with fever and features of meningism\"); Raucci 2019 Table 6; Kim 2022 Table 3 -- ALREADY COLLECTED under fact `feels-feverish`, carried by general-unwell item 1, whose groups include `head`",
+    "17": "NICE NG127 1.21.1 (\"features of meningism\"); RCH Headache exam red flag (\"Signs of meningism (photophobia, neck stiffness)\"); Manoyana 2022 (meningism, p<0.01) -- ALREADY COLLECTED under fact `neck-movement`, carried by general-unwell item 11, throat/sore-throat, skin/rash and tummy/vomiting. See decision 10.",
+    "18": "ICHD-3 1.1 criterion A (\"At least five attacks\"); ICHD-3 2.1 (\"At least 10 episodes ... <1 day/month\"); Raucci 2019 Table 7 (\"Frequency\") -- ALREADY COLLECTED, partially, by `happened-before` and the repeat-report RECURRENCE path; no count may be asked",
+    "19": "RCH Headache (\"Chronic non-progressive -> Tension-type headache, Anxiety, depression, Somatisation\"; \"Headache may also be a manifestation of underlying psychosocial issues\") -- ALREADY COLLECTED by MOODS, which asks the child's STATE and never its CAUSE; see the dignity ruling",
+    "21": "NICE NG127 1.21.4 (\"refer children if headaches are consistently worsened by upright posture and relieved by lying down\") -- NOT PROPOSED for v1; \"consistently\" is a baseline construction and HELPS already ships \"Lie down and rest\" and \"A quiet dark room\""
+  },
+  "bannedPhrases": [
+    [
+      "\\b(migraines?|migrainous|tension[- ]?type|cluster headache|aura|auras)\\b",
+      "names a diagnosis to the child. Kellier 2023's own daily question was 'Have you had a migraine today?' and it must NOT be copied: its cohort had already been given that diagnosis by a neurologist, and this app names no condition to anyone"
+    ],
+    [
+      "\\b(tumou?rs?|cancer|malignan\\w+|meningitis|encephalitis|abscess|hydrocephalus|stroke|h(a)?emorrhage|aneurysm|intracranial|\\bicp\\b|papill?oedema|papilledema|shunt|hypertension|meningism\\w*|meningismus)\\b",
+      "names a condition or a structure to the child. RCH's secondary-cause table and Raucci's Table 6 are written entirely in this register and sit directly in the generator's path"
+    ],
+    [
+      "\\b(brains?|skulls?|nerves?|neuro\\w*|cranial|cranium|cerebral)\\b",
+      "a child told a tablet is asking about their brain has been given a reason to be frightened before they answer, and a frightened answer is not a fact. Extends head-injury's 'concussion|fracture|brain|skull' ban rather than re-opening it"
+    ],
+    [
+      "\\b(photophobia|phonophobia|osmophobia|photophobic|phonophobic|cephalalgia|prodrom\\w+|premonitory|valsalva|ataxi\\w+|nystagmus|dysarthri\\w+|fundoscop\\w+|diplopia|scotoma|paraesthes\\w+|paresthes\\w+)\\b",
+      "clinical register for a symptom. Three of this packet's sources use these words as their default vocabulary; decision 1 rules 'bright lights', 'loud sounds', 'blurry', 'dizzy'"
+    ],
+    [
+      "\\b(unilateral|bilateral|occipital|frontal|temporal|frontotemporal|pulsatile|pulsating|non-?pulsating|periumbilical|localis\\w+|localiz\\w+)\\b",
+      "anatomical or classificatory words for location and quality. The body map already has location (including a `back-head` region) and SENSATIONS ships 'Thump thump' and 'Tight squeeze' -- items 10 and 12"
+    ],
+    [
+      "\\b(press|pressing|squeez\\w+ your head|poke|poking|prod|push on your head|pinch\\w*|cough (now|and see)|try (coughing|bending)|bend (over|down) and (see|tell)|hold your breath|strain(ing)?|blow hard)\\b",
+      "never ask a child to perform, provoke or report an examination. Raucci's 'Valsalva maneuver' is a manoeuvre a clinician asks a patient to perform; item 8 asks what the child has ALREADY noticed and must never ask them to find out"
+    ],
+    [
+      "\\b(cover (one|your) (eye|eyes)|close one eye|look at the (light|lamp|torch|screen|ceiling)|stare at|shine|follow my finger|mirror)\\b",
+      "item 25: never ask a child to test their own eyes or provoke their own photophobia. Squint, failure of upward gaze and pupillary responses are examination findings and item 5 takes only the child's half (is anything blurry)"
+    ],
+    [
+      "\\b(vomit\\w*|emesis|h(a)?ematemesis|regurgitat\\w+|puk\\w+|barf\\w+|spew\\w+|chunder|hurl(ing|ed)?|boke)\\b",
+      "'throw up' is the only permitted verb -- tummy/vomiting decision 1, and vocab.js already ships 'Did you throw up?'. Enumerating alternatives is not enough, so the clinical and slang registers are both banned as families"
+    ],
+    [
+      "\\bsick\\w*\\b",
+      "banned outright in every form. Kellier 2023's own wording is 'felt sick to your stomach' and it must not be copied: 'being sick' means vomiting in British English and coming down with something in American English, and the ambiguity shipped in this app for weeks"
+    ],
+    [
+      "\\b(nausea|nauseous|nauseated|queasy)\\b",
+      "item 14: clinical register, and the sensation screen already ships SENSATIONS.queasy as 'Yucky tummy' at depth inside, which is this packet's depth"
+    ],
+    [
+      "\\b(stomach|abdomen|abdominal|belly|gut|tum)\\b",
+      "tummy/acute-pain decision 1 rules 'your tummy' and nothing else. Kellier's 'sick to your stomach' would otherwise reach a generator through this packet's own quoted table"
+    ],
+    [
+      "\\b(fever\\w*|pyrexia|temperature|degrees|thermometer|celsius|centigrade|fahrenheit)\\b",
+      "item 16: never say fever and never ask a child for a number. The nurse holds the thermometer; carried unchanged from three packets"
+    ],
+    [
+      "\\b(unwell|poorly|off[- ]colou?r|lethargic|lethargy|listless\\w*|floppy|drowsy|drowsiness|irritable|irritability|confus\\w+|conscious\\w*|behaviou?r|personality|regression)\\b",
+      "item 24: observers' words about a child, not the child's own. Manoyana states the exclusion itself -- these 'depend greatly on the perception of the parents'. 'Unwell' and 'off colour' are also banned project-wide as British idiom, and NICE and RCH write in exactly this register"
+    ],
+    [
+      "\\b(seizures?|convuls\\w+|fits?|epilep\\w+|jerk\\w+|shak(e|ing) all over)\\b",
+      "item 23: never name a seizure to the child in any register. 'Fits' is HeadSmart's word for it and is also British. Carried from head-injury's ban, and a child who has had one may have no memory of it"
+    ],
+    [
+      "\\b(scans?|\\bct\\b|\\bmri\\b|x-?rays?|lumbar puncture|spinal tap|blood tests?|needles?|drip|\\biv\\b|cannula|admitted|stay (in )?overnight|operation|surgery)\\b",
+      "item 35: never name what happens next. Manoyana's entire subject is which children get scanned; telling a child that is what the question is for would change the answer"
+    ],
+    [
+      "\\b(paracetamol|acetaminophen|ibuprofen|nurofen|panadol|advil|tylenol|triptans?|rizatriptan|sumatriptan|ondansetron|chlorpromazine|prochlorperazine|analgesi\\w+|painkillers?|pain killers?|tablets?|pills?|medicines?|medication)\\b",
+      "item 32: 'have you been taking too much medicine?' is an accusation delivered by a tablet, the counting is per month, and a child does not know what they were given. HELPS already lets a child ask for 'My own medicine' without being interrogated"
+    ],
+    [
+      "\\b(bull(y|ies|ied|ying)|teas(e|ed|ing)|picked on|left out|stress\\w*|argu\\w+|fight(ing)? at home|shouting at home|home life|divorce|separat\\w+ at home|learning (problem|difficult|disab)\\w*|grades|falling behind)\\b",
+      "the dignity ruling. This ban deliberately OVERRIDES a direct instruction in NICE NG127 1.21.6 to 'ask the child ... about specific learning problems, bullying at school and stress in the family', and Raucci's 'household and family dynamics ... should also be evaluated'. A tablet cannot respond to a disclosure, a 'no' from a bullied child is uninterpretable, the tablet is shared and the waiting room is public, and safeguarding policy is the instrument. MOODS collects the child's STATE and never its CAUSE. Note it does NOT catch bare 'school', which item 9 needs"
+    ],
+    [
+      "\\b(pregnan\\w+|periods?|menstru\\w+|sexual\\w*|\\bsex\\b|alcohol|beer|wine|drugs?|smok\\w+|vap\\w+|cannabis|weed\\b|caffeine|coffee|energy drinks?)\\b",
+      "item 34: out of scope by age and refused on principle. Raucci says a HEADSS screen (home, education, alcohol, drugs, smoking, sex) 'should be performed in all'; the app stops at 12 and a screen that asks an unsupervised child on a shared hospital tablet about drugs or sexual activity is a safeguarding failure before it is a clinical one"
+    ],
+    [
+      "\\b(trigger\\w*|skipp?(ed|ing)? +(a +|your +|any +)?(meal|meals|lunch|breakfast|dinner|tea)|miss(ed|ing)? +(a +|your +|any +)?(meal|meals|lunch|breakfast|dinner)|chocolate|\\bmsg\\b|sweetener|sleep hygiene|slept badly|bad night'?s sleep|too much screen|screen time)\\b",
+      "item 30: trigger identification is management, not assessment, and it belongs to RCH's treatment section. It is also a blame surface -- 'did you skip lunch?' invites a 7-year-old to account for having caused their own headache"
+    ],
+    [
+      "than usual|than normal|more than (you )?normally|like you normally|as usual|than you usually|consistently",
+      "tummy/vomiting decision 4: a 4-7 year old cannot construct their own baseline to compare against. Deliberately does NOT catch 'than before', which head-injury, limb-injury and tummy/acute-pain all ship in accepted trajectory candidates -- a comparison against a remembered moment is a different task. 'Consistently' is banned because NG127 1.21.4's postural criterion is worded with it (item 21)"
+    ],
+    [
+      "\\b(worst( ever)?|first or worst|thunderclap|ever had|in your life)\\b",
+      "item 27: 'first or worst ever' asks a child to rank this headache against every headache of their life. The 'severe' half of RCH's 'Sudden onset and severe' is already rejected universally by screen.mjs"
+    ],
+    [
+      "\\b(rate|score|out of ten|out of 10|how bad|grade|scale of)\\b",
+      "item 11: never ask a child to rate or grade anything in words. The FPS-R screen has intensity, and Kellier's 0-10 numeric severity is the same instrument the app already renders as faces"
+    ],
+    [
+      "\\b(hours?|minutes?|how long has|how many (days|times) (a|per|each) (day|week|month|year)|per (week|month|year)|every (week|month)|diary|headache app|write (it|this|the number) down|count them|exact number)\\b",
+      "items 13 and 18: no threshold in this literature is reachable. ICHD-3's counts are per month and per year (five attacks, ten episodes, <1 day/month), its durations are in hours (2, 4, 30 min, 72), and Kellier asked its 7-17 year olds for a number of hours. This app must not. RCH recommends a headache diary; that is a management tool for a diagnosed child"
+    ],
+    [
+      "\\b(head circumference|centiles?|blood pressure|\\bbp\\b|pulse|heart ?rate|bradycardia|tachycardia)\\b",
+      "items 25 and 26: measurements. NG127 1.21.4 tells clinicians to measure blood pressure against age-and-height-adjusted reference ranges for all children with recurrent headache; that is a cuff, not a question"
+    ],
+    [
+      "\\b(mum|mummy|mom|mommy|dad|daddy|parents?|carers?|grown-?ups?|nurse|doctor|teacher) (said|say|says|told|tell|tells|thinks?|reckons?)\\b",
+      "items 24 and 28: never ask a child to relay what an adult said. Family history of migraine and every observer red flag are the carer's report and belong on the carer's surface"
+    ],
+    [
+      "\\bhave you got\\b|\\bhaven'?t you got\\b|\\bwhilst\\b|\\b(wee|weed|weeing)\\b|\\bnappy|nappies\\b|\\btorch\\b|\\bplaster\\b|\\bcasualty\\b|\\ba&e\\b|\\bpoorly\\b",
+      "British and Australian idiom, banned project-wide and re-banned here because EVERY guideline source in this packet is British or Australian -- RCH writes 'haemorrhage' and 'paracetamol', NICE writes 'unwell', HeadSmart writes 'fits'. Decision 1 rules 'do you have'"
+    ]
+  ],
+  "preferred": {},
+  "preferredNote": "No wording preferences can be expressed yet -- this packet has no candidates. Stage 2 must honour decision 6, which is a wording rule and not an age floor: the YOUNG-tier wording of items 1 and 6 must name a thing the child could not do (source 10, Table 2: 'Sensitivity to light and sounds as indicated by inability to watch TV or play on the computer or on electronic games'), because ICHD-3 states that 'In young children, photophobia and phonophobia may be inferred from their behaviour'. The OLDER tier may ask about the sensation directly, in Kellier 2023's words ('Has light bothered you today?', 'Has sound bothered you today?').",
+  "facts": {
+    "1": "light-hurts",
+    "2": "vomiting",
+    "3": "morning-headache",
+    "4": "head-worse-moving",
+    "5": "blurry",
+    "6": "sound-hurts",
+    "7": null,
+    "8": "head-worse-coughing",
+    "9": "stopping-normal-things",
+    "12": "head-side"
+  },
+  "factsNote": "JUDGEMENT, NOT A CITATION -- no source assigns facts; the reasoning is the bank's dedupe behaviour in `keyOf` and `bankQuestions`. REUSED: `light-hurts` (decision 8 -- it is the id of the head group's hand-written FOLLOW_UPS entry and the fact eyes/complaint item 5 and tummy/vomiting item 4 already carry; `bright-light-hurts` in skin/rash names the same clinical fact but is unreachable from here because skin/rash is depth `surface`, and merging the two slugs is a bank-wide change flagged for review); `vomiting`; `blurry` (eyes/complaint item 4 -- reused as a slug, but this packet proposes its own item because eyes/complaint serves group `eyes` only); `stopping-normal-things` (back/pain item 12, region-neutral by construction). COINED: `morning-headache` (decision 7 -- NOT `morning-vomiting`, which establishes when the THROWING UP happens; the raised-ICP red flag needs both halves and sharing the slug would let one suppress the other. Also not `morning-pain`, which is limb/pain's and is region-neutral in wording); `sound-hurts` (nothing in the bank names sound sensitivity; `hard-to-hear` is hearing LOSS and the opposite finding); `head-worse-moving` (the bank already has three region-specific slugs for this same trigger -- `worse-on-exertion`, `worse-on-movement`, `worse-when-playing` -- and following the precedent stops a head answer and a leg answer collapsing into one). UNTAGGED: item 7, matching head-injury item 2, limb-injury item 4 and tummy/acute-pain item 7, because this project keeps region-specific trajectory questions separate by leaving them without a fact.",
+  "gateNote": "Group `head` asks the MECHANISM gate first and the DEPTH gate second, and only asks depth when mechanism is `no-injury` or `unknown` (GROUP_GATE.head). This packet serves `no-injury` + `inside`; `head-injury` serves `injury`. They never coexist, which is why both carry packetRank 50 -- the rank only ever competes with `general-unwell` (rank 50, cross-cutting, and exhausted after the home-group packet) inside group `head`. `skin-rash` is depth `surface` and therefore cannot reach a child served by this packet, which is why no rash or skin criterion is carried here. KNOWN GATE FAILURE, in Still open: a child whose headache began three days after a fall may answer 'it just started hurting' and be routed here, where NG127's 'headache occurring within 5 days of a head injury' is asked by neither packet.",
+  "itemRankCost": "Items 5 and 4 no longer reach a child in a head-only report. Item 5 (blurry) is the child-reportable half of the strongest single predictor in the only prediction study located (Manoyana, ocular findings OR 19.9) -- but that study is 109 children, retrospective, 47% lesion-positive, and its examination findings are the nurse's half anyway. Item 4 (aggravation by activity) is an ICHD-3 C-criterion, but the sensation screen and the intensity screen already carry two of the other three, so migraine characterisation is not lost entirely. Both remain accepted and ranked, and ship the moment the cap grows."
+}

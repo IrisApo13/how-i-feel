@@ -1,0 +1,635 @@
+{
+  "packet": {
+    "id": "headache",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+    ]
+  },
+  "candidates": [
+    {
+      "id": "h-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Was the TV too bright to watch?",
+        "older": "Have bright lights been bothering you?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "light-hurts",
+      "why": "Decision 6 in its most literal form: the young tier names the thing Kim 2022 Table 2 D.2 says the behaviour is ('inability to watch TV or play on the computer or on electronic games'), and the older tier is Kellier 2023's validated wording turned into US register.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "vague quesiton"
+      }
+    },
+    {
+      "id": "h-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Do bright lights hurt your eyes?",
+        "older": "Do bright lights make the pain worse?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "light-hurts",
+      "why": "Same D.2 behaviour reached through the play half of the sentence rather than the TV half; the older tier is the exact question FOLLOW_UPS.head already ships, which brief section 5 says to re-source rather than replace.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Did the lights make you shut your eyes?",
+        "older": "Does the light in here hurt your eyes?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "light-hurts",
+      "why": "ICHD-3 1.1 criterion D and RCH's exam red flag 'Signs of meningism (photophobia, neck stiffness)' reached through a behaviour the child has already performed; it asks what happened and never asks the child to look at a light or test their own eyes (item 25).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Did you throw up?",
+        "older": "Have you thrown up today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "vomiting",
+      "why": "NG127 1.21.1's same-day criterion 'headache associated with vomiting' and ICHD-3 1.1 criterion D in the plainest form; 'throw up' is the only permitted verb and this is the wording vocab.js already ships.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Did you throw up when your head hurt?",
+        "older": "Have you thrown up while your head has been hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "vomiting",
+      "why": "Ties the throwing up to the headache, which is what RCH means by 'Associated vomiting without another clear cause' and what Kellier 2023 asked ('Did you throw up with your headache today?'); the shared fact means a child who taps Head and Tummy is asked once.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "h-006",
+      "traces_to": 3,
+      "q": {
+        "young": "Does your head hurt when you wake up, or does it wake you at night?",
+        "older": "Does your head hurt when you wake up in the morning, or does it wake you up during the night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "morning-headache",
+      "why": "Covers BOTH halves the item requires, matching NG127 1.21.1's two separate bullets ('headache that wakes them at night'; 'headache that is present on awakening in the morning') and Raucci's single line 'Pain that wakes the child from sleep or occurs on waking'; a candidate covering one half loses half the criterion.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-007",
+      "traces_to": 3,
+      "q": {
+        "young": "Did your head wake you up in the night, or hurt in the morning?",
+        "older": "Has your head woken you up at night, or been hurting first thing in the morning?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "morning-headache",
+      "why": "Both halves again, ordered night-first and anchored to two remembered events rather than to a habit, which is the easier task for a child who has had the headache for a day or two; RCH's 'Early morning' and 'Wakes the child from sleep'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "ame as before"
+      }
+    },
+    {
+      "id": "h-008",
+      "traces_to": 3,
+      "q": {
+        "young": "Does your head hurt when you wake up at night or in the morning?",
+        "older": "Does your head hurt when you wake up, at night or in the morning?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "morning-headache",
+      "why": "The shortest construction that still holds both halves, by putting 'wake up' once and letting 'at night or in the morning' carry the split; offered because the other two are long for a 4-year-old being read to. Same four sources; must never be described as predictive, since Manoyana 2022 tested this feature and found no association (p = 0.52).",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "h-009",
+      "traces_to": 4,
+      "q": {
+        "young": "Does your head hurt more when you run around?",
+        "older": "Does your head hurt more when you move around or play?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "head-worse-moving",
+      "why": "The older tier is Kellier 2023's validated wording almost verbatim and the young tier is Kim 2022 C.4's 'avoidance of walking or playing' in a 4-year-old's vocabulary; asks only whether movement worsens the pain, never whether the child has given things up, which is item 9.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-010",
+      "traces_to": 4,
+      "q": {
+        "young": "Does walking make your head hurt more?",
+        "older": "Does walking around or going up stairs make it worse?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "head-worse-moving",
+      "why": "ICHD-3 1.1 criterion C4's own examples ('eg, walking or climbing stairs') rendered plainly, and the negative image of ICHD-3 2.1's 'not aggravated by routine physical activity'; useful for a child in a waiting room who has not been running around.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-011",
+      "traces_to": 5,
+      "q": {
+        "young": "Does everything look blurry?",
+        "older": "Is anything looking blurry?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "blurry",
+      "why": "HeadSmart's 5-11 column, 'Blurred or double vision/loss of vision', in the word eyes/complaint already ships; the squint, upward-gaze and pupil half of this finding is examination (item 25) and is not asked, and Manoyana's OR 19.9 may never be cited for the question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-012",
+      "traces_to": 5,
+      "q": {
+        "young": "Is it hard to see things?",
+        "older": "Is anything hard to see right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "blurry",
+      "why": "Reaches the same HeadSmart symptom without the word 'blurry', which a 4-year-old may not own, and catches the 'loss of vision' end of that same starred entry; asks what the child notices and never asks them to test an eye.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-013",
+      "traces_to": 5,
+      "q": {
+        "young": "Do you see two of everything?",
+        "older": "Are you seeing two of things instead of one?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "blurry",
+      "why": "The double-vision half of HeadSmart's entry, which the two blurry wordings do not reach and which a child can state as a plain fact about what they see; shares the `blurry` slug so a child who taps Head and Eyes is asked once.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-014",
+      "traces_to": 6,
+      "q": {
+        "young": "Is it too loud in here?",
+        "older": "Have loud sounds been bothering you?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "sound-hurts",
+      "why": "Decision 6 applied to the sound half: the young tier names Kim 2022 D.2's behaviour ('Sensitivity to light and sounds as indicated by inability to watch TV...') and the older tier is Kellier 2023's 'Has sound bothered you today?', the feature with the highest odds ratio in that study (7.5). Young tier reworded 2026-09-08: the original named TV, which a child who was not watching TV answers no to — a false negative. Anchored to the present environment instead, which every child answering is in.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-015",
+      "traces_to": 6,
+      "q": {
+        "young": "Did loud sounds make you stop your game?",
+        "older": "Do loud sounds make it worse?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "sound-hurts",
+      "why": "The play half of the same D.2 sentence, and an older tier built to parallel the light question the group already ships so the pair reads as one pair; ICHD-3 1.1 criterion D always names photophobia and phonophobia together and the app has never asked the second.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "what game"
+      }
+    },
+    {
+      "id": "h-016",
+      "traces_to": 6,
+      "q": {
+        "young": "Did you have to cover your ears?",
+        "older": "Is the noise in here bothering you?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "sound-hurts",
+      "why": "The behaviour a young child is most likely to have actually performed, asked as something that already happened rather than something to try; the older tier uses the waiting room itself, which is loud, and must not be confused with `hard-to-hear`, which is hearing loss.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-017",
+      "traces_to": 7,
+      "q": {
+        "young": "Does your head hurt more than before?",
+        "older": "Is your head hurting more than it was before?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": null,
+      "why": "NG127 1.21.1's 'headache that progressively worsens' and RCH's 'Chronic progressive' pattern row, using the 'than before' construction the wording cautions permit as a within-episode comparison against a remembered moment rather than a baseline the child has to build.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-018",
+      "traces_to": 7,
+      "q": {
+        "young": "Is it getting worse?",
+        "older": "Has it been getting worse since it started?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": null,
+      "why": "The same NG127 criterion asked as a direction of travel rather than a comparison of two moments, matching Raucci's 'Increase in severity or characteristics of the headache'; carries no fact, so a child who taps Head and Tummy is asked about each separately.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-019",
+      "traces_to": 8,
+      "q": {
+        "young": "Does coughing make your head hurt more?",
+        "older": "Have you noticed it hurting more when you cough or sneeze?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "head-worse-coughing",
+      "why": "NG127 1.21.1's 'headache triggered or aggravated by coughing, sneezing or bending down' asked as something the child has already noticed; the older tier says 'have you noticed' precisely so it cannot be read as an instruction to cough, which would be Raucci's Valsalva manoeuvre delegated to the patient.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-020",
+      "traces_to": 8,
+      "q": {
+        "young": "Does bending down make your head hurt more?",
+        "older": "Does it hurt more when you bend down to pick something up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "head-worse-coughing",
+      "why": "The positional half of the same NG127 bullet and RCH's 'positional changes (eg bending forwards)', offered separately because a child who has not coughed cannot answer the cough wording at all, which is why the item is marked partial; anchored to an ordinary action, never an instruction to bend and report.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-021",
+      "traces_to": 8,
+      "q": {
+        "young": "Does your head hurt more when you cough or bend down?",
+        "older": "Does it hurt more when you cough, sneeze, or bend down?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "head-worse-coughing",
+      "why": "All three of NG127's named triggers in one question, so a single slot covers the whole criterion instead of a third of it; the young tier drops sneezing to keep the sentence answerable by a 4-year-old, since coughing and bending are the two the child is likeliest to have done today.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "h-022",
+      "traces_to": 9,
+      "q": {
+        "young": "Did your head stop you playing today?",
+        "older": "Has your head stopped you doing something you wanted to do?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "NG127 1.21.5, the recommendation that decides referral ('unless it is affecting their school life, social life or family activities'), and Raucci Table 7's 'Impairment of daily routine'; asks what the headache has stopped, which is a different fact from item 4's question of whether moving makes it hurt more.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-023",
+      "traces_to": 9,
+      "q": {
+        "young": "Did you have to stop what you were doing?",
+        "older": "Have you had to stop doing things because of your head?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "The same NG127 1.21.5 fact and ICHD-3 C4's second half ('causing avoidance of routine physical activity') without naming any particular activity, so it fits a child whose day does not involve play or school; the region-neutral slug is shared with back/pain item 12 by design.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "h-024",
+      "traces_to": 9,
+      "q": {
+        "young": "Did you stay home from school?",
+        "older": "Have you missed school, or missed seeing your friends, because of your head?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "stopping-normal-things",
+      "why": "The closest wording to NG127 1.21.5's own words, reaching the school and social halves it names; the dignity ban covers bullying, school problems and family stress and deliberately does not catch bare 'school', so this asks only whether the child was there. Caveat for the reviewer: a 'no' is uninterpretable on a weekend or a holiday, which the other two wordings do not suffer from.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "not applciable, this is short term asnwers"
+      }
+    },
+    {
+      "id": "h-025",
+      "traces_to": 12,
+      "answers": "choice",
+      "options": [
+        {
+          "id": "one-side",
+          "label": {
+            "young": "One side",
+            "older": "One side"
+          }
+        },
+        {
+          "id": "both-sides",
+          "label": {
+            "young": "Both sides",
+            "older": "Both sides"
+          }
+        },
+        {
+          "id": "all-over",
+          "label": {
+            "young": "All over",
+            "older": "All over"
+          }
+        }
+      ],
+      "q": {
+        "young": "Where does your head hurt?",
+        "older": "Does your head hurt on one side, or both sides?"
+      },
+      "fact": "head-side",
+      "why": "ICHD-3 C1 and the RCH pain-location row. Added 2026-09-08 at the user request, over the packet's own recommendation; see meta.itemRankNote. Uses the `choice` answer type because the body map cannot carry it -- a temple region would have to sit in the ~22x30 gap between the forehead edge and the ear, and a mis-tap there routes the child to the EARS group and a different packet. The young wording avoids the compound question by letting the three options do the work; the older wording follows Kellier's validated phrasing. \"All over\" is a real third answer for a child who rejects the binary, not a filler option.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-08"
+      }
+    }
+  ]
+}

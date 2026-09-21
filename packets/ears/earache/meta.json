@@ -1,0 +1,171 @@
+{
+  "id": "earache",
+  "group": "ears",
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "6": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "8": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "9": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    5,
+    7,
+    9,
+    8,
+    10,
+    11,
+    12,
+    13
+  ],
+  "minAge": {
+    "8": 8
+  },
+  "cite": {
+    "1": "NICE NG233 1.2.1; AAFP/AAO-HNS AOE; StatPearls Otitis Externa; AAO-HNS plain language summary",
+    "2": "WHO IMCI (ASK column); Schmitt; NICE NG91; Suzuki; RCH",
+    "3": "Schmitt; RCH; NICE NG233 1.2.3-1.2.4; McCormick (ETG-5); Abbott",
+    "4": "AAFP/AAO-HNS AOE; StatPearls Otitis Externa; Schmitt; AAO-HNS plain language summary",
+    "5": "AAO-HNS plain language summary; AAFP/AAO-HNS AOE; StatPearls Otalgia",
+    "6": "AAFP/AAO-HNS AOE; StatPearls Otitis Externa; AAO-HNS plain language summary; Schmitt; NICE NG233 1.2.1",
+    "7": "Schmitt; AAFP/AAO-HNS AOE; StatPearls Otitis Externa",
+    "8": "NICE NG233 1.2.1; StatPearls Otalgia",
+    "9": "Schmitt; NICE NG233 1.2.2; StatPearls Otalgia",
+    "10": "Schmitt; NICE NG91",
+    "11": "RCH; WHO IMCI; Schmitt; McCormick (ETG-5); Abbott (AOM-SOS); Suzuki; AAP via Schmitt",
+    "12": "RCH; Suzuki",
+    "13": "RCH; McCormick (ETG-5); Abbott (AOM-SOS v3)"
+  },
+  "bannedPhrases": [
+    [
+      "otitis|abscess|mastoid|meningitis|labyrinthitis|cellulitis|glue ear|swimmer'?s ear|ear infection|perforat|cholesteatoma",
+      "names a diagnosis to the child"
+    ],
+    [
+      "otalgia|otorrh|tympan|effusion|myringo|grommet|audiogram|audiometr|conductive|tinnitus|pruritus",
+      "clinical term"
+    ],
+    [
+      "eardrum|ear canal|middle ear|outer ear|ear ?wax|\\bwax\\b|\\bpinna\\b|tragus|auricle|earlobe",
+      "names a structure the child cannot see - decision 1"
+    ],
+    [
+      "\\bpus\\b|purulent|discharge|drainage|\\bfluid\\b|yellow|green|bloody|\\bblood\\b",
+      "decision 3: say 'wet' or 'something coming out', and never a colour"
+    ],
+    [
+      "deaf|hearing loss|muffled",
+      "decision 1: say 'hard to hear'"
+    ],
+    [
+      "blocked|plugged|congested|pressure",
+      "decision 1: say 'full or stuffed up'"
+    ],
+    [
+      "tug|pull(ing)? (on |at )?your ear|rub your ear|press|squeeze|poke|wiggle",
+      "item 25: instructs the child to perform the examination manoeuvre on themselves"
+    ],
+    [
+      "behind your ear|\\blump\\b|\\bswelling\\b|\\bswollen\\b",
+      "item 27, the mastoid check: never delegated to the child"
+    ],
+    [
+      "chin to chest|touch your chin",
+      "item 10: never instruct a manoeuvre"
+    ],
+    [
+      "mirror|look in your ear|look inside",
+      "item 23: a child must never inspect their own ear"
+    ],
+    [
+      "dizzy|spinny|balance|unsteady|clumsy|wobbly",
+      "decision 1 and item 19: item 9 asks about falling over; dizziness is SENSATIONS.dizzy"
+    ],
+    [
+      "cotton|q-?tip|swab|pencil|\\bstick\\b|\\bbead\\b|battery|\\btoy\\b",
+      "item 7: never name the object"
+    ],
+    [
+      "fever|temperature|degrees",
+      "item 33: the measurement is the nurse's"
+    ],
+    [
+      "\\bhole\\b|\\bburst\\b|\\bpopped\\b",
+      "names a perforation in plain English"
+    ],
+    [
+      "\\bgunk\\b|\\bgoo\\b|\\bslime\\b|\\bgoop\\b",
+      "decision 1: say wet or something coming out"
+    ],
+    [
+      "\\btubes?\\b",
+      "names a structure the child cannot see"
+    ],
+    [
+      "\\bjaw\\b|bite down",
+      "decision 1: say chew"
+    ],
+    [
+      "hear (properly|right|well)|can.?t hear\\b",
+      "decision 1: say hard to hear"
+    ],
+    [
+      "(get|ask|have) (someone|anyone|your \\w+) (to )?look|shine a (light|torch)|look at your ear",
+      "never delegate the ear inspection to anyone, including a parent"
+    ],
+    [
+      "\\bbump\\b[^?]*\\b(head|neck|ear)\\b",
+      "never say bump about the head or neck - anchored, because decision 1 mandates bumping into things for item 9"
+    ]
+  ]
+}

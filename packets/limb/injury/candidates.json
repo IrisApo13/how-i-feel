@@ -1,0 +1,499 @@
+{
+  "packet": {
+    "id": "limb-injury",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13
+    ]
+  },
+  "candidates": [
+    {
+      "id": "l-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "limb-mechanism",
+      "q": {
+        "young": "Did you fall or bump it?",
+        "older": "Did you fall over or bump it before it started hurting?"
+      },
+      "why": "Item 1, the branch point of the whole packet: a yes sends the nurse to the fracture literature, a no to the limping-child literature. This is the form the app already ships as `fell`, now with a citation behind it. It names the event, which reads naturally but presupposes one; compare l-002. Decision 2 keeps this yes/no and records the knowing loss that \"I fell off the climbing frame\" would tell a nurse more than \"yes\".",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "limb-mechanism",
+      "q": {
+        "young": "Did something happen to it before it hurt?",
+        "older": "Did something happen to it before it hurt, like a fall or bump?"
+      },
+      "why": "Same item, event-neutral. The packet's \"Still open\" list flags that a child whose limb simply started hurting is badly served by a wording that leads with falling; this one lets that child answer no without first being told what kind of event to look for. Costs some concreteness for 4-7s, who answer better to a named action than to \"something\". Pick one of l-001 / l-002, never both.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "subgroups": [
+        "lower"
+      ],
+      "q": {
+        "young": "Could you stand on it right after?",
+        "older": "Right after it happened, could you stand up on it?"
+      },
+      "why": "Item 2, lower-limb form, and the closest this app can get to Ottawa's \"unable to weight bear immediately after the injury\" in a child's words. \"Right after\" carries the immediately-anchor that the criterion lives on; the packet's own natural phrasing uses a word the screen bans, so the anchor is carried by position instead. Standing is the nearer analogue of bearing weight; l-004 offers walking.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "limb-use"
+    },
+    {
+      "id": "l-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "subgroups": [
+        "lower"
+      ],
+      "q": {
+        "young": "Right after, could you walk on it?",
+        "older": "When it first happened, could you walk on it?"
+      },
+      "why": "Item 2, lower limb, walking rather than standing. Ottawa's department half is four steps, so walking is arguably the truer echo of the rule; the risk is that it drifts toward item 23's examination, which the app must never delegate to a child. Note this asks what the child noticed at the scene, not what they can do now - if the reviewer wants \"now\", that is item 3 and a different question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "limb-use"
+    },
+    {
+      "id": "l-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "subgroups": [
+        "upper"
+      ],
+      "q": {
+        "young": "Could you use it right after?",
+        "older": "Right after it happened, could you use it like before?"
+      },
+      "why": "Item 2, upper-limb form, sourced through GGC's history-column \"complete refusal to weight bear/use affected limb\" rather than through Ottawa, which has no upper-limb equivalent. Decision 4 forbids naming a part, so \"use it\" has to stretch from a shoulder to a thumb; the reviewer should judge whether that is still specific enough to mean anything to a 5-year-old.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "limb-use"
+    },
+    {
+      "id": "l-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "subgroups": [
+        "upper"
+      ],
+      "q": {
+        "young": "Right after, could you move it okay?",
+        "older": "Just after it happened, could you move it the way you wanted?"
+      },
+      "why": "Item 2, upper limb, movement rather than use. This is the wording nearest to GGC's pseudoparalysis, and it reports what the child noticed - it never instructs a movement, which decision 5 bans outright. Watch the collision with item 3's \"can you move it okay now\": the two are the same fact at two times, so if the reviewer takes this one, l-010 must not also ship.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "limb-use"
+    },
+    {
+      "id": "l-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "fact": "feels-feverish",
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Have you felt hot or shivery today?"
+      },
+      "why": "Item 11, ranked third, and the only item on the atraumatic branch that reaches toward septic arthritis - an orthopaedic emergency in source 9, and invisible to every prediction rule here. \"Hot or shivery\" keeps it at the level of a sensation the child owns; the word fever and any request for a number are out by the item note. The app currently asks a child with a sore limb nothing at all about being unwell, so this is the largest single gain in the packet.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-008",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "fact": "feels-feverish",
+      "q": {
+        "young": "Are you feeling hot or cold and shaky?",
+        "older": "Have you been feeling hot, or cold and shaky, since it started?"
+      },
+      "why": "Same item, closer to source 9's \"chills, rigors\" by spelling the shivering out as cold-and-shaky, which a young child recognises better than \"shivery\". The cost is length and a compound that a 4-year-old may parse as two things; l-007 is the cleaner sentence. The older form ties it to the episode rather than to today, which suits the long-time band this item survives into.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-009",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "subgroups": [
+        "lower"
+      ],
+      "answers": "yesno",
+      "fact": "limb-use",
+      "q": {
+        "young": "Can you lean on it or stand on it?",
+        "older": "Can you put weight on it right now, like standing or leaning on it?"
+      },
+      "why": "Item 3, lower-limb form, per the split suggested in the sidecar. Re-sources the hand-written `can-move`, which decision 10 says is otherwise silently dropped once this bank covers limb/inside. It reports a present state the child already knows; it does not tell them to try walking, which decision 5 forbids and which would convert the app into an examiner. Item 3 and item 2 are the same fact at different times - decision 7 says never ask both. Reworded 2026-09-08 by iris: the limb group includes arms and hands, and \"walk on it\" cannot be answered about a wrist. The item is load tolerance, so the wording now names leaning as well as standing. Avoids \"press\"/\"pressure\" and \"weight-bear\", both of which this packet bans -- the first as instructing the child to examine themselves, the second as a clinical term.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "subgroups": [
+        "upper"
+      ],
+      "answers": "yesno",
+      "fact": "limb-use",
+      "q": {
+        "young": "Can you move it okay now?",
+        "older": "Are you able to move it the way you want now?"
+      },
+      "why": "Item 3, upper-limb form, from the elbow extension test's telephone recall criterion \"any difficulty using arm\" - a fact that study trusted a patient to report with no examination, which is exactly the warrant this wording needs. Read \"the way you want\" as reporting, not as an instruction to attempt anything.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "limb-use",
+      "q": {
+        "young": "Can you use it now?",
+        "older": "Can you use it now the way you normally do?"
+      },
+      "why": "Item 3 without the subgroup split, offered so the reviewer can see what the generic form costs. It is the ASK capability question in miniature - what the child could do - and it ships to every region including the ones bodyMap may not have subgrouped. Decision 4 predicts it will be weaker than either l-009 or l-010; the reviewer should confirm that before dropping the split.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "too generic, doesnt specify how i can use"
+      }
+    },
+    {
+      "id": "l-012",
+      "duration": [
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it hurt when you are not moving?",
+        "older": "Does it hurt even when you are sitting quietly?"
+      },
+      "why": "Item 12, rest pain - GGC's septic arthritis line \"severe pain on movement +/- at rest\", and in no prediction rule in the packet. This is a thing only the child knows, and the duration set drops just-now and this-morning by decision 6 because an hour-old pain cannot answer it. The natural phrasing of this item uses a word the screen bans, so \"not moving\" carries the rest sense instead.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "pain-at-rest"
+    },
+    {
+      "id": "l-013",
+      "duration": [
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it wake you up at night?",
+        "older": "Has the hurting woken you up in the night?"
+      },
+      "why": "Same item, the night-waking half - RCH's \"pain waking from sleep\", GGC's SOCRATES \"does it wake patient during the night\" and its malignancy row's \"nocturnal pain\". Sharper and more memorable for a child than rest pain, and the red flag the guidelines actually name; the cost is that it misses the child who hurts at rest all day but sleeps through. The item covers both facts and only one question may ship - the reviewer chooses which red flag this slot buys.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-06",
+        "reason": "night pain is worth asking and is the classic RCH/GGC red flag, but item 12 is a welded criterion and only one candidate fires; l-012 (rest pain) keeps the lead, l-013 stands behind it"
+      },
+      "fact": "night-pain"
+    },
+    {
+      "id": "l-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it the same or worse than before?",
+        "older": "Is it the same or worse than it was before?"
+      },
+      "why": "Item 4, the trajectory item, and one of only three that survive into long-time - where, in this complaint, the danger is. Sourced to the elbow extension test's recall criterion \"pain worsening or not improving\" and RCH's limp beyond seven days. Yes is the concerning answer, which keeps the polarity the same way round as every other question on the screen.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-06",
+        "reason": "reworded from \"Is it hurting more than before?\" — item 4 is \"getting worse OR not getting better\", and \"hurting more\" missed the flat child RCH's \"not improving\" is about. Yes is now the concerning answer, matching every other limb question; leads over l-015, which inverted the polarity"
+      }
+    },
+    {
+      "id": "l-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it getting better each day?",
+        "older": "Has it been getting any better since it started?"
+      },
+      "why": "Same item, the not-improving half of the source criterion rather than the worsening half - it catches the child whose pain is flat, which l-014 misses, and flat-for-a-week is precisely RCH's reason to escalate. The cost is real and the reviewer should weigh it: the concerning answer here is NO, inverting the polarity of every other question in the bank, and a nurse view that renders a bare no could be read backwards.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "limb-swelling",
+      "q": {
+        "young": "Does it look puffy?",
+        "older": "Does it look puffy or swollen where it hurts?"
+      },
+      "why": "Item 6, re-sourcing the hand-written `limb-swollen` so it is not dropped by the cap. Deliberately kept at the level a child can see - \"puffy\" - because grading swelling and comparing sides is examination, and the packet forbids asking a child to compare their two limbs. The item is marked partial for good reason: the sources disagree about which side of the history/examination line swelling sits on.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "limb-swelling",
+      "q": {
+        "young": "Is it puffy where it hurts?",
+        "older": "Does the sore part look puffed up or swollen?"
+      },
+      "why": "Same item, anchored to the sore part rather than to the limb as a whole, which matters when the child tapped one finger of a hand that is generally fine. \"Puffed up\" is more concrete than \"puffy\" for a 4-year-old; against that, it is a shade closer to a judgement of degree than the packet wants. Neither wording asks the child to touch anything.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "l-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you been poorly lately?",
+        "older": "Have you been poorly lately, like a cold or a sore throat?"
+      },
+      "why": "Item 13 - transient synovitis and acute myositis are among the commonest causes of a limp, and this is the question that separates them from the emergency. \"Poorly\" is decision 1's chosen word for being unwell. Reviewer must note decision 11: this overlaps the throat group's `cough` and must not fire when the child has tapped throat as well, and `followUpsForGroups` dedupes by id, not by fact.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "poorly is not gramaticlaly correct , delete"
+      }
+    },
+    {
+      "id": "l-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you have a sore throat lately?",
+        "older": "Were you unwell in the last few weeks, with a cold or sore throat?"
+      },
+      "why": "Same item, naming the preceding illness first rather than as an example. GGC's transient synovitis row puts a preceding viral illness at about 50%, and RCH names streptococcal throat and skin infection specifically, so the sore throat is the highest-yield instance. The young form narrows to throat alone and will miss the child who had a chest cold; the older form widens the window to weeks, which is where the sources put it.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "recent-illness"
+    },
+    {
+      "id": "l-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does it look a funny shape?",
+        "older": "Does it look bent or a funny shape to you?"
+      },
+      "why": "Item 5, deliberately ranked last and named the first to drop. Visible deformity is decisive - Pershad and Webster both excluded such children as extremely likely to have a fracture - but it is visible to any adult in the room, so the question buys little, and it is the one item here that can frighten the child who answers yes. Offered as a single wording because the packet does not expect it to reach a screen.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "packet": {
+    "id": "skin-wound",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "candidates": [
+    {
+      "id": "w-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Do you have a cut or a scrape?",
+        "older": "Do you have a cut or a scrape on your skin?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "cut-or-scrape",
+      "why": "The entry item in its plainest form. RCH Lacerations is the whole subject (\"Minor lacerations are extremely common in childhood\") and NHS Cuts and grazes is the whole page. Decision 1 requires BOTH words in this order, for the same reason skin-rash requires \"spots or a rash\": a US child of this age may own only one of them, and the British word is banned. The child arriving here has said only \"on my skin\", so this is a real question and not a restatement of the gate. Young tier is one clause with no qualifier; older tier adds the location word so it does not read as babyish to an 11-year-old.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Is your skin cut or scraped?",
+        "older": "Is the skin cut or scraped where it hurts?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "cut-or-scrape",
+      "why": "Same item and same fact, reached through the verb rather than the noun, for a child who would say \"I scraped it\" but not \"I have a scrape\". RCH Tetanus-prone wounds turns on \"Any wound other than a clean, minor cut\", so what the guideline needs to know is whether the skin is broken, which is what this asks directly. Offered because w-001's noun construction assumes the child owns both nouns and this one only needs the verb.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "w-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Is there a cut, a scrape or a bruise?",
+        "older": "Do you have a cut, a scrape or a bruise where it hurts?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "cut-or-scrape",
+      "why": "The full complaint as the packet titles it, adding the third word decision 1 permits (\"bruise\" is carried unchanged from skin-rash, which ruled it the only morphology word allowed because it is not a colour claim). This is NOT the bruise item: item 7 ships as r-023 with minAge 8 and this packet neither re-asks it nor lowers its floor. Here \"bruise\" only widens the entry gate for a child whose skin is not broken. Reviewer caveat: three nouns is a long list for a 4-year-old being read to, which is why w-001 exists.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-004",
+      "traces_to": 1,
+      "q": {
+        "young": "Can you see a cut or a scrape?",
+        "older": "Can you see a cut or a scrape there?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "cut-or-scrape",
+      "why": "The closest re-sourcing of the hand-written `limb-see` (\"Can you see a cut, bruise or rash?\"), which brief section 5 says to re-source rather than replace, and which ships today with no fact and no citation. FLAGGED CONFLICT FOR THE REVIEWER: the dignity ruling's first clause says no question asks a child to look at their own injury, and \"can you see\" is literally an instruction to look. It is offered anyway because this is the entry question, asked before anything is covered, and because it is the wording the app already ships. If the reviewer reads the dignity ruling as absolute, reject this one and keep w-001.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "w-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Is it bleeding now?",
+        "older": "Is your cut bleeding now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bleeding-now",
+      "why": "The wording meta.preferredNote names: NHS Cuts and grazes 999 list, \"you have a cut and cannot stop the bleeding\", and RCH Lacerations, \"For actively bleeding wounds, control bleeding first\". It carries only the half of that criterion the child owns. \"Now\" and not \"still\" (screen.mjs rejects `still` as assuming it was already true), and no amount word of any kind, because how much blood has been lost is a clinician's estimate and is item 18. Nothing anywhere in the app asks about bleeding at any depth, which is the clearest gap this packet fills.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-006",
+      "traces_to": 2,
+      "q": {
+        "young": "Is blood coming out now?",
+        "older": "Is blood coming out of it right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bleeding-now",
+      "why": "Same 999 criterion, worded as a thing that is happening rather than as a state, for a child who does not use \"bleeding\" as a verb about themselves. This is the split the packet insists on, stated in its own words: whether blood is coming out is a thing a 5-year-old can see; whether it is arterial, bright, or hard to control is item 18 and is excluded. No estimate word, no flow word, no colour word.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "werid wording"
+      }
+    },
+    {
+      "id": "w-007",
+      "traces_to": 2,
+      "q": {
+        "young": "Is there blood on it now?",
+        "older": "Is there fresh blood on your skin right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bleeding-now",
+      "why": "The same fact reached through what is on the skin rather than what the cut is doing, which is the easiest form for a young child who has been holding a wad of tissue on it. Reviewer caveat, and it is a real one: blood that has dried is not active bleeding, so this wording is the least specific of the three and a nurse could read a yes as more than it is. Offered because it is the version a frightened 4-year-old is most likely to answer correctly, and because \"fresh\" in the older tier restores some of the specificity without asking for a colour or an amount.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "w-008",
+      "traces_to": 2,
+      "q": {
+        "young": "Has it stopped bleeding?",
+        "older": "Has the bleeding stopped by now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bleeding-now",
+      "why": "The NHS 999 criterion in the shape the source itself uses -- \"cannot stop the bleeding\" -- rather than inverted into a present-tense state. REVIEWER CAVEAT, STATED SO IT CAN BE REJECTED KNOWINGLY: this is the only candidate in the file whose red flag is a NO. Every other yes/no in the bank flags on a yes, and a nurse-facing surface that mixes polarities is a bug waiting to happen. It is written because it is the source's own construction and because \"has it stopped?\" is a question a child answers without having to judge anything; if the reviewer will not accept a mixed polarity, reject it and keep w-005.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "assumes it bled"
+      }
+    },
+    {
+      "id": "w-009",
+      "traces_to": 3,
+      "q": {
+        "young": "Is something in it, like glass or gravel?",
+        "older": "Is something in it, like glass, gravel or a splinter?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "something-in-it",
+      "why": "Five sources: NHS 999 list (\"there's something stuck in the cut, such as a shard of glass\"), RCH Lacerations (\"Contamination by dirt or foreign bodies\"), RCH Tetanus-prone wounds (\"Wounds containing foreign bodies (especially wood splinters)\"), RCH Cellulitis red flags (\"Foreign body\") and Bernabe. Decision 1's exact register: \"something in it\" with concrete examples, never \"foreign body\". The examples are the point -- they tell the child what counts without asking them to look. Young tier drops \"splinter\" to keep the list to two, since gravel and glass are the two a child who fell already knows about.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-010",
+      "traces_to": 3,
+      "q": {
+        "young": "Did something get stuck in your skin?",
+        "older": "Did something get stuck in there when you got hurt?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "something-in-it",
+      "why": "The same five sources reached through the moment of the injury rather than the present state of the cut, which is the packet's own justification for the item: the child was there and the nurse was not. Past tense is doing safety work here -- it asks what the child already knows went in and cannot be read as \"go and check\", which is the absolute constraint on this item and the half of it no regex can enforce. It anchors to the event without asking where the child was or what they were doing, which would be the blame surface the wording cautions ban.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-011",
+      "traces_to": 3,
+      "q": {
+        "young": "Is there a splinter in it?",
+        "older": "Is there a splinter or a piece of glass in it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "something-in-it",
+      "why": "The narrowest and most concrete wording, and the one that matches the long-time duration band: RCH Tetanus-prone wounds singles out \"especially wood splinters\", and meta.durationsNote keeps item 3 alive at `long-time` precisely because a splinter left in for weeks is a real presentation. \"Splinter\" is on decision 1's permitted list and is a word a 5-year-old owns. Reviewer caveat: naming one object risks a false negative from a child with gravel in a scraped knee, which is why w-009 exists.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-012",
+      "traces_to": 3,
+      "q": {
+        "young": "Is anything in the cut?",
+        "older": "As far as you know, is anything stuck in the cut?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "something-in-it",
+      "why": "The shortest form, with no examples, offered for the same reason the headache packet offered its short wording: three nouns is a lot for a child being read to. The older tier's \"as far as you know\" is deliberate -- the item is marked partial because a retained object is settled by exploration and a child's no does not exclude one, and that hedge puts the uncertainty in the question rather than leaving a nurse to infer it. It also makes it plainer that no checking is being asked for.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-013",
+      "traces_to": 4,
+      "q": {
+        "young": "Did an animal or a person bite you?",
+        "older": "Were you bitten by an animal or a person?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bitten",
+      "why": "Five sources and three treatment decisions: RCH Lacerations (\"Causes (eg animal or human bites) which require consideration for tetanus prophylaxis and/or antibiotics\"), RCH Bites History bullet 1 (\"Animal or person involved\"), RCH Tetanus-prone wounds (\"Bite wounds\"), RCH Cellulitis red flags, and the NHS 111 list. It asks WHETHER, never WHO, and never asks the child to classify the animal -- the NHS's own \"a wild or stray animal\" is banned because it asks a 6-year-old to judge whether the dog was somebody's pet. The human-adult inference is the nurse's to make with the whole child in front of them and must reach them with no framing at all.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-014",
+      "traces_to": 4,
+      "q": {
+        "young": "Did a dog or a cat bite you?",
+        "older": "Did a dog, a cat or another animal bite you?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bitten",
+      "why": "SAME FACT, NARROWER SUBJECT, SAID PLAINLY: this asks only the animal half and does not reach the human half that w-013 carries. It is offered because RCH Bites is written around dogs and cats specifically (\"Infection can be clinically evident in dog bites within 24 hours and in cat bites as quickly as 12 hours\") and because a young child answers a named animal far more reliably than the category word \"animal\". Reviewer caveat: accepting this INSTEAD of w-013 loses the human-bite half of the criterion, which is the half three sources treat as the most contaminated. Naming the animals also stays inside the ban on classifying one -- it offers species, not \"stray\" or \"wild\".",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-015",
+      "traces_to": 4,
+      "q": {
+        "young": "Is it a bite?",
+        "older": "Is that cut a bite from an animal or a person?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bitten",
+      "why": "The shortest possible form of the same criterion, asked about the injury rather than about the event, which keeps it further from anything that could read as an account of what happened. RCH Bites: \"bite injuries in which the skin is broken pose a high risk of infection and are considered contaminated wounds\" -- what the guideline needs is the classification of the injury, and this asks exactly that. Reviewer caveat: the young tier's \"it\" depends on the child having answered item 1 first, and item priority does put item 1 first, but under a two-group cap it may not have been asked in this group.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-016",
+      "traces_to": 5,
+      "q": {
+        "young": "Can you move it okay?",
+        "older": "Can you move it okay, like you could before?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "wound-move",
+      "why": "The child-reportable half of the deep-structure red flag: NHS 999 list, \"you lose feeling near the wound or have trouble moving it\", and RCH Lacerations, \"Injury to deeper structures (eg tendons, joints or nerves)\". Carried in spirit from the app's hand-written `can-move` (\"Can you still move it okay?\") with \"still\" dropped because screen.mjs rejects it globally. Deliberately NOT the `limb-use` fact: `can-move` is scoped limb + inside and can never fire here, and merging would let a question about a cut hand suppress a question about a limp. The older tier's \"like you could before\" is the permitted remembered-moment comparison, not the banned \"than usual\" baseline.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-017",
+      "traces_to": 5,
+      "q": {
+        "young": "Is it hard to move?",
+        "older": "Are you having trouble moving it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "wound-move",
+      "why": "The NHS 999 criterion in the source's own words -- \"have trouble moving it\" -- which flips the polarity so the red flag is a YES, matching every other question in this file and every other question in the bank. On that ground alone this may be the better wording than w-016, and the reviewer should weigh it against w-016's advantage of matching the app's existing `can-move` register. It asks about a function the child performs, which is what keeps item 5 inside the cross-cutting rule; it does not ask the child to test, press or explore anything.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-018",
+      "traces_to": 5,
+      "q": {
+        "young": "Can you wiggle your fingers or toes?",
+        "older": "Can you move your fingers or your toes okay?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "wound-move",
+      "why": "The most concrete form of a function a child performs, and the one a 4-year-old can actually carry out, aimed at RCH Lacerations' tendon and nerve half. FLAGGED CONFLICT: the packet ranks item 5 fifth partly because \"can you move it okay?\" reads oddly for a cut on the tummy or the scalp, and this wording makes that worse, not better -- it is meaningless for a scraped back and would draw a no from a child who simply has no injury on a hand or foot. It is offered because a deep cut across the back of a hand is the commonest case where nothing else in the app asks about movement at all. Reject if the reviewer holds the cross-cutting rule strictly.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-019",
+      "traces_to": 5,
+      "q": {
+        "young": "Can you use it okay?",
+        "older": "Can you use that part of your body okay?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "wound-move",
+      "why": "Same NHS and RCH criterion, widened from movement to use, so that it means something for a cut on a palm or a fingertip where the loss is grip rather than range -- RCH Lacerations singles out the hand and the fingertips, and RCH Bites names hands among the locations most likely to need specialist involvement. The older tier's \"that part of your body\" is the region-neutral construction, offered as the version least likely to read oddly wherever the child tapped. Reviewer caveat: \"use\" is a vaguer verb than \"move\" and a child may answer it about pain rather than function.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-020",
+      "traces_to": 6,
+      "q": {
+        "young": "Does it hurt more than before?",
+        "older": "Is it hurting more than it was before?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": null,
+      "why": "NHS 111 list, \"a cut is swollen, red and getting more painful\", reduced to the one part of it a child can report: the other two are colour (banned) and swelling (already asked as puffy-swollen). Also RCH Cellulitis' \"Pain/tenderness\" and its \"severe pain out of keeping with apparent severity of infection\". \"Than before\" is the permitted comparison against a remembered moment; \"than usual\" is banned project-wide. Untagged, following head/headache item 7, head-injury item 2, limb-injury item 4 and tummy/acute-pain item 7, so it does not suppress another region's trajectory question. Never names what more pain would mean.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-021",
+      "traces_to": 6,
+      "q": {
+        "young": "Is it getting more sore?",
+        "older": "Has it been getting more sore since it happened?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": null,
+      "why": "The same criterion asked as a direction of travel rather than a comparison of two moments, which is what RCH Cellulitis means by \"rapid progression\". \"Sore\" is the app's own register -- SENSATIONS.aching ships as \"Sore\" -- so a child who has already tapped that sensation meets the same word twice, which is deliberate. Direction is the whole content of the item: the sensation screen collects that it is sore and the FPS-R screen collects how much, and neither collects which way it is going.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    },
+    {
+      "id": "w-022",
+      "traces_to": 6,
+      "q": {
+        "young": "Did it start hurting more?",
+        "older": "Has the hurting there been getting worse?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": null,
+      "why": "The third angle on the same NHS \"getting more painful\" criterion, anchored to a change the child noticed rather than to a comparison they have to construct, which is the form meta.minAgeNotes relies on when it refuses an age floor of 8 on this item: it is a remembered moment, not a named recall period, so source 11's finding that under-8s cannot hold \"a week\" or \"yesterday\" does not bite. Reviewer caveat: the young tier's past tense sits slightly oddly with the `just-now` duration band, where nothing has had time to change.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      }
+    }
+  ]
+}

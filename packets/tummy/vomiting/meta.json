@@ -1,0 +1,196 @@
+{
+  "id": "vomiting-diarrhoea",
+  "group": "tummy",
+  "groups": [
+    "tummy"
+  ],
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "3": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "33": [
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    2,
+    3,
+    4,
+    33,
+    5,
+    6,
+    7
+  ],
+  "minAge": {
+    "5": 7
+  },
+  "cite": {
+    "1": "NICE CG84; RCH Gastroenteritis; RCH Vomiting; NHSGGC 180; WHO dehydration scale",
+    "2": "RCH Dehydration; WHO dehydration scale; CDS; WHO IMCI",
+    "3": "NICE CG84; Gorelick 10-point scale; RCH Dehydration; RCH Gastroenteritis",
+    "4": "RCH Vomiting",
+    "5": "NICE CG84; NHSGGC 180; Modified Vesikari Score; RCH Gastroenteritis",
+    "6": "NICE CG84; NHSGGC 180; RCH Vomiting",
+    "7": "NICE CG84; NHSGGC 180; RCH Gastroenteritis",
+    "33": "RCH vomiting (3) -- \"Early morning vomiting and headache may be due to raised ICP\""
+  },
+  "bannedPhrases": [
+    [
+      "\\b(gastro\\w*|norovirus|rotavirus|stomach flu|food poisoning|bugs?)\\b",
+      "names the condition or its cause to the child - decision 1 and wording caution 'never name a condition or a cause'. 'Tummy bug' is what a parent says and it is still a diagnosis"
+    ],
+    [
+      "\\b(dehydrat\\w+|appendi\\w+|obstruction|intussusception|meningitis|sepsis|septic|diabet\\w+|torsion|colitis|pyloric)\\b",
+      "names a condition to the child. 'Dehydrated' is the one most likely to slip through: it sounds plain and it is the classification this whole literature exists to make"
+    ],
+    [
+      "\\b(vomit\\w*|emesis|haematemesis|hematemesis|regurgitat\\w+)\\b",
+      "clinical register for throwing up - decision 1 rules 'throw up', which vocab.js already ships as threw-up"
+    ],
+    [
+      "\\bsick\\w*\\b",
+      "decision 1: 'being sick' means about to vomit in British English and coming down with something in American English. It shipped in this app for weeks. Banned in every form, including the natural 'has anyone at home been sick?' for item 7, which must say 'thrown up'"
+    ],
+    [
+      "bring(ing)? it back up|c(a|o)m(e|es|ing) back up|chuck(ing)? up|\\bspew\\w*|\\bpuke\\w*|\\bbarf\\w*|\\bvomit\\w*",
+      "slang register, some of it regional - decision 1 rules 'throw up' and a generator with no ruling improvises"
+    ],
+    [
+      "\\b(diarrh\\w+|dysentery|loose stools?|loose bowel|bowels?|stools?|motions?|number two|the runs)\\b",
+      "clinical or wrong register for runny poop - decision 1, extending tummy/acute-pain decision 1"
+    ],
+    [
+      "\\bpoo\\b|\\bpooed\\b|\\bpooing\\b|\\bpooey\\b",
+      "British register - tummy/acute-pain decision 1 rules 'poop'"
+    ],
+    [
+      "\\b(wee|weed|weeing|widdle\\w*|urin\\w+|micturition|piddle)\\b",
+      "British register or clinical - tummy/acute-pain decision 1 rules 'pee'"
+    ],
+    [
+      "\\b(nappy|nappies|diapers?|pull-?ups?|potty|bedpan\\w*|commode)\\b",
+      "toileting-dignity ruling: the container is what a nurse counts, not what a 4-12 year old reports, and NHSGGC's 'older children should be instructed to use bedpans' is an instruction to staff. 'Nappy' is also banned project-wide as British"
+    ],
+    [
+      "\\b(accidents?|wet(ting)? (yourself|the bed|your pants)|soil(ed|ing)?|dirty (pants|underwear|clothes)|mess(ed|y)?|smell\\w*|stink\\w*)\\b",
+      "toileting-dignity ruling: never ask a 4-12 year old about continence. A child who has soiled themselves answers no, so it is a broken question as well as a humiliating one"
+    ],
+    [
+      "\\bmake it to the (toilet|bathroom|loo)\\b|\\bget to the (toilet|bathroom|loo) in time\\b",
+      "toileting-dignity ruling: this is the continence question in disguise and it reads as an accusation"
+    ],
+    [
+      "\\b(24 hours|a day|per day|each day|every day|exactly|exact number|write (it|the number) down|count them)\\b",
+      "decision 2: item 5 uses the count widget, whose buckets are None/Once/A few/Lots. Never ask a child to aggregate over a stated window or give an exact number. Deliberately does NOT catch 'how many times have you thrown up today?', which is item 5's own wording"
+    ],
+    [
+      "\\b(fever\\w*|pyrexia|temperature|degrees|thermometer|celsius|centigrade|fahrenheit)\\b",
+      "item 11: never say fever and never ask a child for a number - five thresholds across four sources and the nurse holds the thermometer"
+    ],
+    [
+      "\\b(dry mouth|sticky mouth|tears?|crying|cried|sunken|skin pinch|turgor|capillary refill|pulse|heart ?rate|breathing fast)\\b",
+      "item 21: every dehydration-scale variable except thirst is something someone else looks at, times or feels. 'Have you been crying?' delegates the CDS tears row to a child and returns an answer about how upset they are"
+    ],
+    [
+      "\\b(press|pressing|squeeze|squeezing|poke|poking|prod|push on|pinch\\w*|feel your (tummy|skin|neck|pulse))\\b",
+      "item 21 and item 24: never ask a child to press on their own tummy or pinch their own skin. Skin turgor delegated to a 7-year-old is an examination performed by the patient"
+    ],
+    [
+      "\\b(look at|check|have a look at|inspect) (your|the) (poop|pee|throw-?up|eyes|tongue|mouth|skin|tummy)\\b",
+      "never instruct a child to inspect themselves or what came out of them - the sunken-eyes and dry-mucous-membrane rows delegated"
+    ],
+    [
+      "\\b(bilious|bile|green|mucus|mucous|tarry|mel[ae]na|watery|blood-?stained|coffee[- ]ground)\\b",
+      "item 26: never ask a child to classify what came out of them, and never name green - green is the answer that escalates, so a yes/no naming it is a leading question about a surgical referral"
+    ],
+    [
+      "\\b(drink(ing)? enough|drink more|need to drink|should (be )?drink|why (haven'?t|didn'?t) you|have you been drinking)\\b",
+      "decision 3: item 1 asks what the child managed, never what they should have done. NICE itself separates 'refuses to drink' from 'unable to drink it'"
+    ],
+    [
+      "\\b(poorly|off[- ]colour|off[- ]color|unwell|lethargic|listless\\w*|floppy|drowsy|irritable|toxic)\\b",
+      "item 22: NICE's red-flag symptoms are observer judgements, not the child's words. 'Poorly' and 'off colour' are also banned project-wide as British idiom"
+    ],
+    [
+      "\\bhave you got\\b|\\bhaven'?t you got\\b",
+      "British idiom - banned project-wide; decision 1 rules 'do you have'"
+    ],
+    [
+      "\\b(torch|plaster|jab|casualty|a&e|nasogastric|tube up your nose|drip|\\biv\\b|cannula|needle|ondansetron|\\bors\\b|rehydration|admitted|stay (in )?overnight|operation|surgery)\\b",
+      "names what happens next, and British idiom. NICE's pathway ends in a nasogastric tube for exactly the child item 1 is trying to find; saying so in the question would change the answer"
+    ],
+    [
+      "\\b(rate|score|out of ten|out of 10|how bad|worse than|worst|better than)\\b",
+      "never ask a child to rate or grade anything in words - the FPS-R screen has intensity - and decision 6: this packet ships no trajectory question, because tummy/acute-pain item 7 already serves this group at this depth"
+    ],
+    [
+      "\\b(mum|mummy|mom|mommy|dad|daddy|parents?|carers?|grown-?ups?|nurse|doctor) (said|say|says|told|tell|tells|thinks?)\\b",
+      "never ask a child to relay what an adult said - that is the carer's report. Item 7 asks what the child saw, not what they were told"
+    ],
+    [
+      "\\b(germs?|contagious|infectious|catch(ing)? it|spread(ing)? it|gave it to|passed it (on|to))\\b",
+      "never frame the child as a source of infection or ask them to reason about transmission. NICE's contact question runs the other way: who did the child see throw up"
+    ],
+    [
+      "\\b(stomach|abdomen|abdominal|belly|gut|tum)\\b",
+      "decision 1 rules \"your tummy\" and nothing else. Only \"stomach flu\" was caught, inside the condition regex, so \"Does your stomach hurt?\" screened clean -- the largest gap in the packet"
+    ],
+    [
+      "\\bparched\\b|\\bdehydrated\\b",
+      "decision 1 rules item 2 as \"thirsty\" -- not \"dry mouth\" (already banned), not \"parched\", which had no regex and sits directly in item 2 path"
+    ],
+    [
+      "than usual|than normal|more than (you )?normally|like you normally|as usual|than you usually",
+      "decision 4 is built on this: a 4-7 year old cannot construct their own baseline to compare against. The rejected item-3 wording \"are you peeing less than usual?\" would otherwise screen clean"
+    ],
+    [
+      "bring(ing)? it back up|came back up|chuck(ing)? up|\\bspew\\w*|\\bpuke\\w*|\\bbarf\\w*|\\bvomit\\w*",
+      "\"throw up\" is the only permitted verb (decision 1). The old list enumerated alternatives, so any euphemism not on it passed"
+    ],
+    [
+      "\\bmirror\\b|how fast (are|is) .{0,12}breath|count your breath",
+      "self-examination framings outside the press/pinch/look-at list -- a child checking themselves in a mirror or counting their own breaths is performing an examination"
+    ]
+  ],
+  "minAgeNotes": {
+    "5": "JUDGEMENT, NOT A CITATION. No source floors any item in this packet, and the usual validity floor is unavailable because every instrument read was derived BELOW age 5 (CDS 1-36 months; Gorelick and WHO 1-60 months; MVS 3-48 months; NICE CG84 is under-5s). The packet's own view is that a 4-6 year old asked to aggregate a count across a day answers the shape of the question rather than the fact - the same reasoning tummy/acute-pain applied to its item 8 and throat/sore-throat to its item 7. Flagged so a reviewer can see this floor differs in kind from a source-given one."
+  },
+  "preferred": {},
+  "packetRank": 20,
+  "recovered": {
+    "33": "Recovered 2026-09-07 after review. The packet excluded it as a pattern that lives in long-time, which the packet is out of scope for -- but it already carries long-time exceptions for items 1-3, so that was a scope technicality rather than an evidence judgement. Its provenance is identical in strength to item 4 (one source, one line, same guideline, same raised-ICP red flag), and item 4 ships. Given its own duration exception: a pattern over days cannot be reported by a child whose vomiting started this morning."
+  }
+}

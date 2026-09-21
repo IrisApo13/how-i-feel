@@ -1,0 +1,560 @@
+{
+  "packet": {
+    "id": "neck-pain",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "candidates": [
+    {
+      "id": "n-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "neck-mechanism",
+      "q": {
+        "young": "Did you bump your neck?",
+        "older": "Did you bump your neck, or fall over?"
+      },
+      "why": "Item 1, the trauma branch, in its plainest form. All three complaint guidelines split on trauma before anything else and neither of this packet's groups has a mechanism gate, so this question is the app's only route to that split -- which is why item 1 leads. Names no height and no mechanism, per the threshold disagreement (CCR 'fall from >=1 m/5 stairs' against RCH 'Fall >3 metres'). Cost: a child who was hurt by something other than a fall or a bump has no obvious way in; n-002 covers that.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "werid wording"
+      }
+    },
+    {
+      "id": "n-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "neck-mechanism",
+      "q": {
+        "young": "Did you hurt your neck doing something?",
+        "older": "Did something happen to your neck, like a fall or a bump?"
+      },
+      "why": "Item 1, a wider wording that catches the mechanisms 'bump' and 'fall' miss -- source 6's forced hyperflexion and axial load are neither. Deliberately open, because the raw fact is what the nurse classifies. Cost: 'doing something' is vague enough that a young child may answer about what they were playing rather than about an injury, which n-001 would not. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "neck-mechanism",
+      "q": {
+        "young": "Did you fall over before it started hurting?",
+        "older": "Did you have a fall before your neck started hurting?"
+      },
+      "why": "Item 1, anchored to the order of events rather than to the injury alone. This is the closest the app can get to the CCR's 'Delayed onset of neck pain', which is a comparison between when the injury happened and when the pain began and which the single duration answer cannot express (Still open). Cost: narrower than n-001 -- it asks only about falls.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "n-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "fact": "neck-worse-moving",
+      "q": {
+        "young": "Does it hurt when you move your neck?",
+        "older": "Does your neck hurt more when you move it?"
+      },
+      "why": "Item 2, the fact this packet exists to coin, in its plainest form. PROVOCATION, not restriction: it is deliberately not 'Is it hard to turn your head?', which is the meningism screen carried by six candidates in four packets under the `neck-movement` fact. Worded in the habitual tense so it asks what the child has ALREADY noticed -- source 6 obtains range of movement by asking a child to rotate their head and instructs the clinician to 'Stop immediately if this causes pain', and a tablet cannot stop. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "fact": "neck-worse-moving",
+      "q": {
+        "young": "Does moving your neck make it hurt more?",
+        "older": "Does the hurting get worse when you move your neck?"
+      },
+      "why": "Item 2, the same fact with the movement as the subject rather than the pain. Slightly better at separating a neck that hurts constantly from one that only hurts on movement, which is the distinction that characterises the 43.1% of these children whose cause is postural. Cost: the older tier is a longer sentence for no extra information.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "n-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "fact": "neck-worse-moving",
+      "q": {
+        "young": "Does your neck hurt when you are moving around?",
+        "older": "Does your neck hurt more when you are moving around?"
+      },
+      "why": "Item 2, anchored to whole-body movement rather than to the neck alone, so nothing in it can read as an instruction to move the neck. The safest of the three on that axis and the weakest clinically: moving around is not the same provocation as moving the neck, and a child who is sitting still in a waiting room may have nothing to report. Proposed as the fallback if the reviewer judges n-004 or n-005 too close to a manoeuvre. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "awkward-position",
+      "q": {
+        "young": "Did you sleep in a funny position?",
+        "older": "Did you fall asleep in a funny position last night?"
+      },
+      "why": "Item 3, from RCH's 'History of awkward position eg recent flight, different sleeping arrangement'. The commonest cause of this complaint (source 2: postural 43.1%) and it appears in no prediction rule of any kind -- a pure Search B item. 'Funny position' is the ruled vocabulary, not 'awkward posture'. Deliberately neutral: it must not read as 'did you give yourself this?' Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-008",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "awkward-position",
+      "q": {
+        "young": "Were you curled up for a long time?",
+        "older": "Were you curled up in one position for a long time before it started?"
+      },
+      "why": "Item 3, the waking half of the same criterion -- NHSGGC's 'an awkward head/neck posture for a prolonged period of time'. Covers the child whose neck stiffened over an afternoon rather than overnight, which n-007 misses entirely. The source's own worked example is 'E.g. playing X-box' and it is banned from the wording: it is a brand, a blame surface, and the child is answering on a screen. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-009",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "awkward-position",
+      "q": {
+        "young": "Did you go on a long trip lately?",
+        "older": "Have you been on a long trip in a car or a plane lately?"
+      },
+      "why": "Item 3, taking RCH's other worked example, 'recent flight', directly. A long journey is a concrete event a young child can date, where 'one position for a long time' is an abstraction they may not recognise in themselves. Cost: the narrowest of the three, and it will return 'no' from most children who have the mechanism. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "vomiting",
+      "q": {
+        "young": "Did you throw up?",
+        "older": "Have you thrown up?"
+      },
+      "why": "Item 4, the best-evidenced item in the packet: source 2's multivariate model found vomiting (OR 3.63, p 0.002) one of 'the only variables strongly characterized by the presence of an urgent condition'. 'Throw up' is the only permitted verb, carried from tummy/vomiting decision 1. Shares the `vomiting` slug, so a child who taps Neck and Tummy is asked once -- and proposed anyway because the candidate carrying it in group `throat` is sore-throat item 11 at that packet's rank 10, far below any cap. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "vomiting",
+      "q": {
+        "young": "Did you throw up today?",
+        "older": "Have you thrown up since your neck started hurting?"
+      },
+      "why": "Item 4, tied to the episode rather than left open, which is what makes the answer interpretable next to a duration band. Cost: the older tier asks a child to relate two events in time, and a child who threw up the day before the neck pain began would answer no -- which for the posterior-fossa picture is the wrong way round. n-010 is the safer default.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "n-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "fact": "light-hurts",
+      "q": {
+        "young": "Do bright lights hurt your eyes?",
+        "older": "Do bright lights bother your eyes right now?"
+      },
+      "why": "Item 5, photophobia, named in the NECK history by both complaint guidelines and not borrowed from the meningitis guideline. Reuses the `light-hurts` slug, whose head-group sibling ships this exact young-tier wording -- deliberate, because the shared fact means a child who taps Head and Neck is asked once. Proposed because no candidate carrying `light-hurts` reaches group `throat` or group `back` today.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "doesnt have anythign to do"
+      }
+    },
+    {
+      "id": "n-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "fact": "light-hurts",
+      "q": {
+        "young": "Do the lights in here hurt your eyes?",
+        "older": "Does the light in this room hurt your eyes?"
+      },
+      "why": "Item 5, anchored to the room the child is sitting in rather than to bright lights in general, so a 4-year-old has something present to test against instead of recalling. Cost: a dim waiting room produces a false negative, where n-012 would still catch the child who noticed it earlier.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "werid wordign"
+      }
+    },
+    {
+      "id": "n-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "fact": "light-hurts",
+      "q": {
+        "young": "Are the lights making you shut your eyes?",
+        "older": "Have you been wanting to close your eyes because the lights hurt?"
+      },
+      "why": "Item 5, reaching photophobia through the behaviour rather than the sensation -- the route head/headache took for its young tier, on ICHD-3's note that in young children photophobia may be inferred from behaviour. Useful for a child who cannot say that light 'hurts'. Cost: it embeds its own explanation ('because of the lights'), which is close to leading. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "arms-fuzzy",
+      "q": {
+        "young": "Do your arms feel fuzzy or tingly?",
+        "older": "Have your arms felt fuzzy or tingly?"
+      },
+      "why": "Item 6, from the CCR's high-risk criterion 'Paresthesias in extremities' and source 6's 'Persistent symptoms including pain, paraesthesia and/or weakness'. One of only three history criteria in the whole trauma literature. Vocabulary carried from back/pain decision 1; note that 'pins and needles' is banned OUTRIGHT here rather than reserved for the older tier, because screen.mjs has no tier-conditional ban. Polarity trap: a 'no' is what the rule wants, so this must never be asked as 'your arms feel okay, don't they?' Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "arms-fuzzy",
+      "q": {
+        "young": "Do your arms feel like they went to sleep?",
+        "older": "Do your arms feel like they have gone to sleep?"
+      },
+      "why": "Item 6, the concrete metaphor rather than the adjectives -- back/pain established it as the young-tier route to a concept a 4-year-old has no word for. Probably the strongest young wording in this item. Cost: a child who has never had a limb 'go to sleep' has nothing to match it against, where 'fuzzy or tingly' at least describes a sensation.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "n-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "arms-fuzzy",
+      "q": {
+        "young": "Do your hands feel funny?",
+        "older": "Have your hands or arms felt funny or tingly?"
+      },
+      "why": "Item 6, extended to the hands, where a child is most likely to notice the sensation first. Cost: 'funny' is doing a lot of work and collides with 'funny position' in item 3 -- a child who gets both questions may hear them as related. Ranked last of the three for that reason. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "fact": "recent-illness",
+      "q": {
+        "young": "Did you have a cold lately?",
+        "older": "Did you have a cold or a sore throat in the last few days?"
+      },
+      "why": "Item 7, the infective branch -- 19.1% of source 2's cohort and 19.4% of source 8's. From IAEM's 'recent diagnosis of tonsillitis/pharyngitis/URTI symptoms'. Only the recent-illness half of those bullets is taken: fever is reused by reference, painful swallowing is sore-throat item 1's and already asked first, and drooling is an observer sign. Reuses the `recent-illness` slug. Scoped to the `neck` subgroup on 2026-09-09: without it this packet fired for every throat tap and a plain sore-throat child was asked about neck injury.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "neck"
+      ]
+    },
+    {
+      "id": "n-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "fact": "recent-illness",
+      "q": {
+        "young": "Did your throat hurt before your neck did?",
+        "older": "Did you have a sore throat before your neck started hurting?"
+      },
+      "why": "Item 7, ordering the two complaints in time, which is what makes the infective picture legible rather than coincidental. Cost: overlaps sore-throat item 1, which every child in group `throat` is asked FIRST -- so for most children this arrives after they have already said their throat hurts, and it may read as being asked twice. n-018 does not have that problem.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "not relevant"
+      }
+    },
+    {
+      "id": "n-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "fact": "blurry",
+      "q": {
+        "young": "Is anything looking blurry?",
+        "older": "Is anything looking blurry or hard to see?"
+      },
+      "why": "Item 8, the CNS branch, from the diplopia term all three complaint guidelines name in the neck history. Strabismus from those same lists is NOT carried -- it is an examination finding and a squint is seen by someone else. Reuses `blurry`. Ranked last because it is the rarest branch and because a child with a visual problem is better served by tapping Eyes.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "nothign to do with neck"
+      }
+    },
+    {
+      "id": "n-021",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "fact": "blurry",
+      "q": {
+        "young": "Do you see two of things?",
+        "older": "Are you seeing two of something instead of one?"
+      },
+      "why": "Item 8, the double-vision half specifically, which is what the guidelines actually name -- 'blurry' is the app's existing slug but diplopia is the criterion. Worded to avoid cloning head/headache's shipped 'Do you see two of everything?' verbatim. Cost: young children over-report double vision when asked directly, and this cannot distinguish it from blurring, which is why it shares the `blurry` fact rather than coining one.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "norhing to do with neck"
+      }
+    }
+  ]
+}

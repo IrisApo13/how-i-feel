@@ -1,0 +1,239 @@
+{
+  "packet": {
+    "id": "head-injury",
+    "version": 4,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14
+    ]
+  },
+  "candidates": [
+    {
+      "id": "f-001",
+      "duration": "any",
+      "traces_to": 1,
+      "answers": "count",
+      "q": {
+        "young": "How many times have you thrown up?",
+        "older": "How many times have you thrown up since you hurt your head?"
+      },
+      "why": "Item 1 says ask for a count, not yes/no, so one answer serves both PECARN's binary and CHALICE's three-episode threshold."
+    },
+    {
+      "id": "f-002",
+      "duration": "any",
+      "traces_to": 1,
+      "answers": "count",
+      "q": {
+        "young": "Was it none, once, a few times, or lots?",
+        "older": "Roughly how many times: none, once, two, three, or more than three?"
+      },
+      "why": "Bucketed variant for the packet's open question on count buckets; the older wording keeps the three-episode boundary visible while the young one stays countable."
+    },
+    {
+      "id": "f-003",
+      "duration": "few-days",
+      "traces_to": 1,
+      "answers": "count",
+      "q": {
+        "young": "Have you thrown up today?",
+        "older": "How many times have you thrown up today, not counting earlier days?"
+      },
+      "why": "For older injuries a total since the bump is uninformative; anchoring the count to today separates ongoing vomiting from a single early episode."
+    },
+    {
+      "id": "f-004",
+      "duration": "yesterday",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt more than it did yesterday?",
+        "older": "Is your head hurting more now than it was yesterday?"
+      },
+      "why": "Item 2 is a trajectory rather than a snapshot, and yesterday gives the child a concrete point to compare against."
+    },
+    {
+      "id": "f-005",
+      "duration": "this-morning",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt more than when you woke up?",
+        "older": "Has your headache got stronger since you woke up this morning?"
+      },
+      "why": "Same trajectory item with a same-day anchor, which is the only comparison a child can make reliably for a morning injury."
+    },
+    {
+      "id": "f-006",
+      "duration": "long-time",
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is your head hurting more each day?",
+        "older": "Has your headache been getting stronger over the last few days?"
+      },
+      "why": "A worsening trajectory over days is exactly what item 2 is for and what a repeat visit can capture."
+    },
+    {
+      "id": "f-007",
+      "duration": "not-sure",
+      "traces_to": 2,
+      "answers": "voice",
+      "q": {
+        "young": "Tell me how your head has felt today.",
+        "older": "Tell me how your head has felt today compared with before."
+      },
+      "why": "When the child cannot place the injury in time, a spoken account lets the nurse reconstruct the trajectory instead of forcing a comparison the child cannot date."
+    },
+    {
+      "id": "f-008",
+      "duration": "any",
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your head hurt too much to play?",
+        "older": "Is your headache stopping you doing things you would normally do?"
+      },
+      "why": "A functional proxy for item 3 that avoids asking a child to rate a severity word; include only if the reviewer decides not to derive item 3 from the FPS-R screen."
+    },
+    {
+      "id": "f-009",
+      "duration": "just-now",
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you remember bumping your head?",
+        "older": "Can you remember the moment you hit your head?"
+      },
+      "why": "Item 4 is confirmed by two rules and is asked as whether they remember, never for how long the gap lasted."
+    },
+    {
+      "id": "f-010",
+      "duration": "any",
+      "traces_to": 4,
+      "answers": "yesno",
+      "q": {
+        "young": "Is there a bit you cannot remember?",
+        "older": "Is there a part of what happened that you cannot remember at all?"
+      },
+      "why": "Catches amnesia the child has noticed themselves without using the banned blackout phrasing or asking for a duration."
+    },
+    {
+      "id": "f-011",
+      "duration": "not-sure",
+      "traces_to": 4,
+      "answers": "voice",
+      "q": {
+        "young": "Tell me the last thing you remember before your head hurt.",
+        "older": "Tell me the last thing you remember before you hit your head."
+      },
+      "why": "A spoken answer shows the nurse where the memory gap starts, which is more informative than a yes/no when the child is unsure of timing."
+    },
+    {
+      "id": "f-012",
+      "duration": "just-now",
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Did a grown-up say you would not wake up?",
+        "older": "Did anyone tell you that you were not awake or not answering for a moment?"
+      },
+      "why": "Item 5 is partial and CHALICE requires it witnessed, so the question asks what the child was told rather than treating their own account as fact."
+    },
+    {
+      "id": "f-013",
+      "duration": "any",
+      "traces_to": 5,
+      "answers": "text",
+      "q": {
+        "young": "Who was with you when it happened?",
+        "older": "Who was with you when it happened, and what did they say afterwards?"
+      },
+      "why": "Points the nurse at the person who could witness loss of consciousness, without asking the child to judge whether it happened."
+    },
+    {
+      "id": "f-014",
+      "duration": "just-now",
+      "traces_to": 6,
+      "answers": "voice",
+      "q": {
+        "young": "Tell me how you hurt your head.",
+        "older": "Tell me what you were doing when you hurt your head."
+      },
+      "why": "Item 6 has the child describe the event and the nurse classify it, so an open spoken answer beats any structured choice."
+    },
+    {
+      "id": "f-015",
+      "duration": "any",
+      "traces_to": 6,
+      "answers": "text",
+      "q": {
+        "young": "Did you fall off something? What was it?",
+        "older": "If you fell, what did you fall from? For example the top bunk, a wall, or some stairs."
+      },
+      "why": "The three fall-height thresholds disagree, so the child names the object and the nurse maps it to whichever rule they use."
+    },
+    {
+      "id": "f-016",
+      "duration": "any",
+      "traces_to": 6,
+      "answers": "count",
+      "q": {
+        "young": "If you fell down stairs, how many steps?",
+        "older": "If you fell down stairs, how many steps did you fall?"
+      },
+      "why": "Stairs are the one height a child can count, and CATCH's five-stair criterion is stated in steps rather than metres."
+    },
+    {
+      "id": "f-017",
+      "duration": "any",
+      "traces_to": 6,
+      "answers": "yesno",
+      "q": {
+        "young": "Did something hit your head?",
+        "older": "Did something hit your head, rather than you falling?"
+      },
+      "why": "Separates a struck-by mechanism from a fall, which is the first split all three rules make before applying any threshold."
+    },
+    {
+      "id": "f-018",
+      "duration": "any",
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Did your arms or legs shake when you did not want them to?",
+        "older": "After you hurt your head, did any part of your body shake or go stiff on its own?"
+      },
+      "why": "Item 7 is mostly observer and must never be phrased as asking about a seizure, so it is described in body movements the child could notice."
+    },
+    {
+      "id": "f-019",
+      "duration": "any",
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you feel sleepy right now?",
+        "older": "Do you feel more sleepy than you usually would at this time of day?"
+      },
+      "why": "Item 13 is the child's own sense of sleepiness, not CHALICE's abnormal drowsiness; a no here is weak evidence and must not read as reassurance."
+    },
+    {
+      "id": "f-020",
+      "duration": "this-morning",
+      "traces_to": 13,
+      "answers": "yesno",
+      "q": {
+        "young": "Was it hard to wake up this morning?",
+        "older": "Was it harder than usual to wake up this morning?"
+      },
+      "why": "A concrete moment the child can recall, which reports the same item 13 sleepiness without asking them to monitor their own drowsiness now."
+    }
+  ]
+}

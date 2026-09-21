@@ -1,0 +1,589 @@
+{
+  "packet": {
+    "id": "skin-rash",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "candidates": [
+    {
+      "id": "r-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Are there spots or a rash?",
+        "older": "Are there spots or a rash on your skin?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "rash",
+      "why": "Item 1, the entry item; decision 1 fixes the register as 'spots or a rash' in that order, and this is the app's shipped chest-rash wording that the packet names as the one to match.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Have you got spots or a rash?",
+        "older": "Have you noticed spots or a rash anywhere on your skin?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "rash",
+      "why": "Item 1, second phrasing of the same fact; NG240 1.1.12 says to check all over the body, so 'anywhere on your skin' carries the whole-body scope without instructing the child to look.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-003",
+      "traces_to": 2,
+      "q": {
+        "young": "Are there more spots than before?",
+        "older": "Are there more spots now than when it started?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "spots-spreading",
+      "why": "Item 2, the flagship; NG240's second red flag is a 'rapidly progressive and/or spreading' rash and RCH's History bullet is 'rapid onset and/or rapid progression', and a comparison against memory is the half of that a child can observe with no test and no count.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Have the spots gone to new places?",
+        "older": "Have the spots turned up in new places on your body?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "spots-spreading",
+      "why": "Item 2, same fact asked as distribution rather than number, tracing Whittington's measles 'spreads from face down towards body' and EM 'spreading along limbs towards trunk' while avoiding anything that reads as counting.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before but weaker"
+      }
+    },
+    {
+      "id": "r-005",
+      "traces_to": 3,
+      "q": {
+        "young": "Is it hard to breathe?",
+        "older": "Is it hard to breathe right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "hard-to-breathe",
+      "why": "Item 3, the child-reportable half of NHS inform's 999 list ('has difficulty breathing'); the shared fact is reused so it dedupes against c-001, s-014 and t-017a, none of which fire on the surface branch.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-006",
+      "traces_to": 3,
+      "q": {
+        "young": "Does breathing feel hard?",
+        "older": "Does it feel hard to get your breath?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "hard-to-breathe",
+      "why": "Item 3, second phrasing as a sensation rather than a task; the observer half (grunting, recession, rate) stays in item 26 and no version of it appears here.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same a sbefore"
+      }
+    },
+    {
+      "id": "r-007",
+      "traces_to": 4,
+      "q": {
+        "young": "Is it hard to turn your head?",
+        "older": "Is it hard to turn your head from side to side?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "neck-movement",
+      "why": "Item 4; NG240's table 1 glosses neck stiffness as 'more subtle discomfort or reluctance to move the neck', so it is asked as a function the child discovers by trying, never as a sign someone elicits. New shared fact needing backfill onto s-016.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-008",
+      "traces_to": 4,
+      "q": {
+        "young": "Does your neck feel stiff?",
+        "older": "Does your neck feel stiff when you move your head?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "neck-movement",
+      "why": "Item 4, same fact from the felt side rather than the functional one, matching NHS inform's 999 wording 'has a stiff neck' in a child's register.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-009",
+      "traces_to": 5,
+      "q": {
+        "young": "Do bright lights hurt your eyes?",
+        "older": "Does it hurt your eyes when the lights are bright?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bright-light-hurts",
+      "why": "Item 5; NG240 table 1 'Photophobia' and NHS inform's 'is bothered by light'. The packet fixes the register as 'bright lights' and forbids both 'photophobia' and 'light hurts your head', the latter being a headache question.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-010",
+      "traces_to": 6,
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Do you feel hot or shivery right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "feels-feverish",
+      "why": "Item 6; PiC shows the NICE pathway requires fever and the NBL one does not, so this decides which pathway the child is in. Capture the sensation, never the measurement: the words fever, temperature and degrees are all banned.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-011",
+      "traces_to": 7,
+      "q": {
+        "young": "Is it hard to walk?",
+        "older": "Is it hard to walk or stand up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "limb-use",
+      "why": "Item 7; NG240 table 3 'Leg pain' and RCH's 'Limb tenderness or difficulty mobilising', asked as a function rather than a location so it does not duplicate the body map. Distinct fact by meta.judgement.doNotMerge: limb-use is about one limb.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-012",
+      "traces_to": 8,
+      "q": {
+        "young": "Does it itch?",
+        "older": "Does it itch where the spots are?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "itch",
+      "why": "Item 8, the most repeated child-facing feature in the literature (Whittington's eczema bands, molluscum, EM; NHS inform's chickenpox, hives, scabies, ringworm, prickly heat). Decision 1 fixes 'itchy'/'does it itch'; the shared fact supersedes tummy-itch, limb-itch and back-itch.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-013",
+      "traces_to": 8,
+      "q": {
+        "young": "Do you want to scratch it?",
+        "older": "Do you feel like scratching where the spots are?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "itch",
+      "why": "Item 8, same fact reached through the behaviour rather than the word, for a child who may not use 'itch'; Paller's cognitive debriefing supports a 6-11 year old answering about their own itching, and intensity is never asked.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as befor"
+      }
+    },
+    {
+      "id": "r-014",
+      "traces_to": 9,
+      "q": {
+        "young": "Do you have sore spots in your mouth?",
+        "older": "Do you have sore spots inside your mouth?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "mouth-sores",
+      "why": "Item 9; the mouth lesions are the rash in a place the child would never tap (Whittington HFM and EM Major, NHS inform 'mouth ulcers'). Decision 1 fixes 'sore spots inside your mouth' over 'ulcers', and it is asked as a feeling with no instruction to look.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-015",
+      "traces_to": 9,
+      "q": {
+        "young": "Does your mouth feel sore inside?",
+        "older": "Does the inside of your mouth feel sore too?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "mouth-sores",
+      "why": "Item 9, same fact phrased purely as sensation; NHS inform's 'if eating and swallowing is uncomfortable' is the family-facing cue, and no mirror, no opening wide, no looking is implied.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-016",
+      "traces_to": 10,
+      "q": {
+        "young": "Are any spots like little blisters?",
+        "older": "Are any of the spots like little blisters?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "blisters",
+      "why": "Item 10; vesicular-versus-not is the biggest fork in Whittington's eighteen conditions, one branch of which it calls a dermatological emergency. Decision 1 fixes 'blisters' over bullae, vesicles and bubbles, and nothing invites the child to burst or pick one.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-017",
+      "traces_to": 10,
+      "q": {
+        "young": "Do any spots feel like blisters?",
+        "older": "Do any of the spots feel like a blister?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "blisters",
+      "why": "Item 10, same fact asked by feel rather than by sight, which suits a child whose spots are somewhere they cannot see; NHS inform's chickenpox 'spots turn into fluid-filled blisters' is the anchor.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "r-018",
+      "traces_to": 11,
+      "q": {
+        "young": "Does anywhere look puffy or swollen?",
+        "older": "Does anywhere on you look puffy or swollen?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "puffy-swollen",
+      "why": "Item 11; RCH HSP's periorbital and dependent oedema, Whittington's angioedema of face and hands, NG143's Kawasaki, NHS inform's cellulitis. Decision 1 carries 'puffy or swollen' from limb-swollen; distinct fact because limb-swelling is about one limb, and no body area is named.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-019",
+      "traces_to": 12,
+      "q": {
+        "young": "Are your hands and feet cold?",
+        "older": "Do your hands and feet feel cold right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "cold-hands-feet",
+      "why": "Item 12; NG240 table 3 files 'Cold hands and feet' as a symptom rather than a sign, and RCH's 'cold extremities' is the examiner's version of the same thing, so the child is asked what they feel.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-020",
+      "traces_to": 13,
+      "q": {
+        "young": "Were you unwell a few weeks ago?",
+        "older": "Were you unwell in the last few weeks, with a cold or sore throat?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "recent-illness",
+      "why": "Item 13; RCH HSP's 'URTI in 50% of cases', NHSGGC's ITP '60% have a preceding viral infection', Whittington's scarlet fever 'recent sore throat'. The older wording is limb's shipped l-019 carried across unchanged, and 'unwell' is decision 1's register over 'poorly'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-021",
+      "traces_to": 13,
+      "q": {
+        "young": "Did you have a cold lately?",
+        "older": "Did you have a cold or a sore throat a few weeks ago?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "recent-illness",
+      "why": "Item 13, same fact narrowed to the two named preceding illnesses; 'a cold' is decision 1's register, matching ears' e-005, and no condition is named to the child.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-022",
+      "traces_to": 14,
+      "q": {
+        "young": "Have you got bruises you don't remember?",
+        "older": "Have you got bruises you don't remember getting?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "unexplained-bruises",
+      "why": "Item 14; NHSGGC's leukaemia 'easy bruising, petechiae (in absence of trauma)' rendered as a memory question, which is the only child-facing form of 'in the absence of trauma'. minAge 8 is meta.minAge, recorded as judgement not citation, and it is a haematology item, never a safeguarding one.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "dont make sense"
+      }
+    },
+    {
+      "id": "r-023",
+      "traces_to": 14,
+      "q": {
+        "young": "Do you have new bruises?",
+        "older": "Have you noticed new bruises you don't know how you got?"
+      },
+      "answers": "yesno",
+      "minAge": 8,
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "unexplained-bruises",
+      "why": "Item 14, same fact with the memory demand phrased as not knowing rather than not remembering; 'bruises' is the one morphology word the packet permits because it is not a colour claim.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "r-024",
+      "traces_to": 15,
+      "q": {
+        "young": "Did you bump it or hurt it?",
+        "older": "Did you bump it or hurt it there?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "bumped-it",
+      "why": "Item 15; RCH's History 'History of trauma/injury' and its mechanical causes, asked present-tense about this mark rather than about memory, so it carries no age floor. Distinct from limb's limb-mechanism, which is region-specific.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

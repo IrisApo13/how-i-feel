@@ -1,0 +1,426 @@
+{
+  "packet": {
+    "id": "eye-complaint",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "candidates": [
+    {
+      "id": "y-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Did something get splashed in your eye?",
+        "older": "Did something get splashed into your eye?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-splash",
+      "why": "Item 1, plain form: decision 1 rules 'splashed' as the register word, and this asks the event with no substance named at all, which is the default the item-1 exception sits on top of.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Did something from a bottle go in your eye?",
+        "older": "Did something from a bottle or spray get into your eye?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-splash",
+      "why": "Item 1 using decision 3's narrow category cue ('something from a bottle', 'a spray') because 'chemical' is not a word a 4-year-old owns and RCH injury puts irrigation before examination; no substance is named.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "too specific"
+      }
+    },
+    {
+      "id": "y-003",
+      "traces_to": 2,
+      "q": {
+        "young": "Did something go into your eye?",
+        "older": "Did something go into your eye, even something small?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-something-went-in",
+      "why": "Item 2 as a mechanism question in decision 1's words ('got into your eye'); 'even something small' carries source 3's retained intraocular fragment without naming an object, since the item-1 exception is not extended here.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Did anything fly into your eye?",
+        "older": "Did anything fly or shoot into your eye?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-something-went-in",
+      "why": "Item 2 aimed at the high-velocity half of source 2's projectile list and source 6's Box 1 'High-velocity injury', carried by the verb rather than by naming any of the banned objects.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-005",
+      "traces_to": 3,
+      "q": {
+        "young": "Did something hit or bump your eye?",
+        "older": "Did something hit your eye or bump into it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-impact",
+      "why": "Item 3, the blunt mechanism source 3 keeps apart from projectile ('blunt force/sharp object/projectile') and source 6 calls 'a physical impact'; phrased about the object, never about a person, per the safeguarding exclusion.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-006",
+      "traces_to": 3,
+      "q": {
+        "young": "Did you bump your eye on something?",
+        "older": "Did you fall or bump your eye on something hard?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-impact",
+      "why": "Item 3 reached from the child's own movement, which is how an unwitnessed injury at home reaches the nurse (source 2: 'Most injuries occur at home away from parental supervision'); non-attributive, no second person in the sentence.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "doesnt make sense"
+      }
+    },
+    {
+      "id": "y-007",
+      "traces_to": 4,
+      "q": {
+        "young": "Is anything blurry or hard to see?",
+        "older": "Is anything looking blurry or hard to see right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "blurry",
+      "why": "Item 4 in the shipped `blurry` wording so decision 11's re-sourcing carries it across with citations; no eye-covering or comparison, so it stays a report and not the measured acuity of item 23.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-008",
+      "traces_to": 4,
+      "q": {
+        "young": "Do things look funny or fuzzy now?",
+        "older": "Do things look fuzzy or different from before?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "blurry",
+      "why": "Item 4 in NHS source 12's family-facing register ('changes in your vision') for a child who does not own the word blurry; says nothing about losing sight, which the cautions ban outright.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-009",
+      "traces_to": 5,
+      "q": {
+        "young": "Does light hurt your eyes?",
+        "older": "Does bright light make your eyes hurt?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "light-hurts",
+      "why": "Item 5 in decision 1's words ('light hurts your eyes', 'bright light'), and tagged with the `light-hurts` fact decision 10 requires so the head group's hand-written question dedupes against it.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-010",
+      "traces_to": 6,
+      "q": {
+        "young": "Does it feel like something is in your eye?",
+        "older": "Does it feel like something is in your eye, like sand?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-something-in-it",
+      "why": "Item 6 in the exact concept source 11 cognitive-tested and found 'clear and easy to understand', with decision 1's older-tier 'like sand' in place of the banned 'gritty'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-011",
+      "traces_to": 6,
+      "q": {
+        "young": "Does your eye feel scratchy?",
+        "older": "Does your eye feel scratchy, like sand got in it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-something-in-it",
+      "why": "Item 6 for a child who would not build the longer sentence; keeps the sensation separate from item 2's event, which is the split source 1's '(corneal process)' parenthesis earns.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-012",
+      "traces_to": 7,
+      "q": {
+        "young": "Is it hard to keep your eye open?",
+        "older": "Is it hard to keep your eye open right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-hard-to-open",
+      "why": "Item 7 as the child's half of source 5's 'the child will often be reluctant to open their eye' — a thing the child notices about themselves, with no instruction to open, hold open or test the eye.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-013",
+      "traces_to": 8,
+      "q": {
+        "young": "Was your eye stuck shut when you woke up?",
+        "older": "Was your eye stuck shut or stuck together when you woke up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "eye-stuck-shut",
+      "why": "Item 8, source 7's 'glued eyes in the morning' in decision 1's register ('stuck shut' / 'stuck together', never 'glued' or 'sticky eye'); the morning framing carries the fact without naming what is on the lashes.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-014",
+      "traces_to": 8,
+      "q": {
+        "young": "Were your eyelashes stuck shut this morning?",
+        "older": "Were your eyelashes stuck together when you woke up today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "eye-stuck-shut",
+      "why": "Item 8 from NHS source 12's family-facing 'pus that sticks to lashes', reworded to the visible lashes so no substance is named; five-band duration because source 7 excludes symptoms over seven days.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-015",
+      "traces_to": 9,
+      "q": {
+        "young": "Are your eyes itchy?",
+        "older": "Are your eyes itchy right now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days"
+      ],
+      "fact": "eye-itch",
+      "why": "Item 9 asking itch alone per decision 4, which unbundles the shipped 'Are your eyes itchy or watery?' because source 7 has itch and stickiness pointing in opposite directions; fact matches what `eye-itch` must be given.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-016",
+      "traces_to": 10,
+      "q": {
+        "young": "Does it hurt when you look around?",
+        "older": "Does your eye hurt when you look around the room?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-hurts-to-look",
+      "why": "Item 10, the painful half of source 4's 'Painful or restricted eye movements', written as a report of ordinary looking around rather than the directed gaze that would make it item 26's motility test.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "y-017",
+      "traces_to": 10,
+      "q": {
+        "young": "Does looking around make your eye hurt?",
+        "older": "Does looking around the room make your eye hurt?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "fact": "eye-hurts-to-look",
+      "why": "Item 10 with the ordinary act in the subject position, so nothing in the sentence can be read as an instruction to move the eyes; the packet's worst-sourced item, flagged for the reviewer either way.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

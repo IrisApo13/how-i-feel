@@ -1,0 +1,162 @@
+{
+  "id": "nosebleed",
+  "group": "head",
+  "groups": [
+    "head"
+  ],
+  "depth": null,
+  "mechanism": null,
+  "packetRank": 60,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "4": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "5": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ]
+    }
+  },
+  "durationsNote": "Default is the acute band only. Every red flag either guideline states is about the CURRENT episode -- RCH's \"Bleeding >30 minutes despite adequate pressure\" and \"Bilateral bleeding\", GGC's \"Control epistaxis if present\" -- and a child who reports a nosebleed under `long-time` is not bleeding now. Three exceptions, each sourced. Item 1 runs to `long-time` because StatPearls states nasal foreign bodies \"are usually painless\" and present with discharge, so the presentation is characteristically late. Item 4 runs to `few-days` because GGC tells parents to \"look at the nose in 3-4 days time when the swelling has improved\" and warns of \"a delayed presentation associated with systemic features\", so the nasal-obstruction window outlasts the injury. Item 5 runs to every band because a bleeding tendency is not an acute fact. JUDGEMENT, NOT A CITATION -- no source assigns duration bands; the mapping from each source's own scope to this app's bands is the packet's reasoning.",
+  "itemRank": [
+    1,
+    3,
+    2,
+    4,
+    5
+  ],
+  "itemRankNote": "Proposed, not yet confirmed by review. Decision 4. Only five items survived the self-report filter and the young cap is five sourced questions spent across every group the child tapped, so in practice this ordering decides which of the five are dropped when `head-injury` or `headache` is also live -- which, per the gate ruling, is ALWAYS. Item 1 leads on time-criticality rather than frequency, the same basis on which `eyes/complaint` ranked its chemical-splash item first: StatPearls states paired magnets \"can end up in a septal perforation in as little as 4 hours\", RCH states \"Button batteries require urgent removal\", and the object in the nose is a fact only the child holds. Item 3 is second because it is the child-answerable half of the only duration threshold either guideline gives (RCH, \"Bleeding >30 minutes despite adequate pressure\") and it decides whether first aid is still running. Item 2 is third DESPITE carrying RCH's \"Bilateral bleeding suggests a systemic cause or significant trauma\", because a nurse standing in front of the child can see which side bled far more reliably than the child can report it -- it is the strongest criterion here but the weakest claim on a scarce child-facing slot. Items 4 and 5 are partial and rank last. CONFIRMED 2026-09-09 by iris, reviewed item by item against the shipped six and left unchanged. No longer \"proposed, not yet confirmed by review\".",
+  "minAge": {},
+  "minAgeNotes": {
+    "*": "JUDGEMENT, NOT A CITATION. The empty object is a decision, not an omission. The only age criterion anywhere in these sources is RCH's \"Age <2 years: high association with trauma, child abuse or underlying illness\", echoed by Ismail & Gandhi (\"nosebleeds are uncommon in children under 2\"). That is a POPULATION boundary below this app's floor of 4, not a capability or validity floor inside 4-12, and importing it as a `minAge` would be an invention. No source in this packet floors any history question by age, and no item here asks the child to construct a baseline, count, or estimate -- the three things that produced floors in earlier packets. Item 5 was considered for a floor and refused: see itemNotes."
+  },
+  "cite": {
+    "1": "RCH Epistaxis (1) -- Rarer causes, \"Foreign bodies: suspect with unilateral foul discharge. Button batteries require urgent removal\"; PCH Epistaxis (2) -- \"Local Trauma - (e.g. nose picking, nasal fracture, forceful nose blowing, foreign body)\"; StatPearls Nasal Foreign Body (3) -- \"Patients usually present with foul-smelling purulent nasal discharge that is usually unilateral\", \"NFBs are usually painless\", \"bloody stained discharge or even epistasis might be witnessed in these cases\", and \"Paired magnets also create a current with similar results. which can end up in a septal perforation in as little as 4 hours\"",
+    "2": "RCH Epistaxis (1) -- Red flags, \"Bilateral bleeding suggests a systemic cause or significant trauma\"; StatPearls Nasal Foreign Body (3) -- \"This might be associated with unilateral epistaxis or discharge ranging from clear to purulent\" and \"Unilateral foreign bodies are found on the right side twice as often as the left\"; Alshehri (6) -- \"bilateral nasal bleeding in two cases (0.9%)\", the base rate that makes a \"yes\" here informative",
+    "3": "RCH Epistaxis (1) -- Red flags, \"Bleeding >30 minutes despite adequate pressure\"; GGC Nasal injuries (4) -- \"Control epistaxis if present\" and \"The nose should be held for 10 minutes initially, resisting temptation to release and see if bleeding has stopped\". THE CHILD'S HALF ONLY: neither source's threshold is asked. See bannedPhrases and the packet's \"The two things the literature cares most about\".",
+    "4": "GGC Nasal injuries (4) -- examination heading \"Patency of nares\", and \"If there is a septal haematoma present refer to ENT at initial presentation\"; StatPearls Nasal Foreign Body (3) -- obstruction by an object in the nasal cavity. PARTIAL AND SPLIT, NOT RECLASSIFIED: GGC's criterion is an examination the nurse performs. The child-facing half -- whether air moves through the nose -- is a different, answerable item and is NOT the GGC criterion. Cited on the same basis as head-injury item 13 (sleepiness) and it must never be described as detecting a septal haematoma.",
+    "5": "RCH Epistaxis (1) -- History, \"Consider underlying diagnosis/cause if: ... easy bruising, gum bleeding, prolonged bleeding after minor cuts\"; PCH Epistaxis (2) -- \"Patients in whom epistaxis is recurrent, difficult to control or who have other features of coagulopathy (e.g. easy bruising) may warrant investigation for an underlying coagulation disorder\"",
+    "6": "RCH Epistaxis (1) -- History, \"recurrent, frequent episodes\"; PCH Epistaxis (2) -- \"recurrent\"; Ismail & Gandhi (5) -- \"any previous such events\"; Alshehri (6) -- \"Recurrent nasal bleeding was the most prevalent, seen in 107 cases (48.9%)\" -- ALREADY COLLECTED. `HAPPENED_BEFORE` in vocab.js (\"Has this happened to you before?\") is appended to EVERY report outside the question cap, and the repeat-report path replaces it with RECURRENCE. No candidate may be written. This is the packet's most consequential exclusion; see the packet.",
+    "7": "RCH Epistaxis (1) -- \"Bleeding >30 minutes despite adequate pressure\"; GGC (4) -- \"held for 10 minutes initially\" -- NOT PROPOSED. A child of 4-12 cannot report elapsed time under stress, DURATIONS already collects a band, and the headache packet has already banned asking a child for minutes or hours. Item 3 takes the answerable half.",
+    "8": "RCH Epistaxis (1) -- \"Circulation: shock is rare but possible\", \"group and hold/crossmatch in severe/recurrent bleeding\"; Grigg (7) -- \"The majority of participants overestimated the size of the spill for all items\" and \"Over-estimation of blood loss is common\" -- NOT PROPOSED. Source 7 measured 175 CLINICIANS, not children; it is cited for the proposition that trained observers overestimate, and the extension to a frightened 6-year-old is JUDGEMENT, NOT A CITATION.",
+    "9": "RCH Epistaxis (1) -- Key points, \"Usually due to minor trauma (eg nose picking) or friable nasal mucosa\", and Common causes, \"Minor trauma: nose picking, rubbing, sneezing, coughing or straining\"; PCH Epistaxis (2) -- \"nose picking\" -- REFUSED ON DIGNITY GROUNDS. The leading cause named by both guidelines and the one question in this packet that may never be asked. See the nose-picking ruling.",
+    "10": "GGC Nasal injuries (4) -- \"Establish the mechanism of injury\"; RCH Epistaxis (1) -- \"Minor trauma\" -- ALREADY COLLECTED TWICE. GROUP_GATE.head asks mechanism before any follow-up, and `head-injury` item 6 (h-003, \"What were you doing when you hurt it?\") owns the detail. Fact `bumped-it` is NOT reused and no candidate may be written.",
+    "11": "RCH Epistaxis (1) -- \"easy bruising\"; PCH Epistaxis (2) -- \"other features of coagulopathy (e.g. easy bruising)\" -- NOT PROPOSED. `skin/rash` item 14 already carries fact `unexplained-bruises` with a better-sourced haematology rationale and an age-8 floor; sharing the fact means only one is ever asked and this packet's would be the weaker. Also refused on safeguarding adjacency -- see the packet.",
+    "12": "RCH Epistaxis (1) -- \"gum bleeding\" -- NOT PROPOSED. Group `mouth`'s territory, and the child-facing form is an inspection of their own mouth.",
+    "13": "RCH Epistaxis (1) -- \"family history of bleeding disorders\" -- NOT PROPOSED. The carer's report. The headache packet's ban on relaying what an adult said is carried here.",
+    "14": "RCH Epistaxis (1) -- \"medication history\", and Common causes \"Medications: topical nasal steroids, NSAIDs, fluvoxamine, chemotherapy\" -- NOT PROPOSED. Banned as a family across packets; a child does not know what they were given.",
+    "15": "RCH Epistaxis (1) -- \"history of bleeding after surgical challenges eg dental extractions, tonsillectomy, circumcision\" -- NOT PROPOSED. Surgical history is the carer's, and one of the three named challenges is genital surgery, which is a hard PG refusal independent of the clinical argument.",
+    "16": "RCH Epistaxis (1) -- Red flags, \"History of syncopal episode, haematemesis, melaena or haemodynamic instability\" -- NOT PROPOSED. Syncope is an observer's fact and SENSATIONS.dizzy already collects the child's half; melaena requires the child to look at what came out and is banned project-wide; haematemesis after a nosebleed is confounded by swallowed blood, so a child's \"yes\" would not mean what the criterion means.",
+    "17": "RCH Epistaxis (1) -- \"Foreign bodies: suspect with unilateral foul discharge\"; StatPearls (3) -- \"foul-smelling purulent nasal discharge that is usually unilateral\" -- NOT PROPOSED as its own item; folded into item 1, which takes the actionable child-held half. Asking a child whether their nose smells bad is shame-loaded and is the inspection ban in a different sense.",
+    "18": "RCH Epistaxis (1) -- \"Friable nasal mucosa: upper respiratory tract infection, drying of mucosa (air conditioning/heating), allergic rhinitis\"; PCH Epistaxis (2) -- \"Inflammation (e.g. upper respiratory tract infection, allergic rhinitis)\" -- NOT PROPOSED. Fact `runny-nose` exists but every carrier (e-005, e-006 in `earache`; s-007 in `sore-throat`) is outside group `head` and therefore unreachable from here, so reusing the slug would dedupe against nothing. The fact this packet needs is blockage on ONE side (item 4), not runniness, and neither guideline changes management on the answer.",
+    "19": "GGC Nasal injuries (4) -- \"If there is a delayed presentation associated with systemic features, particularly elevated temperature, a septal abscess should be suspected\" -- ALREADY COLLECTED under fact `feels-feverish`, carried by general-unwell item 1, whose groups include `head`.",
+    "20": "GGC Nasal injuries (4) -- \"Evident deformity - if present refer to the emergency ENT clinic within one week of the time of injury\", \"Swelling +/- contusion\", and \"If at the time of examination swelling prevents confident assessment of deformity ask parents to look at the nose in 3-4 days time\" -- NOT PROPOSED. Examination, and the source itself hands the looking to a parent rather than the patient. Fact `face-swelling` is NOT reused: its carrier m-005 is `groups: [\"mouth\"]` and unreachable from `head`.",
+    "21": "GGC Nasal injuries (4) -- \"Associated skull fracture - e.g. base of skull # which can lead to CSF rhinorrhoea\" -- NOT PROPOSED. Asking a child to characterise fluid coming out of their own head is head-injury's item-10 ban (\"is anything coming out of your ear?\") restated for the nose.",
+    "22": "RCH Epistaxis (1) -- \"Identify site of bleeding: use a headlight/otoscope to look for active bleeding, clots or prominent vessels in Little's area\", cautery with silver nitrate, anterior nasal packing, Merocel/Surgicel/Floseal; GGC (4) -- \"If there is a septal haematoma present refer to ENT\", \"Septal deviation - refer to ENT\" -- \"no -- exam/procedure\". The diagnostic core of the complaint and all of it instrumented.",
+    "23": "RCH Epistaxis (1) -- \"Consider FBE, coagulation screen and group and hold/crossmatch\"; PCH (2) -- \"Full blood count (FBC) and coagulation profile\"; Ismail & Gandhi (5) -- \"blood to check Hb levels, platelet count, and INR\" -- \"no -- investigation\".",
+    "24": "RCH Epistaxis (1) -- \"Airway/Breathing: assess for compromise (facial trauma)\", \"Circulation: shock is rare but possible\", \"signs of haemodynamic compromise\" -- \"no -- observer\". Fact `hard-to-breathe` is NOT reused: it is respiratory distress and belongs to `chest`, and a blocked nostril (item 4) is a different fact that must not be collapsed into it.",
+    "25": "RCH Epistaxis (1) -- \"Epistaxis in children <2 years is rare and should prompt consideration of child abuse or underlying systemic disease\"; Ismail & Gandhi (5) -- \"nosebleeds are uncommon in children under 2\" -- OUT OF SCOPE. The app covers 4-12.",
+    "26": "PCH Epistaxis (2) -- \"underlying coagulopathy or Non-Accidental Injury as an inciting factor\"; GGC (4) -- \"If you have suspicion of NAI discuss with senior\"; Ismail & Gandhi (5) -- \"your history should include a thorough questioning of how this event occurred, any previous such events, and any previous injuries the child may have sustained\", and \"it was decided by 3 independent paediatricians trained in child protection issues that in 50% of the cases child protection concerns should have been raised\" -- EXCLUDED OUTRIGHT. Every directive in these sources is addressed to a clinician with a protocol. See the safeguarding ruling.",
+    "27": "GGC Nasal injuries (4) -- \"Establish whether this is an isolated nasal injury or if there is associated head trauma (see HI guideline), or injury elsewhere\" -- NOT A QUESTION. This is a ROUTING criterion and it is the clearest statement in any source that the nose and the head are assessed together; it is what the gate ruling turns on.",
+    "28": "Alshehri (6) -- \"nasal bleeding with acute pain in three cases (1.4%)\" -- ALREADY COLLECTED by the body map and the FPS-R intensity screen.",
+    "29": "StatPearls Nasal Foreign Body (3) -- \"some children present with headaches on the same side of the foreign body\" -- ALREADY COLLECTED. `headache` item 12 carries fact `head-side`. NOT reused here: item 2's `nose-side` is which NOSTRIL bleeds, and a child can have a left-sided headache and a right-sided nosebleed. Sharing the slug would let one answer suppress the other."
+  },
+  "facts": {
+    "1": "nose-something-went-in",
+    "2": "nose-side",
+    "3": "nose-still-bleeding",
+    "4": "nose-blocked",
+    "5": "bleeds-a-long-time"
+  },
+  "factsNote": "JUDGEMENT, NOT A CITATION -- no source assigns facts; the reasoning is the bank's dedupe behaviour in `keyOf` and `bankQuestions`. ALL FIVE ARE COINED; nothing in the current fact list is reused, and each refusal is deliberate. `nose-something-went-in` -- NOT `eye-something-went-in` and NOT `eye-something-in-it`. `eyes/complaint` is the wording precedent (it split the EVENT, \"Did something go into your eye\", from the SENSATION, \"Does it feel like something is in your eye\") and item 1 is the event half; but both eye slugs are `groups: [\"eyes\"]`, and the urgency differs -- a button battery in the nose perforates the septum in hours. `nose-side` -- NOT `head-side`, which is headache item 12's laterality of PAIN; both are reachable in group `head` at once and collapsing them would lose one. `nose-still-bleeding` -- nothing in the bank names an ongoing bleed. `nose-blocked` -- NOT `hard-to-breathe` (chest, respiratory distress) and NOT `runny-nose` (a different nasal fact, and all three carriers are outside group `head` anyway). `bleeds-a-long-time` -- NOT `unexplained-bruises`, which is skin/rash item 14's; RCH lists \"easy bruising\" and \"prolonged bleeding after minor cuts\" as two separate history criteria and this packet takes only the second.",
+  "bannedPhrases": [
+    [
+      "\\b(epistaxis|rhinorrho?ea|rhinoscopy|nares|naris|nostril flaring|mucosa|mucosal|friable|little'?s area|kiesselbach|septum|septal|turbinate|vestibule|anterior|posterior|unilateral|bilateral)\\b",
+      "clinical and anatomical register for the nose. EVERY source in this packet writes in it -- RCH's whole background paragraph is 'Little's area ... on the anterior septal wall', StatPearls says 'unilateral epistaxis'. Decision 1 rules 'nose', 'one side', 'both sides'. 'anterior'/'posterior'/'unilateral'/'bilateral' are re-banned here rather than borrowed from headache because that packet's list is scoped to headache items"
+    ],
+    [
+      "\\b(cauter\\w+|silver nitrate|nasal pack\\w*|packing|packed with|tampon|merocel|surgicel|floseal|nasopore|co-?phenylcaine|lignocaine|lidocaine|adrenaline|tranexamic|\\btxa\\b|emollient|naseptin|chlorhexidine|bactroban|vaseline|petroleum jelly)\\b",
+      "names the procedure or the drug that comes next. RCH's and PCH's management sections are written entirely in this register and sit directly in a generator's path. A child told a tablet is asking about cautery has been frightened before they answer"
+    ],
+    [
+      "\\b(h(a)?ematoma|h(a)?emorrhag\\w+|h(a)?ematemesis|mel(a)?ena|coagulopath\\w+|coagulation|clotting|diathes\\w+|von willebrand|h(a)?emophili\\w+|\\bitp\\b|thrombocytopeni\\w+|leuk(a)?emi\\w+|lymphoma|angiofibroma|telangiectas\\w+|\\bhht\\b|polyps?|abscess|perforation|deviation|fractur\\w+|tumou?rs?|cancer|malignan\\w+)\\b",
+      "names a condition to the child. The bleeding-disorder differential is the reason recurrence matters clinically and it is the last thing a 7-year-old may be shown. Extends head-injury's 'concussion|fracture|brain|skull' ban rather than re-opening it"
+    ],
+    [
+      "\\b(pick(ing|ed|s)?\\s*(at\\s*)?(your|the|his|her|their)?\\s*nose|nose[-\\s]?pick\\w*|dig(ging|s)?\\s*(around\\s*)?(in|up|inside)\\s*(your|the)\\s*nose|(finger|fingers|thumb|nail|nails)\\s*(in|up|inside|into)\\s*(your|the)\\s*nose|scratch\\w*\\s*(in|up|inside)\\s*(your|the)\\s*nose|rub\\w*\\s*(in|up|inside)\\s*(your|the)\\s*nose|bogey|booger\\w*)\\b",
+      "THE NOSE-PICKING RULING. RCH names 'nose picking' in its Key points and again under Common causes; PCH names it first. It is the leading cause of paediatric epistaxis and it may never be asked. A tablet in a public waiting room asking a child whether they pick their nose is an accusation dressed as a question; the expected answer is 'no' whatever the truth, so the item carries no information even if it were permitted; and it changes nothing -- pressure, review and emollient are the same either way. This app collects the child's STATE, never its CAUSE, exactly as the headache packet refused bullying, stress and skipped meals"
+    ],
+    [
+      "\\b(did|have)\\s+you\\s+(put|push|stick|shove|poke|place|stuff|jam)\\b|\\b(put|pushed|stuck|shoved|poked|stuffed|jammed)\\s+\\w*\\s*(up|in|into|inside)\\s+(your|the)\\s+nose\\b|\\bwhat did you put\\b",
+      "item 1 must stay PASSIVE. 'Did something go up your nose?' is the question; 'Did you put something up your nose?' is the same clinical fact turned into an admission, and a child who thinks they are in trouble says no. This is `eyes/complaint`'s construction ('Did something go into your eye', never 'did you poke your eye') applied to the body part where the temptation to blame is far stronger. A button battery answered 'no' out of shame is the worst outcome available in this packet"
+    ],
+    [
+      "\\b(how much (blood|it bled|came out)|how many (millilit\\w+|tablespoons?|teaspoons?|cupfuls?|drops?|tissues?)|millilit\\w+|\\bmls?\\b|tablespoons?|teaspoons?|egg\\s?cups?|a lot of blood|lots of blood|loads of blood|how long (has|have|did|was)|how many (minutes|hours)|\\bminutes?\\b|\\bhours?\\b|thirty minutes|10 minutes|ten minutes|time it|timed? it)\\b",
+      "THE TWO THINGS THE LITERATURE CARES MOST ABOUT, AND THE TWO A CHILD CANNOT REPORT. RCH's only duration threshold is 'Bleeding >30 minutes despite adequate pressure' and its severity language is volume-based; source 7 measured 175 clinicians estimating blood on ten household objects and 'The majority of participants overestimated the size of the spill for all items'. If trained clinicians overestimate, a frightened child cannot do better, and elapsed time under stress is worse still. DURATIONS already collects a band. Item 3 asks the answerable half -- whether it has stopped -- and no candidate may ask for an amount or a clock"
+    ],
+    [
+      "\\b(look at (the|your|it)|check (the|your) (tissue|towel|cloth|bowl|dish|shirt|top)|kidney dish|spit (it|the blood|that) out|swallow\\w* (the )?blood|soaked|dripping|clots?|blow your nose (and|then)|show (me|us|the nurse) the)\\b",
+      "never ask a child to inspect, produce or handle what came out of them. RCH's own management text instructs staff to have the child 'spit out any blood into a kidney dish' -- a direction to a nurse holding the dish, not a question. The project-wide ban on asking a child to look at what came out applies to blood exactly as it applies everywhere else"
+    ],
+    [
+      "\\b(hurt you|hit you|punch\\w*|smack\\w*|slap\\w*|did (anyone|someone|somebody)|who did (this|that|it)|on purpose|deliberate\\w*|abuse|non[-\\s]?accidental|\\bnai\\b|are you (safe|scared|frightened|afraid)|scared of (anyone|someone|anybody)|is anyone hurting)\\b",
+      "THE SAFEGUARDING RULING. PCH names 'Non-Accidental Injury as an inciting factor', GGC says 'If you have suspicion of NAI discuss with senior', and source 5 exists because clinicians miss it. Every one of those directives is addressed to a trained adult with a protocol. A shared hospital tablet cannot verify who is standing behind the child, cannot respond to a disclosure, and cannot keep the answer. Asking would be worse than not asking. See the packet"
+    ],
+    [
+      "\\b(family history|runs in (your|the) family|anyone in your family|your (brother|sister|cousin)s? (get|has|have)|tonsillectomy|tonsils (taken )?out|dental extraction|circumcis\\w+|operation|surgery|blood tests?|needles?|\\bfbc\\b|\\bfbe\\b|\\binr\\b|platelets?|crossmatch|cross-match|group and hold|transfusion|\\bdrip\\b|cannula)\\b",
+      "RCH's history block asks for family history of bleeding disorders and 'bleeding after surgical challenges eg dental extractions, tonsillectomy, circumcision'. All three are the carer's knowledge, one of them is genital surgery, and naming a blood test to a child changes the answer to every question after it. Carried in spirit from the headache packet's ban on naming what happens next"
+    ],
+    [
+      "\\b(mum|mummy|mom|mommy|dad|daddy|parents?|carers?|grown-?ups?|nurse|doctor|teacher)\\s+(said|say|says|told|tell|tells|thinks?|reckons?)\\b",
+      "never ask a child to relay what an adult said. Carried unchanged from the headache packet; RCH and GGC both write history items that are plainly the carer's report"
+    ],
+    [
+      "\\b(rate|score|out of ten|out of 10|how bad|grade|scale of|serious|dangerous|severe|badly?|worst|heavy|heavily|profuse)\\b",
+      "never ask a child to classify severity -- head-injury's rule, and RCH's escalation language ('severe or difficult to stop', 'profuse/posterior') is written entirely in it. The FPS-R screen has intensity"
+    ],
+    [
+      "than usual|than normal|more than (you )?normally|like you normally|as usual|than you usually|than other (kids|children|people)|consistently|for a child of your age",
+      "a 4-7 year old cannot construct their own baseline. Carried from tummy/vomiting decision 4 via headache. It deliberately does NOT catch 'a long time', which item 5 needs -- that is a judgement about the child's own repeated experience, not a comparison against a norm they have never seen"
+    ],
+    [
+      "\\b(smell(s|y|ed|ing)?\\s*(bad|funny|nasty|horrible|weird|off)|foul|stink\\w*|pus|purulent|snot|discharge|goo|gunk|yucky stuff)\\b",
+      "item 17: RCH's foreign-body cue is 'unilateral foul discharge' and StatPearls' is 'foul-smelling purulent nasal discharge'. Both are clinician observations, and the child-facing form -- does your nose smell bad -- is shame-loaded on a shared tablet and is the inspection ban by another route. Item 1 takes the actionable half of the same criterion"
+    ],
+    [
+      "\\bhave you got\\b|\\bhaven'?t you got\\b|\\bwhilst\\b|\\bcasualty\\b|\\ba&e\\b|\\bplaster\\b|\\bpoorly\\b|\\bunwell\\b|off[-\\s]colou?r|\\btorch\\b|\\bparacetamol\\b|\\b(wee|weed|weeing)\\b|\\bnappy|nappies\\b|\\bin hospital\\b|\\bmum\\b|\\bmummy\\b|\\bnought\\b|\\bfringe\\b",
+      "British and Australian idiom, banned project-wide and re-banned here because FIVE of this packet's seven sources are Australian or British -- RCH and PCH write 'haemorrhage' and 'oedema', GGC writes 'haematoma' and 'nares', source 7 is Australian. Decision 1 rules 'do you have' and US spellings throughout"
+    ]
+  ],
+  "preferred": {},
+  "preferredNote": "No wording preferences can be expressed yet -- this packet has no candidates. Three wording rules bind stage 2 and are not expressible as bans. (1) Item 1 must be PASSIVE and must name an object, not a finger: the model is `eyes/complaint`'s 'Did something go into your eye', so 'Did something go up your nose?' -- see the agentive-insertion ban for why. (2) Item 2 must ask for the informative pole. RCH's red flag is BILATERAL bleeding, and 'is only one side bleeding?' inverts it into the uninformative answer, so the question is 'Is blood coming out of both sides?' (young) / 'Is it bleeding from both sides of your nose?' (older) -- 'nostril' is permitted in the older tier but 'both sides of your nose' is plainer and preferred. (3) Item 3 must ask about the present moment and nothing else -- 'Is your nose still bleeding?' -- because every attempt to make it more precise reintroduces the clock. Every item must NAME THE NOSE explicitly: this packet has no runtime gate confining it to children who tapped the nose (see gateNote), so the wording is the only thing that lets a child who bumped the back of their head answer 'no' cheaply instead of being confused.",
+  "gateNote": "ROUTING RULING -- read with the packet's \"Where this packet fires\" section. Group `head` asks MECHANISM first and DEPTH second, and depth only when mechanism is `no-injury` or `unknown` (GROUP_GATE.head). A nosebleed sits across that gate: it follows a bump or starts on its own, and GGC states the assessment directly -- \"Establish whether this is an isolated nasal injury or if there is associated head trauma\". THREE OPTIONS WERE CONSIDERED. (a) `mechanism: null`, surviving both branches. (b) `subgroups: [\"nose\"]`, keyed to the body-map region. (c) something else. OPTION (b) WAS THE INTENDED ANSWER AND IT IS CURRENTLY IMPOSSIBLE: `subgroupOf` in src/data/bodyMap.js returns `null` for every region whose group is not `limb`, so `subgroupsForRegions(['nose'])` is `[]`, and the filter in `bankQuestions` reads `!q.applies.subgroups || !subgroups?.length || ...` -- an empty subgroup list short-circuits to TRUE and the question fires anyway. Declaring `subgroups: [\"nose\"]` today would therefore be a no-op that fires for every head child while DOCUMENTING a restriction the runtime does not enforce, which is worse than option (a) because it is untrue on the page. So the ruling is (c): ship as (a) -- `mechanism: null`, `depth: null` -- state the cost, and name the one-line fix without making it. `depth: null` is also deliberate and not laziness: a child whose nose is bleeding has no good answer to \"on your skin, or inside?\", so scoping to `surface` (which would dodge `headache`) would hide this packet from every child who answered \"inside\", a plausible answer for a bleeding nose. THIS PACKET BREAKS THE ASSUMPTION THAT HEAD PACKETS NEVER COEXIST. `head-injury` (mechanism `injury`) and `headache` (mechanism `no-injury`, depth `inside`) are mutually exclusive by construction, which is why both carry packetRank 50 and why neither's rank was ever chosen against a sibling. This packet coexists with one or the other in all four combinations of (bumped / just started) x (tapped nose / tapped head generally), and in two of those four it fires for a child with no nose complaint at all. THE ONE-LINE FIX, for the reviewer, NOT MADE HERE: generalise `subgroupOf` beyond group `limb` so that region `nose` yields a `nose` subgroup, then add `subgroups: [\"nose\"]` to this packet. That is a change to src/ and to the sibling `limb` semantics, and it is out of this packet's scope. `packets/back/pain` reached the same conclusion from the other side -- its questions fire for a child who taps only Back of neck -- and recorded \"The cheapest fix is to generalise `subgroupOf` beyond `limb`\". This is the second packet to need it.",
+  "packetRankNote": "60, against `head-injury` and `headache` at 50. JUDGEMENT, NOT A CITATION. `packetRank` decides which packet's queue PICKS FIRST in the round-robin in build-bank.mjs, not which one wins outright, so 60 means this packet takes the even slots and its sibling always ships its best question before this one ships its best. That is the correct ordering for a packet that, per gateNote, fires for many children who have no nose complaint: the sibling owns the branch the gate actually established, this packet does not. It is also the honest reflection of the evidence -- `head-injury` was built on three validated decision rules and `headache` on ICHD-3 and NG127, while this packet found NO prediction rule of any kind. COST, stated plainly: round-robin still gives this packet roughly half the slots wherever it is live, so a child who bumped the back of their head loses two or three of five or six questions to nose questions. Raising the rank further does not fix that -- only the subgroup gate does. The acute-only default duration band is the second mitigation and is the only one this packet could actually ship.",
+  "itemNotes": {
+    "3": "The item most likely to be misread. It is NOT RCH's '>30 minutes' criterion and must never be presented as it. It establishes one binary the child genuinely holds -- is blood coming out right now -- which is what tells the nurse whether first aid is still running before anyone has looked.",
+    "4": "PARTIAL, and the weakest sourcing in the packet. GGC's 'Patency of nares' is an examination heading; the child-facing question is a different item that happens to concern the same anatomy, and it is cited on the split-don't-reclassify rule (brief section 4), exactly as head-injury item 13 was split from CHALICE's 'abnormal drowsiness'. It must never be described as detecting a septal haematoma.",
+    "5": "PARTIAL. RCH's own history criterion is 'prolonged bleeding after minor cuts', which is the one bleeding-tendency question that is neither an inspection, nor the carer's, nor shame-loaded. An age floor was considered -- 'a long time' is a duration judgement -- and REFUSED: it is a judgement about the child's own repeated experience rather than a comparison against a baseline they have never seen, which is the distinction the headache packet drew when it allowed 'than before' while banning 'than usual'. Ranked last because that distinction is fine and may not survive contact with a 5-year-old."
+  }
+}

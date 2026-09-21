@@ -1,0 +1,623 @@
+{
+  "packet": {
+    "id": "chest-pain",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "candidates": [
+    {
+      "id": "x-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Does it hurt more when you run around?",
+        "older": "Does it get worse when you run around or play?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-on-exertion",
+      "why": "Item 1 in decision 1's literal wording, 'run around or play'. The older tier is a word away from the shipped chest-worse-move ('Does it get worse when you run around?'), which the shared fact requires: whichever wording wins, the child must not meet two questions that read differently. Sourced by all six sources at once - RCH 'Reproducibility (consider exertional or positional)', Sheffield 'EXERTIONAL SYNCOPE and/or CHEST PAIN', SCAMP 'whether the pain was associated with exertion', Fogliazza Table 1, AHA element 1. It asks about a pattern the child has already lived through and never asks them to go and run (bannedPhrases 7). A 'no' here is not a negative finding - the AHA screen heads its own list with 'Parental verification recommended', which is the instrument saying it does not trust unverified self-report at any age it covers. The screener flags this as the same question as limb-pain p-004: that is a cross-REGION identity, and back/pain's doNotMerge, limb/pain item 9 and head/headache item 4 all refuse to merge exertion facts across regions because whether a leg hurts on running says nothing about whether a chest does. This packet does not overturn any of them; the only share it makes is with chest-breathing, inside one region.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Does playing make your chest hurt more?",
+        "older": "Does the pain come on when you run around or play?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-on-exertion",
+      "why": "Same criterion reached by onset rather than by worsening - AHA element 1 is 'Exertional chest pain/discomfort' and RCH's arrhythmia row is 'Exertional chest pain', both of which are pain that arrives with activity, not only pain that gets louder. Offered so a reviewer can choose between the two constructions; the fact stays worse-on-exertion because splitting it would ask a chest child the exertion question twice.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "x-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Does your chest hurt when you play outside?",
+        "older": "Does it get worse the more you run around?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-on-exertion",
+      "why": "The gradient form: RCH's exercise-induced row is 'Exercise induced chest pain with dyspnoea/cough', a dose relationship rather than a single event. The young tier names a concrete scene a 4-7 year old can picture instead of an abstract 'when you run around'. Weakest of the three on wording discipline - 'the more you' is a comparison - and written to be rejected against x-001 if the reviewer prefers the shipped phrasing.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "x-004",
+      "traces_to": 2,
+      "q": {
+        "young": "Does it hurt more when you breathe in?",
+        "older": "Does the pain get worse when you breathe in?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-breathing-in",
+      "why": "Decision 1 fixes 'when you breathe in' and forbids 'take a deep breath': the criterion is a pattern the child has already noticed, not a manoeuvre to perform (bannedPhrases 7). Best-attested criterion for the children who actually arrive - RCH 'Worse with movement or deep breathing' and 'Reproducible with palpation, movement or deep breathing', Sheffield 'worse with movement/coughing/inspiration' and 'Sharp, localised, worse with inspiration/coughing', Fogliazza 'pain that worsens with inspiration'. Fact coined, not hard-to-breathe: RCH names difficulty breathing separately and sharing the slug would let one answer silence the other.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Does breathing in make it hurt?",
+        "older": "Does it hurt more when you breathe in than when you breathe out?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-breathing-in",
+      "why": "The in-versus-out comparison is what 'pleuritic' means in a child's words, and it is sharper than a plain yes because a child with pain at rest can still answer it. Kept out of the young tier deliberately: two clauses is one too many for a child being read to.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "x-006",
+      "traces_to": 2,
+      "q": {
+        "young": "Does your chest hurt when you breathe in?",
+        "older": "Have you noticed the pain getting worse when you breathe in?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-breathing-in",
+      "why": "Third phrasing, written so the older tier says out loud that it is asking about something already noticed - the guard decision 1 puts on this item. 'Your chest' is the only anatomy this packet may use (bannedPhrases 2), so the young tier names it rather than the structures that move when a child breathes.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-007",
+      "traces_to": 3,
+      "q": {
+        "young": "Do you feel like you might fall over when you run around?",
+        "older": "Do you ever feel like you might fall over when you run around?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "faint-on-exertion",
+      "why": "Decision 5's split, in decision 1's fixed wording 'feel like you might fall over'. AHA element 2 is 'Exertional syncope or near-syncope' and this takes the near-syncope half only - the sensation the child is awake for. Never 'faint', 'collapse', 'black out' or 'pass out': bannedPhrases 4 bans the concept, screen.mjs bans 'passed out' globally, and head/injury and general/unwell both ban self-reported loss of consciousness. Separate fact from item 1 because RCH lists exertional pain and syncope as separate rows of one arrhythmia block, and sharing would let a 'no' on one silence the other. A 'no' here is not a negative finding, for the same reason as item 1. Flagged over-length in the young tier and left that way on purpose: decision 1's fixed phrase is eight words before any mention of running, so the packet's binding wording and the screener's nine-word young cap cannot both be met on this item. If the reviewer wants the cap, x-008 is the same finding inside it.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "not relevant?"
+      }
+    },
+    {
+      "id": "x-008",
+      "traces_to": 3,
+      "q": {
+        "young": "Do you feel wobbly when you stand?",
+        "older": "When you stand, do you feel like you might fall over?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "faint-on-exertion",
+      "why": "'Wobbly' is the word a 4-7 year old already owns for this sensation, and it carries none of the loss-of-consciousness freight the banned words do. The older tier keeps 'fall over' so it stays inside decision 1 while the young tier reaches the same sensation through a word the child uses first.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-009",
+      "traces_to": 3,
+      "q": {
+        "young": "Do you grab something when you run around?",
+        "older": "When you run around, do you need to hold on to something?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "faint-on-exertion",
+      "why": "The behavioural form: near-syncope as the thing the child does about it rather than the thing they feel. Offered because a child who cannot name a sensation can still remember grabbing a wall, and because it stays furthest of the three from any word about consciousness. Risk the reviewer should weigh: a child who holds on out of tiredness answers yes too, so it is less specific than x-007.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "not relevant"
+      }
+    },
+    {
+      "id": "x-010",
+      "traces_to": 4,
+      "q": {
+        "young": "Did you bump your chest?",
+        "older": "Did you bump it or hurt it?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "bumped-it",
+      "why": "Reuses bumped-it from skin/rash r-024, whose wording is already region-neutral and whose depth is surface, so it cannot collide at chest/inside. The older tier is that shipped wording unchanged; the young tier names the region because a 4-7 year old asked 'did you bump it' has to hold 'it' in mind across the sentence. RCH 'Recent injury' and 'Recent trauma'; Sheffield's first risk factor is chest wall trauma. Drops the long-time band per durationsNote: a bump three months ago is not the mechanism of today's pain.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-011",
+      "traces_to": 4,
+      "q": {
+        "young": "Did something hit your chest?",
+        "older": "Did you get hit or knocked there before it started hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "bumped-it",
+      "why": "The passive half of the same mechanism - a ball, a door, another child - which 'did you bump it' quietly excludes by making the child the agent. Fogliazza: 'bruising could indicate trauma, warranting further investigation'. No blame in either tier: a child who was hit by someone must be able to answer yes without the question sounding like an accusation. Same dropped long-time band as x-010.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-012",
+      "traces_to": 5,
+      "answers": "choice",
+      "options": [
+        {
+          "id": "one-spot",
+          "label": {
+            "young": "One little spot",
+            "older": "One small spot"
+          }
+        },
+        {
+          "id": "bigger-area",
+          "label": {
+            "young": "A big part of my chest",
+            "older": "A bigger area"
+          }
+        },
+        {
+          "id": "all-over",
+          "label": {
+            "young": "All over",
+            "older": "All over my chest"
+          }
+        }
+      ],
+      "q": {
+        "young": "Where does it hurt in your chest?",
+        "older": "Show me where it hurts. Is it one spot, or a bigger area?"
+      },
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "pinpoint-pain",
+      "why": "MY RULING ON DECISION 2, which the sidecar never recorded: this item takes `choice`, not `yesno`. The finding the sources want is localisation - RCH 'Pin point area to 2 or 3 adjacent ribs', 'Localised area of chest pain', Sheffield 'Well localised', Fogliazza 'well-localized pain might suggest a musculoskeletal cause' - and a yes/no cannot carry it: 'yes, I can point to it' tells a nurse nothing, because every child can point somewhere. The body map cannot carry it either, since chest is a single region with no sub-regions. Three labelled options record the one axis the app is missing and the child is competent to answer. Decision 1's 'point to' and 'show me' are kept and 'press on' and 'touch' are absent, so this stays on the right side of the self-examination line (decision 8). The other ten items stay yesno; this is the only one whose answer is not a yes or a no.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-013",
+      "traces_to": 5,
+      "q": {
+        "young": "Can you point to it with one finger?",
+        "older": "Can you point to the exact spot where it hurts with one finger?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "pinpoint-pain",
+      "why": "The yes/no that does work for this item: one finger is the whole criterion, because RCH's costochondritis row is 'Pin point area to 2 or 3 adjacent ribs' and a child who needs a whole hand has answered no. Uses 'point to', which decision 1 permits, and not 'press on' or 'touch', which it forbids - the child indicates the place and never goes looking inside their own chest for it (bannedPhrases 6). Offered against x-012 so the reviewer can choose between a choice and a yes/no rather than being handed only my ruling.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-014",
+      "traces_to": 5,
+      "q": {
+        "young": "Does it hurt in the same spot every time?",
+        "older": "Is the pain always in the same small spot?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "pinpoint-pain",
+      "why": "RCH's 'Reproducible localised pain' without the clinical word (bannedPhrases 3 bans 'reproducible'). Asks whether the place is stable rather than whether it is small, which is a different half of the same criterion and useful for a child whose pain comes and goes. Answerable only by a child who has had it more than once, which is why it sits third of the three.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-015",
+      "traces_to": 6,
+      "q": {
+        "young": "Does it hurt more when you lie down?",
+        "older": "Does the pain get worse when you lie down?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-lying-down",
+      "why": "Decision 1 fixes 'lie down' and 'sit up' - which is why lie-down is deliberately absent from the British-idiom ban in bannedPhrases 14. Sheffield's pericarditis line is 'Sharp pain, worse on lying down', SCAMP records that the pain 'increased with supine position', and RCH has 'Refusal to lie on one site'. A position a child changes every night and needs no instruction to try.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-016",
+      "traces_to": 6,
+      "q": {
+        "young": "Does it feel better when you sit up?",
+        "older": "Does it feel better when you sit up or lean forward?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-lying-down",
+      "why": "The relieving half of the same axis, in RCH's own terms: 'Pain improved by sitting upright or leaning forward'. Same fact deliberately - a child who says the pain eases sitting up has answered the lying-down question, and coining a second fact would ask them both. Worth the reviewer's attention because it is the packet's one question a child can answer yes to and feel better rather than worse for being asked.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-017",
+      "traces_to": 7,
+      "q": {
+        "young": "Does the hurt wake you up at night?",
+        "older": "Does it wake you up at night?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "night-pain",
+      "why": "Reuses night-pain, which back/pain b-001 and limb/pain l-013 already share across two regions with the identical region-neutral wording 'Does it wake you up at night?' - the older tier is that wording unchanged rather than a third variant. Double-earned in one question: a yes is RCH's bone-lesion red flag ('Night time pain or awakening from sleep') and a no is the precordial-catch discriminator ('Onset can be during rest or activity but not during sleep'). Drops just-now per durationsNote: a child whose pain started minutes ago cannot answer this, and a non-answer is noise on a nurse's screen.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "weird phrasing"
+      }
+    },
+    {
+      "id": "x-018",
+      "traces_to": 7,
+      "q": {
+        "young": "Does it hurt at night in bed?",
+        "older": "Has the pain woken you up out of your sleep?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "night-pain",
+      "why": "Same fact, reached without requiring the child to have been woken - a 4-7 year old often knows the pain was there at bedtime but not whether it woke them. The older tier is sharper than the young one on purpose: Sheffield reserves a chest film for 'pain waking from sleep', and waking is the stronger finding. Departs from the shipped b-001 wording, so it should be rejected if the reviewer wants the bank to stay consistent across regions.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-019",
+      "traces_to": 8,
+      "q": {
+        "young": "Did something go down the wrong way?",
+        "older": "Did something go down the wrong way when you were eating or drinking?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "choking-episode",
+      "why": "Shares choking-episode with chest/breathing item 9 deliberately, and the sharing is the whole point: that item is 10th in its packet's itemRank and ships to nobody, so this is the only route by which a criterion RCH lists under CHEST PAIN ('History of ingested foreign body', 'Suspicion button battery ingestion', 'Food impaction') reaches a child at all. 'Go down the wrong way' is the lay phrase a child has heard an adult use, and it names no anatomy. Screened as identical to chest-breathing c-017, which is the intended outcome of sharing the fact and not a collision.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-020",
+      "traces_to": 8,
+      "q": {
+        "young": "Did a bit of food get stuck?",
+        "older": "Did you swallow something that got stuck?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "choking-episode",
+      "why": "The impaction half rather than the choking half - the young tier says food because that is the thing a 4-7 year old can picture, and the older tier keeps the wider 'something', which matters because RCH lists 'Food impaction' and button battery separately from aspiration. Worded with no blame in it - not 'something you shouldn't have' - because a child who thinks they are about to be in trouble stops answering, and this is the item where a false negative costs most.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-021",
+      "traces_to": 9,
+      "q": {
+        "young": "Does it hurt more after you eat?",
+        "older": "Does the pain get worse after you eat?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "worse-after-eating",
+      "why": "RCH's reflux row ('Heartburn / Non-specific chest pain / Epigastric discomfort or pain') and Sheffield's 'exacerbated by eating/posture', with every word of the clinical register stripped - 'heartburn', 'reflux' and 'epigastric' are all banned by name (bannedPhrases 1 and 3), and naming a condition to a child is the thing this packet bans first. Fact coined and deliberately not eating-drinking, which is chest/breathing item 7 and establishes whether the child CAN eat - the opposite construction.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-022",
+      "traces_to": 10,
+      "q": {
+        "young": "Do you play sports or dance?",
+        "older": "Do you play sports or dance most weeks?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "sport-activity",
+      "why": "Reuses sport-activity from back/pain b-023, verified there as 'Do you play sports or dance?' - a property of the child, not of a body part, which is the case the project's merge rule admits. RCH instructs the clinician to 'ask about activities, hobbies, jobs' and Fogliazza to 'inquire about sports activities', which is the strongest self-report warrant in this packet: two sources telling a clinician to ask the patient directly. The older tier adds a frequency the child can actually judge, since RCH's finding is overuse rather than participation, and does it without asking for a count (bannedPhrases 13).",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "not relevant"
+      }
+    },
+    {
+      "id": "x-023",
+      "traces_to": 11,
+      "q": {
+        "young": "Were you sick before your chest started hurting?",
+        "older": "Were you sick in the last couple of weeks, before your chest started hurting?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "recent-illness",
+      "why": "RCH's 'Recent illness or vaccination' and Sheffield's pericarditis line 'preceding viral illness'. The vaccination half is not carried and is cited for no question: dose, date and product are the carer's and the record's. Note the register trap - the item's own title in the packet reads 'Were you unwell recently', and 'unwell' is banned outright by bannedPhrases 14 as British idiom, so no candidate may use the item's own name. 'Sick' is the US word and the app's.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      }
+    },
+    {
+      "id": "x-024",
+      "traces_to": 11,
+      "q": {
+        "young": "Have you had a cold lately?",
+        "older": "Did you have a cold or another illness just before the pain started?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "recent-illness",
+      "why": "Same fact through the one illness a 4-7 year old can name unprompted. Reuses recent-illness from skin/rash r-020/r-021, which is depth surface and unreachable from chest/inside. Deliberately does not name a fever: feels-feverish is a separate fact this packet declined to lift (decision 9), and putting the word inside this question would let a recent-illness answer stand in for one.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-10",
+        "reason": "same as previous"
+      }
+    }
+  ]
+}

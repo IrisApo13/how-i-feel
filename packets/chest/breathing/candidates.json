@@ -1,0 +1,565 @@
+{
+  "packet": {
+    "id": "chest-breathing",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14
+    ]
+  },
+  "candidates": [
+    {
+      "id": "c-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Is it hard to breathe?",
+        "older": "Is it hard to breathe right now?"
+      },
+      "why": "Item 1, the flagship: the only symptom among source 1's fifteen score parameters and the fact BIOTOPE, IMCI, RCH Cough, NHSGGC and Dalhousie all reach. This is the exact wording the app already ships under id 'breathing', so choosing it re-sources the hand-written question without changing what a child sees; decision 1 fixes the phrase 'hard to breathe' and forbids every alternative. Presence only, never graded (item 20), and per source 14 a 'no' here is softer than a 'yes'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Does breathing feel like hard work?",
+        "older": "Does breathing feel like hard work right now?"
+      },
+      "why": "Same item, worded from Dalhousie's 'effort' sub-construct rather than from the guideline phrase - effort is one of the three things children themselves drew in source 13's focus groups. The cost is that it drops the app's shipped wording, so picking it means the hand-written 'breathing' question is replaced by different words, not just a citation; it may also read as harder to a 4-year-old than the plain form in c-001.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "ambiguous and same as prev"
+      }
+    },
+    {
+      "id": "c-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "fact": "worse-on-exertion",
+      "q": {
+        "young": "Does it get worse when you run around?",
+        "older": "Does it get worse when you run around or play?"
+      },
+      "why": "Item 2, the best-evidenced child-report item here - C-ACT's activity limitation, answered by children as young as 4, plus ISAAC Q7 and RCH's exertional shortness of breath. The young wording is verbatim the shipped 'chest-worse-move', which decision 11 says to preserve. It does two jobs at once (severity now, chronic control over time), which is why it survives every duration band.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "fact": "worse-on-exertion",
+      "q": {
+        "young": "Is it hard to run around?",
+        "older": "Is it hard to run around and play today?"
+      },
+      "why": "Same item, framed as difficulty rather than as something getting worse. C-ACT asks about activity limitation directly, and a child who has felt this way for a month has no 'before' to compare against, so 'worse' can misfire in the long-time band where this item is meant to keep working. Cost: it abandons the shipped wording, and it overlaps c-001's 'hard to' phrasing, which could make two adjacent questions sound like one.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you stop for a breath when you talk?",
+        "older": "Do you have to stop for a breath when you talk?"
+      },
+      "why": "Item 3, the child's half of the vocalisation criterion that NHSGGC and RCH Severity otherwise grade by listening (item 19, excluded). Decision 3 fixes this shape: about the breath running out, never 'can you talk normally' - which would ask the child to compare themselves to a norm - and never about how the voice sounds, which is the throat packet. It asks the child to notice something, not to perform a breathing task.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you need a breath before you finish talking?",
+        "older": "Do you need a breath before you finish what you are saying?"
+      },
+      "why": "Same item from the sentence-completion side rather than the mid-sentence pause - closer to ISAAC Q5's construct without carrying its word count, which is banned. Slightly more abstract than c-005 for a 4-year-old; the gain is that it does not depend on the child noticing a stop, only on noticing that they ran short before the end.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "c-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "cough",
+      "q": {
+        "young": "Have you been coughing?",
+        "older": "Have you been coughing today?"
+      },
+      "why": "Item 4. The app has no complaint field, so a child who taps Chest and 'inside' may have no cough at all and nobody knows - which is why this is not vacuous here. Plainest possible form; it is ranked fourth precisely because presence of cough is the least discriminating fact in this literature (6-12 respiratory infections a year is a normal childhood).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-008",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "cough",
+      "q": {
+        "young": "Do you have a cough?",
+        "older": "Do you have a cough that keeps coming back?"
+      },
+      "why": "Same item, with the older form reaching for source 4's 'Frequency - occasionally or frequently through the day' without asking for a count. Reviewer should weigh whether the added clause is worth it: it makes the older question discriminate a little more, but a child may read 'keeps coming back' as being about past illnesses rather than about today, and the packet forbids anything that sounds like counting attacks.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "c-009",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does coughing wake you up at night?",
+        "older": "Does your cough wake you up after you fall asleep?"
+      },
+      "why": "Item 5, the best-sourced item in the packet - six sources plus two child-report instruments (ISAAC Q8/Q4 and C-ACT's nighttime awakenings). Per decision 4 it deliberately drops ISAAC's 'apart from a cough associated with a cold' clause: a child cannot subtract a cold, and the app collects the raw fact for the nurse to classify. Gains rather than loses relevance in the long-time band.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you cough when you are in bed?",
+        "older": "Do you cough at night when you are trying to sleep?"
+      },
+      "why": "Same item anchored to bedtime rather than to waking. A 4-year-old knows whether they cough in bed; whether coughing is what woke them is an inference, and source 4 notes that some cough patterns are by definition unobservable to the sleeper. The trade-off is that this loses the 'wakes you' severity edge that C-ACT and ISAAC actually scored.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "q": {
+        "young": "Have you used your inhaler today?",
+        "older": "Have you used your inhaler at all today?"
+      },
+      "why": "Item 6, partial: the child knows whether they have had it; dose, frequency and whether it worked belong to the carer and the record. Register is fixed by decision 1 - 'inhaler', never a brand or a drug class. Distinct from HELPS.my-medicine, which records what the child wants rather than what they have had.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "q": {
+        "young": "Did you have your inhaler today?",
+        "older": "Have you had your inhaler since you woke up today?"
+      },
+      "why": "Same item; 'have/had' rather than 'used' avoids implying the child self-administered, which matters for a 4-year-old whose inhaler is given to them. The older form pins the window to since-waking, closer to the few-hours question the acute guidelines care about, at the cost of confusing a child who woke in the night.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "c-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "fact": "eating-drinking",
+      "q": {
+        "young": "Have you been able to eat and drink?",
+        "older": "Have you been able to eat and drink today?"
+      },
+      "why": "Item 7, the one plain history item in RCH Severity, whose severity table is otherwise all observation. The source frames feeding and hydration as affected early in respiratory illness, which is exactly what a self-report app is positioned to catch. 'Been able to' keeps it about what the child managed, not what they wanted (HELPS.water / HELPS.food).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "fact": "eating-drinking",
+      "q": {
+        "young": "Did you finish your food today?",
+        "older": "Have you managed to finish your food and drinks today?"
+      },
+      "why": "Same item, made concrete for the youngest users: 'able to eat' is an abstraction, 'did you finish' is an event a 4-year-old can recall. Cost is a false positive from ordinary fussy eating, and it narrows an item the source states broadly as feeding and hydration.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "q": {
+        "young": "Can you hear a whistle when you breathe?",
+        "older": "Can you hear a whistling sound when you breathe?"
+      },
+      "why": "Item 8, the most-cited criterion in the literature and the one this packet trusts least - no source read supports a child under 13 reporting it about themselves, and ISAAC used parent report at 6-7. Neutral presence form only: a 'no' must never be shown downstream as reassurance, because source 6's silent chest can precede collapse. 'Whistle' is ISAAC's own lay gloss, not an invention.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your chest make a whistle sound?",
+        "older": "Does your chest make a whistling sound when you breathe?"
+      },
+      "why": "Same item located in the chest rather than in the act of hearing, matching ISAAC's 'whistling in the chest' and the body-map label the child just tapped. Reviewer should decide which is safer: c-015 asks the child to listen, this one asks them to attribute a sound to a body part, and neither should ever be read as the child confirming or excluding a clinical finding.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "fact": "choking-episode",
+      "q": {
+        "young": "Did something go down the wrong way?",
+        "older": "Did something go down the wrong way before this started?"
+      },
+      "why": "Item 9, inhaled foreign body - RCH AUAO says the choking may not be witnessed, which is the whole argument for asking the child. The object is deliberately unnamed: naming one prompts the answer and can frighten a child into denying it. Survives long-time because source 4 lists foreign body under chronic cough as well as acute.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "fact": "choking-episode",
+      "q": {
+        "young": "Did you choke on something?",
+        "older": "Did you choke on something that went down the wrong way?"
+      },
+      "why": "Same item using the child's own likely word. Shorter and blunter than c-017 for the youngest tier, but 'choke' may frighten, and a child who inhaled something without a dramatic choking moment - which RCH AUAO says happens - may answer no to this and yes to c-017. Note this is a distinct fact from tummy's swallowing question (decision 10): distinct id, distinct wording.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your cough sound like a dog barking?",
+        "older": "When you cough, does it sound like a dog barking?"
+      },
+      "why": "Item 10, the one cough quality all three sources state without a stethoscope, and croup is nocturnal so the child is often the only one awake. One animal only - offering a second simile turns it into a menu and the child picks the one they can picture. Drops long-time because croup is a days-long illness. Flagged in Still open: this simile needs a play specialist, since a child may find it funny or frightening and neither gives a clean answer.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your cough sound loud and barky?",
+        "older": "Does your cough have a loud, barky sound to it?"
+      },
+      "why": "Same item without the animal, offered because Still open flags the dog simile as the packet's least-confident wording. 'Barky' keeps the source's descriptor but removes the comparison a child has to picture. The cost is real: 'barky' is close to a nonsense word for a 4-year-old, whereas a dog is something they know, so this may be the worse option and is offered only so the reviewer has the choice.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as before but worse"
+      }
+    },
+    {
+      "id": "c-021",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "q": {
+        "young": "Does anything come up when you cough?",
+        "older": "Does anything come up into your mouth when you cough?"
+      },
+      "why": "Item 11, partial: wet-versus-dry is the first row of RCH Cough's history table and it decides which half of the differential applies, but source 4 links clinicians to a recording to learn the sound, so the classification itself is trained. The child can report that something comes up; they cannot classify it. Colour, amount and blood are item 27 and are never asked.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "c-022",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your cough bring something up?",
+        "older": "Does something come up from your chest when you cough?"
+      },
+      "why": "Same item; the older form names the chest, matching the region the child tapped and RCH's wet/productive-cough framing, while staying clear of any internal structure. Reviewer should weigh whether 'from your chest' invites the child to guess at where it came from - c-021's 'into your mouth' keeps the whole question inside what the child can actually observe.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "c-023",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 14,
+      "answers": "yesno",
+      "fact": "feels-feverish",
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Have you been feeling hot or shivery today?"
+      },
+      "why": "Item 14, partial and ranked last: the child reports the sensation, the nurse measures and classifies, and no number or degree is ever mentioned. Ranked last because the nurse takes a temperature regardless and because STARWAVe defines this variable two incompatible ways in one parenthesis - a measurement or a parent's judgement. Loses long-time: a fever a month ago is not a fever.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

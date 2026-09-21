@@ -1,0 +1,211 @@
+{
+  "id": "eye-complaint",
+  "group": "eyes",
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "3": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "4": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "5": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "6": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "7": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "10": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "12": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    9,
+    4,
+    2,
+    3,
+    5,
+    7,
+    1,
+    6,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "minAge": {},
+  "minAgeNotes": {
+    "_all": "JUDGEMENT, NOT A CITATION. Source 11 (Narvekar) put its patient-reported instrument at >=8, but that floor attaches to a 0-10 numeric rating scale over a 24h recall window, its pediatric evidence is four children aged 9-10, and importing it would silence EVERY question here for the 4-7 tier -- a tier the app already serves with two unevidenced hand-written questions. The honest form: the 4-7 wording of items 1, 2, 3 and 10 is the least supported thing in the repo."
+  },
+  "cite": {
+    "1": "RCH eye injury; AJGP",
+    "2": "RCH red eye; RCH eye injury; RCH penetrating; AJGP",
+    "3": "RCH red eye; RCH penetrating; AJGP",
+    "4": "RCH red eye; RCH eye injury; RCH penetrating; RCH periorbital; AJGP",
+    "5": "RCH red eye; RCH eye injury; AJGP; NHS",
+    "6": "RCH red eye; RCH eye injury; Rietveld; Narvekar",
+    "7": "RCH eye examination; RCH eye injury",
+    "8": "Rietveld; Meltzer (PARTIALLY READ); RCH red eye",
+    "9": "RCH red eye; Rietveld; Narvekar; AJGP",
+    "10": "RCH periorbital cellulitis"
+  },
+  "judgement": {
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "rankingPrinciple": "Decision 9: no item is ranked highly because a model names it. The two model variables (items 8, 9) rank eighth and ninth, below eight guideline-only items.",
+    "item1Exception": "Decision 3: item 1 may use a CATEGORY cue (the general kind of substance), a deliberate narrow exception to the never-name-the-chemical ban. Naming a specific chemical stays banned.",
+    "item10": "The single most consequential item in the packet and the worst-sourced -- one guideline, one clause. Kept because it is the only child-reportable discriminator for orbital involvement.",
+    "item11": "Demoted, not deleted. If a two-option answer widget ever ships, item 11 is the first to promote and should REPLACE item 8, not join it.",
+    "unenforceableCautions": "Decision 3's bound on the item-1 exception -- 'a generator must not read this decision as permission to list hazards' -- is prose only. Nothing distinguishes a permitted category cue from an enumerated hazard list, so item 1's candidates need a human eye at review rather than a screen rule."
+  },
+  "bannedPhrases": [
+    [
+      "touch (it|your eye)|\\brub\\b|\\bpress\\b|hold it open|open your eye|pull (the|your) lid|blink hard|wash it out|put anything in|in a mirror",
+      "never tell a child to do anything to their own eye -- source 3: 'avoid any pressure on the eyeball … as eye contents may be extruded'"
+    ],
+    [
+      "cover your other|close one eye|look up and down|move your eyes|try to look at|\\bfollow (the|my)\\b",
+      "never make a question an examination the child performs; item 4 must not become an acuity test, item 10 must not become a motility test"
+    ],
+    [
+      "conjunctivit|pink eye|cellulit|uveit|irit|keratit|glaucoma|corneal ulcer|abrasion|hyphaema|hyphema|chemosis|endophthalmit|\\bstye\\b",
+      "names a condition to the child -- a named cause coming out of the screen reads as a diagnosis"
+    ],
+    [
+      "cornea|conjunctiv|pupil|\\biris\\b|retina|sclera|\\blens\\b|\\bglobe\\b|\\borbit\\b|eyeball",
+      "names a structure the child cannot see -- and going to look means touching the eye"
+    ],
+    [
+      "bleach|drain cleaner|\\bacid\\b|alkali|\\bBB gun\\b|\\bdart\\b|\\bpencil\\b|scissors|air gun|lawn mower|power tool|hammer",
+      "never name the chemical or the object -- naming prompts the answer and can frighten a child into denying it"
+    ],
+    [
+      "\\bblind\\b|lose your sight|losing your sight|vision loss|\\bdamage\\b|go dark|going dark",
+      "a child asked whether they are going blind will answer the fear, not the fact"
+    ],
+    [
+      "fever|febrile|temperature|degrees|thermometer",
+      "ask the sensation, never the measurement"
+    ],
+    [
+      "eye drops|antibiotic|ointment|\\bcream\\b",
+      "never name a treatment -- the app collects, it does not advise"
+    ],
+    [
+      "did you poke|were you playing|did someone (hit|hurt|throw)|whose fault|who did",
+      "accusatory or attributive trauma question -- source 6 requires a non-accusatory manner an app cannot modulate"
+    ],
+    [
+      "\\bpoorly\\b|sticky eye|\\btorch\\b|have you got|casualty|\\bplaster\\b|\\bmum\\b|\\bnappy\\b",
+      "British idiom -- the sources are Australian, British and Dutch-British; the register is US English"
+    ],
+    [
+      "\\bglued\\b|\\bmatted\\b|\\bgritty\\b|discharge|\\bpus\\b|tearing|photophobia|visual acuity|diplopia|foreign body",
+      "source jargon the register decision replaces"
+    ],
+    [
+      "gummed",
+      "decision 1: item 8 register -- the wording is 'stuck together' or 'stuck shut'"
+    ],
+    [
+      "\\bmucus\\b|secretions|\\bgrit\\b|weeping",
+      "decision 1: register -- 'goopy' if a word is needed at all, and 'like sand' for item 6"
+    ],
+    [
+      "sensitivity to light|vision impairment|visual disturbance",
+      "decision 1: abstract clinical register for the young tier"
+    ],
+    [
+      "washed it out|washing it out|rinsed it",
+      "never name a treatment -- the advice sense of item 33, which belongs on the nurse-facing surface"
+    ],
+    [
+      "did (someone|anyone|somebody)",
+      "accusatory or attributive trauma question -- source 6 requires a non-accusatory manner an app cannot modulate"
+    ],
+    [
+      "a stick|a stone|a rock|a sword|firework|a twig|a nail|a toy",
+      "never name the object -- naming prompts the answer"
+    ]
+  ],
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

@@ -1,0 +1,211 @@
+{
+  "id": "skin-rash",
+  "group": "skin",
+  "groups": [
+    "head",
+    "throat",
+    "chest",
+    "tummy",
+    "limb",
+    "back",
+    "eyes",
+    "ears",
+    "mouth"
+  ],
+  "depth": "surface",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ],
+      "8": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    14,
+    3,
+    4,
+    11,
+    6,
+    2,
+    5,
+    8,
+    7,
+    10,
+    9,
+    12,
+    13,
+    15
+  ],
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "minAge": {
+    "14": 8
+  },
+  "minAgeNotes": {
+    "14": "JUDGEMENT, NOT A CITATION. No source floors any item here; the three age statements found are about disease frequency. Item 14's floor is the packet's view that a question about what you cannot remember is harder than the fact it asks about.",
+    "8": "Deliberately unfloored despite every itch instrument in the literature starting at 6 -- see 'The 4-and-5-year-old problem'."
+  },
+  "cite": {
+    "1": "NICE NG240; NICE NG143; RCH; NHSGGC; Whittington; NHS inform",
+    "2": "NICE NG240; RCH; Whittington",
+    "3": "NHS inform; Whittington; NICE NG240",
+    "4": "NICE NG240; NICE NG143; NHS inform",
+    "5": "NICE NG240; NHS inform",
+    "6": "PiC; NICE NG143; NICE NG240; RCH; NHS inform",
+    "7": "NICE NG240; RCH; RCH HSP; NHSGGC",
+    "8": "Whittington; NHS inform; Paller",
+    "9": "Whittington; NHS inform; NICE NG143",
+    "10": "Whittington; NHS inform",
+    "11": "RCH HSP; Whittington; NICE NG143; NHS inform",
+    "12": "NICE NG240; RCH",
+    "13": "RCH HSP; NHSGGC; Whittington",
+    "14": "NHSGGC; RCH",
+    "15": "RCH; NHSGGC"
+  },
+  "judgement": {
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "factsToReuse": "Items 1, 3, 6, 8 carry the existing shared facts rash, hard-to-breathe, feels-feverish, itch.",
+    "factsNeedingBackfill": "Decision 9: items 4, 7 and 13 need NEW shared facts that must ALSO be added to questions already shipping (s-016 for turning the head, l-019 for 'unwell in the last few weeks'). That backfill is not done and must happen before this packet's bank is trusted to dedupe.",
+    "doNotMerge": "Item 7 must NOT take limb's `limb-use` and item 11 must NOT take `limb-swelling` -- both of those are about one limb, and PLAN.md merges a fact only when it is systemic.",
+    "unenforceableCautions": "Two cautions in this packet cannot be regexes and their absence is not an oversight: (a) NG240 1.1.10 -- an absent rash is not reassurance, which constrains the nurse-facing surface and summary text, not question wording; and (b) item 5's register split between 'bright lights hurt your eyes' and the headache question it must not become."
+  },
+  "bannedPhrases": [
+    [
+      "meningit|meningococc|septic|sepsis|measles|chickenpox|varicella|scarlet fever|rubella|slapped cheek|fifth disease|hand[- ]?foot|impetigo|eczema|dermatit|urticaria|hives|scabies|ringworm|molluscum|psoriasis|cellulit|henoch|schonlein|schönlein|purpura|petechia|\\bITP\\b|leukaemia|leukemia|cancer|kawasaki|herpes|shingles|anaphyla",
+      "names a diagnosis to the child -- the most dangerous packet in the repo for this rule, because these are words a child has actually heard"
+    ],
+    [
+      "blanch|does it fade|\\bglass\\b|tumbler|\\bpress\\b|\\bpush\\b|squeeze|\\bpoke\\b|\\bprod\\b|\\brub\\b",
+      "the blanching test, and any instruction to press on the skin: two sources list local pressure as a CAUSE of petechiae, so this prevents a harm, not just a bad answer"
+    ],
+    [
+      "\\bred\\b|\\bpink\\b|purple|\\bblue\\b|\\bblack\\b|brown|\\bdark\\b|\\bpale\\b|blotchy|silvery|golden|dusky|colou?r",
+      "never ask the colour of anything -- unreliable from a child, and unevenly unreliable across skin tones"
+    ],
+    [
+      "how many|how big|millimet|\\bmm\\b|centimet|bigger than|larger than|count (the|your|them)",
+      "never ask about size or ask a child to count spots -- it produces a number a nurse reads as a measurement"
+    ],
+    [
+      "^(?!.*\\bspot)(?=.*\\brash\\b).*$",
+      "says 'rash' without also offering 'spots' -- a US child of this age may not use the word 'rash' at all"
+    ],
+    [
+      "\\bnappy\\b|\\bnappies\\b|genital|scrotum|\\bgroin\\b|private parts",
+      "British, and the app must not ask a child about that area at all"
+    ],
+    [
+      "\\bpoorly\\b|off colour|off color",
+      "British; 'poorly' reads to a US child as an adverb, and 'off colour' collides with the colour ban"
+    ],
+    [
+      "\\bplaster\\b",
+      "British; US is 'Band-Aid', and wound care is roadmap row 3 anyway"
+    ],
+    [
+      "nettle rash|\\bweals?\\b|\\bwelts?\\b",
+      "British or clinical names for the same thing"
+    ],
+    [
+      "macule|papule|vesic|bulla|pustule|lesion|exanthem|erythema|oedema|edema|pruritus|excoriat|maculopapular|target lesion|koplik|strawberry tongue|desquamat|non[- ]?blanching",
+      "dermatology register -- say spots, blisters, puffy, itchy"
+    ],
+    [
+      "bleeding under the skin|blood spots|\\bblood\\b",
+      "source 7's family-facing wording, written for an adult; a frightening image to hand a child worried about their own skin"
+    ],
+    [
+      "catching|contagious|infectious|give it to|pass it on|spread it to",
+      "a child told they are contagious will conceal the next rash; item 17 asks about OTHER people's spots, never the child's transmission"
+    ],
+    [
+      "in a mirror|look at your|lift up your|look inside your|check your|uncover|take off your",
+      "never instruct a child to look at, uncover or examine themselves -- source 2's 'check all over the body' is addressed to a clinician"
+    ],
+    [
+      "fever|febrile|temperature|degrees|thermometer",
+      "same ruling as three previous packets: ask the sensation, never the measurement"
+    ],
+    [
+      "eruption|breaking out",
+      "decision 1: item 1 register -- the wording is 'spots or a rash', both, always"
+    ],
+    [
+      "pruritic|irritated|scratchy",
+      "decision 1: item 8 register -- the word is 'itchy', which SENSATIONS.itchy already commits the app to"
+    ],
+    [
+      "water blisters|bubbles",
+      "decision 1: item 10 register -- a child of this age owns the word 'blister'"
+    ],
+    [
+      "\\bulcers?\\b|mouth sores",
+      "decision 1: item 9 register -- 'ulcer' is a word a child may know from a much more frightening context"
+    ],
+    [
+      "under the weather",
+      "decision 1: item 13 register -- the word is 'unwell', carried unchanged from limb's l-019"
+    ],
+    [
+      "\\ba bug\\b|\\ba virus\\b|coryza",
+      "decision 1: item 13 register -- the phrase is 'a cold', matching ears' e-005"
+    ],
+    [
+      "\\bpop\\b|\\bpopped\\b|\\bburst\\b|\\bpick\\b|\\bpicked\\b|\\bsqueezed?\\b",
+      "item 10 note: never invite a child to pop, burst or pick a blister"
+    ],
+    [
+      "open wide",
+      "item 9 note: never instruct a child to open or check inside their own mouth"
+    ],
+    [
+      "down there|private area",
+      "item 11: the app must not ask a child about that area at all -- broader than the word list"
+    ]
+  ],
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

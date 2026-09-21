@@ -1,0 +1,138 @@
+{
+  "id": "chest-breathing",
+  "group": "chest",
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure",
+      "long-time"
+    ],
+    "exceptions": {
+      "10": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "13": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "14": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    11,
+    3,
+    4,
+    5,
+    8,
+    2,
+    6,
+    7,
+    9,
+    10,
+    12,
+    13,
+    14
+  ],
+  "minAge": {},
+  "cite": {
+    "1": "PERUKI; STARWAVe/BIOTOPE; WHO IMCI; RCH Cough; NHSGGC 623; Dalhousie",
+    "2": "C-ACT; ISAAC; RCH Asthma; RCH Cough",
+    "3": "NHSGGC 623; RCH Severity; RCH Asthma; ISAAC",
+    "4": "WHO IMCI; RCH Cough; RCH Pneumonia; BIOTOPE; C-ACT",
+    "5": "ISAAC; C-ACT; RCH Asthma; RCH Cough; RCH Croup; NHSGGC 623",
+    "6": "RCH Asthma; NHSGGC 623; C-ACT",
+    "7": "RCH Severity; RCH Cough",
+    "8": "ISAAC; PERUKI; STARWAVe/BIOTOPE; RCH Croup; RCH AUAO; RCH Cough",
+    "9": "RCH AUAO; RCH Cough",
+    "10": "RCH Croup; RCH AUAO; RCH Cough",
+    "11": "RCH Cough; BIOTOPE",
+    "12": "RCH Cough",
+    "13": "STARWAVe; RCH AUAO; RCH Cough",
+    "14": "STARWAVe; RCH Pneumonia; RCH Cough; RCH Croup"
+  },
+  "bannedPhrases": [
+    [
+      "asthma|pneumonia|croup|whooping|pertussis|bronchiolit|chest infection|\\bTB\\b|tuberculo|bronchitis|emphysema",
+      "names a diagnosis to the child"
+    ],
+    [
+      "wheez|stridor|stertor|dyspn|respirator|recession|retraction|indrawing|accessory|saturation|\\bsats\\b|auscultat|crackle|crepitat|peak flow|spirometr|tachypn|hypox|cyanos",
+      "clinical term"
+    ],
+    [
+      "breathless|shortness of breath|short of breath|out of breath|catch (your|my) breath|winded",
+      "decision 1: say 'hard to breathe'"
+    ],
+    [
+      "puffer|nebuli[sz]|ventolin|salbutamol|reliever|preventer|steroid|\\bMDI\\b|spacer",
+      "decision 1: say 'inhaler'; never a brand or a drug class"
+    ],
+    [
+      "\\battack\\b|flare[- ]?up|episode",
+      "frightening or clinical framing of an illness"
+    ],
+    [
+      "blood|bleeding|bloody",
+      "wording caution: never ask a child about blood in a cough"
+    ],
+    [
+      "deep breath|hold your breath|blow (into|out)|count (your|how many)|breaths? (a|per) minute|how many words",
+      "instructs a breathing task - asking it can worsen the child"
+    ],
+    [
+      "\\bcoin\\b|batter(y|ies)|peanut|\\bbone\\b|\\btoy\\b|marble",
+      "names the object in item 9 and prompts the answer"
+    ],
+    [
+      "degrees|temperature|fever|thermometer",
+      "wording caution: never ask a child for a temperature"
+    ],
+    [
+      "lungs|airway|windpipe|trachea|\\btubes\\b|voice box",
+      "names an internal structure the child cannot see"
+    ],
+    [
+      "press|squeeze|poke|push on|feel your",
+      "instructs the child to examine themselves"
+    ],
+    [
+      "\\bseal\\b|sea ?lion",
+      "decision: item 10 offers one animal, not a menu"
+    ],
+    [
+      "noisy breathing|whistl(y|ing) chest|chesty",
+      "decision 1: say 'a whistle when you breathe'"
+    ],
+    [
+      "(can.?t|cannot|don.?t|doesn.?t|isn.?t|aren.?t|\\bnot\\b)[^?]{0,40}\\b(hear|whistl|breath)",
+      "inverted or negative-presence form: never phrase a respiratory item so that no is the finding"
+    ],
+    [
+      "\\brate\\b|\\bscale\\b|\\bscore\\b|how hard|a little bit|a big bit|out of ten|which face",
+      "item 20: never grade breathlessness in words, faces or pictures"
+    ],
+    [
+      "\\bnormal(ly)?\\b|like (you )?(usually|normally)|like (the )?other (kids|children)",
+      "asks the child to compare themselves to a norm - decision 3"
+    ]
+  ],
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

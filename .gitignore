@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Outreach drafts: unsent emails and notes about named people. Not part of the
+# app, and not for publication.
+OUTREACH*.md
+Screenshot*.png
+
+# Fetched source documents. Third-party copyrighted material (WHO, NHS, charity
+# and journal PDFs) cached by scripts/fetch-source.mjs so extraction is
+# reproducible locally. The packets cite every source by URL, so the evidence
+# trail survives without redistributing the documents themselves.
+packets/.sources/

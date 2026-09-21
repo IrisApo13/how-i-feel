@@ -1,0 +1,158 @@
+{
+  "id": "sore-throat",
+  "group": "throat",
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "1": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "5": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "6": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "7": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "8": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "9": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "10": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    12,
+    3,
+    6,
+    5,
+    8,
+    2,
+    4,
+    7,
+    9,
+    11,
+    10,
+    13,
+    14,
+    15
+  ],
+  "minAge": {},
+  "cite": {
+    "1": "RCH; NHSGGC",
+    "2": "NHSGGC; RCH",
+    "3": "Cohen (Breese, Fujikawa, Wald, McIsaac, Joachim); FeverPAIN; Centor",
+    "4": "Cohen (Fujikawa, Wald, Attia, Joachim); FeverPAIN",
+    "5": "RCH; NHSGGC",
+    "6": "RCH",
+    "7": "NHSGGC",
+    "8": "NHSGGC; RCH",
+    "9": "RCH; RCH AUAO",
+    "10": "RCH; NHSGGC",
+    "11": "Cohen (Fujikawa); RCH; NHSGGC",
+    "12": "RCH AUAO",
+    "13": "Cohen; FeverPAIN; Centor; McIsaac; RCH; NHSGGC",
+    "14": "Cohen (Fujikawa, Edmond)",
+    "15": "Cohen (Joachim); RCH"
+  },
+  "bannedPhrases": [
+    [
+      "tonsil|quinsy|abscess|strep|scarlet|croup|epiglott",
+      "names a diagnosis to the child"
+    ],
+    [
+      "dysphagia|odynophagia|coryza|rhinorrh|trismus|torticollis|exudate|stridor",
+      "clinical term"
+    ],
+    [
+      "hoarse|croaky|husky|muffled",
+      "decision 1: say 'your voice sounds different'"
+    ],
+    [
+      "saliva|dribble|drool|spittle",
+      "decision 1: say 'spit'"
+    ],
+    [
+      "blocked\\s+(nose|up)|congested",
+      "decision 1: say 'stuffy or runny nose'"
+    ],
+    [
+      "\\bgulp\\b|get it down",
+      "decision 1: say 'swallow'"
+    ],
+    [
+      "\\bglands?\\b|\\blumps?\\b|\\bbumps?\\b|feel your neck|press(ing)? (on )?your neck",
+      "never ask a child to palpate their own neck"
+    ],
+    [
+      "look in your (own )?throat|in the mirror|see any white|white (bits|spots|patches)|open (your mouth|wide) and (look|check|see)",
+      "no throat self-examination"
+    ],
+    [
+      "\\bcoin\\b|\\bbatter(y|ies)\\b|\\bmagnet\\b|\\bbone\\b|\\bmarble\\b",
+      "never name the swallowed object (item 12)"
+    ],
+    [
+      "\\bfever\\b|temperature|degrees",
+      "child reports the sensation, the nurse measures"
+    ]
+  ],
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

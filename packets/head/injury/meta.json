@@ -1,0 +1,72 @@
+{
+  "id": "head-injury",
+  "group": "head",
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure"
+    ],
+    "exceptions": {
+      "2": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    6,
+    1,
+    2,
+    4,
+    13,
+    7,
+    5,
+    3,
+    14
+  ],
+  "minAge": {
+    "4": 5
+  },
+  "cite": {
+    "1": "PECARN; CHALICE",
+    "2": "CATCH",
+    "3": "PECARN",
+    "4": "PECARN; CHALICE; NG232",
+    "5": "PECARN; CHALICE",
+    "6": "PECARN; CATCH; CHALICE",
+    "7": "CHALICE; PECARN",
+    "13": "child-report (not a rule criterion)",
+    "14": "Child SCAT5"
+  },
+  "bannedPhrases": [
+    [
+      "black(ed)?\\s*out",
+      "says 'black out' - leading and frightening"
+    ],
+    [
+      "seizure|fit\\b|convuls",
+      "names a seizure to the child"
+    ],
+    [
+      "concussion|fracture|brain|skull",
+      "names a clinical finding to the child"
+    ]
+  ],
+  "gateNote": "Group `head` uses the MECHANISM gate, not depth. This packet serves the `injury` branch only. A child who answers 'it just started hurting' must not receive these questions -- they are written for children who hurt their head. The `no-injury` branch needs a head/headache packet, which does not exist yet.",
+  "preferred": {
+    "4": "h-002",
+    "5": "h-005",
+    "6": "h-003",
+    "13": "h-013"
+  },
+  "preferredNote": "Item 6 has two accepted candidates. h-003 ('What were you doing when you hurt it?') leads because it is open and applies to every mechanism; f-016 (stairs count) only helps a child who fell downstairs and is useless otherwise.",
+  "mechanism": "injury",
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

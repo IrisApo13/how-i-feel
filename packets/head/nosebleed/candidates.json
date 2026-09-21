@@ -1,0 +1,392 @@
+{
+  "packet": {
+    "id": "nosebleed",
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "candidates": [
+    {
+      "id": "d-001",
+      "traces_to": 1,
+      "q": {
+        "young": "Did something go up your nose?",
+        "older": "Did something go up your nose, even a while back?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "nose-something-went-in",
+      "why": "The packet's own model wording for item 1, kept passive and agentless exactly as the nose-picking ruling requires: RCH's \"Foreign bodies: suspect with unilateral foul discharge. Button batteries require urgent removal\" reached through the event half only. The older tier adds \"a while back\" because StatPearls says nasal foreign bodies \"are usually painless\" and present late, which is also why this item carries the long-time band. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-002",
+      "traces_to": 1,
+      "q": {
+        "young": "Is something in your nose right now?",
+        "older": "Do you think there is something inside your nose now?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "nose-something-went-in",
+      "why": "The same criterion reached through present state rather than a remembered event, which is the form that still works for a child who does not recall the moment. Same fact as d-001 because it is the same thing a nurse acts on: StatPearls' four-hour septal injury from paired magnets and RCH's urgent battery removal both depend only on whether the object is in there.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "d-003",
+      "traces_to": 1,
+      "q": {
+        "young": "Did a bead or button go up your nose?",
+        "older": "Has any small object, like a bead or a button, gone into your nose?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "nose-something-went-in",
+      "why": "Names the object rather than the act, which is the whole point of the packet's ruling: the object is the clinical fact and the act is the accusation. Concrete nouns give a 4-year-old something to picture, and \"button\" is deliberate because RCH singles out button batteries as the one nasal foreign body that cannot wait. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-004",
+      "traces_to": 1,
+      "q": {
+        "young": "Did something go in your nose a while ago?",
+        "older": "Do you remember anything going into your nose, even days ago?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "nose-something-went-in",
+      "why": "Reaches for the late presentation StatPearls describes, since a child who has already answered \"no\" about today may still hold a fact from last week. The older tier frames it as remembering rather than doing, on the reasoning that a child braced for blame answers a memory question more freely. Four phrasings because this item leads the packet on time-criticality and a false \"no\" here is the worst outcome available in it.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "d-005",
+      "traces_to": 2,
+      "q": {
+        "young": "Is your nose bleeding from both sides?",
+        "older": "Is blood coming out of both sides of your nose?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "fact": "nose-side",
+      "why": "RCH's red flag \"Bilateral bleeding suggests a systemic cause or significant trauma\", asked for the informative pole per decision 2 -- both sides, never \"is only one side bleeding\". Alshehri's 0.9% base rate is what makes a \"yes\" worth a slot; the clinical register word for it is banned and \"both sides of your nose\" is the plain form decision 1 rules. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-006",
+      "traces_to": 2,
+      "q": {
+        "young": "Did both sides of your nose bleed?",
+        "older": "Has blood come from both nostrils today?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "fact": "nose-side",
+      "why": "Past tense for the child whose nose has already stopped, since RCH's criterion is about the episode and not only about this second. \"Nostrils\" appears in the older tier only, which decision 1 permits, while the young tier stays on \"both sides of your nose\".",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as previous"
+      }
+    },
+    {
+      "id": "d-007",
+      "traces_to": 2,
+      "q": {
+        "young": "Did your nose bleed on both sides at once?",
+        "older": "Was blood coming from both sides of your nose at the same time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "fact": "nose-side",
+      "why": "Pins down simultaneity, because a child who bled from one side, stopped, then bled from the other will otherwise answer \"yes\" to d-005 and d-006 and mean something RCH's red flag does not cover. Same fact, since it is the same laterality question asked more strictly. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-008",
+      "traces_to": 3,
+      "q": {
+        "young": "Is your nose bleeding right now?",
+        "older": "Right now, as you answer this, is your nose bleeding?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "fact": "nose-still-bleeding",
+      "why": "The child's half of RCH's \"Bleeding >30 minutes despite adequate pressure\" and GGC's ten-minute hold, with neither threshold asked and neither implied: it is the one binary the child genuinely holds, and it tells the nurse whether first aid is still running before anyone has looked. The older tier anchors to the act of answering so a child does not report the whole episode instead of this moment. It is not the >30 minute criterion and must never be shown as one.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "d-009",
+      "traces_to": 3,
+      "q": {
+        "young": "Is blood coming out of your nose?",
+        "older": "Is any blood coming from your nose at this moment?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "not-sure"
+      ],
+      "fact": "nose-still-bleeding",
+      "why": "The same present-moment binary reached through the substance rather than the verb, for a child who does not read \"bleeding\" as an ongoing state. Only two phrasings survive for this item: the packet's preferred \"Is your nose still bleeding?\" and every variant built on \"still\" or \"stopped\" is rejected by the screen as presupposing, and every attempt to be more precise than \"right now\" reintroduces the clock.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "d-010",
+      "traces_to": 4,
+      "q": {
+        "young": "Can you breathe through your nose?",
+        "older": "Can you breathe through your nose without opening your mouth?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "nose-blocked",
+      "why": "Split from GGC's examination heading \"Patency of nares\" rather than reclassified: whether air moves through the child's own nose is a different, answerable item that happens to concern the same anatomy, and it must never be described as detecting anything. Fact is nose-blocked and deliberately not hard-to-breathe, which is the chest's respiratory-distress fact. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-011",
+      "traces_to": 4,
+      "q": {
+        "young": "Is your nose blocked up?",
+        "older": "Does one side of your nose feel blocked up?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "nose-blocked",
+      "why": "\"Blocked up\" is the plain-register form decision 1 names. The older tier takes the one-sided form because the fact this item needs is blockage on one side -- StatPearls' obstruction by an object -- and not the runniness that fact runny-nose carries in other groups. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-012",
+      "traces_to": 4,
+      "q": {
+        "young": "Can you sniff through your nose?",
+        "older": "Can you sniff air in through both sides of your nose?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "fact": "nose-blocked",
+      "why": "Sniffing is something a child can do on the spot and report, which the more abstract \"can you breathe through it\" is not for a 5-year-old. Three phrasings because this item has the thinnest sourcing in the packet and a reviewer may want the wording that stands up without the citation carrying it.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as before"
+      }
+    },
+    {
+      "id": "d-013",
+      "traces_to": 5,
+      "q": {
+        "young": "Do little cuts bleed for a long time?",
+        "older": "When you get a small cut, does it bleed for a long time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "bleeds-a-long-time",
+      "why": "RCH's history criterion \"prolonged bleeding after minor cuts\", the one bleeding-tendency question that is not an inspection, not the carer's knowledge and not shame-loaded. \"A long time\" is permitted where \"than usual\" is not: this is a judgement about the child's own repeated experience, not a comparison against a baseline they have never seen. The young tier drops the fronted clause the older tier keeps. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-09"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    },
+    {
+      "id": "d-014",
+      "traces_to": 5,
+      "q": {
+        "young": "Do your cuts keep bleeding for a long time?",
+        "older": "After a small cut, does the bleeding keep going for a long time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "bleeds-a-long-time",
+      "why": "\"Keep bleeding\" carries the persistence RCH means by \"prolonged\" without asking for a clock or an amount, both of which are banned outright. PCH's \"other features of coagulopathy\" is the corroborating source; the condition itself is never named to the child.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-09",
+        "reason": "same as prev"
+      }
+    },
+    {
+      "id": "d-015",
+      "traces_to": 5,
+      "q": {
+        "young": "\"When you scrape your knee, does it bleed for a long time?",
+        "older": "When you scrape your knee, does it bleed for a long time?"
+      },
+      "answers": "yesno",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "long-time",
+        "not-sure"
+      ],
+      "fact": "bleeds-a-long-time",
+      "why": "The most concrete version of the same criterion, on the reasoning that a young child has a clearer memory of a scraped knee than of \"a cut\" in the abstract. Weakest of the three because the knee narrows RCH's \"minor cuts\" to one kind of injury, and a child who has never scraped a knee has no answer to give. Scoped to the `nose` subgroup on 2026-09-09: without it this packet fired for every head tap and a headache child was asked about nosebleeds for half their slots.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-10"
+      },
+      "subgroups": [
+        "nose"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "back-pain",
+  "group": "back",
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days",
+      "long-time"
+    ],
+    "exceptions": {
+      "8": [
+        "yesterday",
+        "few-days",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    5,
+    7,
+    4,
+    6,
+    3,
+    9,
+    12,
+    14,
+    8,
+    2,
+    10,
+    13,
+    11
+  ],
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "minAge": {
+    "4": 8
+  },
+  "minAgeNotes": {
+    "4": "JUDGEMENT, NOT A CITATION. Bladder/bowel change is a genuine red flag and the most embarrassing thing to ask a child in a hospital corridor. Ranked FOURTH despite the floor, precisely because of it: it fires only for 8-12s where the cap is 6, so ranking it high costs a young child nothing.",
+    "6": "Deliberately NOT floored, even though its nearest in-app equivalent SENSATIONS.tingly is tiers:['older']. Flooring it at 8 would make it duplicate `tingly` exactly where it fires and vanish exactly where the app has no other route to the concept. The answer is a tier-split WORDING, not a floor."
+  },
+  "cite": {
+    "1": "Frosch et al.; Sheffield ED; Houghton; Phillips; RCH; NHSGGC",
+    "2": "Frosch et al.; Sheffield ED; Houghton",
+    "3": "Frosch et al.; Sheffield ED; Houghton; Phillips; RCH; NHSGGC",
+    "4": "Frosch et al.; Sheffield ED; Houghton; Phillips",
+    "5": "Frosch et al.; Sheffield ED; Houghton; Phillips",
+    "6": "Frosch et al.; Houghton; Phillips",
+    "7": "Frosch et al.; Houghton; Phillips",
+    "8": "Sheffield ED; Houghton; Phillips; NHSGGC",
+    "9": "Frosch et al.; Sheffield ED; Houghton; Phillips; RCH",
+    "10": "Houghton; Frosch et al.; Phillips",
+    "11": "Frosch et al. (Table 2); Houghton",
+    "12": "Sheffield ED; Houghton; RCH",
+    "13": "Sheffield ED; Frosch et al. (Table 2); Houghton",
+    "14": "Sheffield ED; RCH; Houghton"
+  },
+  "judgement": {
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "mainEffect": "This packet's main effect on the `back` group is NOT to add questions; it is to change which get asked. The three already-shipping hand-written questions (items 9, 10, 11) rank 7th, 12th and 14th -- a deliberate demotion.",
+    "factsToReuse": "Item 3 -> feels-feverish. Item 14 -> limb-use. Everything else mints a new fact.",
+    "doNotMerge": "Item 10 must NOT reuse `worse-on-exertion` (chest). That fact is chest pain on exertion, a cardiorespiratory discriminator; back pain worse on movement is a mechanical one. A child who taps Chest and Back will get two similar-sounding movement questions and that is the accepted cost.",
+    "vomitingIsAnAbsence": "Item 35 records that `vomiting` is NOT reused: no source read names vomiting in a child with back pain. Writing that question here would be an invented citation.",
+    "neckNotAbsorbed": "Decision 11: neck stiffness is NOT absorbed. Roadmap row 11 is a separate packet. This packet is scoped to upper and lower back.",
+    "wordingTrapsForGeneration": "Two natural item wordings are blocked by screen.mjs's UNIVERSAL rules and must be rephrased, not fought: item 2's 'Does it hurt even when you are keeping still?' trips the global `still` presupposition ban, and item 13's 'Do you do a lot of sport?' trips the global `a lot` intensity ban. Neither is a packet-specific rule; both are in LEADING.",
+    "unenforceableCautions": "Two cautions cannot be regexes. (a) Decision 1 rules out 'pins and needles' for the YOUNG tier only, and screen.mjs has no tier-conditional ban -- so the older tier's use of it is correct and the young tier's would have to be caught by eye. (b) 'stiff' alone is ruled out because SENSATIONS.stiff is a different fact; not banned outright because item 8 may legitimately need the word."
+  },
+  "bannedPhrases": [
+    [
+      "tumou?r|cancer|leukaemia|leukemia|sarcoma|cauda equina|scolios|kyphos|discit|osteomyelit|spondylo|sciatica|radiculopath|herniat|arthrit|\\bJIA\\b",
+      "names a condition to the child"
+    ],
+    [
+      "\\bspine\\b|\\bspinal\\b|vertebra|\\bdisc\\b|\\bnerve\\b",
+      "names a structure -- the child already tapped Upper back or Lower back, which is the only location word needed"
+    ],
+    [
+      "x-?ray|\\bMRI\\b|\\bscan\\b|blood test|\\bneedle\\b|\\bbrace\\b|\\bcast\\b|operation|surgery",
+      "never name what happens next -- carried unchanged from the limb packet"
+    ],
+    [
+      "\\bpress\\b|\\bpoke\\b|push on|feel your back|touch your back",
+      "never ask a child to press, poke or feel their own back -- that is item 27 delegated to a seven-year-old"
+    ],
+    [
+      "\\bbend\\b|arch your|\\btwist\\b|\\blean (over|forward|back)\\b|try to (lift|bend|twist|arch)",
+      "never instruct a child to bend, arch, twist or lift to see whether it hurts -- it produces a reproducible-pain answer that reads as an elicited finding"
+    ],
+    [
+      "crooked|\\bbent\\b|lopsided|one shoulder|what does your back look",
+      "never ask a child what their back looks like -- item 29, the one region of the body a child cannot see"
+    ],
+    [
+      "genital|your bottom|on your bottom|saddle|private parts",
+      "never ask about the child's genitals, their bottom, or saddle sensation -- carried verbatim from the tummy packet"
+    ],
+    [
+      "\\baccident\\b|wetting|wet yourself|\\bnappy\\b|\\bdiaper\\b|soiled",
+      "never make a bathroom question sound like a fault, a test or an accusation -- item 4 asks whether something has been DIFFERENT, never what happened"
+    ],
+    [
+      "how many|how often|\\bminutes\\b|\\bcount\\b|how much longer",
+      "never ask a child to time or count anything -- source 4 says 30-60 minutes of stiffness; a child cannot"
+    ],
+    [
+      "significant|unrelenting|progressive",
+      "grading adjectives inside the source criterion -- stripping them is what makes the criterion askable"
+    ],
+    [
+      "because of|is it from|is it the (sport|gymnastics|dancing)",
+      "never present sport as the cause -- item 13 asks what the child does, full stop"
+    ],
+    [
+      "\\bschool\\b|\\bclass\\b|\\blessons?\\b",
+      "the app runs in a hospital and the child may not have been at school for a week -- ask about the things they normally do"
+    ],
+    [
+      "\\bpoorly\\b|\\bwee\\b|\\bweeing\\b|wee-wee|off[- ]?colou?r|have you got|trousers|\\bplaster\\b|\\btorch\\b|might be sick",
+      "British idiom -- sources 2 and 5 are British, 7 Scottish, 6 Australian, 1 British-inflected; the register is US English"
+    ],
+    [
+      "\\blumbar\\b",
+      "decision 1 bans it alongside spine, vertebra, disc and nerve; the structure rule omitted it"
+    ],
+    [
+      "give way|buckle|collapse|paralys",
+      "decision 1: item 5 vocabulary -- the register is 'weak or wobbly'"
+    ],
+    [
+      "radiates|\\bshoots\\b|travels",
+      "decision 1: item 7 vocabulary -- adult pain-clinic idiom"
+    ],
+    [
+      "paraesthesia|paresthesia|\\bsensory\\b|\\bnumb\\b|numbness",
+      "decision 1: item 6 vocabulary -- the route to the concept is 'fuzzy', 'like pins', 'gone to sleep'"
+    ],
+    [
+      "\\brigid\\b",
+      "decision 1: item 8 vocabulary"
+    ],
+    [
+      "clothes.{0,15}loose",
+      "item 31: named in the packet as an invention that must never be written -- a child does not know their weight trend"
+    ],
+    [
+      "\\bhours?\\b|\\bseconds?\\b|times a night|how many times",
+      "never ask a child to time or count anything -- the existing rule missed these units"
+    ]
+  ]
+}

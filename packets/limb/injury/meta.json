@@ -1,0 +1,113 @@
+{
+  "id": "limb-injury",
+  "group": "limb",
+  "depth": "inside",
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "few-days",
+      "not-sure"
+    ],
+    "exceptions": {
+      "4": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "11": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "12": [
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ]
+    }
+  },
+  "itemRank": [
+    1,
+    6,
+    11,
+    3,
+    12,
+    4,
+    2,
+    13,
+    5
+  ],
+  "minAge": {},
+  "cite": {
+    "1": "PET; RCH; GGC; EET",
+    "2": "Ottawa Ankle Rule; Ottawa Knee Rule",
+    "3": "Elbow extension test; ASK",
+    "4": "Elbow extension test; NICE NG38",
+    "5": "APWR; Rivara; RCH",
+    "6": "APWR; Webster; GGC",
+    "11": "RCH; GGC",
+    "12": "RCH; GGC",
+    "13": "RCH; GGC"
+  },
+  "bannedPhrases": [
+    [
+      "broken|fracture|break|snap|sprain|dislocat",
+      "names an injury to the child"
+    ],
+    [
+      "\\btorn\\b|infection|septic|arthritis|cancer|tumou?r|leukaemia",
+      "names a condition to the child - wording caution 'never name a condition or an injury'"
+    ],
+    [
+      "x-?ray|scan|cast|plaster|needle|stitch|operation|surgery",
+      "names what happens next"
+    ],
+    [
+      "press|squeeze|poke|push on",
+      "instructs the child to examine themselves"
+    ],
+    [
+      "\\b(arm|leg|hand|foot|feet|finger|toe|thumb|knee|ankle|wrist|elbow|shoulder|hip)\\b",
+      "names a body part - decision 4: the group spans 40+ regions and the body map already holds which"
+    ],
+    [
+      "\\baccident\\b",
+      "decision: 'accident' carries blame"
+    ],
+    [
+      "weight[- ]bear|mobilise|range of movement|\\bfunction(al|ing)?\\b",
+      "clinical term - decision 1"
+    ],
+    [
+      "\\bfever(s|ish)?\\b",
+      "item 11: never say fever to the child - the nurse holds the thermometer"
+    ],
+    [
+      "the other (one|side)\\b|other side|compared? (to|with)",
+      "asks the child to compare their two limbs - an examination delegated"
+    ],
+    [
+      "\\b(try to|see if you can|straighten|bend it|wiggle|hop|take (four|4) steps|grip)\\b",
+      "instructs a movement - decision 5"
+    ],
+    [
+      "did (someone|anyone|somebody)\\b|on purpose|hurt you deliberately",
+      "NAI - the app must never ask a child about inflicted injury"
+    ]
+  ],
+  "subgroupNotes": {
+    "2": "SPLIT REQUIRED: generate two candidates for item 2. lower -> Ottawa's weight-bearing form ('could you stand on it right after?'), subgroups:['lower']. upper -> ('could you still use it right after?'), subgroups:['upper']. A single generic wording is weaker than the criterion it cites.",
+    "3": "Consider the same split: 'can you walk on it now' (lower) vs 'can you move it okay now' (upper)."
+  },
+  "mechanism": "injury",
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}

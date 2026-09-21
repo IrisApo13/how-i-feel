@@ -1,0 +1,519 @@
+{
+  "packet": {
+    "id": "sore-throat",
+    "version": 1,
+    "askableItems": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "candidates": [
+    {
+      "id": "s-001",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hurts-to-swallow",
+      "q": {
+        "young": "Does it hurt when you swallow?",
+        "older": "Does your throat hurt when you swallow?"
+      },
+      "why": "Item 1, odynophagia: the flagship item, present in all four guidelines and in none of the ten scores, and the re-sourced replacement for the shipped hand-written hurt-swallow question. This is the plainest form of the fact and uses the ruled vocabulary ('swallow', 'your throat'). Costs nothing but tells you only about pain, not about failure - item 2 carries that.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-002",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 1,
+      "answers": "yesno",
+      "fact": "hurts-to-swallow",
+      "q": {
+        "young": "Does swallowing make your throat hurt?",
+        "older": "When you swallow food or drink, does your throat hurt?"
+      },
+      "why": "Item 1 again, a competing wording that anchors the act to food and drink so a child who has not eaten recently has something concrete to test against. Cost: the older tier's anchoring may return 'no' from a child who has swallowed nothing all day, where s-001 would have caught the pain on saliva.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same exact as previous question"
+      }
+    },
+    {
+      "id": "s-003",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Can you swallow your spit okay?",
+        "older": "Are you able to swallow your own spit right now?"
+      },
+      "why": "Item 2, the escalation item, ranked ahead of every score variable in the literature: source 4 puts 'difficulty swallowing saliva/liquids' in words a family is expected to act on. Asked about the child's experience, never about observed drooling (decision 3). Note the packet's own open question: a 'no' here means something is badly wrong and a frightened child may hear that in the question - the young tier especially needs a play specialist's view.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-004",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 2,
+      "answers": "yesno",
+      "q": {
+        "young": "Is your spit hard to swallow?",
+        "older": "Is it hard to swallow the spit in your mouth?"
+      },
+      "why": "Item 2, competing wording. Positively framed difficulty rather than negatively framed ability, so a 'yes' is the worrying answer and matches the direction of every other question in the packet - a reviewer may prefer that consistency, since s-003 alone inverts the polarity of a yes. Slightly more alarming to read aloud than s-003.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "exact same as previous one"
+      }
+    },
+    {
+      "id": "s-005",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "cough",
+      "q": {
+        "young": "Have you been coughing?",
+        "older": "Have you been coughing in the last few days?"
+      },
+      "why": "Item 3, the only score variable in the whole literature a child can answer unaided (seven of ten scores), and the re-sourced replacement for the shipped hand-written cough question. Asked as presence, never as absence: the scores treat absence of cough as a bacterial sign, so the interpretation is the nurse's and nothing in the app may invert it. Deliberately not fused with item 4 (decision 4).",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-006",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 3,
+      "answers": "yesno",
+      "fact": "cough",
+      "q": {
+        "young": "Do you have a cough?",
+        "older": "Do you have a cough as well as your sore throat?"
+      },
+      "why": "Item 3, competing wording. 'Do you have a cough' asks about a state a child can name rather than about a stretch of time, which suits the young tier; the older tier ties it to the presenting complaint so the child does not report a cough they had a month ago. Cost: a child with an occasional cough may not think they 'have a cough'.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-007",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "runny-nose",
+      "q": {
+        "young": "Is your nose stuffy or runny?",
+        "older": "Has your nose been stuffy or runny?"
+      },
+      "why": "Item 4, coryza, named in six sources and asked separately from cough on purpose - no two of the six rules that contain both bundle them the same way, so a fused question silently picks one rule's bundling (decision 4). Wording per decision 1: 'stuffy or runny nose', never 'blocked' or 'congested'. Presence only; Attia's moderate-to-severe grading is an examiner's and is not carried.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-008",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 4,
+      "answers": "yesno",
+      "fact": "runny-nose",
+      "q": {
+        "young": "Is your nose stuffed up or dripping?",
+        "older": "Do you have a stuffy or runny nose too?"
+      },
+      "why": "Item 4, competing wording for reviewers who think 'stuffy' and 'runny' are not a four-year-old's words; 'stuffed up' and 'dripping' are more concrete and stay inside decision 1's US register. Note that the sidecar regex bans 'blocked nose' but not 'blocked up', so a near-Britishism would pass the screen here - s-007 or this, not a third phrasing built around 'blocked'.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "previous question is same and has better questions"
+      }
+    },
+    {
+      "id": "s-009",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Does your voice sound different today?",
+        "older": "Does your voice sound different from how it normally sounds?"
+      },
+      "why": "Item 5, the child's half of the voice-change criterion. The listener's half - 'hot potato' and muffled voice as heard - stays excluded in item 21, because its own definition names the pathology it implies. Wording per decision 1: 'your voice sounds different', never hoarse, croaky, husky or muffled. Alm supports 'difficulties talking' as something 4-11 year olds rate about themselves.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-010",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 5,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it hard to talk?",
+        "older": "Is it hard to talk because of your throat?"
+      },
+      "why": "Item 5, competing wording, and the one closer to the source: Alm's PRiC item is 'difficulties talking', which children self-rated, whereas hearing your own voice as different is arguably a listener's judgement the child cannot make. Cost: it collapses voice quality into effort, so a child whose voice has changed but who talks freely answers no.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-011",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "eating-drinking",
+      "q": {
+        "young": "Can you eat and drink okay?",
+        "older": "Have you been able to eat and drink today?"
+      },
+      "why": "Item 6, oral intake: simultaneously a rule variable, a history bullet in both complaint guidelines, an escalation trigger and RCH's discharge criterion. Distinct from HELPS.water and HELPS.food, which record what the child wants rather than what they have managed. Like s-003 the yes is the reassuring answer, which is the opposite polarity to most of the packet.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-012",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 6,
+      "answers": "yesno",
+      "fact": "eating-drinking",
+      "q": {
+        "young": "Is it hard to eat or drink?",
+        "older": "Is it harder than usual to eat or drink anything?"
+      },
+      "why": "Item 6, competing wording, framed as difficulty so a yes is the answer that matters, matching the rest of the packet. Cost: it measures effort rather than intake, and a child who is finding it hard but managing looks the same as one who has taken nothing - which is the fact the discharge criterion actually turns on.",
+      "review": {
+        "status": "rejected",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "same question as above"
+      }
+    },
+    {
+      "id": "s-013",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 7,
+      "answers": "yesno",
+      "q": {
+        "young": "Does one side hurt more?",
+        "older": "Does your throat hurt more on one side than the other?"
+      },
+      "why": "Item 7, laterality - the quinsy signal, and unobtainable any other way because the body map has one throat region and one neck region, neither split left or right. The age floor is the packet's own judgement, not a citation (decision 7): a 4-6 year old is expected to answer the shape of the question rather than the fact. The young tier string exists only for the seven-year-olds inside that band.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "minAge 7 removed 2026-09-06 — the floor was the generator’s judgement, not a source, and laterality is worth asking from age 4"
+      }
+    },
+    {
+      "id": "s-014",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Is it hard to breathe?",
+        "older": "Is it hard to breathe right now?"
+      },
+      "why": "Item 8, third of source 4's family-facing triad and a red flag in every guideline read. Note decision 10: this duplicates the chest group's hand-written breathing question, followUpsForGroups dedupes on question id rather than on fact, so a child who taps Chest and Throat will be asked it twice under two ids unless that is fixed.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-015",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 8,
+      "answers": "yesno",
+      "fact": "hard-to-breathe",
+      "q": {
+        "young": "Does breathing feel hard right now?",
+        "older": "Does it feel hard to get your breath in right now?"
+      },
+      "why": "Item 8, competing wording. Deliberately phrased so it does not read identically to the chest group's shipped question, which may help a nurse tell the two apart on screen while the id-dedupe problem is unresolved. Cost: 'get your breath in' is a longer construction and the young tier is at the edge of its word budget.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-016",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 9,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it hard to turn your head?",
+        "older": "Is it hard to turn your head from side to side?"
+      },
+      "why": "Item 9, the child's-eye half of torticollis and limitation of neck extension, and the retropharyngeal-abscess signal that no score contains. A clinician observes the posture and measures the range; the child discovers the difficulty by trying, which is why this is a question and item 22 is not. Not an instruction to feel the neck - nothing here asks the child to touch themselves.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      },
+      "fact": "neck-movement"
+    },
+    {
+      "id": "s-017",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure",
+        "long-time"
+      ],
+      "traces_to": 10,
+      "answers": "yesno",
+      "q": {
+        "young": "Is it hard to open your mouth wide?",
+        "older": "Is it hard to open your mouth wide right now?"
+      },
+      "why": "Item 10, trismus, marked partial: a child can report difficulty but not restriction, which is what trismus is and which the clinician establishes by looking. Phrased as a report about difficulty, never as an instruction to open up and check - the wording cautions and source 6's 'throat examination is rarely required' both rule that out.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-018",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 11,
+      "answers": "yesno",
+      "fact": "vomiting",
+      "q": {
+        "young": "Have you thrown up?",
+        "older": "Have you thrown up since your throat started hurting?"
+      },
+      "why": "Item 11, a Fujikawa variable and a non-specific symptom in both complaint guidelines. Register carried from the tummy packet's decision 1: 'throw up'. Not redundant with the tummy packet's t-003, which is scoped to group tummy and will not fire for a throat-only report. Distinct from nausea, which SENSATIONS.queasy already covers and which is offered to this child because the group is internal.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-019",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 12,
+      "answers": "yesno",
+      "fact": "choking-episode",
+      "q": {
+        "young": "Did something go down the wrong way?",
+        "older": "Did something go down the wrong way when you were eating or drinking?"
+      },
+      "why": "Item 12, inhaled foreign body: source 5 says the coughing or choking episode 'may not be witnessed', so only the child knows. The object is deliberately unnamed - no coin, battery, toy or bone - because naming it prompts the answer and can frighten a child into denying it. Weakest provenance in the packet: one guideline, and one scoped to airway obstruction rather than sore throat.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07",
+        "reason": "reworded 2026-09-06 — kept the choking half of item 12 only; the swallowed-object half is deliberately not asked. Tiers realigned to one question, young back under the word limit"
+      }
+    },
+    {
+      "id": "s-020",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 13,
+      "answers": "yesno",
+      "fact": "feels-feverish",
+      "q": {
+        "young": "Do you feel hot or shivery?",
+        "older": "Do you feel hot or shivery right now?"
+      },
+      "why": "Item 13, the child's half of fever: ten sources, five incompatible thresholds, one of them no number at all. The child reports the sensation and the nurse holds the thermometer and picks a threshold; the word fever never appears, no number is asked for, and the child never sees one. Ranked low precisely because the app cannot resolve any threshold and a temperature will be taken regardless.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    },
+    {
+      "id": "s-021",
+      "duration": [
+        "just-now",
+        "this-morning",
+        "yesterday",
+        "few-days",
+        "not-sure"
+      ],
+      "traces_to": 14,
+      "answers": "yesno",
+      "q": {
+        "young": "Do you have spots on your skin?",
+        "older": "Have you noticed spots or a rash on your skin?"
+      },
+      "why": "Item 14, rash: three of eight rules contain a rash term, but the classification - scarlatiniform against viral against urticarial - and the discriminating detail RCH lists are entirely the examiner's, so this captures presence only. Structurally homeless (decision 9): a skin finding inside an internal group with no surface sibling, asked of a child whose rash is on their chest. Ranked second-last for that reason.",
+      "review": {
+        "status": "accepted",
+        "by": "iris",
+        "on": "2026-09-07"
+      }
+    }
+  ]
+}

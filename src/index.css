@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* A soft blue ground, and one darker blue that does all the work.
+ *
+ * The old palette was a cream page with five accent colours -- sky, mint, sun,
+ * grape, hurt -- and white cards floating on top of it. Five accents means
+ * nothing is emphasised, and white-on-cream is what produces the stack of pale
+ * rounded boxes that reads as generated. So: the page itself is the colour, and
+ * surfaces sit on it by being slightly lighter or slightly deeper, never by
+ * being outlined.
+ *
+ * `hurt` survives because red means one thing in this app -- pain intensity --
+ * and it is the reason the guide character has no red in it. */
+@theme {
+  --color-ink: #1f3346;          /* deep blue-grey; reads as ink, not black */
+  --color-sky: #bcdcf4;          /* the page */
+  --color-sky-soft: #e8f3fc;     /* raised surfaces */
+  --color-sky-deep: #2b7cb8;     /* the single accent: selection, actions */
+  --color-sky-line: #a9cde8;     /* dividers and quiet edges */
+  --color-cream: #fdf8f0;
+  --color-mint: #5bbfa8;
+  --color-sun: #f2b544;
+  --color-hurt: #d8555c;
+
+}
+/* Option tints. Declared here rather than inside @theme on purpose: Tailwind v4
+ * only emits a theme variable it can see referenced in the source, and these are
+ * used from an inline style, which it never scans. Inside @theme they were
+ * tree-shaken away, the inline backgroundColor resolved to nothing, and every
+ * card stayed the same colour.
+ *
+ * Each choice keeps the SAME tint every time it appears, so the colour is a
+ * recognition cue rather than decoration -- a child who cannot read learns that
+ * the green one is the ice pack. No red or pink: red means pain intensity in
+ * this app and nothing else. */
+:root {
+  --t-peach: 249 205 170;
+  --t-butter: 247 228 158;
+  --t-sage: 190 222 178;
+  --t-mint: 165 217 205;
+  --t-lilac: 203 190 234;
+  --t-sand: 231 210 182;
+  --t-powder: 168 202 235;
+}
+
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Two soft pools of light on the blue. Glass needs something behind it -- over
+ * a flat colour a blurred panel is indistinguishable from a translucent one,
+ * and the whole effect reads as a mistake. These are what the cards refract. */
+body {
+  background:
+    radial-gradient(90rem 60rem at 12% -10%, #e9f5ff 0%, transparent 60%),
+    radial-gradient(70rem 50rem at 105% 15%, #cfe4f2 0%, transparent 55%),
+    var(--color-sky);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* iOS-style glass. Three parts, and it falls apart if any is missing:
+ *   - a translucent fill, so the page shows through
+ *   - backdrop-blur, so what shows through is softened rather than legible
+ *   - a bright hairline along the top edge, which is what reads as a lit
+ *     surface rather than a flat transparent rectangle
+ * The saturate() is what stops blurred pastels going grey. */
+.glass {
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 6px 18px -8px rgba(23, 52, 79, 0.35);
+}
+
+/* Selected state. Deep enough that it reads as filled rather than tinted --
+ * with every option coloured, selection has to change value, not just hue. */
+.glass-on {
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 8px 22px -8px rgba(21, 70, 110, 0.55);
+}
+
+/* Type does the hierarchy now that boxes do not. A rounded face keeps it warm
+ * without needing a border round everything. */
+h1, h2, .display {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Kids tap fast and repeatedly; never let the OS select text or zoom. */
+button, .no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%      { transform: scale(1.025) translateY(-2px); }
+}
+
+.breathe {
+  animation: breathe 3.4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breathe { animation: none; }
+}
+
+/* ---- the hand-drawn guide ----
+   Four drawings merged into one SVG. A pose is a combination of the classes
+   below; `Guide.jsx` maps pose names onto them.
+
+   THREE WAYS CSS CAN BREAK THIS DRAWING, all of which happened:
+
+   1. NEVER SCALE IT. A squash of 1.2% opened hairline white seams across the
+      whole bear -- scaling pulls abutting shapes apart by a fraction of a pixel
+      and their anti-aliased edges stop meeting. With ~150 paths that shows up
+      everywhere at once. The bounce translates only. Rotation and opacity are
+      safe; scale is not.
+
+   2. NEVER REGROUP PATHS. SVG paints in document order, so a path's position in
+      the file is part of the drawing -- the eye outlines sit under the muzzle
+      and the pupils sit over it. Wrapping scattered paths in a <g> to rotate
+      them together puts them all on top and wrecks the face. The head is 81
+      scattered paths and rotates via `transform-box: view-box`, which makes
+      transform-origin an absolute viewport coordinate so they share one pivot
+      without moving.
+
+   3. PIVOTS MUST BE MEASURED, NOT GUESSED. The arm pivot was 16px above the
+      real shoulder, so waving swung the arm off the body and revealed a gap --
+      the drawing has nothing behind the arm, because nobody draws what is
+      covered. (446, 668) is the inner-lowest point of the raised arm, where it
+      meets the body. Anchored there it cannot detach. */
+.guide svg { width: 100%; height: auto; display: block; }
+.guide .eyes-shut, .guide .mouth-open, .guide .arm-up-l, .guide .arm-up-r { opacity: 0; }
+.guide .head { transform-box: view-box; transform-origin: 343px 506px; }
+
+.g-bounce { animation: g-bounce 3.6s ease-in-out infinite; }
+@keyframes g-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+.g-tilt .head  { animation: g-tilt 4.2s ease-in-out infinite; }
+.g-think .head { animation: g-tilt 6s ease-in-out infinite; }
+@keyframes g-tilt { 0%, 100% { rotate: 0deg; } 30% { rotate: -3.2deg; } 70% { rotate: 1.4deg; } }
+
+/* steps(1,end) so each keyframe CUTS. A real blink snaps; a crossfade reads as
+   heavy-lidded, which is a different expression. ~110ms of a 5.2s cycle. */
+.g-blink .eyes-open { animation: g-eo 5.2s steps(1, end) infinite; }
+.g-blink .eyes-shut { animation: g-es 5.2s steps(1, end) infinite; }
+@keyframes g-eo { 0%, 95.4%, 100% { opacity: 1; } 95.5%, 97.6% { opacity: 0; } }
+@keyframes g-es { 0%, 95.4%, 100% { opacity: 0; } 95.5%, 97.6% { opacity: 1; } }
+
+/* Uneven on purpose -- an even cycle is what makes a moving mouth read as a
+   twitch. Speech is not a metronome. */
+.g-talk .mouth-shut { animation: g-ms 1.5s steps(1, end) infinite; }
+.g-talk .mouth-open { animation: g-mo 1.5s steps(1, end) infinite; }
+@keyframes g-ms { 0%,11%,26%,45%,58%,79%,100% { opacity: 1; } 12%,25%,46%,57%,80%,93% { opacity: 0; } }
+@keyframes g-mo { 0%,11%,26%,45%,58%,79%,100% { opacity: 0; } 12%,25%,46%,57%,80%,93% { opacity: 1; } }
+
+/* The swap crossfades over ~90ms: long enough to kill the pop, short enough
+   that two arms are never both visible. */
+.g-wave .arm-down-r { animation: g-armdn 2.8s ease-in-out 1 both; }
+.g-wave .arm-up-r {
+  animation: g-armup 2.8s ease-in-out 1 both, g-flap 0.6s ease-in-out 0.32s 3 both;
+  transform-box: view-box; transform-origin: 446px 668px;
+}
+@keyframes g-armdn { 0%,6% { opacity: 1; } 9%,88% { opacity: 0; } 94%,100% { opacity: 1; } }
+@keyframes g-armup { 0%,6% { opacity: 0; } 9%,88% { opacity: 1; } 94%,100% { opacity: 0; } }
+@keyframes g-flap  { 0%, 100% { rotate: 0deg; } 50% { rotate: -7deg; } }
+
+/* Point holds the raised arm still. Cheer raises both and opens the mouth. */
+.g-point .arm-down-r { opacity: 0; }
+.g-point .arm-up-r   { opacity: 1; }
+.g-cheer .arm-down-l, .g-cheer .arm-down-r { opacity: 0; }
+.g-cheer .arm-up-l,  .g-cheer .arm-up-r,
+.g-cheer .mouth-open { opacity: 1; }
+.g-cheer .mouth-shut { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .guide, .guide svg * { animation: none !important; }
+}
+
+/* Visible to screen readers only. Typewriter uses it so the full line is read
+   once rather than re-announced on every keystroke. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}

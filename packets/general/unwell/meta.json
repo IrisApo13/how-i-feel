@@ -1,0 +1,184 @@
+{
+  "id": "general-unwell",
+  "group": "general",
+  "groups": [
+    "general",
+    "head",
+    "throat",
+    "chest",
+    "tummy",
+    "limb",
+    "back",
+    "eyes",
+    "ears",
+    "mouth"
+  ],
+  "depth": null,
+  "durations": {
+    "default": [
+      "just-now",
+      "this-morning",
+      "yesterday",
+      "not-sure",
+      "few-days",
+      "long-time"
+    ],
+    "exceptions": {}
+  },
+  "itemRank": [
+    1,
+    3,
+    9,
+    4,
+    2,
+    7,
+    5,
+    11,
+    8,
+    13,
+    10,
+    12,
+    6
+  ],
+  "proposedForV1": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "minAge": {},
+  "minAgeNotes": {
+    "15": "JUDGEMENT, NOT A CITATION -- item 15 (new bedwetting) would need minAge 7 if revived. Not proposed for v1, so no floor ships."
+  },
+  "cite": {
+    "1": "IMCI; Craig; NICE NG143; RCH; AUS fever model (Keitel)",
+    "2": "NICE NG143",
+    "3": "Craig; IMCI; NICE NG143",
+    "4": "NICE NG143; RCH",
+    "5": "NICE NG143; Craig; RCH; AUS fever model (Keitel)",
+    "6": "NICE NG143",
+    "7": "IMCI; RCH; Bleeker and Pneumonia Rule 3 (Keitel)",
+    "8": "IMCI; RCH; Five Stage Decision Tree and AUS fever model (Keitel)",
+    "9": "Thompson HTA; IMCI; Five Stage Decision Tree and Pneumonia Rule 1 (Keitel)",
+    "10": "Craig; IMCI; RCH; AUS fever model and Pneumonia Rule 3 (Keitel)",
+    "11": "NICE NG143; IMCI; RCH",
+    "12": "NICE NG143; RCH; RCH prolonged; AUS fever model (Keitel)",
+    "13": "NICE NG143; RCH; RCH prolonged"
+  },
+  "judgement": {
+    "itemRank": "Proposed, not yet confirmed by review.",
+    "minAge": "No age floors on any item. See decision 7 -- the absence is reasoned, not skipped.",
+    "durations": "Empty exceptions is deliberate: every item carries all six bands, including long-time.",
+    "feelsFeverish": "Item 1 must carry the shared fact `feels-feverish`. It takes that fact from l-007/l-008, s-020, c-023, e-019 and t-019, which are NOT to be deleted -- the dedupe is by fact, so the region-anchored wordings remain the fallback.",
+    "semanticCautionNotEnforceable": "Decision 1's 'never invert item 10 in the question' (cough must be asked present-positive) is a semantic constraint, not a phrase, and screen.mjs cannot enforce it. Recorded so its absence is not read as an oversight."
+  },
+  "bannedPhrases": [
+    [
+      "sepsis|septic|meningit|meningococc|kawasaki|pneumonia|bronchiolit|urine infection|\\bUTI\\b|bladder infection|kidney infection|bacteraemia|bacteremia|blood poisoning|encephalit|osteomyelit|malaria|measles|influenza|\\bflu\\b|covid|\\bPIMS\\b|leukaemia|leukemia|cancer",
+      "names a diagnosis to the child"
+    ],
+    [
+      "fever|febrile|temperature|degrees|thermometer|antipyretic",
+      "item 1 asks about a sensation, never a measurement; 'have you got a temperature' is British for fever"
+    ],
+    [
+      "\\brigor|\\brigors\\b",
+      "clinical term -- a child says shaking"
+    ],
+    [
+      "\\bpoorly\\b",
+      "British for ill; a US child reads it as an adverb"
+    ],
+    [
+      "off colour|off color",
+      "British for unwell, and colour is an excluded observer criterion (item 28)"
+    ],
+    [
+      "\\bsick\\b",
+      "UK English 'sick' means vomiting, US English means becoming ill -- unresolvable on a child's screen; say 'throw up'"
+    ],
+    [
+      "\\bwee\\b|\\bwees\\b|\\bweeing\\b|\\bwee-wee\\b",
+      "British; the register is 'pee'"
+    ],
+    [
+      "\\bnappy\\b|\\bnappies\\b",
+      "British, and infant-only in any case"
+    ],
+    [
+      "\\bunwell\\b",
+      "British-leaning clinical register, and it is the vague global judgement item 29 excludes"
+    ],
+    [
+      "blanch|\\bglass\\b|tumbler|does it fade|go(es)? away when you (push|press)|push on the (rash|spots)|press on the (rash|spots)",
+      "the blanching test is performed by an adult on a child, never delegated to the patient (item 33)"
+    ],
+    [
+      "\\bpinch\\b|press on|feel your pulse|count your breath|in a mirror|how fast are you breathing",
+      "asks the child to examine or measure themselves (items 26, 27, 28, 32)"
+    ],
+    [
+      "\\bfit\\b|\\bfits\\b|seizure|convulsion|black(ed)? out|\\bfaint",
+      "a child who has had a seizure cannot report it -- that is what a seizure is (item 31)"
+    ],
+    [
+      "how (ill|sick|unwell)|do you look|look sick|are you very",
+      "asks the child for the clinician's (item 29) or carer's (item 30) judgement"
+    ],
+    [
+      "ethnic|\\bbackground\\b|country of birth|travel(led)?|where do you live|who do you live with",
+      "not the child's to report; items 37 and 39, and see 'The high-risk branch'"
+    ],
+    [
+      "medicine|medication|\\btablet|paracetamol|ibuprofen|tylenol|calpol|motrin",
+      "RCH: response to antipyretics does not predict severity, and it invites a child to report a dose nobody recorded (item 35)"
+    ],
+    [
+      "\\baccident\\b|big (boy|girl)|supposed to|still dry",
+      "shaming register around bedwetting, if item 15 is ever revived"
+    ],
+    [
+      "burning up",
+      "decision 1: banned wording for item 1 -- ask the plain sensation"
+    ],
+    [
+      "\\bchills\\b|the shivers",
+      "decision 1: banned wording for item 2 -- the register is shivering or shaking"
+    ],
+    [
+      "stiff neck|neck stiffness|meningism",
+      "decision 1: banned wording for item 11 -- ask whether it is hard to turn their head"
+    ],
+    [
+      "urinat|\\burine\\b|pass water",
+      "decision 1: banned wording for items 4-6 -- the register is 'pee'"
+    ],
+    [
+      "\\bstool|\\bmotions\\b|\\bbowels?\\b|\\bpoo\\b",
+      "decision 1: banned wording for item 8 -- the register is 'poop'"
+    ],
+    [
+      "purpura|petechia|\\bbruis",
+      "decision 1: banned wording for item 12"
+    ],
+    [
+      "\\bswollen\\b|oedema|\\bedema\\b",
+      "decision 1: banned wording for item 17 -- the register is 'puffy'"
+    ]
+  ],
+  "preferred": {
+    "3": "g-005",
+    "9": "g-013",
+    "11": "g-016"
+  },
+  "itemRankNote": "REORDERED 2026-09-08 by iris, who reviewed every packet item by item in packets/RANKING.md and named the top six directly. This supersedes the agent-proposed ordering; it is no longer \"proposed, not yet confirmed\"."
+}
