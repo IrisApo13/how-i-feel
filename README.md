@@ -1,12 +1,13 @@
 # How I Feel
 
-A prototype of the child-facing half of a hospital symptom-reporting app: a kid
-describes where it hurts, how much, what it feels like and what might help, and
-the app turns that into a structured report a nurse can read in seconds.
+A prototype hospital symptom-reporting app. A child describes where it hurts,
+how much, what it feels like and what might help, and the app turns that into a
+structured report a nurse can read in seconds. Both halves are built: the
+child's side and the nurse's side.
 
-Built for the Congressional App Challenge. **Everything visual is a placeholder**
-— the characters, avatar and body map are primitive SVG shapes standing in for
-hand-drawn art.
+Built for the Congressional App Challenge. The guide character is hand-drawn;
+the faces scale, the avatar and the body map are drawn in code from the rules
+documented at the top of each component.
 
 ## Running it
 
@@ -163,16 +164,19 @@ duplicating every path.
   canvas with the character in the same position, or cross-fades will jump.
 - **Avatar** — `src/components/Avatar.jsx`. One base figure with layered parts;
   skin tone is a `fill` value, not a separate drawing.
-- **Icons** — currently emoji, in the `icon` fields of `src/data/vocab.js`.
+- **Icons** — none. Emoji were removed in the redesign; `src/data/vocab.js`
+  documents how to reintroduce icons as drawn assets.
 
 ## Next on the body map
 
 Planned, not built:
 
-- **"All over" and "I don't know where".** There is currently nowhere to report
-  feeling generally unwell — fever, dizziness, "I feel yucky" — so a child with
-  no single sore spot has no valid tap. The two cases mean different things
-  clinically and should not collapse into one button.
+- **"I don't know where".** "All over" shipped: `all-over` is a region with
+  `view: null`, surfaced as a button under the map, routed to the
+  `general-unwell` packet and deliberately kept out of `GROUP_GATE`. What is
+  still missing is the second case. A child who *cannot localise* is currently
+  offered only "I hurt all over", which asserts something different, and the
+  two mean different things to a nurse.
 - **More zoom views.** `zoomTo` already works for the head; the same mechanism
   gives a torso close-up (tummy quadrants, gated to the `older` tier), hands,
   feet and a mouth view for teeth. Zoom handles granularity — head to eye is a
@@ -180,9 +184,11 @@ Planned, not built:
 
 ## Known gaps
 
-- The nurse end (`src/screens/NurseEnd.jsx`) is a placeholder. It lists reports
-  out of this device's own `localStorage` so the mode switch has somewhere to
-  land; the real one is a separate component that receives reports directly.
+- The nurse end (`src/screens/NurseEnd.jsx`) is built — collapsed report cards
+  showing name, age, area and pain score, expanding to every field the child
+  reported plus the citation behind each follow-up question. It still reads
+  from this device's own `localStorage`, so a nurse cannot see reports from
+  another device. That needs a backend, which is the open question.
 - **The staff PIN is not authentication.** It is stored in plaintext in
   `localStorage` and exists only to stop a bored child tapping into the nurse
   end. Anything involving real patient data needs a real auth story.
