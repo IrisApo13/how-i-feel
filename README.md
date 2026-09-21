@@ -4,10 +4,6 @@ A prototype of the child-facing half of a hospital symptom-reporting app: a kid
 describes where it hurts, how much, what it feels like and what might help, and
 the app turns that into a structured report a nurse can read in seconds.
 
-Built for the Congressional App Challenge. **Everything visual is a placeholder**
-— the characters, avatar and body map are primitive SVG shapes standing in for
-hand-drawn art.
-
 ## Running it
 
 ```bash
@@ -26,7 +22,7 @@ first time anyone opens it. From the patient side the way in is the small
 
 **Setup** — name, age, preferred input method (tap / talk / write / draw),
 whether the guide speaks aloud or uses word bubbles, guide character, and a
-customisable avatar. Saved to `localStorage`.
+customizable avatar. Saved to `localStorage`.
 
 **Home** — greeting, one big report button, and a check for any report from the
 last 48 hours.
@@ -35,16 +31,17 @@ last 48 hours.
 shortcut instead of repeating themselves. Choosing it carries the previous
 regions forward and jumps straight to "how bad is it now".
 
-**Voice path** (when the child chose "Talking") — guided prompts, live
+**Voice path** (only for when the child chose "Talking") — guided prompts, live
 transcript, keyword extraction into structured fields, then a confirmation
 screen. Uses the browser's `SpeechRecognition`.
 
 **Body map** — an anatomical child silhouette, front and back, with five zoom
-views: head, both hands, both feet and the tummy. Multi-select across all of
-them; a part containing a hidden selection is marked with a dot on the body.
+views: head, both hands, both feet and the tummy. 20 regions in total, option 
+to multi-select across all of them; a part containing a hidden selection is 
+marked with a dot on the body.
 
 **Depth** — "is it on your skin, or inside?", asked straight after the body map.
-Children localise pain by surface region no matter what is actually wrong
+Children localize pain by surface region no matter what is actually wrong
 underneath, so depth is asked as one plain binary rather than offered as
 anatomical layers a child would have to navigate. Only ambiguous region groups
 are asked (see `GROUP_DEPTH` in `src/data/bodyMap.js`) — a throat is always
@@ -63,11 +60,11 @@ head gets "did you bump it / do lights make it worse"; and so on.
 **Tell me more** — a free-draw canvas or a text box, shown only if the child
 picked drawing or writing at setup.
 
-**Summary** — everything laid out, every row tappable to go back and change it,
-then send. Includes a toggle showing the raw JSON a nurse dashboard would
-receive.
+**Summary** — everything is laid out for the child to review, every row tappable
+to go back and change it, then send. Includes a toggle showing the raw JSON a 
+nurse dashboard would receive.
 
-## Design decisions worth keeping
+## Deliberate design choices
 
 A few things in here are deliberate and easy to accidentally undo:
 
@@ -159,30 +156,14 @@ duplicating every path.
   drawing moves a landmark, adjust the shared boundary curve in `REGIONS` on
   both sides of it so the two regions still tile.
 - **Guide characters** — `src/components/Guide.jsx`. Eight poses: `idle`, `wave`,
-  `talk`, `point`, `listen`, `think`, `cheer`, `attentive`. Draw each on the same
-  canvas with the character in the same position, or cross-fades will jump.
+  `talk`, `point`, `listen`, `think`, `cheer`, `attentive`. We will be drawing
+  each on the same canvas with the character in teh same position, or cross-fades
+  will jump. Currently, only ONE teddy-bear guide character. 
 - **Avatar** — `src/components/Avatar.jsx`. One base figure with layered parts;
   skin tone is a `fill` value, not a separate drawing.
-- **Icons** — currently emoji, in the `icon` fields of `src/data/vocab.js`.
-
-## Next on the body map
-
-Planned, not built:
-
-- **"All over" and "I don't know where".** There is currently nowhere to report
-  feeling generally unwell — fever, dizziness, "I feel yucky" — so a child with
-  no single sore spot has no valid tap. The two cases mean different things
-  clinically and should not collapse into one button.
-- **More zoom views.** `zoomTo` already works for the head; the same mechanism
-  gives a torso close-up (tummy quadrants, gated to the `older` tier), hands,
-  feet and a mouth view for teeth. Zoom handles granularity — head to eye is a
-  closer look, not a deeper layer.
 
 ## Known gaps
 
-- The nurse end (`src/screens/NurseEnd.jsx`) is a placeholder. It lists reports
-  out of this device's own `localStorage` so the mode switch has somewhere to
-  land; the real one is a separate component that receives reports directly.
 - **The staff PIN is not authentication.** It is stored in plaintext in
   `localStorage` and exists only to stop a bored child tapping into the nurse
   end. Anything involving real patient data needs a real auth story.
