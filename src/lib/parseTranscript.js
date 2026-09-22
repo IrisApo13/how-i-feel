@@ -33,7 +33,6 @@ const SENSATION_WORDS = {
   burning: ['burn', 'burning', 'burns', 'hot', 'sting', 'stinging', 'stings', 'fire', 'spicy'],
   aching: ['ache', 'aches', 'aching', 'achy', 'sore', 'soreness'],
   throbbing: ['throb', 'throbbing', 'pounding', 'pulsing', 'beating', 'thumping'],
-  punch: ['punch', 'punched', 'bonk', 'bonked', 'hit', 'kicked', 'whack', 'slam'],
   squeezing: ['squeeze', 'squeezing', 'tight', 'tightness', 'crush', 'crushing', 'pressure'],
   itchy: ['itch', 'itchy', 'itches', 'scratchy'],
   dizzy: ['dizzy', 'spinning', 'spinny', 'lightheaded', 'woozy', 'wobbly'],

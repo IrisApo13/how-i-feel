@@ -31,10 +31,30 @@ export default function DepthScreen({
   const character = getCharacter(profile.characterId)
   const young = profile.ageTier === 'young'
   const tier = young ? 'young' : 'older'
-  // One gate on screen: the guide asks it, and the card does not repeat it.
-  // Two or more -- several groups, or one group mid-way through its second
-  // gate -- and each card must carry its own question or the mix is unreadable.
-  const single = gates.length === 1 ? GATES[gates[0].type] : null
+  // The guide no longer reads the gate question aloud, and every card carries
+  // its own question text.
+  //
+  // It used to do the opposite: with one gate on screen the guide asked it and
+  // the card stayed silent. The cost was that the line the guide had to say was
+  // a different line on every path -- "Did you bump it, or did it just start
+  // hurting?" and its siblings -- and none of them has a generated clip, so on
+  // the single-gate path (the common one) the guide fell through to the
+  // browser's synthetic voice. One robotic sentence inside a flow that
+  // otherwise speaks in the recorded voice is worse than a plainer line,
+  // because the child hears the seam instead of the question.
+  //
+  // So the guide says a fixed line and the question moves into the card, where
+  // it is read rather than heard. Nothing is lost: the words were always on
+  // screen anyway (see GuideSays), and this is the one prompt whose two answers
+  // are themselves named on the buttons.
+  //
+  // Two fixed lines, not one, because the count has to be true: a child who
+  // tapped one arm and is told "a quick question about each one" is being
+  // talked to by something that was not listening -- there is no each one.
+  // Both are literals rather than one sentence assembled at runtime, because a
+  // clip is named by the hash of its finished text, so an assembled sentence
+  // could never have one.
+  const one = gates.length === 1
 
   return (
     <Screen onBack={onBack} progress={progress}>
@@ -42,7 +62,7 @@ export default function DepthScreen({
         <GuideSays
           character={character}
           pose="think"
-          text={single ? single.question[tier] : 'A quick question about each one.'}
+          text={one ? 'A quick question about that.' : 'A quick question about each one.'}
           voiceMode={profile.voiceMode}
           size={92}
         />
@@ -51,9 +71,7 @@ export default function DepthScreen({
           {gates.map((g) => (
             <Card key={`${g.group}-${g.key}`}>
               <p className="text-lg font-bold mb-2.5">{g.label}</p>
-              {!single && (
-                <p className="text-sm text-ink/55 mb-2">{GATES[g.type].question[tier]}</p>
-              )}
+              <p className="text-sm text-ink/55 mb-2">{GATES[g.type].question[tier]}</p>
               <div className="grid grid-cols-3 gap-2">
                 {GATES[g.type].options.map((d) => (
                   <button
@@ -73,8 +91,14 @@ export default function DepthScreen({
           ))}
         </div>
 
+        {/* Names the button the child is actually looking at, which is not the
+            same button in both tiers: the 4-7 wording is "I don't know" and the
+            8-12 wording is "I'm not sure" (see GATES in data/vocab.js). Telling
+            a child to pick something that is not on their screen is how a real
+            answer becomes a guess. */}
         <p className="text-center text-sm text-ink/45 px-4">
-          If you&apos;re not sure, that&apos;s okay — say so.
+          If you&apos;re not sure, that&apos;s okay. Just select{' '}
+          {young ? '“I don’t know”.' : '“I’m not sure”.'}
         </p>
       </div>
 

@@ -72,7 +72,10 @@ export const SENSATIONS = [
   { id: 'burning', label: 'Burning', kidLabel: 'Hot and stingy', tiers: ['young', 'older'], depths: ['surface', 'inside'] },
   { id: 'aching', label: 'Aching', kidLabel: 'Sore', tiers: ['young', 'older'], depths: ['surface', 'inside'] },
   { id: 'throbbing', label: 'Throbbing', kidLabel: 'Thump thump', tiers: ['young', 'older'], depths: ['surface', 'inside'] },
-  { id: 'punch', label: 'Like a punch', kidLabel: 'Like a bonk', tiers: ['young', 'older'], depths: ['inside'] },
+  // Removed 2026-09-21: 'punch' / "Like a bonk". A punch is a mechanism, not a
+  // sensation -- it says how a hurt arrived, not what it feels like now, which
+  // is what this screen asks. 'sharp', 'aching' and 'throbbing' already cover
+  // what a blow leaves behind, and the gate question asks about the bump.
   { id: 'squeezing', label: 'Squeezing', kidLabel: 'Tight squeeze', tiers: ['young', 'older'], depths: ['inside'] },
   { id: 'itchy', label: 'Itchy', kidLabel: 'Itchy', tiers: ['young', 'older'], depths: ['surface'] },
   // Spinny belongs to the head and the ears -- vertigo is an ear complaint --
@@ -123,10 +126,9 @@ export const HELPS = [
   { id: 'rest', label: 'Lie down and rest', depths: ['surface', 'inside'] },
   { id: 'ice', label: 'An ice pack', depths: ['surface', 'inside'] },
   { id: 'bandage', label: 'A bandage', depths: ['surface'] },
-  { id: 'clean-it', label: 'Someone to clean it', depths: ['surface'] },
   { id: 'bathroom', label: 'Go to the bathroom', depths: ['inside'] },
   { id: 'food', label: 'Something to eat', depths: ['inside'] },
-  { id: 'call-home', label: 'Call my grown-up', depths: ['surface', 'inside'] },
+  { id: 'call-home', label: 'Call a guardian', depths: ['surface', 'inside'] },
   { id: 'company', label: 'Someone to stay with me', depths: ['surface', 'inside'] },
   { id: 'quiet', label: 'A quiet dark room', depths: ['surface', 'inside'] },
   // Removed 2026-09-13: "Go back to class" was left over from when this was a
@@ -134,6 +136,11 @@ export const HELPS = [
   // child to ask for a specific drug, which is a request no app should be
   // putting in a nurse's hands on a child's behalf, and which the child may not
   // be able to name correctly anyway.
+  //
+  // Removed 2026-09-21: "Someone to clean it". "Call my grown-up" became "Call
+  // a guardian" the same day -- on a ward the adult a child wants is not
+  // reliably a parent, and the report is read by staff who need to know which
+  // adult is meant.
   { id: 'dont-know', label: "I don't know", depths: ['surface', 'inside'] },
 ]
 

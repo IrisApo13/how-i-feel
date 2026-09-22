@@ -151,7 +151,11 @@ for (const f of readdirSync('src/screens')) {
   // a ternary -- `text={sel.length ? 'Anywhere else?' : 'Show me where...'}` --
   // and both were being skipped, which is why two of the most-heard lines in the
   // app had no audio.
-  for (const m of s.matchAll(/text=\{([^}]*)\}|text="([^"]{4,160})"/g)) {
+  // `speakText` as well as `text`: a screen whose visible line interpolates the
+  // child's name passes a name-free `speakText` for the guide to say, and that
+  // is exactly the line that needs a clip. Matching a bare `text=` suffix does
+  // not catch it, because `speakText` capitalises the T.
+  for (const m of s.matchAll(/(?:speakT|t)ext=\{([^}]*)\}|(?:speakT|t)ext="([^"]{4,160})"/g)) {
     const expr = m[1] ?? `"${m[2]}"`
     // The closing quote must MATCH the opening one. Treating any quote
     // character as a terminator split "Here's what helps me most:" into "Here"
@@ -163,6 +167,16 @@ for (const f of readdirSync('src/screens')) {
 // the intro screen holds its lines in a const array instead
 for (const m of readFileSync('src/screens/IntroScreen.jsx', 'utf8')
   .matchAll(/^\s*["'](.{6,160}?)["'],\s*$/gm)) lines.add(m[1])
+
+// Some lines are spoken by a direct speak() call rather than handed to
+// GuideSays -- the voice sample on the setup screen is one, and it is the line
+// that most needs a real clip, since its entire purpose is to demonstrate the
+// voice. Only literals are collectable; a template string interpolates
+// something known at runtime and is handled below.
+for (const f of readdirSync('src/screens')) {
+  const s = readFileSync(`src/screens/${f}`, 'utf8')
+  for (const m of s.matchAll(/\bspeak\(\s*(["'])((?:(?!\1).){6,160})\1/g)) lines.add(m[2])
+}
 
 // 2. bank questions, both age tiers
 const bank = readFileSync('src/data/bank.js', 'utf8')

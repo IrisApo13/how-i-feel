@@ -37,6 +37,10 @@ export default function IntroScreen({ profile, onNext, onBack, progress }) {
   // lands last.
   const typed = useRef(false)
   const spoken = useRef(false)
+  // Drives the mouth, which is why it is state and not another ref: the talking
+  // animation loops forever on its own, so the guide has to be told when the
+  // clip has finished or it keeps mouthing at a child reading in silence.
+  const [speaking, setSpeaking] = useState(false)
 
   const advance = () => {
     if (!typed.current || !spoken.current) return
@@ -62,11 +66,16 @@ export default function IntroScreen({ profile, onNext, onBack, progress }) {
       spoken.current = true
       return undefined
     }
+    setSpeaking(true)
     speak(LINES[line], character.voice, () => {
       spoken.current = true
+      setSpeaking(false)
       advanceRef.current()
     })
-    return () => stopSpeaking()
+    return () => {
+      setSpeaking(false)
+      stopSpeaking()
+    }
   }, [line, profile.voiceMode, character])
 
   const lineDone = () => {
@@ -83,7 +92,7 @@ export default function IntroScreen({ profile, onNext, onBack, progress }) {
           </p>
         </div>
 
-        <Guide pose={line === 0 ? 'wave' : 'talk'} size={260} />
+        <Guide pose={line === 0 ? 'wave' : speaking ? 'talk' : 'attentive'} size={260} />
       </div>
 
       <BigButton

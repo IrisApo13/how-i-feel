@@ -7,10 +7,7 @@
 // Capacitor and call Apple's on-device recognizer. Either swap happens behind
 // `listen()` without touching any screen.
 
-export const canSpeak = () =>
-  typeof window !== 'undefined' && 'speechSynthesis' in window
-
-// Pre-generated audio first, browser speech second.
+// The app's spoken audio is pre-generated, and only pre-generated.
 //
 // The browser's own voices are whatever the device happens to have installed,
 // and on a Mac that is usually the ~1MB "compact" tier -- grainy to the point
@@ -21,9 +18,10 @@ export const canSpeak = () =>
 //
 // The filename is a hash of the text, so editing a question's wording yields a
 // new name, the old clip is simply never requested, and nothing can play stale
-// audio over changed words. A missing file is not an error -- it falls through
-// to the browser voice, which is what happens for the three lines that
-// interpolate a child's name or body part at runtime.
+// audio over changed words. A missing file is not an error either -- the line
+// is shown and not spoken. That is why a line assembled at runtime, around a
+// child's name or the part they tapped, can never be heard: its text is not
+// known when the clips are made, so it has no clip and never will.
 
 const AUDIO_BASE = '/audio'
 let current = null
@@ -65,26 +63,41 @@ const sha1Hex = (str) => {
 
 export const clipUrl = (text) => `${AUDIO_BASE}/${sha1Hex(text.trim()).slice(0, 16)}.mp3`
 
-const speakWithBrowser = (text, voiceOpts = {}) => {
-  if (!canSpeak()) return
-  window.speechSynthesis.cancel()
-  // Chrome silently pauses the engine after inactivity and never reports it.
-  window.speechSynthesis.resume()
-  const utter = new SpeechSynthesisUtterance(text)
-  utter.pitch = voiceOpts.pitch ?? 1.2
-  // Not below 1. Slowing a synthetic voice does not make it gentler, it makes
-  // it ominous, and the old default of 0.9 was a large part of why this sounded
-  // frightening rather than kind.
-  utter.rate = voiceOpts.rate ?? 1
-  utter.volume = 1
-  window.speechSynthesis.speak(utter)
-}
+// THE GUIDE HAS ONE VOICE, OR NONE.
+//
+// There used to be a fallback here: a line with no clip was read by
+// `speechSynthesis`, on the reasoning that a plain voice beats silence. Tested
+// on a real device, it is the other way round. The browser's voice is a
+// different speaker mid-conversation -- flatter, differently paced, and on a
+// Mac often the ~1MB compact tier -- so the child hears the app change
+// character for one sentence. Every line that fell through was one a child met
+// early: the home greeting, the setup sample, the gate question. All three were
+// reported as sounding wrong before the cause was understood, and none of them
+// read as "missing audio". They read as the app being slightly off.
+//
+// So an un-recorded line is now simply not spoken. The words are on screen
+// either way -- that is a rule of the whole flow, not a concession here -- and
+// silence is honest in a way a second voice is not.
+//
+// The practical consequence: adding a line to a screen adds a silent line until
+// someone runs the generator. `node scripts/build-audio.mjs --live --dry` lists
+// exactly what is missing, and the check costs nothing.
 
-// `onEnd` fires when the clip finishes -- or immediately after the browser
-// voice is handed the line, since a caller that waits for speech to end must
-// not hang when there is no clip to wait for.
+// `onEnd` fires when the line is over: the clip's `ended` event, or at once
+// when there is no clip to play. Callers use it both to advance (IntroScreen)
+// and to stop the guide's mouth moving, so it must mean "the sentence is over",
+// never "the sentence has started" -- and it must fire even when nothing is
+// spoken, or a caller waiting on it hangs and a screen never advances.
+//
+// `voiceOpts` is kept on the signature and unused. It carried pitch and rate
+// for the synthetic voice; a recorded clip has its own. It stays because the
+// characters each declare one (see data/characters.js) and a second guide would
+// be a second set of clips chosen here.
 export const speak = (text, voiceOpts = {}, onEnd) => {
-  if (!text) return
+  if (!text) {
+    onEnd?.()
+    return
+  }
   stopSpeaking()
   const audio = new Audio(clipUrl(text))
   audio.volume = 1
@@ -94,21 +107,16 @@ export const speak = (text, voiceOpts = {}, onEnd) => {
     onEnd?.()
   }
 
-  // `play()` returns a promise, and THAT is the subtle part. Calling pause() on
-  // an audio element whose play() has not yet resolved makes the promise reject
-  // with AbortError -- so when a screen changes and the cleanup stops the clip,
-  // the rejection looks exactly like "file missing" and the fallback fires. The
-  // symptom is the good clip being cut off and the flat system voice reading the
-  // PREVIOUS screen's line over the new one, which reads as the audio being out
-  // of sync with the app.
-  //
-  // So a rejection only means "fall back" if this clip is still the current one.
-  // If something else has taken over, the stop was deliberate and there is
-  // nothing to recover from.
+  // A rejection here is either a missing clip or a deliberate stop -- calling
+  // pause() on an element whose play() has not resolved rejects with
+  // AbortError, which is indistinguishable from "file not found". Both end the
+  // same way now that nothing speaks in the guide's place, but `onEnd` must
+  // only fire for THIS clip: if something else has taken over, that clip owns
+  // the mouth and the callback, and stopping a line the child has already left
+  // behind must not reach back to end the line they are on.
   audio.play().catch(() => {
     if (current !== audio) return
     current = null
-    speakWithBrowser(text, voiceOpts)
     onEnd?.()
   })
 }
@@ -121,7 +129,8 @@ export const stopSpeaking = () => {
     current = null
     audio.pause()
   }
-  if (canSpeak()) window.speechSynthesis.cancel()
+  // Nothing cancels `speechSynthesis` here any more: this app never hands it a
+  // line. See the note above `speak`.
 }
 
 const Recognition =

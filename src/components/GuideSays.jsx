@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Guide from './Guide'
 import { speak, stopSpeaking } from '../lib/speech'
@@ -12,11 +12,37 @@ export default function GuideSays({
   character,
   pose = 'idle',
   text,
+  speakText,
   voiceMode = 'bubble',
   size = 130,
   onTapCharacter,
 }) {
   const lastSpoken = useRef(null)
+  const [speaking, setSpeaking] = useState(false)
+
+  // What is SAID can differ from what is shown, and only for a good reason.
+  //
+  // The greetings interpolate the child's name, so they can never be
+  // pre-recorded -- the hash that names a clip is taken from the finished
+  // sentence. That used to mean the two friendliest lines in the app were the
+  // two read by the browser's synthetic voice, which children hear as flat and
+  // slightly wrong, and it is the first thing the app says.
+  //
+  // So a screen may pass `speakText`: the same sentence with the name left out,
+  // which IS recorded. The name stays on screen where it belongs and the voice
+  // stays the guide's. Keep any `speakText` a plain literal -- scripts/
+  // build-audio.mjs scrapes these props to decide what to generate, and it
+  // cannot resolve an expression.
+  const spoken = speakText ?? text
+
+  // The mouth moves while the guide is speaking and stops when it stops.
+  // Talking is an ANIMATION, not a drawing: left to itself it loops forever, so
+  // the guide carried on mouthing silently long after the clip had finished --
+  // for the whole time the child spent choosing an answer. A face that moves
+  // with no sound does not read as friendly, it reads as wrong.
+  //
+  // In bubble mode nothing is spoken at all, so nothing here ever moves.
+  const livePose = pose === 'talk' && !speaking ? 'attentive' : pose
 
   // The `lastSpoken` guard stops a line being re-read when the component
   // re-renders for an unrelated reason. It MUST be cleared in the cleanup,
@@ -27,14 +53,16 @@ export default function GuideSays({
   // while working fine in a production build. That is a miserable thing to
   // debug, hence this comment.
   useEffect(() => {
-    if (voiceMode !== 'voice' || !text || lastSpoken.current === text) return
-    lastSpoken.current = text
-    speak(text, character.voice)
+    if (voiceMode !== 'voice' || !spoken || lastSpoken.current === spoken) return
+    lastSpoken.current = spoken
+    setSpeaking(true)
+    speak(spoken, character.voice, () => setSpeaking(false))
     return () => {
       lastSpoken.current = null
+      setSpeaking(false)
       stopSpeaking()
     }
-  }, [text, voiceMode, character])
+  }, [spoken, voiceMode, character])
 
   return (
     <div className="flex items-end gap-2 justify-center">
@@ -44,7 +72,7 @@ export default function GuideSays({
         className="shrink-0"
         aria-label="Tap to hear that again."
       >
-        <Guide pose={pose} size={size} />
+        <Guide pose={livePose} size={size} />
       </motion.button>
 
       {text && (

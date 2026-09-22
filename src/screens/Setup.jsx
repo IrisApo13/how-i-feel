@@ -120,6 +120,10 @@ export default function Setup({ onComplete }) {
   if (current === 'age') {
     return shell(
       <>
+        {/* No speakText here, and nothing worth recording: `voiceMode` is still
+            its 'bubble' default. The child does not choose to hear the guide
+            aloud until the 'voice' step, two steps after this one, so every
+            line on the way in is read rather than spoken. */}
         <GuideSays
           character={character}
           pose="talk"
@@ -196,8 +200,12 @@ export default function Setup({ onComplete }) {
             sub="I'll say it"
             selected={voiceMode === 'voice'}
             onClick={() => {
+              // No sample line. Choosing this used to play "Hi! I can talk out
+              // loud like this." -- a line with no recorded clip, so the one
+              // moment whose whole job was to demonstrate the guide's voice
+              // demonstrated the browser's instead. A sample in the wrong voice
+              // is worse than no sample: the child picks on the strength of it.
               setVoiceMode('voice')
-              speak(`Hi ${name.trim() || 'friend'}, I can talk out loud like this.`, character.voice)
             }}
           />
           <ChoiceCard

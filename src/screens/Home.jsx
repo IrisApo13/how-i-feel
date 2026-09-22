@@ -13,11 +13,20 @@ export default function Home({ profile, recent, stats, onStart, onReset, onStaff
       <div className="flex-1 flex flex-col justify-center gap-6 py-4">
         <div className="flex items-center justify-center gap-1">
           <Avatar avatar={profile.avatar} size={78} />
+          {/* A bubble even in voice mode, deliberately. This is the only line
+              that greets the child by name, and a name is the one thing a clip
+              cannot carry -- a clip is named by the hash of its finished
+              sentence -- so spoken aloud it could only ever be the browser's
+              synthetic voice. Dropping the name to make it recordable would
+              have the guide greet the child less warmly than the bubble does.
+              Home is also the screen a child returns to most, and the one they
+              can sit on without going anywhere, so a line that reads itself out
+              on every visit is the wrong thing to have chosen. */}
           <GuideSays
             character={character}
             pose="wave"
             text={`Hi ${profile.name}! How are you feeling today?`}
-            voiceMode={profile.voiceMode}
+            voiceMode="bubble"
             size={120}
           />
         </div>
